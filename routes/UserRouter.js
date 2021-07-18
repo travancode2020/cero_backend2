@@ -56,42 +56,133 @@ UserRouter.route("/")
       .catch((err) => next(err));
   });
 
-UserRouter.route("/:user_id").get((req, res, next) => {
-  Users.findById(req.params.user_id)
-    .then(
-      (user) => {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        res.json(user);
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
-});
-/*
+UserRouter.route("/:userid")
+  .get((req, res, next) => {
+    Users.findById(req.params.userid)
+      .then(
+        (user) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(user);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
+
   .post((req, res, next) => {
     res.statusCode = 403;
-    res.end("POST operation not supported on /CARDS/" + req.params.cardId);
+    res.end("POST operation not supported on /Users/" + req.params.userid);
   })
 
   .put((req, res, next) => {
     Users.findByIdAndUpdate(
-      req.params.user_id,
+      req.params.userid,
       {
         $set: req.body,
       },
       { new: true }
     )
       .then(
-        (card) => {
+        (user) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(card);
+          res.json(user);
         },
         (err) => next(err)
       )
       .catch((err) => next(err));
+  });
+
+///
+//
+//
+//
+//
+//
+//
+//
+
+//  //
+
+//
+//
+//
+//  //  //  //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//        THIS GAP IS JUST FOR LOOKING THE CODE CLEAN //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+//  //
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/*
+
+
+
+  .post((req, res, next) => {
+    Users.findById(req.params.userid)
+      .then(
+        (user) => {
+          if (user != null) {
+            user.comments.push(req.body);
+            user.save().then(
+              (user) => {
+                res.statusCode = 200;
+                res.setHeader("Content-Type", "application/json");
+                res.json(user);
+              },
+              (err) => next(err)
+            );
+          } else {
+            err = new Error("Card " + req.params.userid + " not found");
+            err.status = 404;
+            return next(err);
+          }
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  });
+
+/*
+  .post((req, res, next) => {
+    res.statusCode = 403;
+    res.end("POST operation not supported on /CARDS/" + req.params.cardId);
   })
+
+  
 
   .delete((req, res, next) => {
     Users.findByIdAndRemove(req.params.userId)
@@ -105,6 +196,51 @@ UserRouter.route("/:user_id").get((req, res, next) => {
       )
       .catch((err) => next(err));
   });
+
+UserRouter.route("/:userid/interest")
+  .get((req, res, next) => {
+    Users.findById(req.params.userid)
+      .then(
+        (user) => {
+          if (user != null) {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json");
+            res.json(card.comments);
+          } else {
+            err = new Error("Card " + req.params.cardId + " not found");
+            err.status = 404;
+            return next(err);
+          }
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
+  .post((req, res, next) => {
+    Cards.findById(req.params.cardId)
+      .then(
+        (card) => {
+          if (card != null) {
+            card.comments.push(req.body);
+            card.save().then(
+              (card) => {
+                res.statusCode = 200;
+                res.setHeader("Content-Type", "application/json");
+                res.json(card);
+              },
+              (err) => next(err)
+            );
+          } else {
+            err = new Error("Card " + req.params.cardId + " not found");
+            err.status = 404;
+            return next(err);
+          }
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  });
+
 
 
 

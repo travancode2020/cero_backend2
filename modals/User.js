@@ -3,6 +3,13 @@ const Schema = mongoose.Schema;
 
 var savedSchema = new Schema({});
 
+var interestSchema = new Schema({
+  interest: {
+    type: String,
+    required: true,
+  },
+});
+
 var followingSchema = new Schema(
   {
     user_id: {
@@ -192,7 +199,7 @@ const UserSchema = new Schema(
       unique: true,
     },
 
-    date_join: {
+    password: {
       type: String,
       required: true,
     },
@@ -222,7 +229,7 @@ const UserSchema = new Schema(
       required: true,
     },
 
-    numSatisaction: {
+    numSatisfaction: {
       type: Number,
       required: true,
     },
@@ -236,10 +243,7 @@ const UserSchema = new Schema(
       type: Number,
     },
 
-    interest: {
-      type: String,
-      required: true,
-    },
+    interest: [interestSchema],
 
     Cards: [cardSchema],
     followers: [followerSchema],
