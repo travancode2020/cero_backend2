@@ -9,10 +9,11 @@ var indexRouter = require("./routes/index");
 var UserRouter = require("./routes/UserRouter");
 
 var app = express();
-// const url = "mongodb://localhost:27017/cerodb";
-require('dotenv/config');
-
+const url = "mongodb://localhost:27017/cerodb";
 const mongoose = require("mongoose");
+
+require("dotenv/config");
+
 mongoose
   .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
@@ -26,17 +27,18 @@ mongoose
     console.log(err);
   });
 
-
+/*
 const Users = require("./modals/User");
-// const connect = mongoose.connect(url);
-// connect.then(
-//   (db) => {
-//     console.log("Connected to Server");
-//   },
-//   (err) => {
-//     console.log(err);
-//   }
-// );
+const connect = mongoose.connect(url);
+connect.then(
+  (db) => {
+    console.log("Connected to Server");
+  },
+  (err) => {
+    console.log(err);
+  }
+);
+*/
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
