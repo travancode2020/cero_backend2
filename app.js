@@ -7,9 +7,11 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 
 var UserRouter = require("./routes/UserRouter");
+var CardRouter = require("./routes/CardRouter");
 
 var app = express();
 const url = "mongodb://localhost:27017/cerodb";
+const Users = require("./modals/User");
 const mongoose = require("mongoose");
 
 require("dotenv/config");
@@ -28,7 +30,7 @@ mongoose
   });
 
 /*
-const Users = require("./modals/User");
+
 const connect = mongoose.connect(url);
 connect.then(
   (db) => {
@@ -38,6 +40,7 @@ connect.then(
     console.log(err);
   }
 );
+
 */
 
 // view engine setup
@@ -52,6 +55,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", UserRouter);
+app.use("/cards", CardRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

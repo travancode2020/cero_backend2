@@ -1,6 +1,38 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+var workSchema = new Schema(
+  {
+    id: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+    },
+    detail: {
+      type: String,
+    },
+
+    images: [],
+
+    views: {
+      id: {
+        type: String,
+        required: true,
+      },
+
+      user_name: {
+        type: String,
+      },
+    },
+  },
+
+  {
+    timestamps: true,
+  }
+);
+
 var savedSchema = new Schema({});
 
 var interestSchema = new Schema({
@@ -129,51 +161,6 @@ var cardSchema = new Schema(
   }
 );
 
-var cardSchema = new Schema(
-  {
-    link: {
-      type: String,
-      required: true,
-    },
-
-    isImage: {
-      type: Boolean,
-      required: true,
-    },
-    Likes: {
-      type: Number,
-      required: true,
-    },
-    Saved: {
-      type: Number,
-      required: true,
-    },
-
-    Hostid: {
-      type: String,
-      required: true,
-    },
-    HostName: {
-      type: String,
-      required: true,
-    },
-    HostPropic: {
-      type: String,
-      required: true,
-    },
-
-    Tags: {
-      type: String,
-      required: true,
-    },
-
-    comments: [commentSchema],
-  },
-  {
-    timestamps: true,
-  }
-);
-
 const UserSchema = new Schema(
   {
     user_id: {
@@ -239,11 +226,17 @@ const UserSchema = new Schema(
       required: true,
     },
 
+    ProBio: {
+      type: String,
+    },
+
+    work: [workSchema],
+
     streak: {
       type: Number,
     },
 
-    interest: [interestSchema],
+    interest: [],
 
     Cards: [cardSchema],
     followers: [followerSchema],
