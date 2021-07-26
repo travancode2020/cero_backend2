@@ -15,7 +15,6 @@ const Users = require("./modals/User");
 const mongoose = require("mongoose");
 
 require("dotenv/config");
-
 mongoose
   .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
@@ -28,7 +27,6 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
 /*
 
 const connect = mongoose.connect(url);
@@ -40,6 +38,8 @@ connect.then(
     console.log(err);
   }
 );
+
+
 
 */
 

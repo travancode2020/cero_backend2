@@ -163,7 +163,7 @@ var cardSchema = new Schema(
 
 const UserSchema = new Schema(
   {
-    user_id: {
+    _id: {
       type: String,
       required: true,
       unique: true,

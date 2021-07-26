@@ -88,6 +88,12 @@ const CardSchema = new Schema(
       required: true,
     },
 
+    _id: {
+      type: String,
+      requireed: true,
+      unique: true,
+    },
+
     Hostid: {
       type: String,
       required: true,
