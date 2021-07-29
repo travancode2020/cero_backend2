@@ -35,13 +35,6 @@ var workSchema = new Schema(
 
 var savedSchema = new Schema({});
 
-var interestSchema = new Schema({
-  interest: {
-    type: String,
-    required: true,
-  },
-});
-
 var followingSchema = new Schema(
   {
     user_id: {
@@ -95,18 +88,24 @@ var followerSchema = new Schema({
   },
 });
 
-var commentSchema = new Schema(
+var tagsSchema = new Schema(
   {
-    comment: {
+    mainCat: {
       type: String,
-      required: true,
-    },
-    author: {
-      type: String,
-      required: true,
     },
 
-    author_id: {
+    subCat: {
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+var LikesSchema = new Schema(
+  {
+    user_id: {
       type: String,
       required: true,
     },
@@ -116,24 +115,71 @@ var commentSchema = new Schema(
   }
 );
 
-var cardSchema = new Schema(
+var dislikesSchema = new Schema(
   {
-    link: {
+    user_id: {
       type: String,
       required: true,
     },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+var linkSchema = new Schema(
+  {
+    link_url: {
+      type: String,
+    },
+
+    image: {
+      type: Boolean,
+    },
+  },
+
+  {
+    timestamps: true,
+  }
+);
+
+var commentSchema = new Schema(
+  {
+    comment: {
+      type: String,
+      required: true,
+    },
+    user_id: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const CardSchema = new Schema(
+  {
+    link: [linkSchema],
 
     isImage: {
       type: Boolean,
       required: true,
     },
-    Likes: {
-      type: Number,
-      required: true,
-    },
+    Likes: [LikesSchema],
+
+    dislikes: [dislikesSchema],
+
     Saved: {
       type: Number,
       required: true,
+    },
+
+    id: {
+      type: String,
+      required: true,
+      unique: true,
     },
 
     Hostid: {
@@ -148,11 +194,11 @@ var cardSchema = new Schema(
       type: String,
       required: true,
     },
-
-    Tags: {
+    Caption: {
       type: String,
-      required: true,
     },
+
+    Tags: [tagsSchema],
 
     comments: [commentSchema],
   },
@@ -238,7 +284,7 @@ const UserSchema = new Schema(
 
     interest: [],
 
-    Cards: [cardSchema],
+    Cards: [CardSchema],
     followers: [followerSchema],
     verifiedProfiles: [verifiedProfilesSchema],
     following: [followingSchema],

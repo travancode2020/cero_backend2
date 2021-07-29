@@ -88,9 +88,9 @@ const CardSchema = new Schema(
       required: true,
     },
 
-    _id: {
+    id: {
       type: String,
-      requireed: true,
+      required: true,
       unique: true,
     },
 

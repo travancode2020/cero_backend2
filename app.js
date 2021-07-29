@@ -10,7 +10,7 @@ var UserRouter = require("./routes/UserRouter");
 var CardRouter = require("./routes/CardRouter");
 
 var app = express();
-const url = "mongodb://localhost:27017/cerodb";
+const url = "mongodb://localhost:27017/cerotest";
 const Users = require("./modals/User");
 const mongoose = require("mongoose");
 
@@ -27,6 +27,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
 /*
 
 const connect = mongoose.connect(url);
@@ -39,10 +40,7 @@ connect.then(
   }
 );
 
-
-
 */
-
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
