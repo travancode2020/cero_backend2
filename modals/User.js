@@ -17,14 +17,7 @@ var workSchema = new Schema(
     images: [],
 
     views: {
-      id: {
-        type: String,
-        required: true,
-      },
-
-      user_name: {
-        type: String,
-      },
+      type: String,
     },
   },
 

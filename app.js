@@ -31,6 +31,7 @@ mongoose
   });
 
 /*
+
 const connect = mongoose.connect(url);
 connect.then(
   (db) => {
@@ -40,6 +41,7 @@ connect.then(
     console.log(err);
   }
 );
+
 */
 
 // view engine setup
