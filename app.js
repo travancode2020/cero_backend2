@@ -10,11 +10,11 @@ var UserRouter = require("./routes/UserRouter");
 var CardRouter = require("./routes/CardRouter");
 
 var app = express();
-const url = "mongodb://localhost:27017/test";
+
+//const url = "mongodb://localhost:27017/test";
+
 const Users = require("./modals/User");
 const mongoose = require("mongoose");
-
-/*
 
 require("dotenv/config");
 mongoose
@@ -30,7 +30,7 @@ mongoose
     console.log(err);
   });
 
-*/
+/*
 
 const connect = mongoose.connect(url);
 connect.then(
@@ -41,6 +41,7 @@ connect.then(
     console.log(err);
   }
 );
+*/
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
