@@ -98,11 +98,6 @@ const CardSchema = new Schema(
       required: true,
     },
 
-    id: {
-      type: String,
-      required: true,
-    },
-
     Likes: [LikesSchema],
 
     Hostid: {

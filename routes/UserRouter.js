@@ -92,19 +92,29 @@ UserRouter.route("/:userid")
         (err) => next(err)
       )
       .catch((err) => next(err));
+  })
+  .delete((req, res, next) => {
+    Users.findByIdAndRemove(req.params.userid)
+      .then(
+        (resp) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(resp);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
   });
 
-/*
-
-UserRouter.route("/:userid/Cards")
+UserRouter.route("/:cardId/work")
   .get((req, res, next) => {
-    Users.findById(req.params.userid)
+    Users.findById(req.params.cardId)
       .then(
-        (user) => {
-          if (user != null) {
+        (card) => {
+          if (card != null) {
             res.statusCode = 200;
             res.setHeader("Content-Type", "application/json");
-            res.json(user.Cards);
+            res.json(card.work);
           } else {
             err = new Error("Card " + req.params.cardId + " not found");
             err.status = 404;
@@ -121,17 +131,17 @@ UserRouter.route("/:userid/Cards")
       .then(
         (card) => {
           if (card != null) {
-            card.Cards.push(req.body);
+            card.work.push(req.body);
             card.save().then(
               (card) => {
                 res.statusCode = 200;
                 res.setHeader("Content-Type", "application/json");
-                res.json(card.Cards);
+                res.json(card.work);
               },
               (err) => next(err)
             );
           } else {
-            err = new Error("Card " + req.params.cardId + " not found");
+            err = new Error("Card " + req.params.userid + " not found");
             err.status = 404;
             return next(err);
           }
@@ -144,44 +154,14 @@ UserRouter.route("/:userid/Cards")
   .put((req, res, next) => {
     res.statusCode = 403;
     res.end("PUT operation not supported on /Cards");
-  });
-
-UserRouter.route("/:userid/Cards/:cardid")
-  .get((req, res, next) => {
-    Users.findById(req.params.userid)
-      .then(
-        (card) => {
-          if (card != null && card.Cards.id(req.params.cardid) != null) {
-            res.statusCode = 200;
-            res.setHeader("Content-Type", "application/json");
-            res.json(card.Cards.id(req.params.cardid));
-          } else if (card == null) {
-            err = new Error("Card " + req.params.cardid + " not found");
-            err.status = 404;
-            return next(err);
-          } else {
-            err = new Error("Comment " + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
   })
-  .post((req, res, next) => {
-    res.statusCode = 403;
-    res.end("POST operation not supported on /Cardsids/" + req.params.cardId);
-  });
-
-/*
-  .put((req, res, next) => {
+  .delete((req, res, next) => {
     Users.findById(req.params.userid)
       .then(
         (card) => {
-          if (card != null && card.Cards.id(req.params.cardid) != null) {
-            if (req.body.Cards) {
-              card.Cards.id(req.params.cardid).Cards = req.body.Cards;
+          if (card != null) {
+            for (var i = card.work.length - 1; i >= 0; i--) {
+              card.work.id(card.work[i]._id).remove();
             }
             card.save().then(
               (card) => {
@@ -191,12 +171,54 @@ UserRouter.route("/:userid/Cards/:cardid")
               },
               (err) => next(err)
             );
-          } else if (card == null) {
+          } else {
+            err = new Error("Card " + req.params.userid + " not found");
+            err.status = 404;
+            return next(err);
+          }
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  });
+
+/*
+
+UserRouter.route("/:userid/interest")
+  .get((req, res, next) => {
+    Users.findById(req.params.userid)
+      .then(
+        (user) => {
+          if (user != null) {
+            res.statusCode = 200;
+            res.setHeader("Content-Type", "application/json");
+            res.json(card.interest);
+          } else {
             err = new Error("Card " + req.params.cardId + " not found");
             err.status = 404;
             return next(err);
+          }
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
+  .post((req, res, next) => {
+    Cards.findById(req.params.cardId)
+      .then(
+        (card) => {
+          if (card != null) {
+            card.comments.push(req.body);
+            card.save().then(
+              (card) => {
+                res.statusCode = 200;
+                res.setHeader("Content-Type", "application/json");
+                res.json(card);
+              },
+              (err) => next(err)
+            );
           } else {
-            err = new Error("Comment " + req.params.commentId + " not found");
+            err = new Error("Card " + req.params.cardId + " not found");
             err.status = 404;
             return next(err);
           }
