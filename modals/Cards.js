@@ -18,9 +18,12 @@ var tagsSchema = new Schema(
 
 var LikesSchema = new Schema(
   {
-    user_id: {
+    _id: {
       type: String,
-      required: true,
+    },
+
+    user_name: {
+      type: String,
     },
   },
   {
@@ -30,9 +33,12 @@ var LikesSchema = new Schema(
 
 var dislikesSchema = new Schema(
   {
-    user_id: {
+    _id: {
       type: String,
-      required: true,
+    },
+
+    user_name: {
+      type: String,
     },
   },
   {
@@ -62,9 +68,14 @@ var commentSchema = new Schema(
       type: String,
       required: true,
     },
-    user_id: {
+
+    _id: {
       type: String,
       required: true,
+    },
+
+    user_name: {
+      type: String,
     },
   },
   {
@@ -79,7 +90,6 @@ const CardSchema = new Schema(
       type: Boolean,
       required: true,
     },
-    Likes: [LikesSchema],
 
     dislikes: [dislikesSchema],
 
@@ -91,8 +101,9 @@ const CardSchema = new Schema(
     id: {
       type: String,
       required: true,
-      unique: true,
     },
+
+    Likes: [LikesSchema],
 
     Hostid: {
       type: String,

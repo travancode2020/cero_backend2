@@ -94,6 +94,8 @@ UserRouter.route("/:userid")
       .catch((err) => next(err));
   });
 
+/*
+
 UserRouter.route("/:userid/Cards")
   .get((req, res, next) => {
     Users.findById(req.params.userid)
