@@ -1,6 +1,80 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+var commentSchema = new Schema(
+  {
+    comment: {
+      type: String,
+      required: true,
+    },
+
+    userId: {
+      type: String,
+      required: true,
+    },
+
+    userName: {
+      type: String,
+    },
+
+    likes: [],
+    replyTo: {
+      type: String,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+const CardSchema = new Schema(
+  {
+    link: [],
+
+    isImage: {
+      type: Boolean,
+      required: true,
+    },
+
+    disLikes: [],
+
+    saved: {
+      type: Number,
+      required: true,
+    },
+
+    likes: [],
+
+    hostId: {
+      type: String,
+      required: true,
+    },
+    hostName: {
+      type: String,
+      required: true,
+    },
+    hostPropic: {
+      type: String,
+      required: true,
+    },
+    caption: {
+      type: String,
+    },
+
+    views: [],
+
+    tags: [],
+
+    comments: [commentSchema],
+  },
+  {
+    timestamps: true,
+  }
+);
+
+var Cards = mongoose.model("Card", CardSchema);
+module.exports = Cards;
+
+/*
 var tagsSchema = new Schema(
   {
     mainCat: {
@@ -61,69 +135,4 @@ var linkSchema = new Schema(
     timestamps: true,
   }
 );
-
-var commentSchema = new Schema(
-  {
-    comment: {
-      type: String,
-      required: true,
-    },
-
-    _id: {
-      type: String,
-      required: true,
-    },
-
-    user_name: {
-      type: String,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
-const CardSchema = new Schema(
-  {
-    link: [linkSchema],
-
-    isImage: {
-      type: Boolean,
-      required: true,
-    },
-
-    dislikes: [dislikesSchema],
-
-    Saved: {
-      type: Number,
-      required: true,
-    },
-
-    Likes: [LikesSchema],
-
-    Hostid: {
-      type: String,
-      required: true,
-    },
-    HostName: {
-      type: String,
-      required: true,
-    },
-    HostPropic: {
-      type: String,
-      required: true,
-    },
-    Caption: {
-      type: String,
-    },
-
-    Tags: [tagsSchema],
-
-    comments: [commentSchema],
-  },
-  {
-    timestamps: true,
-  }
-);
-
-var Cards = mongoose.model("Card", CardSchema);
-module.exports = Cards;
+*/

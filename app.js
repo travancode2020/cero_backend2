@@ -31,7 +31,6 @@ mongoose
   });
 
 /*
-
 const connect = mongoose.connect(url);
 connect.then(
   (db) => {
