@@ -37,10 +37,7 @@ const CardSchema = new Schema(
 
     disLikes: [],
 
-    saved: {
-      type: Number,
-      required: true,
-    },
+    saved: [],
 
     likes: [],
 
@@ -54,7 +51,6 @@ const CardSchema = new Schema(
     },
     hostPropic: {
       type: String,
-      required: true,
     },
     caption: {
       type: String,
