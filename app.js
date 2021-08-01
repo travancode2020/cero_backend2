@@ -40,7 +40,6 @@ connect.then(
     console.log(err);
   }
 );
-
 */
 
 // view engine setup
