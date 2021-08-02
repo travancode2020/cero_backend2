@@ -62,7 +62,6 @@ const UserSchema = new Schema(
 
     photoUrl: {
       type: String,
-      required: true,
     },
 
     dob: {
@@ -82,12 +81,10 @@ const UserSchema = new Schema(
 
     satisfaction: {
       type: Number,
-      required: true,
     },
 
     cryptoBal: {
       type: Number,
-      required: true,
     },
 
     proBio: {
