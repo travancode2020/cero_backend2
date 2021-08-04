@@ -16,9 +16,7 @@ var workSchema = new Schema(
 
     images: [],
 
-    views: {
-      type: String,
-    },
+    views: [],
   },
 
   {
