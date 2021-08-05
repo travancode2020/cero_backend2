@@ -75,11 +75,30 @@ UserRouter.route("/:userid")
     res.end("POST operation not supported on /Users/" + req.params.userid);
   })
 
-  .put((req, res, next) => {
+  .patch((req, res, next) => {
     Users.findByIdAndUpdate(
       req.params.userid,
       {
         $addToSet: req.body,
+      },
+      { new: true }
+    )
+      .then(
+        (user) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(user);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
+
+  .put((req, res, next) => {
+    Users.findByIdAndUpdate(
+      req.params.userid,
+      {
+        $set: req.body,
       },
       { new: true }
     )
