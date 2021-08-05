@@ -79,7 +79,7 @@ CardRouter.route("/:cardId")
     Cards.findByIdAndUpdate(
       req.params.cardId,
       {
-        $set: req.body,
+        $addToSet: req.body,
       },
       { new: true }
     )

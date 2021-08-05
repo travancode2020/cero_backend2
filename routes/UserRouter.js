@@ -79,7 +79,7 @@ UserRouter.route("/:userid")
     Users.findByIdAndUpdate(
       req.params.userid,
       {
-        $set: req.body,
+        $addToSet: req.body,
       },
       { new: true }
     )
@@ -93,6 +93,7 @@ UserRouter.route("/:userid")
       )
       .catch((err) => next(err));
   })
+
   .delete((req, res, next) => {
     Users.findByIdAndRemove(req.params.userid)
       .then(
