@@ -75,7 +75,7 @@ CardRouter.route("/:cardId")
     res.end("POST operation not supported on /CARDS/" + req.params.cardId);
   })
 
-  .put((req, res, next) => {
+  .patch((req, res, next) => {
     Cards.findByIdAndUpdate(
       req.params.cardId,
       {
@@ -93,7 +93,24 @@ CardRouter.route("/:cardId")
       )
       .catch((err) => next(err));
   })
-
+  .put((req, res, next) => {
+    Cards.findByIdAndUpdate(
+      req.params.cardId,
+      {
+        $pullAll: req.body,
+      },
+      { new: true }
+    )
+      .then(
+        (card) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(card);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
   .delete((req, res, next) => {
     Cards.findByIdAndRemove(req.params.cardId)
       .then(

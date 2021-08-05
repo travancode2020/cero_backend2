@@ -98,7 +98,7 @@ UserRouter.route("/:userid")
     Users.findByIdAndUpdate(
       req.params.userid,
       {
-        $set: req.body,
+        $pullAll: req.body,
       },
       { new: true }
     )
