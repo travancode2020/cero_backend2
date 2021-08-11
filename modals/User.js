@@ -102,6 +102,8 @@ const UserSchema = new Schema(
     verifiedProfiles: [],
     following: [],
     saved: [],
+    liked: [],
+    viewed: [],
   },
   {
     timestamps: true,

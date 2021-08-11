@@ -9,6 +9,24 @@ const CardRouter = express.Router();
 
 CardRouter.use(bodyParser.json());
 
+/*
+
+CardRouter.route("/").get((req, res, next) => {
+ 
+  const tag = req.body.tags;
+
+  Cards.find({ tags: tag  })
+    .then(
+      (card) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(card);
+      },
+      (err) => next(err)
+    )
+    .catch((err) => next(err));
+});
+*/
 CardRouter.route("/")
   .get((req, res, next) => {
     Cards.find({})

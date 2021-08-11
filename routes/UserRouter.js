@@ -239,12 +239,18 @@ UserRouter.route("/:userId/work/:workId")
       .then(
         (card) => {
           if (card != null && card.work.id(req.params.workId) != null) {
-            card.work.id(req.params.workId).w = req.body.work;
+            if (req.body.images) {
+              card.work.id(req.params.workId).images = req.body.images;
+            }
+            if (req.body.views) {
+              card.work.id(req.params.workId).views = req.body.views;
+            }
+
             card.save().then(
               (card) => {
                 res.statusCode = 200;
                 res.setHeader("Content-Type", "application/json");
-                res.json(card.work.workI);
+                res.json(card.work);
               },
               (err) => next(err)
             );
