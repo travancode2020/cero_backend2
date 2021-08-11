@@ -70,11 +70,6 @@ UserRouter.route("/:userid")
       .catch((err) => next(err));
   })
 
-  .post((req, res, next) => {
-    res.statusCode = 403;
-    res.end("POST operation not supported on /Users/" + req.params.userid);
-  })
-
   .patch((req, res, next) => {
     Users.findByIdAndUpdate(
       req.params.userid,
@@ -94,7 +89,7 @@ UserRouter.route("/:userid")
       .catch((err) => next(err));
   })
 
-  .head((req, res, next) => {
+  .post((req, res, next) => {
     Users.findByIdAndUpdate(
       req.params.userid,
       {
