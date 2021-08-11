@@ -94,6 +94,25 @@ UserRouter.route("/:userid")
       .catch((err) => next(err));
   })
 
+  .head((req, res, next) => {
+    Users.findByIdAndUpdate(
+      req.params.userid,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    )
+      .then(
+        (user) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(user);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
+
   .put((req, res, next) => {
     Users.findByIdAndUpdate(
       req.params.userid,
@@ -268,6 +287,42 @@ UserRouter.route("/:userId/work/:workId")
       )
       .catch((err) => next(err));
   })
+
+  .patch((req, res, next) => {
+    Users.findById(req.params.userId)
+      .then(
+        (card) => {
+          if (card != null && card.work.id(req.params.workId) != null) {
+            if (req.body.images) {
+              card.work.id(req.params.workId).images = req.body.images;
+            }
+            if (req.body.views) {
+              card.work.id(req.params.workId).views = req.body.views;
+            }
+
+            card.save().then(
+              (card) => {
+                res.statusCode = 200;
+                res.setHeader("Content-Type", "application/json");
+                res.json(card.work);
+              },
+              (err) => next(err)
+            );
+          } else if (card == null) {
+            err = new Error("Card " + req.params.cardId + " not found");
+            err.status = 404;
+            return next(err);
+          } else {
+            err = new Error("Comment " + req.params.commentId + " not found");
+            err.status = 404;
+            return next(err);
+          }
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  })
+
   .delete((req, res, next) => {
     Users.findById(req.params.userId)
       .then(
