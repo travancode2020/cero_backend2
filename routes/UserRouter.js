@@ -54,6 +54,24 @@ UserRouter.route("/")
         (err) => next(err)
       )
       .catch((err) => next(err));
+  })
+
+  .patch((req, res, next) => {
+    const userName = req.body.userName;
+
+    Users.find({ userName: userName })
+      .then(
+        (card) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+
+          if (card.length <= 0) {
+            res.json(true);
+          } else res.json(false);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
   });
 
 UserRouter.route("/:userid")
