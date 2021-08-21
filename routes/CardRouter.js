@@ -251,18 +251,34 @@ CardRouter.route("/:cardId/comments/:commentId")
     );
   })
   .put((req, res, next) => {
-    Cards.findById(req.params.cardId)
+    Cards.findByIdAndUpdate(req.params.cardId)
+
       .then(
         (card) => {
+          console.log(card.comments.id(req.params.commentId));
           if (card != null && card.comments.id(req.params.commentId) != null) {
             if (req.body.comment) {
               card.comments.id(req.params.commentId).comment = req.body.comment;
             }
+            if (req.body.likes) {
+              card.comments.id(req.params.commentId).likes = req.body.likes;
+            }
+            if (req.body.userId) {
+              card.comments.id(req.params.commentId).userId = req.body.userId;
+            }
+            if (req.body.userName) {
+              card.comments.id(req.params.commentId).userName =
+                req.body.userName;
+            }
+            if (req.body.replyTo) {
+              card.comments.id(req.params.commentId).replyTo = req.body.replyTo;
+            }
+
             card.save().then(
               (card) => {
                 res.statusCode = 200;
                 res.setHeader("Content-Type", "application/json");
-                res.json(card);
+                res.json(card.comments.id(req.params.commentId));
               },
               (err) => next(err)
             );
@@ -280,6 +296,7 @@ CardRouter.route("/:cardId/comments/:commentId")
       )
       .catch((err) => next(err));
   })
+
   .delete((req, res, next) => {
     Cards.findById(req.params.cardId)
       .then(

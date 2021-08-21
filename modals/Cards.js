@@ -60,6 +60,8 @@ const CardSchema = new Schema(
 
     tags: [],
 
+    color: [],
+
     comments: [commentSchema],
   },
   {
