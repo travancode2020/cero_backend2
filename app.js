@@ -1,46 +1,33 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+require("dotenv/config");
 
-var indexRouter = require("./routes/index");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
-var UserRouter = require("./routes/UserRouter");
-var CardRouter = require("./routes/CardRouter");
+const { IndexRouter, CardRouter, UserRouter } = require("./routes");
 
-var app = express();
-
-const url = "mongodb://localhost:27017/test";
-
-const Users = require("./modals/User");
+const app = express();
 const mongoose = require("mongoose");
 
-require("dotenv/config");
 mongoose
   .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
     dbName: "Cero_Database",
   })
   .then(() => {
-    console.log("Database connected....");
+    console.log("Successfully connected to database");
   })
   .catch((err) => {
-    console.log(err);
+    console.log("database connection failed. exiting now...");
+    console.error(err);
+    process.exit(1);
   });
-/*
 
-const connect = mongoose.connect(url);
-connect.then(
-  (db) => {
-    console.log("Connected to Server");
-  },
-  (err) => {
-    console.log(err);
-  }
-);
-*/
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
@@ -51,7 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
+app.use("/", IndexRouter);
 app.use("/users", UserRouter);
 app.use("/cards", CardRouter);
 

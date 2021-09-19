@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-var workSchema = new Schema(
+const WorkSchema = new Schema(
   {
     uId: {
       type: String,
@@ -13,9 +13,7 @@ var workSchema = new Schema(
     detail: {
       type: String,
     },
-
     images: [],
-
     views: [],
   },
 
@@ -26,78 +24,57 @@ var workSchema = new Schema(
 
 const UserSchema = new Schema(
   {
-    _id: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-
     userName: {
       type: String,
       required: true,
       unique: true,
     },
-
     name: {
       type: String,
       required: true,
     },
-
     email: {
       type: String,
       required: true,
       unique: true,
     },
-
     password: {
       type: String,
       required: true,
     },
-
     phone: {
       type: Number,
     },
-
     photoUrl: {
       type: String,
     },
-
     dob: {
       type: String,
       required: true,
     },
-
     isCreator: {
       type: Boolean,
       required: true,
     },
-
     isPro: {
       type: Boolean,
       required: true,
     },
-
     satisfaction: {
       type: Number,
     },
-
     cryptoBal: {
       type: Number,
     },
-
     proBio: {
       type: String,
     },
-
-    work: [workSchema],
-
+    work: [WorkSchema],
     streak: {
       type: Number,
     },
     userTag: [],
-
     interest: [],
-
     followers: [],
     verifiedProfiles: [],
     following: [],

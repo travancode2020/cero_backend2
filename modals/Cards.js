@@ -1,22 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-var commentSchema = new Schema(
+const CommentSchema = new Schema(
   {
     comment: {
       type: String,
       required: true,
     },
-
     userId: {
       type: String,
       required: true,
     },
-
     userName: {
       type: String,
     },
-
     likes: [],
     replyTo: {
       type: String,
@@ -26,21 +23,17 @@ var commentSchema = new Schema(
     timestamps: true,
   }
 );
+
 const CardSchema = new Schema(
   {
     link: [],
-
     isImage: {
       type: Boolean,
       required: true,
     },
-
     disLikes: [],
-
     saved: [],
-
     likes: [],
-
     hostId: {
       type: String,
       required: true,
@@ -55,21 +48,17 @@ const CardSchema = new Schema(
     caption: {
       type: String,
     },
-
     views: [],
-
     tags: [],
-
     color: [],
-
-    comments: [commentSchema],
+    comments: [CommentSchema],
   },
   {
     timestamps: true,
   }
 );
 
-var Cards = mongoose.model("Card", CardSchema);
+const Cards = mongoose.model("Card", CardSchema);
 module.exports = Cards;
 
 /*

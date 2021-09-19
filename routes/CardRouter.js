@@ -1,13 +1,10 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-
 const mongoose = require("mongoose");
 
-const Cards = require("../modals/Cards");
+// Import controllers
+const { getAllCards, createCard, deleteCard } = require("../controllers");
 
 const CardRouter = express.Router();
-
-CardRouter.use(bodyParser.json());
 
 /*
 
@@ -27,51 +24,14 @@ CardRouter.route("/").get((req, res, next) => {
     .catch((err) => next(err));
 });
 */
-CardRouter.route("/")
-  .get((req, res, next) => {
-    Cards.find({})
-      .then(
-        (card) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(card);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
 
-  .post((req, res, next) => {
-    Cards.create(req.body)
-      .then(
-        (card) => {
-          console.log("New Card Created", card);
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(card);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-
-  .put((req, res, next) => {
-    res.statusCode = 403;
-    res.end("PUT operation not supported on /Cards");
-  })
-
-  .delete((req, res, next) => {
-    Cards.remove({})
-      .then(
-        (resp) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(resp);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  });
+CardRouter.get("/", getAllCards);
+CardRouter.post("/", createCard);
+CardRouter.put("/", (_, res) => {
+  res.statusCode = 403;
+  res.end("PUT operation not supported on /Cards");
+});
+CardRouter.delete("/", deleteCard);
 
 CardRouter.route("/:cardId")
 
