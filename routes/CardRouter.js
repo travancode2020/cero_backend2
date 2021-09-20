@@ -7,6 +7,8 @@ const {
   deleteAllCards,
 } = require("../controllers/cards/main.js");
 
+const { getCardsByUserId } = require("../controllers/cards/card_user_id.js");
+
 const {
   getCardById,
   patchCardById,
@@ -43,6 +45,9 @@ CardRouter.delete("/", deleteAllCards);
 
 //controllers/cards/card_trending.js
 CardRouter.get("/trending", getAllTrendingCards);
+
+//controllers/cards/card_user_id.js
+CardRouter.get("/user/:userId", getCardsByUserId);
 
 // controllers/cards/card_id.js
 CardRouter.get("/:cardId", getCardById);
