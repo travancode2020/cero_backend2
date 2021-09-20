@@ -5,12 +5,19 @@ const getAllCards = async (req, res, next) => {
     const interestString = req.query.interests || "";
     const interestArray = interestString.split(",");
 
+    const count = parseInt(req.query.count);
+    const page = parseInt(req.query.page);
+
     let foundCards = null;
 
     if (interestString.length) {
-      foundCards = await Cards.find({ tags: { $in: interestArray } });
+      foundCards = await Cards.find({ tags: { $in: interestArray } })
+        .skip(count * (page - 1))
+        .limit(count);
     } else {
-      foundCards = await Cards.find({});
+      foundCards = await Cards.find({})
+        .skip(count * (page - 1))
+        .limit(count);
     }
 
     res.status(200).json(foundCards);
