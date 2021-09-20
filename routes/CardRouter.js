@@ -26,6 +26,10 @@ const {
   deleteCommentByCommentId,
 } = require("../controllers/cards/card_id_comment_id.js");
 
+const {
+  getAllTrendingCards,
+} = require("../controllers/cards/card_trending.js");
+
 const CardRouter = express.Router();
 
 // controllers/cards/main.js
@@ -36,6 +40,9 @@ CardRouter.put("/", (_, res) => {
   res.end("PUT operation not supported on /Cards");
 });
 CardRouter.delete("/", deleteAllCards);
+
+//controllers/cards/card_trending.js
+CardRouter.get("/trending", getAllTrendingCards);
 
 // controllers/cards/card_id.js
 CardRouter.get("/:cardId", getCardById);
