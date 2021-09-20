@@ -5,8 +5,6 @@ const getAllCards = async (req, res, next) => {
     const interestString = req.query.interests || "";
     const interestArray = interestString.split(",");
 
-    console.log(interestString)
-
     let foundCards = null;
 
     if (interestString.length) {

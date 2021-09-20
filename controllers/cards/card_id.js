@@ -1,16 +1,22 @@
 const Cards = require("../../modals/Cards.js");
+const Users = require("../../modals/User.js");
 
-const getCardById = (req, res, next) => {
-  Cards.findById(req.params.cardId)
-    .then(
-      (card) => {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        res.json(card);
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
+const getCardById = async (req, res, next) => {
+  try {
+    const cardId = req.params.cardId;
+
+    const foundCard = await Cards.findById(cardId);
+    const foundHost = await Users.findById(foundCard.hostId).select(
+      "userTag userName name photoUrl"
+    );
+
+    foundCard.commentCount = foundCard.comments.length;
+    foundCard.comments = undefined;
+
+    res.status(200).json({ ...foundCard, host: foundHost });
+  } catch (error) {
+    next(error);
+  }
 };
 
 const patchCardById = (req, res, next) => {

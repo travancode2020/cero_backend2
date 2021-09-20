@@ -24,6 +24,11 @@ const WorkSchema = new Schema(
 
 const UserSchema = new Schema(
   {
+    _id: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     userName: {
       type: String,
       required: true,
