@@ -1,10 +1,78 @@
 const express = require("express");
-const mongoose = require("mongoose");
 
 // Import controllers
-const { getAllCards, createCard, deleteCard } = require("../controllers");
+const {
+  getAllCards,
+  createCard,
+  deleteAllCards,
+} = require("../controllers/cards/main.js");
+
+const {
+  getCardById,
+  patchCardById,
+  putCardById,
+  deleteCardById,
+} = require("../controllers/cards/card_id.js");
+
+const {
+  getAllCommentsByCardId,
+  postCommentByCardId,
+  deleteAllCommentsByCardId,
+} = require("../controllers/cards/card_id_comments.js");
+
+const {
+  getCommentByCommentId,
+  putCommentByCommentId,
+  deleteCommentByCommentId,
+} = require("../controllers/cards/card_id_comment_id.js");
 
 const CardRouter = express.Router();
+
+// controllers/cards/main.js
+CardRouter.get("/", getAllCards);
+CardRouter.post("/", createCard);
+CardRouter.put("/", (_, res) => {
+  res.statusCode = 403;
+  res.end("PUT operation not supported on /Cards");
+});
+CardRouter.delete("/", deleteAllCards);
+
+// controllers/cards/card_id.js
+CardRouter.get("/:cardId", getCardById);
+CardRouter.post("/:cardId", (req, res) => {
+  res.statusCode = 403;
+  res.end("POST operation not supported on /CARDS/" + req.params.cardId);
+});
+CardRouter.patch("/:cardId", patchCardById);
+CardRouter.put("/:cardId", putCardById);
+CardRouter.delete("/:cardId", deleteCardById);
+
+// controllers/cards/card_id_comments.js
+CardRouter.get("/:cardId/comments", getAllCommentsByCardId);
+CardRouter.post("/:cardId/comments", postCommentByCardId);
+CardRouter.put("/:cardId/comments", (req, res) => {
+  res.statusCode = 403;
+  res.end(
+    "PUT operation not supported on /Cards/" + req.params.cardId + "/comments"
+  );
+});
+CardRouter.delete("/:cardId/comments", deleteAllCommentsByCardId);
+
+// controllers/cards/card_id_comment_id.js
+CardRouter.get("/:cardId/comments/:commentId", getCommentByCommentId);
+CardRouter.post("/:cardId/comments/:commentId", (req, res) => {
+  res.statusCode = 403;
+  res.end(
+    "POST operation not supported on /Cards/" +
+      req.params.cardId +
+      "/comments/" +
+      req.params.commentId
+  );
+});
+CardRouter.put("/:cardId/comments/:commentId", putCommentByCommentId);
+CardRouter.delete("/:cardId/comments/:commentId", deleteCommentByCommentId);
+
+module.exports = CardRouter;
 
 /*
 
@@ -24,269 +92,6 @@ CardRouter.route("/").get((req, res, next) => {
     .catch((err) => next(err));
 });
 */
-
-CardRouter.get("/", getAllCards);
-CardRouter.post("/", createCard);
-CardRouter.put("/", (_, res) => {
-  res.statusCode = 403;
-  res.end("PUT operation not supported on /Cards");
-});
-CardRouter.delete("/", deleteCard);
-
-CardRouter.route("/:cardId")
-
-  .get((req, res, next) => {
-    Cards.findById(req.params.cardId)
-      .then(
-        (card) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(card);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-
-  .post((req, res, next) => {
-    res.statusCode = 403;
-    res.end("POST operation not supported on /CARDS/" + req.params.cardId);
-  })
-
-  .patch((req, res, next) => {
-    Cards.findByIdAndUpdate(
-      req.params.cardId,
-      {
-        $addToSet: req.body,
-      },
-      { new: true }
-    )
-      .then(
-        (card) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(card);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-  .put((req, res, next) => {
-    Cards.findByIdAndUpdate(
-      req.params.cardId,
-      {
-        $pullAll: req.body,
-      },
-      { new: true }
-    )
-      .then(
-        (card) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(card);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-  .delete((req, res, next) => {
-    Cards.findByIdAndRemove(req.params.cardId)
-      .then(
-        (resp) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(resp);
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  });
-
-CardRouter.route("/:cardId/comments")
-  .get((req, res, next) => {
-    Cards.findById(req.params.cardId)
-      .then(
-        (card) => {
-          if (card != null) {
-            res.statusCode = 200;
-            res.setHeader("Content-Type", "application/json");
-            res.json(card.comments);
-          } else {
-            err = new Error("Card " + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-  .post((req, res, next) => {
-    Cards.findById(req.params.cardId)
-      .then(
-        (card) => {
-          if (card != null) {
-            card.comments.push(req.body);
-            card.save().then(
-              (card) => {
-                res.statusCode = 200;
-                res.setHeader("Content-Type", "application/json");
-                res.json(card);
-              },
-              (err) => next(err)
-            );
-          } else {
-            err = new Error("Card " + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-  .put((req, res, next) => {
-    res.statusCode = 403;
-    res.end(
-      "PUT operation not supported on /Cards/" + req.params.cardId + "/comments"
-    );
-  })
-  .delete((req, res, next) => {
-    Cards.findById(req.params.cardId)
-      .then(
-        (card) => {
-          if (card != null) {
-            for (var i = card.comments.length - 1; i >= 0; i--) {
-              card.comments.id(card.comments[i]._id).remove();
-            }
-            card.save().then(
-              (card) => {
-                res.statusCode = 200;
-                res.setHeader("Content-Type", "application/json");
-                res.json(card);
-              },
-              (err) => next(err)
-            );
-          } else {
-            err = new Error("Card " + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  });
-
-CardRouter.route("/:cardId/comments/:commentId")
-  .get((req, res, next) => {
-    Cards.findById(req.params.cardId)
-      .then(
-        (card) => {
-          if (card != null && card.comments.id(req.params.commentId) != null) {
-            res.statusCode = 200;
-            res.setHeader("Content-Type", "application/json");
-            res.json(card.comments.id(req.params.commentId));
-          } else if (card == null) {
-            err = new Error("Card " + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          } else {
-            err = new Error("Comment " + req.params.commentId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-  .post((req, res, next) => {
-    res.statusCode = 403;
-    res.end(
-      "POST operation not supported on /Cards/" +
-        req.params.cardId +
-        "/comments/" +
-        req.params.commentId
-    );
-  })
-  .put((req, res, next) => {
-    Cards.findByIdAndUpdate(req.params.cardId)
-
-      .then(
-        (card) => {
-          console.log(card.comments.id(req.params.commentId));
-          if (card != null && card.comments.id(req.params.commentId) != null) {
-            if (req.body.comment) {
-              card.comments.id(req.params.commentId).comment = req.body.comment;
-            }
-            if (req.body.likes) {
-              card.comments.id(req.params.commentId).likes = req.body.likes;
-            }
-            if (req.body.userId) {
-              card.comments.id(req.params.commentId).userId = req.body.userId;
-            }
-            if (req.body.userName) {
-              card.comments.id(req.params.commentId).userName =
-                req.body.userName;
-            }
-            if (req.body.replyTo) {
-              card.comments.id(req.params.commentId).replyTo = req.body.replyTo;
-            }
-
-            card.save().then(
-              (card) => {
-                res.statusCode = 200;
-                res.setHeader("Content-Type", "application/json");
-                res.json(card.comments.id(req.params.commentId));
-              },
-              (err) => next(err)
-            );
-          } else if (card == null) {
-            err = new Error("Card " + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          } else {
-            err = new Error("Comment " + req.params.commentId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  })
-
-  .delete((req, res, next) => {
-    Cards.findById(req.params.cardId)
-      .then(
-        (card) => {
-          if (card != null && card.comments.id(req.params.commentId) != null) {
-            card.comments.id(req.params.commentId).remove();
-            card.save().then(
-              (card) => {
-                res.statusCode = 200;
-                res.setHeader("Content-Type", "application/json");
-                res.json(card);
-              },
-              (err) => next(err)
-            );
-          } else if (card == null) {
-            err = new Error("CARD" + req.params.cardId + " not found");
-            err.status = 404;
-            return next(err);
-          } else {
-            err = new Error("Comment " + req.params.commentId + " not found");
-            err.status = 404;
-            return next(err);
-          }
-        },
-        (err) => next(err)
-      )
-      .catch((err) => next(err));
-  });
-
-module.exports = CardRouter;
 
 /**CardRouter.route("/:cardId/likes")
   .get((req, res, next) => {

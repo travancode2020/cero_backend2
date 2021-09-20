@@ -25,7 +25,7 @@ const createCard = (req, res, next) => {
     .catch((err) => next(err));
 };
 
-const deleteCard = (req, res, next) => {
+const deleteAllCards = (req, res, next) => {
   Cards.remove({})
     .then(
       (resp) => {
@@ -41,5 +41,5 @@ const deleteCard = (req, res, next) => {
 module.exports = {
   getAllCards,
   createCard,
-  deleteCard,
+  deleteAllCards,
 };
