@@ -27,7 +27,7 @@ const createUser = (req, res, next) => {
     .catch((err) => next(err));
 };
 
-const patchUserByUsername = (res, res, next) => {
+const patchUserByUsername = (req, res, next) => {
   Users.find({ userName: userName })
     .then(
       (card) => {

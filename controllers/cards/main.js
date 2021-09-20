@@ -1,14 +1,24 @@
 const Cards = require("../../modals/Cards.js");
 
-const getAllCards = (req, res, next) => {
-  Cards.find({})
-    .then(
-      (card) => {
-        res.status(200).json(card);
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
+const getAllCards = async (req, res, next) => {
+  try {
+    const interestString = req.query.interests || "";
+    const interestArray = interestString.split(",");
+
+    console.log(interestString)
+
+    let foundCards = null;
+
+    if (interestString.length) {
+      foundCards = await Cards.find({ tags: { $in: interestArray } });
+    } else {
+      foundCards = await Cards.find({});
+    }
+
+    res.status(200).json(foundCards);
+  } catch (error) {
+    next(error);
+  }
 };
 
 const createCard = (req, res, next) => {
