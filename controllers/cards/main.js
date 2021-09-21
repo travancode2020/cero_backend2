@@ -5,7 +5,7 @@ const getAllCards = async (req, res, next) => {
     const interestString = req.query.interests || "";
     const interestArray = interestString.split(",");
 
-    const count = parseInt(req.query.count);
+    const count = parseInt(req.query.count) || 5;
     const page = parseInt(req.query.page);
 
     let foundCards = null;
