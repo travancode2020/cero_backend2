@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const MomentScema = new Schema({
   host: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    type: String,
     required: true,
   },
   mediaType: {
     type: String,
+    enum: ["IMAGE", "VIDEO"],
     required: true,
   },
   mediaUrl: {
@@ -18,6 +18,11 @@ const MomentScema = new Schema({
   duration: {
     type: Number,
     required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+    expires: "1440m",
   },
 });
 

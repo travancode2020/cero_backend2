@@ -18,7 +18,19 @@ const deleteAllMoments = async (req, res, next) => {
   }
 };
 
+const createMoment = async (req, res, next) => {
+  try {
+    const momentBody = req.body;
+    const newMoment = await Moment.create(momentBody);
+
+    res.status(200).json(newMoment);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAllMoments,
   deleteAllMoments,
+  createMoment,
 };
