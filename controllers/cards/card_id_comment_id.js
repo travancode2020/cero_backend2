@@ -28,7 +28,6 @@ const putCommentByCommentId = (req, res, next) => {
 
     .then(
       (card) => {
-        console.log(card.comments.id(req.params.commentId));
         if (card != null && card.comments.id(req.params.commentId) != null) {
           if (req.body.comment) {
             card.comments.id(req.params.commentId).comment = req.body.comment;

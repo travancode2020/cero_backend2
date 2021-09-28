@@ -6,7 +6,6 @@ const getMomentsByUserId = async (req, res, next) => {
     const userId = req.params.userId;
 
     const foundUser = await Users.findById({ _id: userId });
-    console.log(foundUser.following)
 
     const foundUserMoments = await Moment.find({
       host: foundUser._id,
