@@ -6,17 +6,17 @@ const LocationSchema = new Schema({
     type: String,
     required: true,
   },
+  host: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   location: {
     type: {
       type: String,
       default: "Point",
     },
-    coordinates: [
-      {
-        longitude: { type: Number, required: true },
-        latitude: { type: Number, required: true },
-      },
-    ],
+    longitude: { type: Number, required: true },
+    latitude: { type: Number, required: true },
   },
 });
 

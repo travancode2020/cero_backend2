@@ -1,4 +1,5 @@
 const Location = require("../../modals/Location.js");
+const Users = require("../../modals/User.js");
 
 const getAllLocations = async (req, res, next) => {
   try {
@@ -11,6 +12,10 @@ const getAllLocations = async (req, res, next) => {
 
 const deleteAllLocations = async (req, res, next) => {
   try {
+    await Users.updateMany(
+      {},
+      { isLocationSharingEnabled: false, location: null }
+    );
     await Location.remove({}).then((response) =>
       res.status(200).json(response)
     );
