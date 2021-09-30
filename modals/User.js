@@ -86,6 +86,14 @@ const UserSchema = new Schema(
     saved: [],
     liked: [],
     viewed: [],
+    isLocationSharingEnabled: {
+      type: Boolean,
+      default: false,
+    },
+    location: {
+      type: Schema.Types.ObjectId,
+      ref: "Location",
+    },
   },
   {
     timestamps: true,
