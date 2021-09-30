@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "0e7d07a0-768f-4a37-8f9f-152c0380ee5c",
+		"name": "feature-location-based-search-003",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/location",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"location"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Locations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/location",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"location"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "497"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f1-NEDlbaze4m8g8CQ7No+j5fk1BfI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 11:29:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.008396,\n                76.958242\n            ]\n        },\n        \"_id\": \"615593b174bf282d7cf1a23a\",\n        \"city\": \"Coimbatore\",\n        \"host\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.011317,\n                76.957258\n            ]\n        },\n        \"_id\": \"615593dd74bf282d7cf1a23f\",\n        \"city\": \"Coimbatore\",\n        \"host\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"6155940d74bf282d7cf1a244\",\n        \"city\": \"Thachampara\",\n        \"host\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete All Locations",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/location",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable Location Sharing by User ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/location/disable/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"location",
+						"disable",
+						"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Enable Location Sharing by User ID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/location/disable/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"disable",
+								"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-4HSRs8RB2CIZUDGxNrGtSIJunt0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 11:50:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Location Sharing disabled\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Enable Location Sharing By User ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"city\": \"Thachampara\",\r\n    \"location\": {\r\n      \"type\": \"Point\",\r\n      \"coordinates\": [\r\n        10.960573,\r\n        76.502824\r\n      ]\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/location/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"location",
+						"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Enable Location Sharing By User ID",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"city\": \"Thachampara\",\r\n    \"location\": {\r\n      \"type\": \"Point\",\r\n      \"coordinates\": [\r\n        10.960573,\r\n        76.502824\r\n      ]\r\n    }\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/location/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-ZUDTeCpY0XS53K3rjBL1K13Ewlg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 11:52:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Location Sharing enabled\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Location by User ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"city\": \"Thachampara Updated\",\r\n    \"location\": {\r\n      \"type\": \"Point\",\r\n      \"coordinates\": [\r\n        10.960573,\r\n        76.502824\r\n      ]\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/location/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"location",
+						"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Location by User ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"city\": \"Thachampara Updated\",\r\n    \"location\": {\r\n      \"type\": \"Point\",\r\n      \"coordinates\": [\r\n        10.960573,\r\n        76.502824\r\n      ]\r\n    }\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/location/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ad-vHOifFJLB9ZdaAgdpbee4U2Yuhs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 11:53:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"location\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n            10.960573,\n            76.502824\n        ]\n    },\n    \"_id\": \"6155a4e7522ac422d0fd14ad\",\n    \"city\": \"Thachampara Updated\",\n    \"host\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Location Based Search with Range, User Tag, Latitude, Longitude",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"location",
+						"search"
+					],
+					"query": [
+						{
+							"key": "lng",
+							"value": "11.008396"
+						},
+						{
+							"key": "lat",
+							"value": "76.958242"
+						},
+						{
+							"key": "range",
+							"value": "100000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Latitude, Longitude, Range, userTag example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000&tag=Entrepreneur",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"search"
+							],
+							"query": [
+								{
+									"key": "lng",
+									"value": "11.008396"
+								},
+								{
+									"key": "lat",
+									"value": "76.958242"
+								},
+								{
+									"key": "range",
+									"value": "100000"
+								},
+								{
+									"key": "tag",
+									"value": "Entrepreneur"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1271"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f7-8MsZNUwZmDDrG7pzeXD5C9yKMPw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 12:00:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.011317,\n                76.957258\n            ]\n        },\n        \"_id\": \"615593dd74bf282d7cf1a23f\",\n        \"city\": \"Coimbatore\",\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Psychology\",\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [\n                \"9ctRiM2pyAU7mANinGrXFe1I9fk2\"\n            ],\n            \"verifiedProfiles\": [],\n            \"following\": [],\n            \"saved\": [\n                \"61269239f34d6d001640f01d\",\n                \"61256077fa24c6001602de24\",\n                \"612561fffa24c6001602de4c\"\n            ],\n            \"liked\": [\n                \"612dcb192779bc001618256e\"\n            ],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": true,\n            \"_id\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n            \"userName\": \"ajay_k.p\",\n            \"name\": \"Ajay P\",\n            \"email\": \"ajkrishna7117me@gmail.com\",\n            \"password\": \"Ajay1@\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"dob\": \"00/00/0000\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"work\": [\n                {\n                    \"images\": [],\n                    \"views\": [],\n                    \"_id\": \"6126613e8e49b6001690fa22\",\n                    \"uId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                    \"title\": \"Aasshhb hhh\",\n                    \"detail\": \"wwnnvv. bbbb\",\n                    \"createdAt\": \"2021-08-25T15:26:54.303Z\",\n                    \"updatedAt\": \"2021-08-25T15:26:54.303Z\"\n                }\n            ],\n            \"createdAt\": \"2021-08-24T21:06:43.001Z\",\n            \"updatedAt\": \"2021-09-30T10:39:25.366Z\",\n            \"__v\": 1,\n            \"phone\": null,\n            \"proBio\": \"I can create you commerical cross platform apps at economic rates.\",\n            \"location\": \"615593dd74bf282d7cf1a23f\"\n        },\n        \"__v\": 0\n    }\n]"
+				},
+				{
+					"name": "Latitude, Longitude, Range example to get every user in that range",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"search"
+							],
+							"query": [
+								{
+									"key": "lng",
+									"value": "11.008396"
+								},
+								{
+									"key": "lat",
+									"value": "76.958242"
+								},
+								{
+									"key": "range",
+									"value": "100000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3950"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f6e-gz+xUC2ZDxQHQ1ztWuG98NTDgHE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 30 Sep 2021 12:02:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.008396,\n                76.958242\n            ]\n        },\n        \"_id\": \"615593b174bf282d7cf1a23a\",\n        \"city\": \"Coimbatore\",\n        \"host\": {\n            \"userTag\": [\n                \"SoftwareDeveloper\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Psychology\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"History\",\n                \"General Knowledge\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [\n                \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n            ],\n            \"verifiedProfiles\": [],\n            \"following\": [],\n            \"saved\": [\n                \"61269239f34d6d001640f01d\",\n                \"612691d5f34d6d001640f017\"\n            ],\n            \"liked\": [\n                \"61269239f34d6d001640f01d\",\n                \"612dcb192779bc001618256e\",\n                \"612cc2cd1dbfbc0016dda6e9\"\n            ],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": true,\n            \"_id\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n            \"userName\": \"ajaykrishnap\",\n            \"name\": \"Ajay Krishna P\",\n            \"email\": \"ajayagarian.aero2astro@gmail.com\",\n            \"password\": \"password\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n            \"dob\": \"11/11/1998\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"work\": [],\n            \"createdAt\": \"2021-08-24T20:07:11.461Z\",\n            \"updatedAt\": \"2021-09-30T10:38:41.779Z\",\n            \"__v\": 0,\n            \"phone\": null,\n            \"location\": \"615593b174bf282d7cf1a23a\"\n        },\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.011317,\n                76.957258\n            ]\n        },\n        \"_id\": \"615593dd74bf282d7cf1a23f\",\n        \"city\": \"Coimbatore\",\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Psychology\",\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [\n                \"9ctRiM2pyAU7mANinGrXFe1I9fk2\"\n            ],\n            \"verifiedProfiles\": [],\n            \"following\": [],\n            \"saved\": [\n                \"61269239f34d6d001640f01d\",\n                \"61256077fa24c6001602de24\",\n                \"612561fffa24c6001602de4c\"\n            ],\n            \"liked\": [\n                \"612dcb192779bc001618256e\"\n            ],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": true,\n            \"_id\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n            \"userName\": \"ajay_k.p\",\n            \"name\": \"Ajay P\",\n            \"email\": \"ajkrishna7117me@gmail.com\",\n            \"password\": \"Ajay1@\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"dob\": \"00/00/0000\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"work\": [\n                {\n                    \"images\": [],\n                    \"views\": [],\n                    \"_id\": \"6126613e8e49b6001690fa22\",\n                    \"uId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                    \"title\": \"Aasshhb hhh\",\n                    \"detail\": \"wwnnvv. bbbb\",\n                    \"createdAt\": \"2021-08-25T15:26:54.303Z\",\n                    \"updatedAt\": \"2021-08-25T15:26:54.303Z\"\n                }\n            ],\n            \"createdAt\": \"2021-08-24T21:06:43.001Z\",\n            \"updatedAt\": \"2021-09-30T10:39:25.366Z\",\n            \"__v\": 1,\n            \"phone\": null,\n            \"proBio\": \"I can create you commerical cross platform apps at economic rates.\",\n            \"location\": \"615593dd74bf282d7cf1a23f\"\n        },\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"6155a4e7522ac422d0fd14ad\",\n        \"city\": \"Thachampara Updated\",\n        \"host\": {\n            \"userTag\": [],\n            \"interest\": [\n                \"Psychology\",\n                \"Business\",\n                \"Current Affairs\",\n                \"Science & Technology\",\n                \"General Knowledge\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [],\n            \"following\": [\n                \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n            ],\n            \"saved\": [],\n            \"liked\": [],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": true,\n            \"_id\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n            \"userName\": \"xena\",\n            \"name\": \"Arun Babu\",\n            \"email\": \"1runx3na@gmail.com\",\n            \"password\": \"Xena@123\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gg8wM5ILKBdRc-AS1Mbm03Xw8aRIiiQBMQuD4Kk=s96-c\",\n            \"dob\": \"00/00/0000\",\n            \"isCreator\": false,\n            \"isPro\": true,\n            \"work\": [\n                {\n                    \"images\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/9ctRiM2pyAU7mANinGrXFe1I9fk22021-08-27%2021%3A08%3A46.786038?alt=media&token=0ecd2940-2f7f-4a37-b82f-6f1a24568301\"\n                    ],\n                    \"views\": [],\n                    \"_id\": \"6129070f52bb920016e370ab\",\n                    \"uId\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n                    \"title\": \"Temp Title\",\n                    \"detail\": \"temp description\",\n                    \"createdAt\": \"2021-08-27T15:38:55.155Z\",\n                    \"updatedAt\": \"2021-08-27T15:38:55.155Z\"\n                },\n                {\n                    \"images\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/9ctRiM2pyAU7mANinGrXFe1I9fk22021-08-27%2022%3A26%3A00.169149?alt=media&token=bea983e4-5813-4940-a728-ba673f7e31b6\"\n                    ],\n                    \"views\": [],\n                    \"_id\": \"6129192752bb920016e371e0\",\n                    \"uId\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n                    \"title\": \"second heading\",\n                    \"detail\": \"second description\",\n                    \"createdAt\": \"2021-08-27T16:56:07.776Z\",\n                    \"updatedAt\": \"2021-08-27T16:56:07.776Z\"\n                }\n            ],\n            \"createdAt\": \"2021-08-27T14:09:39.649Z\",\n            \"updatedAt\": \"2021-09-30T11:52:07.525Z\",\n            \"__v\": 2,\n            \"proBio\": \"Developer\",\n            \"location\": \"6155a4e7522ac422d0fd14ad\"\n        },\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	]
+}

@@ -2,6 +2,7 @@ const express = require("express");
 const UserRouter = require("./UserRouter.js");
 const CardRouter = require("./CardRouter.js");
 const MomentRouter = require("./MomentRouter.js");
+const LocationRouter = require("./LocationRouter.js");
 
 const router = express.Router();
 
@@ -15,4 +16,5 @@ module.exports = {
   UserRouter,
   CardRouter,
   MomentRouter,
+  LocationRouter,
 };
