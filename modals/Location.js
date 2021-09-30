@@ -15,10 +15,15 @@ const LocationSchema = new Schema({
       type: String,
       default: "Point",
     },
-    longitude: { type: Number, required: true },
-    latitude: { type: Number, required: true },
+    coordinates: {
+      type: Array,
+      required: true,
+    },
   },
 });
+
+LocationSchema.index({location: '2dsphere'});
+
 
 const Location = mongoose.model("Location", LocationSchema);
 module.exports = Location;
