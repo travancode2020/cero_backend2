@@ -16,12 +16,12 @@ const getAllTrendingCards = async (req, res, next) => {
         $unwind: "$cards",
       },
       {
-        $sort: { "cards.like_count": 1 },
+        $sort: { _id: 1, "cards.like_count": -1 },
       },
       {
         $group: {
           _id: "$_id",
-          cards: { $addToSet: "$$ROOT.cards" },
+          cards: { $push: "$cards" },
         },
       },
     ]);
