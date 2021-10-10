@@ -19,7 +19,7 @@ const locationBasedSearch = async (req, res, next) => {
       return res.status(400).json({ message: "Range is required" });
     }
 
-    if (!pro) {
+    if (pro === undefined || pro === null) {
       return res.status(400).json({ message: "isPro flag is missing" });
     }
 
