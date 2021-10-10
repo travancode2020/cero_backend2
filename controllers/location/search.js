@@ -7,6 +7,7 @@ const locationBasedSearch = async (req, res, next) => {
     const tag = req.query.tag;
     const lat = req.query.lat;
     const lng = req.query.lng;
+    const pro = req.query.pro;
 
     if (!lat || !lng) {
       return res
@@ -16,6 +17,10 @@ const locationBasedSearch = async (req, res, next) => {
 
     if (!range) {
       return res.status(400).json({ message: "Range is required" });
+    }
+
+    if (!pro) {
+      return res.status(400).json({ message: "isPro flag is missing" });
     }
 
     await Location.ensureIndexes({ point: "2dsphere" });
@@ -29,7 +34,7 @@ const locationBasedSearch = async (req, res, next) => {
           },
         },
       })
-        .populate("host", null, { userTag: tag })
+        .populate("host", null, { userTag: tag, isPro: pro })
         .exec((err, users) => {
           if (err) {
             next(err);
@@ -46,7 +51,7 @@ const locationBasedSearch = async (req, res, next) => {
           },
         },
       })
-        .populate("host")
+        .populate("host", null, { isPro: pro })
         .exec((err, users) => {
           if (err) {
             next(err);
