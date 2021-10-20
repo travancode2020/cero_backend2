@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "0f822607-e4bf-49c2-8773-3f7a3b5dcd1d",
+		"name": "user-routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9308"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"245c-bLI7qEYMJKUf7V6BxVpN/F3n/T8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Oct 2021 05:04:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userTag\": [\n            \"SoftwareDeveloper\"\n        ],\n        \"interest\": [\n            \"Business\",\n            \"Psychology\",\n            \"Culture & lifestyle\",\n            \"Current Affairs\",\n            \"History\",\n            \"General Knowledge\",\n            \"Science & Technology\"\n        ],\n        \"followers\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n        ],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [\n            \"61269239f34d6d001640f01d\",\n            \"612691d5f34d6d001640f017\"\n        ],\n        \"liked\": [\n            \"61269239f34d6d001640f01d\",\n            \"612dcb192779bc001618256e\",\n            \"612cc2cd1dbfbc0016dda6e9\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": true,\n        \"_id\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"userName\": \"ajaykrishnap\",\n        \"name\": \"Ajay Krishna P\",\n        \"email\": \"ajayagarian.aero2astro@gmail.com\",\n        \"password\": \"password\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"dob\": \"11/11/1998\",\n        \"isCreator\": true,\n        \"isPro\": true,\n        \"work\": [],\n        \"createdAt\": \"2021-08-24T20:07:11.461Z\",\n        \"updatedAt\": \"2021-10-19T14:26:26.359Z\",\n        \"__v\": 0,\n        \"phone\": null,\n        \"location\": \"615593b174bf282d7cf1a23a\"\n    },\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"interest\": [\n            \"Psychology\",\n            \"Business\",\n            \"Culture & lifestyle\",\n            \"Current Affairs\",\n            \"General Knowledge\",\n            \"History\",\n            \"Science & Technology\"\n        ],\n        \"followers\": [\n            \"9ctRiM2pyAU7mANinGrXFe1I9fk2\"\n        ],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [\n            \"61269239f34d6d001640f01d\",\n            \"61256077fa24c6001602de24\",\n            \"612561fffa24c6001602de4c\"\n        ],\n        \"liked\": [\n            \"612dcb192779bc001618256e\",\n            \"61269239f34d6d001640f01d\",\n            \"612691d5f34d6d001640f017\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": true,\n        \"_id\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"name\": \"Ajay P\",\n        \"email\": \"ajkrishna7117me@gmail.com\",\n        \"password\": \"Ajay1@\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": true,\n        \"isPro\": true,\n        \"work\": [\n            {\n                \"images\": [],\n                \"views\": [],\n                \"_id\": \"6126613e8e49b6001690fa22\",\n                \"uId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"title\": \"Aasshhb hhh\",\n                \"detail\": \"wwnnvv. bbbb\",\n                \"createdAt\": \"2021-08-25T15:26:54.303Z\",\n                \"updatedAt\": \"2021-08-25T15:26:54.303Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-24T21:06:43.001Z\",\n        \"updatedAt\": \"2021-10-19T14:26:27.852Z\",\n        \"__v\": 1,\n        \"phone\": null,\n        \"proBio\": \"I can create you commerical cross platform apps at economic rates.\",\n        \"location\": \"615593dd74bf282d7cf1a23f\"\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Psychology\",\n            \"Business\",\n            \"Current Affairs\",\n            \"Science & Technology\",\n            \"General Knowledge\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [\n            \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n        ],\n        \"saved\": [],\n        \"liked\": [],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": true,\n        \"_id\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n        \"userName\": \"xena\",\n        \"name\": \"Arun Babu\",\n        \"email\": \"1runx3na@gmail.com\",\n        \"password\": \"Xena@123\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gg8wM5ILKBdRc-AS1Mbm03Xw8aRIiiQBMQuD4Kk=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": true,\n        \"work\": [\n            {\n                \"images\": [\n                    \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/9ctRiM2pyAU7mANinGrXFe1I9fk22021-08-27%2021%3A08%3A46.786038?alt=media&token=0ecd2940-2f7f-4a37-b82f-6f1a24568301\"\n                ],\n                \"views\": [],\n                \"_id\": \"6129070f52bb920016e370ab\",\n                \"uId\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n                \"title\": \"Temp Title\",\n                \"detail\": \"temp description\",\n                \"createdAt\": \"2021-08-27T15:38:55.155Z\",\n                \"updatedAt\": \"2021-08-27T15:38:55.155Z\"\n            },\n            {\n                \"images\": [\n                    \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/9ctRiM2pyAU7mANinGrXFe1I9fk22021-08-27%2022%3A26%3A00.169149?alt=media&token=bea983e4-5813-4940-a728-ba673f7e31b6\"\n                ],\n                \"views\": [],\n                \"_id\": \"6129192752bb920016e371e0\",\n                \"uId\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n                \"title\": \"second heading\",\n                \"detail\": \"second description\",\n                \"createdAt\": \"2021-08-27T16:56:07.776Z\",\n                \"updatedAt\": \"2021-08-27T16:56:07.776Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-27T14:09:39.649Z\",\n        \"updatedAt\": \"2021-09-30T11:52:07.525Z\",\n        \"__v\": 2,\n        \"proBio\": \"Developer\",\n        \"location\": \"6155a4e7522ac422d0fd14ad\"\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Business\",\n            \"Psychology\",\n            \"History\",\n            \"Science & Technology\",\n            \"General Knowledge\",\n            \"Current Affairs\",\n            \"Culture & lifestyle\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [\n            \"61255207fa24c6001602dd3e\",\n            \"612dcb192779bc001618256e\",\n            \"612691d5f34d6d001640f017\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"LpIlC8Yohibn84TvPw1BW6gu64j2\",\n        \"userName\": \"abhi\",\n        \"name\": \"Abhinanda\",\n        \"email\": \"nandalechu31@gmail.com\",\n        \"password\": \"Abhi@1\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GjcLrapX4dP-zXjR17jTl-ean8Ujf_G4s6n3aJhyw=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": true,\n        \"work\": [],\n        \"createdAt\": \"2021-08-28T18:49:17.915Z\",\n        \"updatedAt\": \"2021-10-01T15:57:26.556Z\",\n        \"__v\": 0,\n        \"proBio\": \"Yes\",\n        \"location\": null\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Culture & lifestyle\",\n            \"General Knowledge\",\n            \"Science & Technology\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [\n            \"612691d5f34d6d001640f017\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"vNyGRD6f11YLEOIjmHk9yxgvVk32\",\n        \"userName\": \"jils\",\n        \"name\": \"Jils\",\n        \"email\": \"jilsjoyson111@gmail.com\",\n        \"password\": \"Jils1234@\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GgNo8PgwI-pc8DnMBNjyuDDS0HyNWRpyaPIsr1j5w=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": false,\n        \"work\": [],\n        \"createdAt\": \"2021-08-29T04:36:05.215Z\",\n        \"updatedAt\": \"2021-09-30T10:37:46.203Z\",\n        \"__v\": 0,\n        \"location\": null\n    },\n    {\n        \"userTag\": [\n            \"\"\n        ],\n        \"interest\": [\n            \"Science & Technology\",\n            \"Business\",\n            \"Psychology\",\n            \"History\",\n            \"General Knowledge\",\n            \"Current Affairs\",\n            \"Culture & lifestyle\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n        ],\n        \"saved\": [],\n        \"liked\": [\n            \"61269239f34d6d001640f01d\",\n            \"61255207fa24c6001602dd3e\",\n            \"612691d5f34d6d001640f017\",\n            \"612561fffa24c6001602de4c\",\n            \"612dcb192779bc001618256e\",\n            \"612c8d0af9d3f500165c30ea\",\n            \"612cc2cd1dbfbc0016dda6e9\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": true,\n        \"_id\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n        \"userName\": \"hrithiksraj\",\n        \"name\": \"Hrithik s Raj\",\n        \"email\": \"rhrithik1@gmail.com\",\n        \"password\": \"Loveme22@\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ggsfab5kTTlfWjH8c6yJ2dw9cRW41eC1IFp_c58_tE=s96-c\",\n        \"dob\": \"03/01/2000\",\n        \"isCreator\": true,\n        \"isPro\": false,\n        \"work\": [],\n        \"createdAt\": \"2021-08-29T05:07:19.721Z\",\n        \"updatedAt\": \"2021-10-10T15:06:04.841Z\",\n        \"__v\": 0,\n        \"phone\": 918943921454,\n        \"location\": \"6163015c6a81051f44fad5d2\"\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Psychology\",\n            \"Science & Technology\",\n            \"Culture & lifestyle\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [\n            \"612691d5f34d6d001640f017\",\n            \"61255207fa24c6001602dd3e\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n        \"userName\": \"arun.arun\",\n        \"name\": \"Arun Babu\",\n        \"email\": \"aruncluster.babu184@gmail.com\",\n        \"password\": \"Arun@123\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GiLCsciFgfmb5CiIGk15YPKQ0JZDt3uD20HjWdJFg=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": true,\n        \"work\": [],\n        \"createdAt\": \"2021-08-29T05:44:59.854Z\",\n        \"updatedAt\": \"2021-09-30T10:37:46.203Z\",\n        \"__v\": 0,\n        \"proBio\": \"Developer\",\n        \"location\": null\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Business\",\n            \"Culture & lifestyle\",\n            \"Psychology\",\n            \"Current Affairs\",\n            \"General Knowledge\",\n            \"Science & Technology\",\n            \"History\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"3vU1CXr9URP2eZoM3WTM5Gn3Jc13\",\n        \"userName\": \"pappan\",\n        \"name\": \"pappan\",\n        \"email\": \"padmakumarnair10@gmail.com\",\n        \"password\": \"Papp@1\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": false,\n        \"work\": [],\n        \"createdAt\": \"2021-08-29T07:09:52.004Z\",\n        \"updatedAt\": \"2021-09-30T10:37:46.203Z\",\n        \"__v\": 0,\n        \"location\": null\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Business\",\n            \"Culture & lifestyle\",\n            \"History\",\n            \"Current Affairs\",\n            \"Psychology\",\n            \"General Knowledge\",\n            \"Science & Technology\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [\n            \"61255207fa24c6001602dd3e\",\n            \"612cc2cd1dbfbc0016dda6e9\",\n            \"612dcb192779bc001618256e\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n        \"userName\": \"brijpatel\",\n        \"name\": \"Brij Patel \",\n        \"email\": \"brijpatel8295@gmail.com\",\n        \"password\": \"Brijesh@00\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GjqgSEKVbeC4XiMUu4czKAKpsnuC6zzOSeQSHxa=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": false,\n        \"work\": [],\n        \"createdAt\": \"2021-08-29T14:24:53.120Z\",\n        \"updatedAt\": \"2021-09-30T10:37:46.203Z\",\n        \"__v\": 0,\n        \"location\": null\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Business\",\n            \"Psychology\",\n            \"History\",\n            \"Science & Technology\",\n            \"General Knowledge\",\n            \"Current Affairs\",\n            \"Culture & lifestyle\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [\n            \"612c8e59f9d3f500165c30ef\",\n            \"61255207fa24c6001602dd3e\"\n        ],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"U7v4QpOH22eiRJCTru2z0LbDpC33\",\n        \"userName\": \"hari\",\n        \"name\": \"HariKrishnan\",\n        \"email\": \"hmr.inat@gmail.com\",\n        \"password\": \"Password@123\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GhKYa97x2N_qNAPdTj-bBj_RSRvX5LzD3OkODlJ_w=s96-c\",\n        \"dob\": \"00/00/0000\",\n        \"isCreator\": false,\n        \"isPro\": false,\n        \"work\": [],\n        \"createdAt\": \"2021-09-05T10:35:01.269Z\",\n        \"updatedAt\": \"2021-09-30T10:37:46.203Z\",\n        \"__v\": 0,\n        \"location\": null\n    },\n    {\n        \"userTag\": [],\n        \"interest\": [\n            \"Current Affairs\",\n            \"Business\",\n            \"Psychology\"\n        ],\n        \"followers\": [],\n        \"verifiedProfiles\": [],\n        \"following\": [],\n        \"saved\": [],\n        \"liked\": [],\n        \"viewed\": [],\n        \"isLocationSharingEnabled\": false,\n        \"_id\": \"vtrHZCt4cWWCWY4aUeaamuUltNs1\",\n        \"userName\": \"pranav007\",\n        \"name\": \"pranavdeep\",\n        \"email\": \"kumarpranavdeep56@gmail.com\",\n        \"password\": \"LEOpranav@007\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GiX4HIeZSqrCBmZRJPw8jmdCNuAsJWP0fJ7YEsIfw=s96-c\",\n        \"dob\": \"1/11/20\",\n        \"isCreator\": false,\n        \"isPro\": false,\n        \"work\": [],\n        \"createdAt\": \"2021-09-23T08:31:27.350Z\",\n        \"updatedAt\": \"2021-09-30T10:37:46.203Z\",\n        \"__v\": 0,\n        \"location\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get User by User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/IBOaLroPjUSnR3EQjFdhfWidSBC3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"IBOaLroPjUSnR3EQjFdhfWidSBC3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User by User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/IBOaLroPjUSnR3EQjFdhfWidSBC3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"IBOaLroPjUSnR3EQjFdhfWidSBC3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "929"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a1-10pYJYx2MvlDmykFIZ4H7cFETJ4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Oct 2021 05:06:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"\"\n    ],\n    \"interest\": [\n        \"Science & Technology\",\n        \"Business\",\n        \"Psychology\",\n        \"History\",\n        \"General Knowledge\",\n        \"Current Affairs\",\n        \"Culture & lifestyle\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [\n        \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n    ],\n    \"saved\": [],\n    \"liked\": [\n        \"61269239f34d6d001640f01d\",\n        \"61255207fa24c6001602dd3e\",\n        \"612691d5f34d6d001640f017\",\n        \"612561fffa24c6001602de4c\",\n        \"612dcb192779bc001618256e\",\n        \"612c8d0af9d3f500165c30ea\",\n        \"612cc2cd1dbfbc0016dda6e9\"\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n    \"userName\": \"hrithiksraj\",\n    \"name\": \"Hrithik s Raj\",\n    \"email\": \"rhrithik1@gmail.com\",\n    \"password\": \"Loveme22@\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ggsfab5kTTlfWjH8c6yJ2dw9cRW41eC1IFp_c58_tE=s96-c\",\n    \"dob\": \"03/01/2000\",\n    \"isCreator\": true,\n    \"isPro\": false,\n    \"work\": [],\n    \"createdAt\": \"2021-08-29T05:07:19.721Z\",\n    \"updatedAt\": \"2021-10-10T15:06:04.841Z\",\n    \"__v\": 0,\n    \"phone\": 918943921454,\n    \"location\": \"6163015c6a81051f44fad5d2\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Work By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/N5orwkOjGWSlRL71VGqbYO7AwwW2/work",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"N5orwkOjGWSlRL71VGqbYO7AwwW2",
+						"work"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Work By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/N5orwkOjGWSlRL71VGqbYO7AwwW2/work",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"N5orwkOjGWSlRL71VGqbYO7AwwW2",
+								"work"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dc-65FgsUDvGdJBUCrJ2GvQpj+DXEA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Oct 2021 05:08:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"images\": [],\n        \"views\": [],\n        \"_id\": \"6126613e8e49b6001690fa22\",\n        \"uId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"title\": \"Aasshhb hhh\",\n        \"detail\": \"wwnnvv. bbbb\",\n        \"createdAt\": \"2021-08-25T15:26:54.303Z\",\n        \"updatedAt\": \"2021-08-25T15:26:54.303Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Work By Work Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/9ctRiM2pyAU7mANinGrXFe1I9fk2/work/6129070f52bb920016e370ab",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"9ctRiM2pyAU7mANinGrXFe1I9fk2",
+						"work",
+						"6129070f52bb920016e370ab"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Work By Work Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/9ctRiM2pyAU7mANinGrXFe1I9fk2/work/6129070f52bb920016e370ab",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"9ctRiM2pyAU7mANinGrXFe1I9fk2",
+								"work",
+								"6129070f52bb920016e370ab"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "405"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"195-0jlqMhC9VgFDjzHz0pH3sik6dPs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Oct 2021 05:09:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"images\": [\n        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/9ctRiM2pyAU7mANinGrXFe1I9fk22021-08-27%2021%3A08%3A46.786038?alt=media&token=0ecd2940-2f7f-4a37-b82f-6f1a24568301\"\n    ],\n    \"views\": [],\n    \"_id\": \"6129070f52bb920016e370ab\",\n    \"uId\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n    \"title\": \"Temp Title\",\n    \"detail\": \"temp description\",\n    \"createdAt\": \"2021-08-27T15:38:55.155Z\",\n    \"updatedAt\": \"2021-08-27T15:38:55.155Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Followers By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/SNQOQnqzeMdsozL7NY6ieowl5ax1/followers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"SNQOQnqzeMdsozL7NY6ieowl5ax1",
+						"followers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Followers By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/SNQOQnqzeMdsozL7NY6ieowl5ax1/followers",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"SNQOQnqzeMdsozL7NY6ieowl5ax1",
+								"followers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-nlfiNw0Qm4ojrHHeeWbIOisYPas\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Oct 2021 05:10:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Following by User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/9ctRiM2pyAU7mANinGrXFe1I9fk2/following",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"9ctRiM2pyAU7mANinGrXFe1I9fk2",
+						"following"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Following by User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/9ctRiM2pyAU7mANinGrXFe1I9fk2/following",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"9ctRiM2pyAU7mANinGrXFe1I9fk2",
+								"following"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-oCl6MrPiRWiG4pdgicTc0kAhmkA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Oct 2021 05:11:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n]"
+				}
+			]
+		}
+	]
+}
