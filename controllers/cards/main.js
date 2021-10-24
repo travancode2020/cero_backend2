@@ -9,13 +9,18 @@ const getAllCards = async (req, res, next) => {
     const page = parseInt(req.query.page);
 
     let foundCards = null;
+    var populateQuery = [
+      { path: "hostId", select: ["name", "userName", "photoUrl"] },
+    ];
 
     if (interestString.length) {
       foundCards = await Cards.find({ tags: { $in: interestArray } })
+        .populate(populateQuery)
         .skip(count * (page - 1))
         .limit(count);
     } else {
       foundCards = await Cards.find({})
+        .populate(populateQuery)
         .skip(count * (page - 1))
         .limit(count);
     }
