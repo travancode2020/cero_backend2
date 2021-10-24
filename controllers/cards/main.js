@@ -9,7 +9,7 @@ const getAllCards = async (req, res, next) => {
     const page = parseInt(req.query.page);
 
     let foundCards = null;
-    var populateQuery = [
+    const populateQuery = [
       { path: "hostId", select: ["name", "userName", "photoUrl"] },
     ];
 

@@ -8,15 +8,14 @@ const CommentSchema = new Schema(
       required: true,
     },
     userId: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "User",
       required: true,
-    },
-    userName: {
-      type: String,
     },
     likes: [],
     replyTo: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   {
@@ -58,11 +57,15 @@ const CardSchema = new Schema(
 );
 
 CardSchema.virtual("commentCount").get(function () {
-  return this.comments.length;
+  if (this.comments) {
+    return this.comments.length;
+  }
 });
 
 CardSchema.virtual("likeCount").get(function () {
-  return this.likes.length;
+  if (this.likes) {
+    return this.likes.length;
+  }
 });
 
 const Cards = mongoose.model("Card", CardSchema);
