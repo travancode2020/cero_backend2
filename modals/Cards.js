@@ -35,15 +35,8 @@ const CardSchema = new Schema(
     saved: [],
     likes: [],
     hostId: {
-      type: String,
-      required: true,
-    },
-    hostName: {
-      type: String,
-      required: true,
-    },
-    hostPropic: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
     caption: {
       type: String,
@@ -55,8 +48,22 @@ const CardSchema = new Schema(
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+    toObject: {
+      virtuals: true,
+    },
   }
 );
+
+CardSchema.virtual("commentCount").get(function () {
+  return this.comments.length;
+});
+
+CardSchema.virtual("likeCount").get(function () {
+  return this.likes.length;
+});
 
 const Cards = mongoose.model("Card", CardSchema);
 module.exports = Cards;
