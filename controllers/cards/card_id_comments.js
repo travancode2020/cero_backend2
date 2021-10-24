@@ -1,22 +1,29 @@
 const Cards = require("../../modals/Cards.js");
 
-const getAllCommentsByCardId = (req, res, next) => {
-  Cards.findById(req.params.cardId)
-    .then(
-      (card) => {
-        if (card != null) {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(card.comments);
-        } else {
-          err = new Error("Card " + req.params.cardId + " not found");
-          err.status = 404;
-          return next(err);
-        }
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
+const getAllCommentsByCardId = async (req, res, next) => {
+  try {
+    const cardId = req.params.cardId;
+
+    const userPopulateQuery = [
+      { path: "comments", populate: { path: "userId", select: ["userName"] } },
+    ];
+    const replyToPopulateQuery = [
+      { path: "comments", populate: { path: "replyTo", select: ["userName"] } },
+    ];
+
+    const card = await Cards.findById(cardId)
+      .select("comments")
+      .populate(userPopulateQuery)
+      .populate(replyToPopulateQuery);
+
+    if (!card) {
+      return res.status(404).json({ message: "Card Not Found" });
+    }
+
+    res.status(200).json(card);
+  } catch (error) {
+    next(error);
+  }
 };
 
 const postCommentByCardId = (req, res, next) => {
