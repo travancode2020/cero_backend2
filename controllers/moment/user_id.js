@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const { Moment } = require("../../modals/Moment.js");
 const Users = require("../../modals/User.js");
 
@@ -14,7 +16,7 @@ const getMomentsByUserId = async (req, res, next) => {
       host: {
         $in: foundUser.following,
       },
-    });
+    }).populate({ path: "host", select: ["name", "userName", "photoUrl"] });
 
     res.status(200).json({
       hostMoments: foundUserMoments,

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const MomentScema = new Schema({
   host: {
     type: String,
+    ref: "User",
     required: true,
   },
   mediaType: {
