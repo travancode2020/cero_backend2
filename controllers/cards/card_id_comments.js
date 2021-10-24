@@ -5,7 +5,7 @@ const getAllCommentsByCardId = async (req, res, next) => {
     const cardId = req.params.cardId;
 
     const userPopulateQuery = [
-      { path: "comments", populate: { path: "userId", select: ["userName"] } },
+      { path: "comments", populate: { path: "user", select: ["userName"] } },
     ];
     const replyToPopulateQuery = [
       { path: "comments", populate: { path: "replyTo", select: ["userName"] } },
