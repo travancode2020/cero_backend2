@@ -13,7 +13,7 @@ const getCardById = async (req, res, next) => {
     foundCard.commentCount = foundCard.comments.length;
     foundCard.comments = undefined;
 
-    res.status(200).json({ ...foundCard, host: foundHost });
+    res.status(200).json({ ...foundCard._doc, host: foundHost });
   } catch (error) {
     next(error);
   }
