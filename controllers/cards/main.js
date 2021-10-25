@@ -35,7 +35,6 @@ const createCard = (req, res, next) => {
   Cards.create(req.body)
     .then(
       (card) => {
-        console.log("New Card Created", card);
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
         res.json(card);
