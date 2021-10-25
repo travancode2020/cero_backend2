@@ -18,6 +18,10 @@ const WorkSchema = new Schema({
 
 const UserSchema = new Schema(
   {
+    fId: {
+      type: String,
+      required: true,
+    },
     userName: {
       type: String,
       required: true,
