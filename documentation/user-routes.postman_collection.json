@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0f822607-e4bf-49c2-8773-3f7a3b5dcd1d",
+		"_postman_id": "21a42067-aa3e-4260-a727-ed8fa20449cc",
 		"name": "user-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -436,6 +436,93 @@
 					],
 					"cookie": [],
 					"body": "[\n    \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n]"
+				}
+			]
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"testUser\",\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"phone\": \"9999999999\",\r\n    \"dob\": \"18-12-1999\",\r\n    \"isCreator\": false,\r\n    \"isPro\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"testUser\",\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"phone\": \"9999999999\",\r\n    \"dob\": \"18-12-1999\",\r\n    \"isCreator\": false,\r\n    \"isPro\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "438"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b6-EzX4A2ITZtbWlmf4011vKYwPiXE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Oct 2021 08:43:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [],\n    \"interest\": [],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": false,\n    \"_id\": \"61766e42a4fe081a682b514b\",\n    \"userName\": \"testUser\",\n    \"name\": \"Test User\",\n    \"email\": \"testuser@gmail.com\",\n    \"password\": \"password\",\n    \"phone\": 9999999999,\n    \"dob\": \"18-12-1999\",\n    \"isCreator\": false,\n    \"isPro\": false,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T08:43:46.776Z\",\n    \"updatedAt\": \"2021-10-25T08:43:46.776Z\",\n    \"__v\": 0\n}"
 				}
 			]
 		}
