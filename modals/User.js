@@ -1,34 +1,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WorkSchema = new Schema(
-  {
-    uId: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-    },
-    detail: {
-      type: String,
-    },
-    images: [],
-    views: [],
+const WorkSchema = new Schema({
+  title: {
+    type: String,
   },
-
-  {
-    timestamps: true,
-  }
-);
+  detail: {
+    type: String,
+  },
+  images: [
+    {
+      type: String,
+    },
+  ],
+  views: [],
+});
 
 const UserSchema = new Schema(
   {
-    _id: {
-      type: String,
-      required: true,
-      unique: true,
-    },
     userName: {
       type: String,
       required: true,
@@ -68,9 +57,6 @@ const UserSchema = new Schema(
     satisfaction: {
       type: Number,
     },
-    cryptoBal: {
-      type: Number,
-    },
     proBio: {
       type: String,
     },
@@ -78,14 +64,52 @@ const UserSchema = new Schema(
     streak: {
       type: Number,
     },
-    userTag: [],
-    interest: [],
-    followers: [],
-    verifiedProfiles: [],
-    following: [],
-    saved: [],
-    liked: [],
-    viewed: [],
+    userTag: [
+      {
+        type: String,
+      },
+    ],
+    interest: [
+      {
+        type: String,
+      },
+    ],
+    followers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    verifiedProfiles: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    following: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    saved: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Card",
+      },
+    ],
+    liked: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Card",
+      },
+    ],
+    viewed: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Card",
+      },
+    ],
     isLocationSharingEnabled: {
       type: Boolean,
       default: false,
@@ -102,60 +126,3 @@ const UserSchema = new Schema(
 
 var users = mongoose.model("User", UserSchema);
 module.exports = users;
-
-/*
-var savedSchema = new Schema({});
-
-var followingSchema = new Schema(
-  {
-    user_id: {
-      type: String,
-      required: true,
-    },
-
-    user_name: {
-      type: String,
-      required: true,
-    },
-  },
-
-  {
-    timestamps: true,
-  }
-);
-
-var verifiedProfilesSchema = new Schema(
-  {
-    user_id: {
-      type: String,
-      required: true,
-    },
-
-    user_name: {
-      type: String,
-      required: true,
-    },
-  },
-
-  {
-    timestamps: true,
-  }
-);
-
-var followerSchema = new Schema({
-  follower_id: {
-    type: String,
-    required: true,
-  },
-
-  follower_name: {
-    type: String,
-    required: true,
-  },
-
-  photo_url: {
-    type: String,
-    required: true,
-  },
-});
-*/
