@@ -24,7 +24,7 @@ const CommentSchema = new Schema({
 });
 
 const CardSchema = new Schema({
-  link: [
+  links: [
     {
       type: String,
     },
@@ -54,6 +54,7 @@ const CardSchema = new Schema({
   host: {
     type: Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
   caption: {
     type: String,
