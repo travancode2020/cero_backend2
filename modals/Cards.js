@@ -73,6 +73,15 @@ const CardSchema = new Schema({
   comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
 });
 
+CardSchema.set("toObject", { virtuals: true });
+CardSchema.set("toJSON", { virtuals: true });
+
+CardSchema.virtual("likeCount").get(function () {
+  if (this.likes) {
+    return this.likes.length;
+  }
+});
+
 const Comment = mongoose.model("Comment", CommentSchema);
 const Cards = mongoose.model("Card", CardSchema);
 module.exports = Cards;

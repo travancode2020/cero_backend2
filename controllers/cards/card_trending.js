@@ -4,7 +4,7 @@ const getAllTrendingCards = async (req, res, next) => {
   try {
     const trendingCards = await Cards.aggregate([
       {
-        $addFields: { like_count: { $size: { $ifNull: ["$likes", []] } } },
+        $addFields: { likeCount: { $size: { $ifNull: ["$likes", []] } } },
       },
       {
         $group: {
@@ -16,7 +16,7 @@ const getAllTrendingCards = async (req, res, next) => {
         $unwind: "$cards",
       },
       {
-        $sort: { _id: 1, "cards.like_count": -1 },
+        $sort: { _id: 1, "cards.likeCount": -1 },
       },
       {
         $group: {
