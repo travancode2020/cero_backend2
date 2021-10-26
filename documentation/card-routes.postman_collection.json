@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f5c78cb0-ea25-43f8-8085-77c77759aa1a",
+		"_postman_id": "d221ea1c-e233-4b06-ac4d-bb6d0c7ae2a5",
 		"name": "card-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -295,13 +295,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e/comments",
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"cards",
-						"61255207fa24c6001602dd3e",
+						"6176dae832053632d07441cf",
 						"comments"
 					]
 				}
@@ -368,15 +368,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e/comments/61255207fa24c6001602dd3e",
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"cards",
-						"61255207fa24c6001602dd3e",
+						"6176dae832053632d07441cf",
 						"comments",
-						"61255207fa24c6001602dd3e"
+						"61779a9ba516690418103e43"
 					]
 				}
 			},
@@ -444,7 +444,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"links\": [\"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"],\r\n    \"isImage\": true,\r\n    \"host\": \"61766e42a4fe081a682b514b\",\r\n    \"caption\": \"Beautiful Building\",\r\n    \"color\": [\"#FF5733\"]\r\n}",
+					"raw": "{\r\n    \"links\": [\"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"],\r\n    \"isImage\": true,\r\n    \"host\": \"6176c9691ea09c0016dc38b3\",\r\n    \"caption\": \"Beautiful Building\",\r\n    \"color\": [\"#FF5733\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -521,6 +521,172 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [],\n    \"_id\": \"61766fe170053f39a005c0b4\",\n    \"isImage\": true,\n    \"host\": \"61766e42a4fe081a682b514b\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Comment By Card Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"6176dae832053632d07441cf",
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Comment By Card Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"6176dae832053632d07441cf",
+								"comments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "455"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c7-t+ukCrox4mWcHOruCknK+kdTrEY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 06:05:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [\n        \"61779a9ba516690418103e43\"\n    ],\n    \"_id\": \"6176dae832053632d07441cf\",\n    \"isImage\": true,\n    \"host\": \"6176c9691ea09c0016dc38b3\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0,\n    \"likeCount\": 0,\n    \"id\": \"6176dae832053632d07441cf\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Comment By Comment ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"6176dae832053632d07441cf",
+						"comments",
+						"61779a9ba516690418103e43"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Comment By Comment ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"6176dae832053632d07441cf",
+								"comments",
+								"61779a9ba516690418103e43"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-+7dttf6TMeUXpmYyRtIWXCeHyZw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 06:12:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment deleted\"\n}"
 				}
 			]
 		}
