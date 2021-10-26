@@ -17,55 +17,39 @@ const getCommentByCommentId = async (req, res, next) => {
     }
 
     const foundComment = await Comment.findById(commentId);
+
+    if (!foundComment) {
+      return res.status(404).json({ message: "Comment not found" });
+    }
+
     res.status(200).json(foundComment);
   } catch (error) {
     next(error);
   }
 };
 
-const putCommentByCommentId = (req, res, next) => {
-  Cards.findByIdAndUpdate(req.params.cardId)
+const patchCommentByCommentId = async (req, res, next) => {
+  try {
+    const cardId = req.params.cardId;
+    const commentId = req.params.commentId;
+    const updatedComment = req.body.comment;
 
-    .then(
-      (card) => {
-        if (card != null && card.comments.id(req.params.commentId) != null) {
-          if (req.body.comment) {
-            card.comments.id(req.params.commentId).comment = req.body.comment;
-          }
-          if (req.body.likes) {
-            card.comments.id(req.params.commentId).likes = req.body.likes;
-          }
-          if (req.body.userId) {
-            card.comments.id(req.params.commentId).userId = req.body.userId;
-          }
-          if (req.body.userName) {
-            card.comments.id(req.params.commentId).userName = req.body.userName;
-          }
-          if (req.body.replyTo) {
-            card.comments.id(req.params.commentId).replyTo = req.body.replyTo;
-          }
+    if (!mongoose.Types.ObjectId.isValid(cardId)) {
+      return res.status(404).send("Card not found");
+    }
 
-          card.save().then(
-            (card) => {
-              res.statusCode = 200;
-              res.setHeader("Content-Type", "application/json");
-              res.json(card.comments.id(req.params.commentId));
-            },
-            (err) => next(err)
-          );
-        } else if (card == null) {
-          err = new Error("Card " + req.params.cardId + " not found");
-          err.status = 404;
-          return next(err);
-        } else {
-          err = new Error("Comment " + req.params.commentId + " not found");
-          err.status = 404;
-          return next(err);
-        }
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
+    if (!mongoose.Types.ObjectId.isValid(commentId)) {
+      return res.status(404).send("Comment not found");
+    }
+
+    await Comment.findByIdAndUpdate(commentId, {
+      $set: { comment: updatedComment },
+    });
+
+    res.status(200).json({ message: "Comment updated" });
+  } catch (error) {
+    next(error);
+  }
 };
 
 const deleteCommentByCommentId = async (req, res, next) => {
@@ -90,6 +74,6 @@ const deleteCommentByCommentId = async (req, res, next) => {
 
 module.exports = {
   getCommentByCommentId,
-  putCommentByCommentId,
+  patchCommentByCommentId,
   deleteCommentByCommentId,
 };

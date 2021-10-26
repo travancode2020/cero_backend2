@@ -24,7 +24,7 @@ const {
 
 const {
   getCommentByCommentId,
-  putCommentByCommentId,
+  patchCommentByCommentId,
   deleteCommentByCommentId,
 } = require("../controllers/cards/card_id_comment_id.js");
 
@@ -81,7 +81,7 @@ CardRouter.post("/:cardId/comments/:commentId", (req, res) => {
       req.params.commentId
   );
 });
-CardRouter.put("/:cardId/comments/:commentId", putCommentByCommentId);
+CardRouter.patch("/:cardId/comments/:commentId", patchCommentByCommentId);
 CardRouter.delete("/:cardId/comments/:commentId", deleteCommentByCommentId);
 
 module.exports = CardRouter;
