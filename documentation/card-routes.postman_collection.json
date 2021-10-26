@@ -368,7 +368,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -376,7 +376,7 @@
 						"cards",
 						"6176dae832053632d07441cf",
 						"comments",
-						"61779a9ba516690418103e43"
+						"6177b4c101a8dd0f0887b24f"
 					]
 				}
 			},
@@ -705,7 +705,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -713,7 +713,7 @@
 						"cards",
 						"6176dae832053632d07441cf",
 						"comments",
-						"61779a9ba516690418103e43"
+						"6177b4c101a8dd0f0887b24f"
 					]
 				}
 			},
@@ -725,10 +725,15 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Update comment\"\r\n}"
+							"raw": "{\r\n    \"comment\": \"Update comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -736,7 +741,7 @@
 								"cards",
 								"6176dae832053632d07441cf",
 								"comments",
-								"61779a9ba516690418103e43"
+								"6177b4c101a8dd0f0887b24f"
 							]
 						}
 					},
@@ -762,7 +767,166 @@
 						},
 						{
 							"key": "Date",
-							"value": "Tue, 26 Oct 2021 06:35:46 GMT"
+							"value": "Tue, 26 Oct 2021 17:03:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Like or Unlike Comment By User Id and Comment ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isLiked\" : false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"6176c9691ea09c0016dc38b3",
+						"comments",
+						"like",
+						"6177b4c101a8dd0f0887b24f"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Like Comment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isLiked\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"6176c9691ea09c0016dc38b3",
+								"comments",
+								"like",
+								"6177b4c101a8dd0f0887b24f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 17:13:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment updated\"\n}"
+				},
+				{
+					"name": "Unlike Comment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isLiked\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"6176c9691ea09c0016dc38b3",
+								"comments",
+								"like",
+								"6177b4c101a8dd0f0887b24f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 17:13:29 GMT"
 						},
 						{
 							"key": "Connection",
