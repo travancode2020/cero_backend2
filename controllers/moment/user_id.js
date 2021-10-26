@@ -16,7 +16,10 @@ const getMomentsByUserId = async (req, res, next) => {
       host: {
         $in: foundUser.following,
       },
-    }).populate({ path: "host", select: ["name", "userName", "photoUrl"] });
+    }).populate({
+      path: "host",
+      select: ["name", "userName", "photoUrl", "fId"],
+    });
 
     res.status(200).json({
       hostMoments: foundUserMoments,

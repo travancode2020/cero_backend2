@@ -2,16 +2,21 @@ const Cards = require("../../modals/Cards.js");
 const Comment = require("../../modals/Comment.js");
 const mongoose = require("mongoose");
 
-
 const getAllCommentsByCardId = async (req, res, next) => {
   try {
     const cardId = req.params.cardId;
 
     const userPopulateQuery = [
-      { path: "comments", populate: { path: "user", select: ["userName"] } },
+      {
+        path: "comments",
+        populate: { path: "user", select: ["userName", "fId"] },
+      },
     ];
     const replyToPopulateQuery = [
-      { path: "comments", populate: { path: "replyTo", select: ["userName"] } },
+      {
+        path: "comments",
+        populate: { path: "replyTo", select: ["userName", "fId"] },
+      },
     ];
 
     const card = await Cards.findById(cardId)
