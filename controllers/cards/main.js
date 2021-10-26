@@ -10,7 +10,10 @@ const getAllCards = async (req, res, next) => {
 
     let foundCards = null;
     const populateQuery = [
-      { path: "host", select: ["name", "userName", "photoUrl", "fId"] },
+      {
+        path: "host",
+        select: ["name", "userName", "photoUrl", "fId", "userTag"],
+      },
     ];
 
     if (interestString.length) {

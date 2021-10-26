@@ -7,6 +7,25 @@ const getAllTrendingCards = async (req, res, next) => {
         $addFields: { likeCount: { $size: { $ifNull: ["$likes", []] } } },
       },
       {
+        $lookup: {
+          from: "users",
+          let: { host: "$host" },
+          pipeline: [
+            { $match: { $expr: { $eq: ["$_id", "$$host"] } } },
+            {
+              $project: {
+                name: 1,
+                userName: 1,
+                photoUrl: 1,
+                fId: 1,
+                userTag: 1,
+              },
+            },
+          ],
+          as: "host",
+        },
+      },
+      {
         $group: {
           _id: { $first: "$tags" },
           cards: { $addToSet: "$$ROOT" },
