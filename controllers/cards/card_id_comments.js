@@ -23,7 +23,7 @@ const getAllCommentsByCardId = async (req, res, next) => {
       return res.status(404).json({ message: "Card Not Found" });
     }
 
-    res.status(200).json(card);
+    res.status(200).json(card.comments);
   } catch (error) {
     next(error);
   }
