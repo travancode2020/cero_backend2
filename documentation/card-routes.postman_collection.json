@@ -151,14 +151,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/cards/user/SNQOQnqzeMdsozL7NY6ieowl5ax1",
+					"raw": "{{BASE_URL}}/cards/user/6177bb898f45e5001687a543",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"cards",
 						"user",
-						"SNQOQnqzeMdsozL7NY6ieowl5ax1"
+						"6177bb898f45e5001687a543"
 					]
 				}
 			},
@@ -939,6 +939,240 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"message\": \"Comment updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Save Card By User Id and Card Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isSaved\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/61794169eb538a0016b5707e",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"user",
+						"6176c9691ea09c0016dc38b3",
+						"save",
+						"61794169eb538a0016b5707e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Save Card By User Id and Card Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isSaved\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/6177d52e235d3d0016bd88aa",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"user",
+								"6176c9691ea09c0016dc38b3",
+								"save",
+								"6177d52e235d3d0016bd88aa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Oct 2021 15:25:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Card updated\"\n}"
+				},
+				{
+					"name": "Unsave Card By User Id and Card Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isSaved\" : false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/6177d52e235d3d0016bd88aa",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"user",
+								"6176c9691ea09c0016dc38b3",
+								"save",
+								"6177d52e235d3d0016bd88aa"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Oct 2021 15:25:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Card updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Saved Cards By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"user",
+						"6176c9691ea09c0016dc38b3",
+						"saved"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Saved Cards By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"user",
+								"6176c9691ea09c0016dc38b3",
+								"saved"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1396"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"574-KEW97LUM8IaMlqA5zlzPhcwLgwk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Oct 2021 15:38:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    }\n]"
 				}
 			]
 		}
