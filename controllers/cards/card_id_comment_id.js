@@ -67,7 +67,7 @@ const likeCommentByCommentId = async (req, res, next) => {
     }
 
     if (isLiked === null || isLiked === undefined) {
-      res.status(400).json({ message: "isLiked is required" });
+      return res.status(400).json({ message: "isLiked is required" });
     }
 
     if (isLiked) {
