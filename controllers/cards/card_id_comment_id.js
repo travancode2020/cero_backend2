@@ -58,10 +58,6 @@ const likeCommentByCommentId = async (req, res, next) => {
     const commentId = req.params.commentId;
     const isLiked = req.body.isLiked;
 
-    console.log(userId);
-    console.log(commentId);
-    console.log(isLiked);
-
     if (!mongoose.Types.ObjectId.isValid(userId)) {
       return res.status(404).send("User not found");
     }

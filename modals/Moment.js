@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const MomentScema = new Schema({
   host: {
-    type: String,
+    type: Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
