@@ -26,6 +26,9 @@ const getAllTrendingCards = async (req, res, next) => {
         },
       },
       {
+        $unwind: "$host",
+      },
+      {
         $group: {
           _id: { $first: "$tags" },
           cards: { $addToSet: "$$ROOT" },
