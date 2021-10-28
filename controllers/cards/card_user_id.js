@@ -100,7 +100,12 @@ const saveCardByUserId = async (req, res, next) => {
 const likeCardByUserId = async (req, res, next) => {
   const userId = req.params.userId;
   const cardId = req.params.cardId;
-  const isLiked = req.body.isSaved;
+  const isLiked =
+    req.body.isLiked === "true"
+      ? true
+      : req.body.isLiked === "false"
+      ? false
+      : null;
 
   if (!mongoose.Types.ObjectId.isValid(userId)) {
     return res.status(404).send("User not found");
@@ -115,13 +120,34 @@ const likeCardByUserId = async (req, res, next) => {
   }
 
   if (isLiked) {
-    await Cards.findByIdAndUpdate(cardId, {
-      $addToSet: { likes: userId },
-    });
+    await Cards.findByIdAndUpdate(
+      cardId,
+      {
+        $addToSet: { likes: userId },
+      },
+      {
+        $pull: { disLikes: userId },
+      }
+    );
     await User.findByIdAndUpdate(userId, {
       $addToSet: { liked: cardId },
     });
+  } else {
+    await Cards.findByIdAndUpdate(
+      cardId,
+      {
+        $pull: { likes: userId },
+      },
+      {
+        $pull: { disLikes: userId },
+      }
+    );
+    await User.findByIdAndUpdate(userId, {
+      $pull: { liked: cardId },
+    });
   }
+
+  res.status(200).json({ message: "Card updated" });
   try {
   } catch (error) {
     next(error);

@@ -11,6 +11,7 @@ const {
   getCardsByUserId,
   saveCardByUserId,
   getSavedCardsByUserId,
+  likeCardByUserId,
 } = require("../controllers/cards/card_user_id.js");
 
 const {
@@ -55,6 +56,7 @@ CardRouter.get("/trending", getAllTrendingCards);
 CardRouter.get("/user/:userId", getCardsByUserId);
 CardRouter.post("/user/:userId/save/:cardId", saveCardByUserId);
 CardRouter.get("/user/:userId/saved", getSavedCardsByUserId);
+CardRouter.post("/like/:cardId/user/:userId", likeCardByUserId);
 
 // controllers/cards/card_id.js
 CardRouter.get("/:cardId", getCardById);
