@@ -75,6 +75,9 @@ const saveCardByUserId = async (req, res, next) => {
       return res.status(400).json({ message: "isSaved is required" });
     }
 
+    userId = mongoose.Types.ObjectId(userId);
+    cardId = mongoose.Types.ObjectId(cardId);
+
     if (isSaved) {
       await Cards.findByIdAndUpdate(cardId, {
         $addToSet: { saved: userId },
@@ -120,30 +123,62 @@ const likeCardByUserId = async (req, res, next) => {
   }
 
   if (isLiked) {
-    await Cards.findByIdAndUpdate(
-      cardId,
-      {
-        $addToSet: { likes: userId },
-      },
-      {
-        $pull: { disLikes: userId },
-      }
-    );
+    await Cards.findByIdAndUpdate(cardId, {
+      $addToSet: { likes: userId },
+      $pull: { disLikes: userId },
+    });
     await User.findByIdAndUpdate(userId, {
       $addToSet: { liked: cardId },
     });
   } else {
-    await Cards.findByIdAndUpdate(
-      cardId,
-      {
-        $pull: { likes: userId },
-      },
-      {
-        $pull: { disLikes: userId },
-      }
-    );
+    await Cards.findByIdAndUpdate(cardId, {
+      $pull: { likes: userId, disLikes: userId },
+    });
     await User.findByIdAndUpdate(userId, {
       $pull: { liked: cardId },
+    });
+  }
+
+  res.status(200).json({ message: "Card updated" });
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const dislikeCardByUserId = async (req, res, next) => {
+  const userId = req.params.userId;
+  const cardId = req.params.cardId;
+  const isDisliked =
+    req.body.isDisliked === "true"
+      ? true
+      : req.body.isDisliked === "false"
+      ? false
+      : null;
+
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    return res.status(404).send("User not found");
+  }
+
+  if (!mongoose.Types.ObjectId.isValid(cardId)) {
+    return res.status(404).send("Card not found");
+  }
+
+  if (isDisliked === null || isDisliked === undefined) {
+    return res.status(400).json({ message: "isDisliked is required" });
+  }
+
+  if (isDisliked) {
+    await Cards.findByIdAndUpdate(cardId, {
+      $addToSet: { disLikes: userId },
+      $pull: { likes: userId },
+    });
+    await User.findByIdAndUpdate(userId, {
+      $pull: { liked: cardId },
+    });
+  } else {
+    await Cards.findByIdAndUpdate(cardId, {
+      $pull: { likes: userId, disLikes: userId },
     });
   }
 
@@ -159,4 +194,5 @@ module.exports = {
   saveCardByUserId,
   getSavedCardsByUserId,
   likeCardByUserId,
+  dislikeCardByUserId,
 };
