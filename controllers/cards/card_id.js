@@ -5,15 +5,16 @@ const getCardById = async (req, res, next) => {
   try {
     const cardId = req.params.cardId;
 
-    const foundCard = await Cards.findById(cardId);
-    const foundHost = await Users.findById(foundCard.hostId).select(
-      "userTag userName name photoUrl"
-    );
+    const populateQuery = [
+      {
+        path: "host",
+        select: ["name", "userName", "photoUrl", "fId", "userTag"],
+      },
+    ];
 
-    foundCard.commentCount = foundCard.comments.length;
-    foundCard.comments = undefined;
+    const foundCard = await Cards.findById(cardId).populate(populateQuery);
 
-    res.status(200).json({ ...foundCard._doc, host: foundHost });
+    res.status(200).json(foundCard);
   } catch (error) {
     next(error);
   }

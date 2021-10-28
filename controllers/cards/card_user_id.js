@@ -34,7 +34,10 @@ const getSavedCardsByUserId = async (req, res, next) => {
     const userPopulateQuery = [
       {
         path: "saved",
-        populate: { path: "host", select: ["userName", "fId", "name", "photoUrl", "userTag"] },
+        populate: {
+          path: "host",
+          select: ["userName", "fId", "name", "photoUrl", "userTag"],
+        },
       },
     ];
 
@@ -94,8 +97,40 @@ const saveCardByUserId = async (req, res, next) => {
   }
 };
 
+const likeCardByUserId = async (req, res, next) => {
+  const userId = req.params.userId;
+  const cardId = req.params.cardId;
+  const isLiked = req.body.isSaved;
+
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+    return res.status(404).send("User not found");
+  }
+
+  if (!mongoose.Types.ObjectId.isValid(cardId)) {
+    return res.status(404).send("Card not found");
+  }
+
+  if (isLiked === null || isLiked === undefined) {
+    return res.status(400).json({ message: "isLiked is required" });
+  }
+
+  if (isLiked) {
+    await Cards.findByIdAndUpdate(cardId, {
+      $addToSet: { likes: userId },
+    });
+    await User.findByIdAndUpdate(userId, {
+      $addToSet: { liked: cardId },
+    });
+  }
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getCardsByUserId,
   saveCardByUserId,
   getSavedCardsByUserId,
+  likeCardByUserId,
 };
