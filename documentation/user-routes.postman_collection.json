@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "21a42067-aa3e-4260-a727-ed8fa20449cc",
+		"_postman_id": "90bb5468-4eb5-4de8-a4b2-85b33fbe5b12",
 		"name": "user-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -80,13 +80,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/users/IBOaLroPjUSnR3EQjFdhfWidSBC3",
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"users",
-						"IBOaLroPjUSnR3EQjFdhfWidSBC3"
+						"6176c9691ea09c0016dc38b3"
 					]
 				}
 			},
@@ -523,6 +523,79 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"userTag\": [],\n    \"interest\": [],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": false,\n    \"_id\": \"61766e42a4fe081a682b514b\",\n    \"userName\": \"testUser\",\n    \"name\": \"Test User\",\n    \"email\": \"testuser@gmail.com\",\n    \"password\": \"password\",\n    \"phone\": 9999999999,\n    \"dob\": \"18-12-1999\",\n    \"isCreator\": false,\n    \"isPro\": false,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T08:43:46.776Z\",\n    \"updatedAt\": \"2021-10-25T08:43:46.776Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User By FID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/fId/uSOcj00tH8Z36FNJFreqWxz9axp1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"fId",
+						"uSOcj00tH8Z36FNJFreqWxz9axp1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User By FID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/fId/uSOcj00tH8Z36FNJFreqWxz9axp1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"fId",
+								"uSOcj00tH8Z36FNJFreqWxz9axp1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "745"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e9-/S6iMWlfDpSkDUe0O1kFCvVIW3k\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 28 Oct 2021 16:29:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": false,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-10-27T15:36:02.524Z\",\n    \"__v\": 0\n}"
 				}
 			]
 		}
