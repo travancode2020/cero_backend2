@@ -62,6 +62,8 @@ const {
   deleteFollowingByFollowingId,
 } = require("../controllers/user/user_id_following_id.js");
 
+const { getUserByFID } = require("../controllers/user/fId.js");
+
 const UserRouter = express.Router();
 
 // controllers/user/main.js
@@ -152,5 +154,8 @@ UserRouter.delete(
   "/:userId/following/:followingId",
   deleteFollowingByFollowingId
 );
+
+//controller/user/fId.js
+UserRouter.get("/fId/:fId", getUserByFID);
 
 module.exports = UserRouter;
