@@ -11,67 +11,30 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/cards",
+					"raw": "{{BASE_URL}}/cards?interests=One&page=1&count=5",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"cards"
+					],
+					"query": [
+						{
+							"key": "interests",
+							"value": "One"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "5"
+						}
 					]
 				}
 			},
 			"response": [
-				{
-					"name": "Get Cards",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "6157"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"180d-npt2bjvmz/ZAP0PPOqdeqJyZOR4\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:12:17 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"777b7c\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Mountaineering⛰️, also called mountain climbing, the sport of attaining, or attempting to attain, high points in mountainous regions, mainly for the pleasure of the climb. ... For the untrained, mountaineering is a dangerous pastime.\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"👍👍\",\n                \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"userName\": \"ajay_k.p\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n                \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"habahssh\",\n                \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"userName\": \"ajay_k.p\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n                \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"❤\",\n                \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n                \"userName\": \"hrithiksraj\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n                \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-24T20:09:43.981Z\",\n        \"updatedAt\": \"2021-09-05T10:37:02.607Z\",\n        \"__v\": 3\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/N5orwkOjGWSlRL71VGqbYO7AwwW2%2F2021-08-25%2002%3A47%3A41.076350?alt=media&token=c9452ad4-075c-4ce5-a307-1b393949a2af\"\n        ],\n        \"disLikes\": [\n            \"LpIlC8Yohibn84TvPw1BW6gu64j2\",\n            \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n        ],\n        \"saved\": [\n            \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n        ],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"History\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"7a0000\"\n        ],\n        \"_id\": \"612561fffa24c6001602de4c\",\n        \"isImage\": true,\n        \"hostId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"hostName\": \"ajay_k.p\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n        \"caption\": \"Ferrari S.p.A. is an Italian luxury sports car manufacturer based in Maranello, Italy. Founded by Enzo Ferrari in 1939 out of the Alfa Romeo race division as Auto Avio Costruzioni, the company built its first car in 1940, and produced its first Ferrari-badged car in 1947\",\n        \"comments\": [],\n        \"createdAt\": \"2021-08-24T21:17:51.625Z\",\n        \"updatedAt\": \"2021-10-19T14:44:51.844Z\",\n        \"__v\": 0\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/N5orwkOjGWSlRL71VGqbYO7AwwW2%2F2021-08-26%2000%3A24%3A00.011770?alt=media&token=d811c593-3a4f-4906-b2e3-4eccd49939a8\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n        ],\n        \"likes\": [\n            \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"vNyGRD6f11YLEOIjmHk9yxgvVk32\",\n            \"LpIlC8Yohibn84TvPw1BW6gu64j2\",\n            \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"eee9d0\"\n        ],\n        \"_id\": \"612691d5f34d6d001640f017\",\n        \"isImage\": true,\n        \"hostId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"hostName\": \"ajay_k.p\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n        \"caption\": \"According to the Vegetarian Society, a vegetarian is someone who does not eat any meat, poultry, game, fish, shellfish or by-products of animal slaughter. Vegetarian diets contain various levels of fruits, vegetables, grains, pulses, nuts and seeds. 🌽🌾🥕\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612691d5f34d6d001640f017\",\n                \"comment\": \"💞💞\",\n                \"userId\": \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n                \"userName\": \"arun.arun\",\n                \"replyTo\": \"ajay_k.p\",\n                \"createdAt\": \"2021-08-29T05:46:05.822Z\",\n                \"updatedAt\": \"2021-08-29T05:46:05.822Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612691d5f34d6d001640f017\",\n                \"comment\": \"gjdg xc\",\n                \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n                \"userName\": \"hrithiksraj\",\n                \"replyTo\": \"ajay_k.p\",\n                \"createdAt\": \"2021-09-09T10:09:07.538Z\",\n                \"updatedAt\": \"2021-09-09T10:09:07.538Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-25T18:54:13.337Z\",\n        \"updatedAt\": \"2021-10-19T11:19:16.699Z\",\n        \"__v\": 2\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/N5orwkOjGWSlRL71VGqbYO7AwwW2%2F2021-08-26%2000%3A25%3A44.437823?alt=media&token=5a1fc925-fdf1-4ea7-81bb-86f060448cf5\"\n        ],\n        \"disLikes\": [\n            \"LpIlC8Yohibn84TvPw1BW6gu64j2\"\n        ],\n        \"saved\": [\n            \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n        ],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n            \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"General Knowledge\",\n            \"Four\"\n        ],\n        \"color\": [\n            \"1e2d1e\"\n        ],\n        \"_id\": \"61269239f34d6d001640f01d\",\n        \"isImage\": true,\n        \"hostId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"hostName\": \"ajay_k.p\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n        \"caption\": \"🦊 Foxes are small to medium-sized, omnivorous mammals belonging to several genera of the family Canidae. They have a flattened skull, upright triangular ears, a pointed, slightly upturned snout, and a long bushy tail. Twelve species belong to the monophyletic \\\"true foxes\\\" group of genus Vulpes.\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61269239f34d6d001640f01d\",\n                \"comment\": \"👍❤\",\n                \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n                \"userName\": \"hrithiksraj\",\n                \"replyTo\": \"ajay_k.p\",\n                \"createdAt\": \"2021-08-29T05:27:16.994Z\",\n                \"updatedAt\": \"2021-08-29T05:27:16.994Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-25T18:55:53.999Z\",\n        \"updatedAt\": \"2021-10-19T11:14:33.175Z\",\n        \"__v\": 1\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6yrqbWqfskRGFBCPJ8VusTJaJE22%2F2021-08-29%2019%3A57%3A25.944827?alt=media&token=fdaf7b23-4f22-4932-a8e0-86548d2142dc\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Other\",\n            \"One\"\n        ],\n        \"color\": [\n            \"1a1c1f\"\n        ],\n        \"_id\": \"612b9955f702000016c072a2\",\n        \"isImage\": true,\n        \"hostId\": \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n        \"hostName\": \"brijpatel\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a-/AOh14GjqgSEKVbeC4XiMUu4czKAKpsnuC6zzOSeQSHxa=s96-c\",\n        \"caption\": \"\",\n        \"comments\": [],\n        \"createdAt\": \"2021-08-29T14:27:33.342Z\",\n        \"updatedAt\": \"2021-08-29T14:27:33.342Z\",\n        \"__v\": 0\n    }\n]"
-				},
 				{
 					"name": "Get Cards",
 					"originalRequest": {
@@ -122,6 +85,71 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [\n            \"617a5fe7b27a5a00164cea1c\"\n        ],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n        ],\n        \"disLikes\": [\n            \"6177bb898f45e5001687a543\"\n        ],\n        \"saved\": [],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"42343a\"\n        ],\n        \"comments\": [\n            \"617a2b62b0526d0016bc770d\",\n            \"617a401f5f07d6001696d429\"\n        ],\n        \"_id\": \"617941abeb538a0016b57085\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Description is not available\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"617941abeb538a0016b57085\"\n    }\n]"
+				},
+				{
+					"name": "Get Cards With Interests and Skip, Limit",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards?interests=One&page=1&count=5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "interests",
+									"value": "One"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "count",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "704"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c0-VgV6PFKmGw3LDwMgxzDryaCDhJk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 12:03:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    }\n]"
 				}
 			]
 		},
