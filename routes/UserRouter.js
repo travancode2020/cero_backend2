@@ -6,6 +6,7 @@ const {
   createUser,
   patchUserByUsername,
   deleteAllUsers,
+  checkUsernameExists,
 } = require("../controllers/user/main.js");
 
 const {
@@ -52,6 +53,7 @@ const UserRouter = express.Router();
 // controllers/user/main.js
 UserRouter.get("/", getAllUsers);
 UserRouter.post("/", createUser);
+UserRouter.post("/check/username", checkUsernameExists);
 UserRouter.put("/", (_, res) => {
   res.statusCode = 403;
   res.end("PUT operation not supported on /Users");

@@ -56,9 +56,34 @@ const deleteAllUsers = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+const checkUsernameExists = async (req, res, next) => {
+  try {
+    const userName = req.body.userName;
+
+    if (!userName) {
+      res.status(400).json({ message: "userName is required" });
+    }
+
+    const foundUser = await Users.findOne({ userName });
+
+    if (foundUser) {
+      return res
+        .status(200)
+        .json({ message: "User name is not available", isAvailable: false });
+    }
+
+    res
+      .status(200)
+      .json({ message: "User name is available", isAvailable: true });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
   patchUserByUsername,
   deleteAllUsers,
+  checkUsernameExists,
 };

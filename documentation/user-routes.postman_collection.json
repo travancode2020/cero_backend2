@@ -634,6 +634,221 @@
 					"body": "{\n    \"message\": \"User updated\"\n}"
 				}
 			]
+		},
+		{
+			"name": "Check Username Exists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"ajay2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/check/username",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"check",
+						"username"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Check Username Exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"ajay\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/check/username",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"check",
+								"username"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-5XmYJoNX9HuHNZmMhyzZfcZ75Mo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 11:57:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User name not available\"\n}"
+				},
+				{
+					"name": "Not Available",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"ajay\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/check/username",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"check",
+								"username"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-OpGhe+t9623XClPqmE+OL+YPZL4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 11:58:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User name is not available\",\n    \"isAvailable\": false\n}"
+				},
+				{
+					"name": "Available",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"ajay2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/check/username",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"check",
+								"username"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"37-SV1GbhI2Vg6e4aI1y09KFpF5Fik\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 11:59:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User name is available\",\n    \"isAvailable\": true\n}"
+				}
+			]
 		}
 	]
 }
