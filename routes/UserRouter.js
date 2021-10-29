@@ -30,17 +30,6 @@ const {
 } = require("../controllers/user/user_id_work_id.js");
 
 const {
-  getFollowersByUserId,
-  postFollowersByUserId,
-  deleteFollowersByUserId,
-} = require("../controllers/user/user_id_followers.js");
-
-const {
-  getFollowerByFollowerId,
-  deleteFollowerByFollowerId,
-} = require("../controllers/user/user_id_follower_id.js");
-
-const {
   getVerifiedByUserId,
   postVerifiedByUserId,
   deleteVerifiedByUserId,
@@ -51,18 +40,12 @@ const {
   deleteVerifiedByVerifiedId,
 } = require("../controllers/user/user_id_verified_id.js");
 
-const {
-  getFollowingByUserId,
-  postFollowingByUserId,
-  deleteFollowingByUserId,
-} = require("../controllers/user/user_id_following.js");
-
-const {
-  getFollowingByFollowingId,
-  deleteFollowingByFollowingId,
-} = require("../controllers/user/user_id_following_id.js");
-
 const { getUserByFID } = require("../controllers/user/fId.js");
+
+const {
+  followByUserId,
+  unfollowByUserId,
+} = require("../controllers/user/following.js");
 
 const UserRouter = express.Router();
 
@@ -107,19 +90,6 @@ UserRouter.put("/:userId/work/:workId", putWorkByWorkId);
 UserRouter.patch("/:userId/work/:workId", patchWorkByWorkId);
 UserRouter.delete("/:userId/work/:workId", deleteWorkByWorkId);
 
-//controllers/user/user_id_followers.js
-UserRouter.get("/:userId/followers", getFollowersByUserId);
-UserRouter.post("/:userId/followers", postFollowersByUserId);
-UserRouter.put("/:userId/followers", (_, res) => {
-  res.statusCode = 403;
-  res.end("PUT operation not supported on /followers");
-});
-UserRouter.delete("/:userId/followers", deleteFollowersByUserId);
-
-//controllers/user/user_id_follower_id.js
-UserRouter.get("/:userId/followers/:followerId", getFollowerByFollowerId);
-UserRouter.delete("/:userId/followers/:followerId", deleteFollowerByFollowerId);
-
 //controllers/user/user_id_verified.js
 UserRouter.get("/:userId/verifiedprofiles", getVerifiedByUserId);
 UserRouter.post("/:userId/verifiedprofiles", postVerifiedByUserId);
@@ -139,23 +109,11 @@ UserRouter.delete(
   deleteVerifiedByVerifiedId
 );
 
-//controllers/user/user_id_following.js
-UserRouter.get("/:userId/following", getFollowingByUserId);
-UserRouter.post("/:userId/following", postFollowingByUserId);
-UserRouter.put("/:userId/following", (_, res) => {
-  res.statusCode = 403;
-  res.end("PUT operation not supported on /following");
-});
-UserRouter.delete("/:userId/following", deleteFollowingByUserId);
-
-//controller/user/user_id_following_id.js
-UserRouter.get("/:userId/following/:followingId", getFollowingByFollowingId);
-UserRouter.delete(
-  "/:userId/following/:followingId",
-  deleteFollowingByFollowingId
-);
-
 //controller/user/fId.js
 UserRouter.get("/fId/:fId", getUserByFID);
+
+//controller/user/following.js
+UserRouter.post("/follow/:userId", followByUserId);
+UserRouter.post("/unfollow/:userId", unfollowByUserId);
 
 module.exports = UserRouter;

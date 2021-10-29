@@ -294,152 +294,6 @@
 			]
 		},
 		{
-			"name": "Get Followers By User Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/users/SNQOQnqzeMdsozL7NY6ieowl5ax1/followers",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"users",
-						"SNQOQnqzeMdsozL7NY6ieowl5ax1",
-						"followers"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Followers By User Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/users/SNQOQnqzeMdsozL7NY6ieowl5ax1/followers",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"users",
-								"SNQOQnqzeMdsozL7NY6ieowl5ax1",
-								"followers"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "32"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"20-nlfiNw0Qm4ojrHHeeWbIOisYPas\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:10:07 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n]"
-				}
-			]
-		},
-		{
-			"name": "Get Following by User Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/users/9ctRiM2pyAU7mANinGrXFe1I9fk2/following",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"users",
-						"9ctRiM2pyAU7mANinGrXFe1I9fk2",
-						"following"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Following by User Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/users/9ctRiM2pyAU7mANinGrXFe1I9fk2/following",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"users",
-								"9ctRiM2pyAU7mANinGrXFe1I9fk2",
-								"following"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "32"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"20-oCl6MrPiRWiG4pdgicTc0kAhmkA\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:11:19 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    \"N5orwkOjGWSlRL71VGqbYO7AwwW2\"\n]"
-				}
-			]
-		},
-		{
 			"name": "Create User",
 			"request": {
 				"method": "POST",
@@ -596,6 +450,188 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": false,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-10-27T15:36:02.524Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Follow By User Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"followingId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/follow/6176c9691ea09c0016dc38b3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"follow",
+						"6176c9691ea09c0016dc38b3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Follow By User Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"followingId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/follow/6176c9691ea09c0016dc38b3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"follow",
+								"6176c9691ea09c0016dc38b3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-xDMAuPrT5Dozg+Z00ab9Miq0da4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 10:23:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Unfollow By User Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"followingId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/unfollow/6176c9691ea09c0016dc38b3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"unfollow",
+						"6176c9691ea09c0016dc38b3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unfollow By User Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"followingId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/unfollow/6176c9691ea09c0016dc38b3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"unfollow",
+								"6176c9691ea09c0016dc38b3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-xDMAuPrT5Dozg+Z00ab9Miq0da4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 10:35:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated\"\n}"
 				}
 			]
 		}
