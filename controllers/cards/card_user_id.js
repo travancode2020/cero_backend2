@@ -57,11 +57,12 @@ const saveCardByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const cardId = req.params.cardId;
-    const isSaved = req.body.isSaved;
-
-    console.log(userId);
-    console.log(cardId);
-    console.log(isSaved);
+    const isSaved =
+      req.body.isSaved === "true"
+        ? true
+        : req.body.isSaved === "false"
+        ? false
+        : null;
 
     if (!mongoose.Types.ObjectId.isValid(userId)) {
       return res.status(404).send("User not found");
@@ -74,9 +75,6 @@ const saveCardByUserId = async (req, res, next) => {
     if (isSaved === null || isSaved === undefined) {
       return res.status(400).json({ message: "isSaved is required" });
     }
-
-    userId = mongoose.Types.ObjectId(userId);
-    cardId = mongoose.Types.ObjectId(cardId);
 
     if (isSaved) {
       await Cards.findByIdAndUpdate(cardId, {
