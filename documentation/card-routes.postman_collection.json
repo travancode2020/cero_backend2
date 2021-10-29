@@ -1480,6 +1480,81 @@
 					"body": "{\n    \"message\": \"Card updated\"\n}"
 				}
 			]
+		},
+		{
+			"name": "Get All Liked Cards By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"user",
+						"liked",
+						"6177bb898f45e5001687a543"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Liked Cards By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"user",
+								"liked",
+								"6177bb898f45e5001687a543"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1322"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52a-4gha1yWZrye1QhIfgERQidli5Ak\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Oct 2021 10:40:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\",\n        \"General Knowledge\",\n        \"Current Affairs\",\n        \"Culture & lifestyle\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"liked\": [\n        {\n            \"links\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n            ],\n            \"disLikes\": [\n                \"6177bb898f45e5001687a543\"\n            ],\n            \"saved\": [\n                \"617abf7d2dbd2100169ef146\"\n            ],\n            \"likes\": [],\n            \"views\": [],\n            \"tags\": [\n                \"Psychology\",\n                \"Two\"\n            ],\n            \"color\": [\n                \"42343a\"\n            ],\n            \"comments\": [\n                \"617a2b62b0526d0016bc770d\",\n                \"617a401f5f07d6001696d429\"\n            ],\n            \"_id\": \"617941abeb538a0016b57085\",\n            \"isImage\": true,\n            \"host\": \"6177bb898f45e5001687a543\",\n            \"caption\": \"Description is not available\",\n            \"__v\": 0,\n            \"likeCount\": 0,\n            \"id\": \"617941abeb538a0016b57085\"\n        }\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6177bb898f45e5001687a543\",\n    \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n    \"userName\": \"agarian\",\n    \"name\": \"Ajay Agarian\",\n    \"email\": \"ajayagarian.aero2astro@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": true,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-26T08:25:45.965Z\",\n    \"updatedAt\": \"2021-10-28T14:53:04.601Z\",\n    \"__v\": 0,\n    \"phone\": null\n}"
+				}
+			]
 		}
 	]
 }

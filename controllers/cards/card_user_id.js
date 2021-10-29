@@ -187,10 +187,26 @@ const dislikeCardByUserId = async (req, res, next) => {
   }
 };
 
+const getLikedCardsByUserId = async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+
+    const foundCards = await User.findById(userId).populate("liked");
+    if (!foundCards) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(foundCards);
+  } catch (error) {
+    next(erro);
+  }
+};
+
 module.exports = {
   getCardsByUserId,
   saveCardByUserId,
   getSavedCardsByUserId,
   likeCardByUserId,
   dislikeCardByUserId,
+  getLikedCardsByUserId,
 };

@@ -13,6 +13,7 @@ const {
   getSavedCardsByUserId,
   likeCardByUserId,
   dislikeCardByUserId,
+  getLikedCardsByUserId,
 } = require("../controllers/cards/card_user_id.js");
 
 const {
@@ -59,6 +60,7 @@ CardRouter.post("/user/:userId/save/:cardId", saveCardByUserId);
 CardRouter.get("/user/:userId/saved", getSavedCardsByUserId);
 CardRouter.post("/like/:cardId/user/:userId", likeCardByUserId);
 CardRouter.post("/dislike/:cardId/user/:userId", dislikeCardByUserId);
+CardRouter.get("/user/liked/:userId", getLikedCardsByUserId);
 
 // controllers/cards/card_id.js
 CardRouter.get("/:cardId", getCardById);
