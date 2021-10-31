@@ -28,23 +28,18 @@ const {
   deleteWorkByWorkId,
 } = require("../controllers/user/user_id_work_id.js");
 
-const {
-  getVerifiedByUserId,
-  postVerifiedByUserId,
-  deleteVerifiedByUserId,
-} = require("../controllers/user/user_id_verified.js");
-
-const {
-  getVerifiedByVerifiedId,
-  deleteVerifiedByVerifiedId,
-} = require("../controllers/user/user_id_verified_id.js");
-
 const { getUserByFID } = require("../controllers/user/fId.js");
 
 const {
   followByUserId,
   unfollowByUserId,
 } = require("../controllers/user/following.js");
+
+const {
+  getVerifiedProfilesByUserId,
+  postVerifiedProfilesByUserId,
+  deleteVerifiedProfilesByUserId,
+} = require("../controllers/user/verified.js");
 
 const UserRouter = express.Router();
 
@@ -88,30 +83,16 @@ UserRouter.post("/:userId/work/:workId", (req, res) => {
 UserRouter.patch("/:userId/work/:workId", patchWorkByWorkId);
 UserRouter.delete("/:userId/work/:workId", deleteWorkByWorkId);
 
-//controllers/user/user_id_verified.js
-UserRouter.get("/:userId/verifiedprofiles", getVerifiedByUserId);
-UserRouter.post("/:userId/verifiedprofiles", postVerifiedByUserId);
-UserRouter.put("/:userId/verifiedprofiles", (_, res) => {
-  res.statusCode = 403;
-  res.end("PUT operation not supported on /verified profiles");
-});
-UserRouter.delete("/:userId/verifiedprofiles", deleteVerifiedByUserId);
-
-//controllers/user/user_id_verified_id.js
-UserRouter.get(
-  "/:userId/verifiedprofiles/:verifiedId",
-  getVerifiedByVerifiedId
-);
-UserRouter.delete(
-  "/:userId/verifiedprofiles/:verifiedId",
-  deleteVerifiedByVerifiedId
-);
-
 //controller/user/fId.js
 UserRouter.get("/fId/:fId", getUserByFID);
 
 //controller/user/following.js
 UserRouter.post("/follow/:userId", followByUserId);
 UserRouter.post("/unfollow/:userId", unfollowByUserId);
+
+//controllers/user/verified.js
+UserRouter.get("/:userId/verified", getVerifiedProfilesByUserId);
+UserRouter.post("/:userId/verified", postVerifiedProfilesByUserId);
+UserRouter.delete("/:userId/verified", deleteVerifiedProfilesByUserId);
 
 module.exports = UserRouter;
