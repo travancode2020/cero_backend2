@@ -34,7 +34,11 @@ const locationBasedSearch = async (req, res, next) => {
           },
         },
       })
-        .populate("host", null, { userTag: tag, isPro: pro })
+        .populate(
+          "host",
+          "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work -createdAt -updatedAt -location",
+          { userTag: tag, isPro: pro }
+        )
         .exec((err, users) => {
           if (err) {
             next(err);
