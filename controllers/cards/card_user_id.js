@@ -191,14 +191,14 @@ const getLikedCardsByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
 
-    const foundCards = await User.findById(userId).populate("liked");
-    if (!foundCards) {
+    const foundUser = await User.findById(userId).populate("liked");
+    if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json(foundCards);
+    res.status(200).json(foundUser.liked);
   } catch (error) {
-    next(erro);
+    next(error);
   }
 };
 
