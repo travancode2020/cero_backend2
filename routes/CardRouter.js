@@ -38,6 +38,7 @@ const {
 
 const {
   getAllTrendingCards,
+  getAllTrendingCardsByInterests,
 } = require("../controllers/cards/card_trending.js");
 
 const CardRouter = express.Router();
@@ -53,6 +54,7 @@ CardRouter.delete("/", deleteAllCards);
 
 //controllers/cards/card_trending.js
 CardRouter.get("/trending", getAllTrendingCards);
+CardRouter.get("/trending/interests", getAllTrendingCardsByInterests);
 
 //controllers/cards/card_user_id.js
 CardRouter.get("/user/:userId", getCardsByUserId);
