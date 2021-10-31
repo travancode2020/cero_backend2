@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "698869d4-36f5-49c3-9a07-ebb9497abf15",
+		"name": "work-routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Work By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"work"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Work By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"work"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dc-EXRgySQupIf4Dm7yxrWlVO5W61U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 18:39:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"images\": [\n            \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n        ],\n        \"views\": [],\n        \"_id\": \"617ee2e1fd268837f8df76f0\",\n        \"title\": \"Sample Job\",\n        \"detail\": \"Testing Sample Job\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post Work By User Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"Sample Job\",\r\n    \"detail\": \"Testing Sample Job\", \r\n    \"images\": [\"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"work"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Work By User Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Sample Job\",\r\n    \"detail\": \"Testing Sample Job\", \r\n    \"images\": [\"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"work"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "220"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dc-EXRgySQupIf4Dm7yxrWlVO5W61U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 18:39:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"images\": [\n            \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n        ],\n        \"views\": [],\n        \"_id\": \"617ee2e1fd268837f8df76f0\",\n        \"title\": \"Sample Job\",\n        \"detail\": \"Testing Sample Job\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Work By User Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"work"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Work By User Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"work"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "782"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30e-xpCA+E8ey+kTWajJt2vuXGfQCUY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 18:40:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-10-31T18:40:11.067Z\",\n    \"__v\": 2,\n    \"location\": \"617ed575b06f673084888fc4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Patch Work Resource by User Id and Work Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceToUpdate\": \"detail\",\r\n    \"newResource\": \"Detail Updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work/617ee7985c6f5e285cb77c1c",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"work",
+						"617ee7985c6f5e285cb77c1c"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Patch Work Resource by User Id and Work Id",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceToUpdate\": \"title\",\r\n    \"newResource\": \"Sample Job Updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work/617ee7985c6f5e285cb77c1c",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"work",
+								"617ee7985c6f5e285cb77c1c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-6mNoLLewSEEvC9eKYbleMLdHdbg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 19:04:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Work updated\"\n}"
+				},
+				{
+					"name": "Patch Work Resource by User Id and Work Id",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceToUpdate\": \"detail\",\r\n    \"newResource\": \"Detail Updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work/617ee7985c6f5e285cb77c1c",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"work",
+								"617ee7985c6f5e285cb77c1c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-6mNoLLewSEEvC9eKYbleMLdHdbg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 19:05:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Work updated\"\n}"
+				}
+			]
+		}
+	]
+}

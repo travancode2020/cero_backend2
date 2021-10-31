@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7e062788-c043-4cc0-b9dd-04bef853031a",
+		"_postman_id": "e3a3b594-8e01-4971-a393-3e350ed72854",
 		"name": "feature-location-based-search-003",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -183,7 +183,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/location/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+					"raw": "http://localhost:8080/location/6176c9691ea09c0016dc38b3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -191,7 +191,7 @@
 					"port": "8080",
 					"path": [
 						"location",
-						"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+						"6176c9691ea09c0016dc38b3"
 					]
 				}
 			},
@@ -276,7 +276,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/location/9ctRiM2pyAU7mANinGrXFe1I9fk2",
+					"raw": "http://localhost:8080/location/6176c9691ea09c0016dc38b3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -284,7 +284,7 @@
 					"port": "8080",
 					"path": [
 						"location",
-						"9ctRiM2pyAU7mANinGrXFe1I9fk2"
+						"6176c9691ea09c0016dc38b3"
 					]
 				}
 			},

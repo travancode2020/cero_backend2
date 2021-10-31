@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "d34514a3-390d-48f7-ac39-4d22cabb3572",
+		"name": "verified-profile-routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Verified Profile By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/verified",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"verified"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Verified Profile By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/verified",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"verified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "179"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b3-EQp8jF8wLP5dNx/KhleIM7aFxuI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 19:31:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6177a2a9761cc3001671bbd0\",\n        \"userName\": \"arun_xena\",\n        \"name\": \"Arun Xena\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gg8wM5ILKBdRc-AS1Mbm03Xw8aRIiiQBMQuD4Kk=s96-c\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Post Verified Profile By User Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"verifiedProfileId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/verified",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"verified"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Verified Profile By User Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verifiedProfileId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/verified",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"verified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-xDMAuPrT5Dozg+Z00ab9Miq0da4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 19:31:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Verified Profile By User id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"verifiedProfileId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/verified",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"verified"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Verified Profile By User id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verifiedProfileId\" : \"6177a2a9761cc3001671bbd0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/verified",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"verified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-xDMAuPrT5Dozg+Z00ab9Miq0da4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 19:32:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -849,6 +849,156 @@
 					"body": "{\n    \"message\": \"User name is available\",\n    \"isAvailable\": true\n}"
 				}
 			]
+		},
+		{
+			"name": "Patch User Resource",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceToUpdate\": \"interest\",\r\n    \"newResource\": [\r\n        \"Business\",\r\n        \"Culture & lifestyle\",\r\n        \"Current Affairs\",\r\n        \"General Knowledge\",\r\n        \"Psychology\",\r\n        \"History\",\r\n        \"Science & Technology\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Patch User Resource",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceToUpdate\": \"photoUrl\",\r\n    \"newResource\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "782"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30e-3pwoGr5AnYnr07OsS9HUZvb0bTI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 18:32:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-10-31T18:32:55.240Z\",\n    \"__v\": 0,\n    \"location\": \"617ed575b06f673084888fc4\"\n}"
+				},
+				{
+					"name": "Patch User Resource (Array)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceToUpdate\": \"interest\",\r\n    \"newResource\": [\r\n        \"Business\",\r\n        \"Culture & lifestyle\",\r\n        \"Current Affairs\",\r\n        \"General Knowledge\",\r\n        \"Psychology\",\r\n        \"History\",\r\n        \"Science & Technology\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "782"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30e-gqN2GX4aH1w5S1EQ47wqOMsKohw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Oct 2021 18:34:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-10-31T18:34:04.621Z\",\n    \"__v\": 0,\n    \"location\": \"617ed575b06f673084888fc4\"\n}"
+				}
+			]
 		}
 	]
 }

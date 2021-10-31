@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5e653172-69ae-460e-a31a-99de88ccc0b5",
+		"_postman_id": "6a2c438f-c09f-48f7-b7ab-9860561c1d3e",
 		"name": "feature-moments-002",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -150,7 +150,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"host\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\r\n    \"mediaType\": \"IMAGE\",\r\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n    \"duration\": 60\r\n}",
+					"raw": "{\r\n    \"host\": \"6176c9691ea09c0016dc38b3\",\r\n    \"mediaType\": \"IMAGE\",\r\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n    \"duration\": 60\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -378,14 +378,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/moments/user/IBOaLroPjUSnR3EQjFdhfWidSBC3",
+					"raw": "{{BASE_URL}}/moments/user/6177a2a9761cc3001671bbd0",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"moments",
 						"user",
-						"IBOaLroPjUSnR3EQjFdhfWidSBC3"
+						"6177a2a9761cc3001671bbd0"
 					]
 				}
 			},
@@ -396,14 +396,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/moments/user/IBOaLroPjUSnR3EQjFdhfWidSBC3",
+							"raw": "{{BASE_URL}}/moments/user/6177a2a9761cc3001671bbd0",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"moments",
 								"user",
-								"IBOaLroPjUSnR3EQjFdhfWidSBC3"
+								"6177a2a9761cc3001671bbd0"
 							]
 						}
 					},
@@ -421,15 +421,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "744"
+							"value": "1575"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"2e8-RI7r/+AM3VUdsU0HWfwKuvDDyvE\""
+							"value": "W/\"627-qfyfF6QE1WPBibtNSeALAX12qAw\""
 						},
 						{
 							"key": "Date",
-							"value": "Sat, 25 Sep 2021 13:07:04 GMT"
+							"value": "Wed, 27 Oct 2021 08:49:53 GMT"
 						},
 						{
 							"key": "Connection",
@@ -441,7 +441,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"hostMoments\": [\n        {\n            \"createdAt\": \"2021-09-25T12:57:50.165Z\",\n            \"_id\": \"614f1cfa0215672d0c28148e\",\n            \"host\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"mediaType\": \"IMAGE\",\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"duration\": 60,\n            \"__v\": 0\n        }\n    ],\n    \"followingMoments\": [\n        {\n            \"createdAt\": \"2021-09-25T13:01:51.192Z\",\n            \"_id\": \"614ef39b8b70f31748305857\",\n            \"host\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n            \"mediaType\": \"IMAGE\",\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"duration\": 60,\n            \"__v\": 0\n        }\n    ]\n}"
+					"body": "{\n    \"hostMoments\": [\n        {\n            \"mediaUrl\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n            ],\n            \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n            \"_id\": \"61784de51e74f0205c6bca5d\",\n            \"host\": \"6177a2a9761cc3001671bbd0\",\n            \"mediaType\": \"IMAGE\",\n            \"duration\": 60,\n            \"__v\": 0\n        }\n    ],\n    \"followingMoments\": [\n        {\n            \"host\": {\n                \"_id\": \"6176c9691ea09c0016dc38b3\",\n                \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n                \"userName\": \"ajay\",\n                \"name\": \"Ajay Krishna P\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n            },\n            \"moments\": [\n                {\n                    \"_id\": \"61784db91e74f0205c6bca56\",\n                    \"mediaUrl\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n                    ],\n                    \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n                    \"mediaType\": \"IMAGE\",\n                    \"duration\": 60,\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"61784ded1e74f0205c6bca61\",\n                    \"mediaUrl\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n                    ],\n                    \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n                    \"mediaType\": \"IMAGE\",\n                    \"duration\": 60,\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"61784dec1e74f0205c6bca5f\",\n                    \"mediaUrl\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n                    ],\n                    \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n                    \"mediaType\": \"IMAGE\",\n                    \"duration\": 60,\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
 				}
 			]
 		}
