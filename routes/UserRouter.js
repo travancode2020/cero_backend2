@@ -24,7 +24,6 @@ const {
 
 const {
   getWorkByWorkId,
-  putWorkByWorkId,
   patchWorkByWorkId,
   deleteWorkByWorkId,
 } = require("../controllers/user/user_id_work_id.js");
@@ -86,7 +85,6 @@ UserRouter.post("/:userId/work/:workId", (req, res) => {
       req.params.userId
   );
 });
-UserRouter.put("/:userId/work/:workId", putWorkByWorkId);
 UserRouter.patch("/:userId/work/:workId", patchWorkByWorkId);
 UserRouter.delete("/:userId/work/:workId", deleteWorkByWorkId);
 
