@@ -12,9 +12,8 @@ const {
 const {
   getUserByUserId,
   postUserByUserId,
-  patchUserByUserId,
-  putUserByUserId,
   deleteUserByUserId,
+  updateUserProfile,
 } = require("../controllers/user/user_id.js");
 
 const {
@@ -63,10 +62,9 @@ UserRouter.delete("/", deleteAllUsers);
 
 // controllers/user/user_id.js
 UserRouter.get("/:userid", getUserByUserId);
-UserRouter.patch("/:userid", patchUserByUserId);
 UserRouter.post("/:userid", postUserByUserId);
-UserRouter.put("/:userid", putUserByUserId);
 UserRouter.delete("/:userid", deleteUserByUserId);
+UserRouter.patch("/:userId", updateUserProfile);
 
 //controllers/user/user_id_work.js
 UserRouter.get("/:userId/work", getWorkByUserId);

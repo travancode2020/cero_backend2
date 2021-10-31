@@ -32,44 +32,6 @@ const postUserByUserId = (req, res, next) => {
     .catch((err) => next(err));
 };
 
-const patchUserByUserId = (req, res, next) => {
-  Users.findByIdAndUpdate(
-    req.params.userid,
-    {
-      $addToSet: req.body,
-    },
-    { new: true }
-  )
-    .then(
-      (user) => {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        res.json(user);
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
-};
-
-const putUserByUserId = (req, res, next) => {
-  Users.findByIdAndUpdate(
-    req.params.userid,
-    {
-      $pullAll: req.body,
-    },
-    { new: true }
-  )
-    .then(
-      (user) => {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        res.json(user);
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
-};
-
 const deleteUserByUserId = (req, res, next) => {
   Users.findByIdAndRemove(req.params.userid)
     .then(
@@ -83,10 +45,62 @@ const deleteUserByUserId = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+const updateUserProfile = async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const resourceToUpdate = req.body.resourceToUpdate;
+    const newResource = req.body.newResource;
+    const confidentialResource = [
+      "password",
+      "email",
+      "fId",
+      "followers",
+      "following",
+      "verifiedProfiles",
+      "saved",
+      "liked",
+      "viewed",
+      "isLocationSharingEnabled",
+      "location",
+    ];
+
+    if (!userId) {
+      return res.status(400).json({ message: "userId is required" });
+    }
+
+    if (!resourceToUpdate || !newResource) {
+      return res
+        .status(400)
+        .json({ message: "required body parameters are missing" });
+    }
+
+    const isUserExists = await Users.exists({ _id: userId });
+    if (!isUserExists) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    if (confidentialResource.includes(resourceToUpdate)) {
+      res.status(404).json({
+        message:
+          "Cannot update this particular resource without proper permissions",
+      });
+    }
+
+    const updatedUser = await Users.findByIdAndUpdate(
+      userId,
+      { $set: { [`${resourceToUpdate}`]: newResource } },
+      { new: true }
+    );
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getUserByUserId,
   postUserByUserId,
-  patchUserByUserId,
-  putUserByUserId,
   deleteUserByUserId,
+  updateUserProfile,
 };
