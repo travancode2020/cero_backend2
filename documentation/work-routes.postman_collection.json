@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "698869d4-36f5-49c3-9a07-ebb9497abf15",
+		"_postman_id": "f6bc6a47-5794-432b-8b39-f900a80ae0a3",
 		"name": "work-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -54,15 +54,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "220"
+							"value": "599"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"dc-EXRgySQupIf4Dm7yxrWlVO5W61U\""
+							"value": "W/\"257-4A2uuu7Qrp3OC6E+hPIgR/QCyA0\""
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 31 Oct 2021 18:39:37 GMT"
+							"value": "Mon, 01 Nov 2021 05:41:45 GMT"
 						},
 						{
 							"key": "Connection",
@@ -74,7 +74,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"images\": [\n            \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n        ],\n        \"views\": [],\n        \"_id\": \"617ee2e1fd268837f8df76f0\",\n        \"title\": \"Sample Job\",\n        \"detail\": \"Testing Sample Job\"\n    }\n]"
+					"body": "[\n    {\n        \"images\": [\n            \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n        ],\n        \"views\": [],\n        \"_id\": \"617ee7985c6f5e285cb77c1c\",\n        \"title\": \"Sample Job Updated\",\n        \"detail\": \"Detail Updated\",\n        \"createdAt\": \"2021-11-01T05:41:39.504Z\",\n        \"updatedAt\": \"2021-11-01T05:41:39.504Z\"\n    },\n    {\n        \"images\": [\n            \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n        ],\n        \"views\": [],\n        \"_id\": \"617f7e130e9c6e02dcb1f8cf\",\n        \"title\": \"Sample Job\",\n        \"detail\": \"Testing Sample Job\",\n        \"createdAt\": \"2021-11-01T05:41:39.505Z\",\n        \"updatedAt\": \"2021-11-01T05:41:39.505Z\"\n    }\n]"
 				}
 			]
 		},
