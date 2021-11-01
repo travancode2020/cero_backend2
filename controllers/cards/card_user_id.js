@@ -191,7 +191,18 @@ const getLikedCardsByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
 
-    const foundUser = await User.findById(userId).populate("liked");
+    const userPopulateQuery = [
+      {
+        path: "liked",
+        populate: {
+          path: "host",
+          select: ["userName", "fId", "name", "photoUrl", "userTag"],
+        },
+      },
+    ];
+
+    const foundUser = await User.findById(userId).populate(userPopulateQuery);
+
     if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
