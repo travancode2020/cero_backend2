@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "90bb5468-4eb5-4de8-a4b2-85b33fbe5b12",
+		"_postman_id": "fa0aab99-f266-4d96-8b32-3c03a79cc823",
 		"name": "user-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -857,7 +857,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"resourceToUpdate\": \"interest\",\r\n    \"newResource\": [\r\n        \"Business\",\r\n        \"Culture & lifestyle\",\r\n        \"Current Affairs\",\r\n        \"General Knowledge\",\r\n        \"Psychology\",\r\n        \"History\",\r\n        \"Science & Technology\"\r\n    ]\r\n}",
+					"raw": "{\r\n    \"resourceToUpdate\": \"isPro\",\r\n    \"newResource\": \"true\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -877,7 +877,7 @@
 			},
 			"response": [
 				{
-					"name": "Patch User Resource",
+					"name": "Patch User Resource (Boolean)",
 					"originalRequest": {
 						"method": "PATCH",
 						"header": [],
@@ -997,6 +997,67 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-10-31T18:34:04.621Z\",\n    \"__v\": 0,\n    \"location\": \"617ed575b06f673084888fc4\"\n}"
+				},
+				{
+					"name": "Patch User Resource",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceToUpdate\": \"isPro\",\r\n    \"newResource\": \"false\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1476"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c4-ic+4gFuKWxb4ZHwHjYcdkdoZx6k\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 01 Nov 2021 14:37:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [\n        \"6177a2a9761cc3001671bbd0\"\n    ],\n    \"following\": [\n        \"6177bb898f45e5001687a543\"\n    ],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": false,\n    \"work\": [\n        {\n            \"images\": [\n                \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n            ],\n            \"views\": [],\n            \"_id\": \"617ee7985c6f5e285cb77c1c\",\n            \"title\": \"Sample Job Updated\",\n            \"detail\": \"Detail Updated\",\n            \"createdAt\": \"2021-11-01T05:41:39.504Z\",\n            \"updatedAt\": \"2021-11-01T05:41:39.504Z\"\n        },\n        {\n            \"images\": [\n                \"https://static6.depositphotos.com/1037613/650/i/600/depositphotos_6509200-stock-photo-searching-for-jobs.jpg\"\n            ],\n            \"views\": [],\n            \"_id\": \"617f7e130e9c6e02dcb1f8cf\",\n            \"title\": \"Sample Job\",\n            \"detail\": \"Testing Sample Job\",\n            \"createdAt\": \"2021-11-01T05:41:39.505Z\",\n            \"updatedAt\": \"2021-11-01T05:41:39.505Z\"\n        }\n    ],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-11-01T14:37:22.659Z\",\n    \"__v\": 6,\n    \"location\": \"617ed575b06f673084888fc4\",\n    \"proBio\": \"Height\"\n}"
 				}
 			]
 		}

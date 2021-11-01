@@ -48,8 +48,8 @@ const deleteUserByUserId = (req, res, next) => {
 const updateUserProfile = async (req, res, next) => {
   try {
     const userId = req.params.userId;
-    const resourceToUpdate = req.body.resourceToUpdate;
-    const newResource = req.body.newResource;
+    var resourceToUpdate = req.body.resourceToUpdate;
+    var newResource = req.body.newResource;
     const confidentialResource = [
       "password",
       "email",
@@ -72,6 +72,11 @@ const updateUserProfile = async (req, res, next) => {
       return res
         .status(400)
         .json({ message: "required body parameters are missing" });
+    }
+
+    if (resourceToUpdate === "isPro" || resourceToUpdate === "isCreator") {
+      newResource =
+        newResource === "true" ? true : newResource === "false" ? false : null;
     }
 
     const isUserExists = await Users.exists({ _id: userId });
