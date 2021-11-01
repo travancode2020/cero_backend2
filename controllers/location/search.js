@@ -36,7 +36,7 @@ const locationBasedSearch = async (req, res, next) => {
       })
         .populate(
           "host",
-          "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work -createdAt -updatedAt -location",
+          "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location",
           { userTag: tag, isPro: pro }
         )
         .exec((err, users) => {
