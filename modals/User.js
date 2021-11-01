@@ -1,20 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WorkSchema = new Schema({
-  title: {
-    type: String,
-  },
-  detail: {
-    type: String,
-  },
-  images: [
-    {
+const WorkSchema = new Schema(
+  {
+    title: {
       type: String,
     },
-  ],
-  views: [],
-});
+    detail: {
+      type: String,
+    },
+    images: [
+      {
+        type: String,
+      },
+    ],
+    views: [],
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const UserSchema = new Schema(
   {
