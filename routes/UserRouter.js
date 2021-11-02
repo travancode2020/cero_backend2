@@ -41,6 +41,13 @@ const {
   deleteVerifiedProfilesByUserId,
 } = require("../controllers/user/verified.js");
 
+const {
+  getStreakByUserId,
+  createStreakByUserId,
+  deleteStreakByUserId,
+  updateStreakByUserId,
+} = require("../controllers/user/streak.js");
+
 const UserRouter = express.Router();
 
 // controllers/user/main.js
@@ -94,5 +101,11 @@ UserRouter.post("/unfollow/:userId", unfollowByUserId);
 UserRouter.get("/:userId/verified", getVerifiedProfilesByUserId);
 UserRouter.post("/:userId/verified", postVerifiedProfilesByUserId);
 UserRouter.delete("/:userId/verified", deleteVerifiedProfilesByUserId);
+
+//controllers/user/streak.js
+UserRouter.get("/:userId/streak", getStreakByUserId);
+UserRouter.post("/:userId/streak", createStreakByUserId);
+UserRouter.delete("/:userId/streak", deleteStreakByUserId);
+UserRouter.put("/:userId/streak", updateStreakByUserId);
 
 module.exports = UserRouter;

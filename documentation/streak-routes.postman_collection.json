@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "2b5ba6a8-64b8-43ee-a8c5-d418a39f0f1e",
+		"name": "streak-routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Streak By User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"streak"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Streak By User Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"streak"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-GDj8KA9I8R70RwQ3m/2P3SZCxt0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Nov 2021 06:39:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6180dd1b3ec5d1259c785075\",\n    \"lastDate\": \"2020-12-31T18:30:00.000Z\",\n    \"score\": 0,\n    \"highestScore\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Streak By User Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastDate\": \"01/01/2021\",\r\n    \"score\": 0,\r\n    \"highestScore\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"streak"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Streak By User Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastDate\": \"01/01/2021\",\r\n    \"score\": 0,\r\n    \"highestScore\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"streak"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1008"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f0-CAC2mxAQb0Ui/MyDSlBqn33Eebo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Nov 2021 06:39:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"streak\": {\n        \"_id\": \"6180dd1b3ec5d1259c785075\",\n        \"lastDate\": \"2020-12-31T18:30:00.000Z\",\n        \"score\": 0,\n        \"highestScore\": 0\n    },\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [\n        \"6177a2a9761cc3001671bbd0\"\n    ],\n    \"following\": [\n        \"6177bb898f45e5001687a543\"\n    ],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-11-02T06:39:23.283Z\",\n    \"__v\": 12,\n    \"location\": \"617ed575b06f673084888fc4\",\n    \"proBio\": \"I am pro at creating logos\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Streak By User Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"streak"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Streak By User Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"streak"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-xDMAuPrT5Dozg+Z00ab9Miq0da4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Nov 2021 06:44:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Streak By User ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastDate\": \"01/01/2021\",\r\n    \"score\": 10,\r\n    \"highestScore\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"streak"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Streak By User ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastDate\": \"01/01/2021\",\r\n    \"score\": 10,\r\n    \"highestScore\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/streak",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"streak"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1454"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5ae-PwMLnJMSPAl0DBC+4Kbr9mOrkBI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Nov 2021 07:07:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"streak\": {\n        \"_id\": \"6180e3c1ae57b12e90f7d475\",\n        \"lastDate\": \"2020-12-31T18:30:00.000Z\",\n        \"score\": 10,\n        \"highestScore\": 10\n    },\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Culture & lifestyle\",\n        \"Current Affairs\",\n        \"General Knowledge\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [\n        \"6177a2a9761cc3001671bbd0\"\n    ],\n    \"following\": [\n        \"6177bb898f45e5001687a543\"\n    ],\n    \"saved\": [\n        \"6177d52e235d3d0016bd88aa\",\n        \"61794169eb538a0016b5707e\"\n    ],\n    \"liked\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6176c9691ea09c0016dc38b3\",\n    \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n    \"userName\": \"ajay\",\n    \"name\": \"Ajay Krishna P\",\n    \"email\": \"ajkrishna7117me@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": false,\n    \"isPro\": true,\n    \"work\": [\n        {\n            \"images\": [],\n            \"views\": [],\n            \"_id\": \"6180e19c38f8d40016219c7a\",\n            \"title\": \"In my project there is a \\\"model\\\" folder in lib. In model folder there is \\\"user_model\\\" file. You crea\",\n            \"detail\": \"In my project there is a \\\"model\\\" folder in lib. In model folder there is \\\"user_model\\\" file. You creat such model folder in your project too and copy my \\\"user_model\\\" into yours.\",\n            \"createdAt\": \"2021-11-02T06:58:36.041Z\",\n            \"updatedAt\": \"2021-11-02T06:58:36.041Z\"\n        }\n    ],\n    \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n    \"updatedAt\": \"2021-11-02T07:07:45.951Z\",\n    \"__v\": 15,\n    \"location\": \"617ed575b06f673084888fc4\",\n    \"proBio\": \"I am pro at creating logos\"\n}"
+				}
+			]
+		}
+	]
+}

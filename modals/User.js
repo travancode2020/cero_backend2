@@ -21,6 +21,21 @@ const WorkSchema = new Schema(
   }
 );
 
+const StreakSchema = new Schema({
+  lastDate: {
+    type: Date,
+    required: true,
+  },
+  score: {
+    type: Number,
+    required: true,
+  },
+  highestScore: {
+    type: Number,
+    required: true,
+  },
+});
+
 const UserSchema = new Schema(
   {
     fId: {
@@ -71,7 +86,8 @@ const UserSchema = new Schema(
     },
     work: [WorkSchema],
     streak: {
-      type: Number,
+      type: StreakSchema,
+      default: null,
     },
     userTag: [
       {
