@@ -397,6 +397,81 @@
 					"body": "{\n    \"message\": \"Work updated\"\n}"
 				}
 			]
+		},
+		{
+			"name": "Delete Work By User Id and Work Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work/6180bf7bd3144a2f20f9e5db",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"6176c9691ea09c0016dc38b3",
+						"work",
+						"6180bf7bd3144a2f20f9e5db"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Work By User Id and Work Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/work/6180bf7bd3144a2f20f9e5db",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"6176c9691ea09c0016dc38b3",
+								"work",
+								"6180bf7bd3144a2f20f9e5db"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Nov 2021 04:33:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
 		}
 	]
 }
