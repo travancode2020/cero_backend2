@@ -33,6 +33,8 @@ const { getUserByFID } = require("../controllers/user/fId.js");
 const {
   followByUserId,
   unfollowByUserId,
+  getFollowersByUserId,
+  getFollowingByUserId,
 } = require("../controllers/user/following.js");
 
 const {
@@ -96,6 +98,8 @@ UserRouter.get("/fId/:fId", getUserByFID);
 //controller/user/following.js
 UserRouter.post("/follow/:userId", followByUserId);
 UserRouter.post("/unfollow/:userId", unfollowByUserId);
+UserRouter.get("/:userId/following", getFollowingByUserId);
+UserRouter.get("/:userId/followers", getFollowersByUserId);
 
 //controllers/user/verified.js
 UserRouter.get("/:userId/verified", getVerifiedProfilesByUserId);

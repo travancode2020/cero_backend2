@@ -58,7 +58,45 @@ const unfollowByUserId = async (req, res, next) => {
   }
 };
 
+const getFollowersByUserId = async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+
+    const foundUser = await Users.findById(userId).populate({
+      path: "followers",
+      select: ["userName", "name", "photoUrl", "fId"],
+    });
+    if (!foundUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(foundUser.followers);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getFollowingByUserId = async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+
+    const foundUser = await Users.findById(userId).populate({
+      path: "following",
+      select: ["userName", "name", "photoUrl", "fId"],
+    });
+    if (!foundUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(foundUser.following);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   followByUserId,
   unfollowByUserId,
+  getFollowersByUserId,
+  getFollowingByUserId,
 };
