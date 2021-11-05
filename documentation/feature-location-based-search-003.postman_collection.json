@@ -11,12 +11,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/location",
+					"raw": "{{BASE_URL}}/location?city=Thamchampara%20Updated",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"location"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Thamchampara%20Updated"
+						}
 					]
 				}
 			},
@@ -71,6 +77,63 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.008396,\n                76.958242\n            ]\n        },\n        \"_id\": \"615593b174bf282d7cf1a23a\",\n        \"city\": \"Coimbatore\",\n        \"host\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.011317,\n                76.957258\n            ]\n        },\n        \"_id\": \"615593dd74bf282d7cf1a23f\",\n        \"city\": \"Coimbatore\",\n        \"host\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"6155940d74bf282d7cf1a244\",\n        \"city\": \"Thachampara\",\n        \"host\": \"9ctRiM2pyAU7mANinGrXFe1I9fk2\",\n        \"__v\": 0\n    }\n]"
+				},
+				{
+					"name": "Get Locations Based on City",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/location?city=Thamchampara%20Updated",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"location"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "Thamchampara%20Updated"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "806"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"326-1+6rqF7MKkyo1ycQ7fU2gpp/0Uo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Nov 2021 09:40:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"617ed575b06f673084888fc4\",\n        \"city\": \"Thamchampara Updated\",\n        \"host\": {\n            \"streak\": {\n                \"_id\": \"618426937248eb001620dbbe\",\n                \"lastDate\": \"2021-11-04T23:59:36.466Z\",\n                \"score\": 1,\n                \"highestScore\": 1\n            },\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [\n                \"6177a2a9761cc3001671bbd0\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n            \"updatedAt\": \"2021-11-04T18:52:37.191Z\",\n            \"__v\": 18,\n            \"proBio\": \"I am pro at creating logos\"\n        },\n        \"__v\": 0\n    }\n]"
 				}
 			]
 		},

@@ -3,7 +3,18 @@ const Users = require("../../modals/User.js");
 
 const getAllLocations = async (req, res, next) => {
   try {
-    const foundLocations = await Location.find({});
+    const city = req.query.city;
+    var foundLocations = null;
+
+    const populatePath = "host";
+    const populateSelect =
+      "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location";
+
+    if (city) {
+      foundLocations = await Location.find({ city: city }).populate(populatePath,populateSelect);
+    } else {
+      foundLocations = await Location.find({}).populate(populatePath,populateSelect);
+    }
     res.status(200).json(foundLocations);
   } catch (error) {
     next(error);
