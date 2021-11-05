@@ -11,7 +11,10 @@ const {
   disableLocationSharing,
 } = require("../controllers/location/user_id.js");
 
-const { locationBasedSearch } = require("../controllers/location/search.js");
+const {
+  searchByCity,
+  searchByRange,
+} = require("../controllers/location/search.js");
 
 const LocationRouter = express.Router();
 
@@ -25,6 +28,7 @@ LocationRouter.post("/disable/:userId", disableLocationSharing);
 LocationRouter.put("/:userId", updateLocation);
 
 //controllers/location/search.js
-LocationRouter.get("/search", locationBasedSearch);
+LocationRouter.get("/search/range", searchByRange);
+LocationRouter.get("/search/city", searchByCity);
 
 module.exports = LocationRouter;

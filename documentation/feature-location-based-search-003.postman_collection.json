@@ -11,18 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/location?city=Thamchampara%20Updated",
+					"raw": "{{BASE_URL}}/location",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"location"
-					],
-					"query": [
-						{
-							"key": "city",
-							"value": "Thamchampara%20Updated"
-						}
 					]
 				}
 			},
@@ -418,20 +412,19 @@
 			]
 		},
 		{
-			"name": "Location Based Search with Range, User Tag, Latitude, Longitude",
+			"name": "Search By Range, Lat, Lng, Usertag",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000&pro=true",
-					"protocol": "http",
+					"raw": "{{BASE_URL}}/location/search/range?lng=11.008396&lat=76.958242&range=100000&pro=true&tag=Entrepreneur",
 					"host": [
-						"localhost"
+						"{{BASE_URL}}"
 					],
-					"port": "8080",
 					"path": [
 						"location",
-						"search"
+						"search",
+						"range"
 					],
 					"query": [
 						{
@@ -449,18 +442,22 @@
 						{
 							"key": "pro",
 							"value": "true"
+						},
+						{
+							"key": "tag",
+							"value": "Entrepreneur"
 						}
 					]
 				}
 			},
 			"response": [
 				{
-					"name": "No Tag and No Pro",
+					"name": "Location Based Search with Range, User Tag, Latitude, Longitude",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000",
+							"raw": "http://localhost:8080/location/search/range?lng=11.008396&lat=76.958242&range=100000&pro=true&tag=Entrepreneur",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -468,7 +465,8 @@
 							"port": "8080",
 							"path": [
 								"location",
-								"search"
+								"search",
+								"range"
 							],
 							"query": [
 								{
@@ -482,74 +480,10 @@
 								{
 									"key": "range",
 									"value": "100000"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "658"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"292-lnvP4bImJy70nnl5RNbigu4dAQc\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 01 Nov 2021 05:56:19 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"617ed575b06f673084888fc4\",\n        \"city\": \"Thachampara Updated\",\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [\n                \"6177a2a9761cc3001671bbd0\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"isCreator\": false,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n            \"updatedAt\": \"2021-11-01T05:41:39.505Z\",\n            \"__v\": 6\n        },\n        \"__v\": 0\n    }\n]"
-				},
-				{
-					"name": "Just Tag and No Pro",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000&tag=Entrepreneur",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"location",
-								"search"
-							],
-							"query": [
-								{
-									"key": "lng",
-									"value": "11.008396"
 								},
 								{
-									"key": "lat",
-									"value": "76.958242"
-								},
-								{
-									"key": "range",
-									"value": "100000"
+									"key": "pro",
+									"value": "true"
 								},
 								{
 									"key": "tag",
@@ -572,15 +506,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "658"
+							"value": "1629"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"292-lnvP4bImJy70nnl5RNbigu4dAQc\""
+							"value": "W/\"65d-4qzEFZcq3xhdEki35SZutw5K7KY\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 01 Nov 2021 05:57:19 GMT"
+							"value": "Fri, 05 Nov 2021 11:42:27 GMT"
 						},
 						{
 							"key": "Connection",
@@ -592,110 +526,29 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"617ed575b06f673084888fc4\",\n        \"city\": \"Thachampara Updated\",\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [\n                \"6177a2a9761cc3001671bbd0\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"isCreator\": false,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n            \"updatedAt\": \"2021-11-01T05:41:39.505Z\",\n            \"__v\": 6\n        },\n        \"__v\": 0\n    }\n]"
-				},
-				{
-					"name": "Just Pro",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000&pro=true",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"location",
-								"search"
-							],
-							"query": [
-								{
-									"key": "lng",
-									"value": "11.008396"
-								},
-								{
-									"key": "lat",
-									"value": "76.958242"
-								},
-								{
-									"key": "range",
-									"value": "100000"
-								},
-								{
-									"key": "pro",
-									"value": "true"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "658"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"292-lnvP4bImJy70nnl5RNbigu4dAQc\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 01 Nov 2021 05:57:36 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"617ed575b06f673084888fc4\",\n        \"city\": \"Thachampara Updated\",\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [\n                \"6177a2a9761cc3001671bbd0\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"isCreator\": false,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n            \"updatedAt\": \"2021-11-01T05:41:39.505Z\",\n            \"__v\": 6\n        },\n        \"__v\": 0\n    }\n]"
+					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"617ed575b06f673084888fc4\",\n        \"city\": \"Jodhpur Updated\",\n        \"host\": {\n            \"streak\": {\n                \"_id\": \"618426937248eb001620dbbe\",\n                \"lastDate\": \"2021-11-04T23:59:36.466Z\",\n                \"score\": 1,\n                \"highestScore\": 1\n            },\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [\n                \"6177a2a9761cc3001671bbd0\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n            \"updatedAt\": \"2021-11-04T18:52:37.191Z\",\n            \"__v\": 18,\n            \"proBio\": \"I am pro at creating logos\"\n        },\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"6184d3416bc87600164c6f43\",\n        \"city\": \"Jodhpur Updated\",\n        \"host\": {\n            \"streak\": {\n                \"_id\": \"618422b47248eb001620db11\",\n                \"lastDate\": \"2021-11-03T00:00:00.000Z\",\n                \"score\": 0,\n                \"highestScore\": 0\n            },\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\",\n                \"General Knowledge\",\n                \"Current Affairs\",\n                \"Culture & lifestyle\"\n            ],\n            \"followers\": [\n                \"617abf7d2dbd2100169ef146\",\n                \"6176c9691ea09c0016dc38b3\"\n            ],\n            \"verifiedProfiles\": [\n                \"6176c9691ea09c0016dc38b3\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-26T08:25:45.965Z\",\n            \"updatedAt\": \"2021-11-05T06:46:25.513Z\",\n            \"__v\": 0,\n            \"phone\": null\n        },\n        \"__v\": 0\n    }\n]"
 				}
 			]
 		},
 		{
-			"name": "Location Based Search with Is Pro Flag",
+			"name": "Search By City and Usertag",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000&tag=Entrepreneur&pro=true",
-					"protocol": "http",
+					"raw": "{{BASE_URL}}/location/search/city?city=Jodhpur%20Updated&tag=Entrepreneur&pro=true",
 					"host": [
-						"localhost"
+						"{{BASE_URL}}"
 					],
-					"port": "8080",
 					"path": [
 						"location",
-						"search"
+						"search",
+						"city"
 					],
 					"query": [
 						{
-							"key": "lng",
-							"value": "11.008396"
-						},
-						{
-							"key": "lat",
-							"value": "76.958242"
-						},
-						{
-							"key": "range",
-							"value": "100000"
+							"key": "city",
+							"value": "Jodhpur%20Updated"
 						},
 						{
 							"key": "tag",
@@ -710,33 +563,24 @@
 			},
 			"response": [
 				{
-					"name": "Location Based Search with Is Pro Flag",
+					"name": "Search By City and Usertag",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/location/search?lng=11.008396&lat=76.958242&range=100000&tag=Entrepreneur&pro=true",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/location/search/city?city=Jodhpur%20Updated&tag=Entrepreneur&pro=true",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "8080",
 							"path": [
 								"location",
-								"search"
+								"search",
+								"city"
 							],
 							"query": [
 								{
-									"key": "lng",
-									"value": "11.008396"
-								},
-								{
-									"key": "lat",
-									"value": "76.958242"
-								},
-								{
-									"key": "range",
-									"value": "100000"
+									"key": "city",
+									"value": "Jodhpur%20Updated"
 								},
 								{
 									"key": "tag",
@@ -763,15 +607,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "1271"
+							"value": "2"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"4f7-ipgnYLAQulxrl/wD53XiMdGjsl8\""
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 10 Oct 2021 14:46:06 GMT"
+							"value": "Fri, 05 Nov 2021 11:47:40 GMT"
 						},
 						{
 							"key": "Connection",
@@ -783,7 +627,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                11.011317,\n                76.957258\n            ]\n        },\n        \"_id\": \"615593dd74bf282d7cf1a23f\",\n        \"city\": \"Coimbatore\",\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Psychology\",\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [\n                \"9ctRiM2pyAU7mANinGrXFe1I9fk2\"\n            ],\n            \"verifiedProfiles\": [],\n            \"following\": [],\n            \"saved\": [\n                \"61269239f34d6d001640f01d\",\n                \"61256077fa24c6001602de24\",\n                \"612561fffa24c6001602de4c\"\n            ],\n            \"liked\": [\n                \"612dcb192779bc001618256e\"\n            ],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": true,\n            \"_id\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n            \"userName\": \"ajay_k.p\",\n            \"name\": \"Ajay P\",\n            \"email\": \"ajkrishna7117me@gmail.com\",\n            \"password\": \"Ajay1@\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"dob\": \"00/00/0000\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"work\": [\n                {\n                    \"images\": [],\n                    \"views\": [],\n                    \"_id\": \"6126613e8e49b6001690fa22\",\n                    \"uId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                    \"title\": \"Aasshhb hhh\",\n                    \"detail\": \"wwnnvv. bbbb\",\n                    \"createdAt\": \"2021-08-25T15:26:54.303Z\",\n                    \"updatedAt\": \"2021-08-25T15:26:54.303Z\"\n                }\n            ],\n            \"createdAt\": \"2021-08-24T21:06:43.001Z\",\n            \"updatedAt\": \"2021-10-01T10:00:47.388Z\",\n            \"__v\": 1,\n            \"phone\": null,\n            \"proBio\": \"I can create you commerical cross platform apps at economic rates.\",\n            \"location\": \"615593dd74bf282d7cf1a23f\"\n        },\n        \"__v\": 0\n    }\n]"
+					"body": "[]"
 				}
 			]
 		}
