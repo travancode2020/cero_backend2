@@ -10,6 +10,7 @@ const {
 const {
   getMomentById,
   deleteMomentById,
+  addViewByMomentId
 } = require("../controllers/moment/moment_id.js");
 
 const { getMomentsByUserId } = require("../controllers/moment/user_id.js");
@@ -24,6 +25,7 @@ MomentRouter.post("/", createMoment);
 //controllers/moment/moment_id.js
 MomentRouter.get("/:momentId", getMomentById);
 MomentRouter.delete("/:momentId", deleteMomentById);
+MomentRouter.post("/:momentId", addViewByMomentId)
 
 //controllers/moment/user_id.js
 MomentRouter.get("/user/:userId", getMomentsByUserId);

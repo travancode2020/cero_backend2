@@ -2,7 +2,13 @@ const { Moment } = require("../../modals/Moment.js");
 
 const getAllMoments = async (req, res, next) => {
   try {
-    const allMoments = await Moment.find({});
+    const userPopulateQuery = [
+      {
+        path: "views",
+        select: ["userName", "fId", "name", "photoUrl", "userTag"],
+      },
+    ];
+    const allMoments = await Moment.find({}).populate(userPopulateQuery);
 
     res.status(200).json(allMoments);
   } catch (error) {
