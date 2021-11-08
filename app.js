@@ -5,20 +5,23 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const initFirebase = require("./config/firebase.js");
 
 const {
   IndexRouter,
   CardRouter,
   UserRouter,
   MomentRouter,
-  LocationRouter
+  LocationRouter,
+  AuthRouter,
 } = require("./routes");
 
 const app = express();
 const mongoose = require("mongoose");
+initFirebase();
 
 mongoose
-  .connect(process.env.CONNECTION_STRING, {
+  .connect(process.env.CONNECTION_DEV_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -49,6 +52,7 @@ app.use("/users", UserRouter);
 app.use("/cards", CardRouter);
 app.use("/moments", MomentRouter);
 app.use("/location", LocationRouter);
+app.use("/auth", AuthRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
