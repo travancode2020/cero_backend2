@@ -71,9 +71,39 @@ const deleteCardById = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+const getLikedUsersByCardId = async (req, res, next) => {
+  try {
+    const cardId = req.params.cardId;
+    const foundCard = await Cards.findById(cardId).populate({
+      path: "likes",
+      select: ["userName", "name", "fId", "photoUrl", "userTag"],
+    });
+
+    res.status(200).json(foundCard.likes);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getSavedUsersByCardId = async (req, res, next) => {
+  try {
+    const cardId = req.params.cardId;
+    const foundCard = await Cards.findById(cardId).populate({
+      path: "saved",
+      select: ["userName", "name", "fId", "photoUrl", "userTag"],
+    });
+
+    res.status(200).json(foundCard.saved);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getCardById,
   patchCardById,
   putCardById,
   deleteCardById,
+  getLikedUsersByCardId,
+  getSavedUsersByCardId,
 };

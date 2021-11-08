@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d221ea1c-e233-4b06-ac4d-bb6d0c7ae2a5",
+		"_postman_id": "2336160c-5b59-4adc-94cb-4454ac4846d8",
 		"name": "card-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1666,6 +1666,152 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"message\": \"Card updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Liked Users By Card Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"617941abeb538a0016b57085",
+						"liked"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Liked Users By Card Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"617941abeb538a0016b57085",
+								"liked"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "463"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1cf-npQw3EOPWWtynnR7zGO34Ca1g74\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Nov 2021 09:43:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userTag\": [],\n        \"_id\": \"617abf7d2dbd2100169ef146\",\n        \"fId\": \"qrXxJTlIZPSgLU3Yy8lMsx7v9Zv2\",\n        \"userName\": \"johnny\",\n        \"name\": \"Johnny\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJyZ_eHmreKuBa0OiylLG86GCuospFqXhr8RWEhi=s96-c\"\n    },\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Saved Users By Card Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/cards/6177d52e235d3d0016bd88aa/saved",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"6177d52e235d3d0016bd88aa",
+						"saved"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Saved Users By Card Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards/6177d52e235d3d0016bd88aa/saved",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"6177d52e235d3d0016bd88aa",
+								"saved"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f2-5KXXNsWU7gmRWi5ttylOSy98UIE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 Nov 2021 09:45:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
 				}
 			]
 		}

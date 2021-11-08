@@ -21,6 +21,8 @@ const {
   patchCardById,
   putCardById,
   deleteCardById,
+  getLikedUsersByCardId,
+  getSavedUsersByCardId,
 } = require("../controllers/cards/card_id.js");
 
 const {
@@ -73,6 +75,8 @@ CardRouter.post("/:cardId", (req, res) => {
 CardRouter.patch("/:cardId", patchCardById);
 CardRouter.put("/:cardId", putCardById);
 CardRouter.delete("/:cardId", deleteCardById);
+CardRouter.get("/:cardId/liked", getLikedUsersByCardId);
+CardRouter.get("/:cardId/saved", getSavedUsersByCardId);
 
 // controllers/cards/card_id_comments.js
 CardRouter.get("/:cardId/comments", getAllCommentsByCardId);
