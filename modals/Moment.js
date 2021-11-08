@@ -16,10 +16,6 @@ const MomentScema = new Schema({
     type: [String],
     required: true,
   },
-  duration: {
-    type: Number,
-    required: true,
-  },
   views: [
     {
       type: Schema.Types.ObjectId,
