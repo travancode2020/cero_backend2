@@ -22,6 +22,7 @@ const getAllCards = async (req, res, next) => {
         foundCards = await Cards.find({
           tags: { $in: interestArray },
           likes: { $nin: [userId] },
+          disLikes: { $nin: [userId] },
         })
           .populate(populateQuery)
           .skip(count * (page - 1))
@@ -34,7 +35,10 @@ const getAllCards = async (req, res, next) => {
       }
     } else {
       if (userId) {
-        foundCards = await Cards.find({ likes: { $nin: [userId] } })
+        foundCards = await Cards.find({
+          likes: { $nin: [userId] },
+          disLikes: { $nin: [userId] },
+        })
           .populate(populateQuery)
           .skip(count * (page - 1))
           .limit(count);
