@@ -19,8 +19,7 @@ const getMomentsByUserId = async (req, res, next) => {
       },
       {
         $group: {
-          _id: "null",
-          host: { $first: "$host" },
+          _id: "$host",
           moments: { $addToSet: "$$ROOT" },
         },
       },
@@ -30,7 +29,7 @@ const getMomentsByUserId = async (req, res, next) => {
       {
         $lookup: {
           from: "users",
-          localField: "host",
+          localField: "_id",
           foreignField: "_id",
           as: "host",
         },
