@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/cards?interests=One&page=1&count=5",
+					"raw": "{{BASE_URL}}/cards?userId=617abf7d2dbd2100169ef146",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -20,16 +20,8 @@
 					],
 					"query": [
 						{
-							"key": "interests",
-							"value": "One"
-						},
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "count",
-							"value": "5"
+							"key": "userId",
+							"value": "617abf7d2dbd2100169ef146"
 						}
 					]
 				}
@@ -150,6 +142,63 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    }\n]"
+				},
+				{
+					"name": "Get Card not Liked Yet by User id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/cards?userId=617abf7d2dbd2100169ef146",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "617abf7d2dbd2100169ef146"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2135"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"857-hTpYdZAL8KXvgbNvNXTJjLz2V/Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 09 Nov 2021 05:47:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [\n            \"617a5fe7b27a5a00164cea1c\"\n        ],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6176c9691ea09c0016dc38b3%2F2021-11-07%2020%3A27%3A19.913912?alt=media&token=763c3155-d453-4b85-a5c6-a36351f92d5d\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"131413\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6187e95c3cfcfe00165f3da9\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        },\n        \"caption\": \"575983\",\n        \"__v\": 0,\n        \"likeCount\": 1,\n        \"id\": \"6187e95c3cfcfe00165f3da9\"\n    }\n]"
 				}
 			]
 		},

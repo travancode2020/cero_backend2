@@ -4,6 +4,7 @@ const getAllCards = async (req, res, next) => {
   try {
     const interestString = req.query.interests || "";
     const interestArray = interestString.split(",");
+    const userId = req.query.userId;
 
     const count = parseInt(req.query.count) || 5;
     const page = parseInt(req.query.page);
@@ -17,15 +18,32 @@ const getAllCards = async (req, res, next) => {
     ];
 
     if (interestString.length) {
-      foundCards = await Cards.find({ tags: { $in: interestArray } })
-        .populate(populateQuery)
-        .skip(count * (page - 1))
-        .limit(count);
+      if (userId) {
+        foundCards = await Cards.find({
+          tags: { $in: interestArray },
+          likes: { $nin: [userId] },
+        })
+          .populate(populateQuery)
+          .skip(count * (page - 1))
+          .limit(count);
+      } else {
+        foundCards = await Cards.find({ tags: { $in: interestArray } })
+          .populate(populateQuery)
+          .skip(count * (page - 1))
+          .limit(count);
+      }
     } else {
-      foundCards = await Cards.find({})
-        .populate(populateQuery)
-        .skip(count * (page - 1))
-        .limit(count);
+      if (userId) {
+        foundCards = await Cards.find({ likes: { $nin: [userId] } })
+          .populate(populateQuery)
+          .skip(count * (page - 1))
+          .limit(count);
+      } else {
+        foundCards = await Cards.find({})
+          .populate(populateQuery)
+          .skip(count * (page - 1))
+          .limit(count);
+      }
     }
 
     res.status(200).json(foundCards);
