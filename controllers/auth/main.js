@@ -14,7 +14,7 @@ const sessionLogin = (req, res, next) => {
         res.end(JSON.stringify({ status: "success" }));
       },
       (error) => {
-        res.status(401).json({ message: "Unauthorized" });
+        next(error);
       }
     );
 };
