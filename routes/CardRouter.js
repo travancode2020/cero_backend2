@@ -43,10 +43,12 @@ const {
   getAllTrendingCardsByInterests,
 } = require("../controllers/cards/card_trending.js");
 
+const { checkAuth } = require("../middleware/auth");
+
 const CardRouter = express.Router();
 
 // controllers/cards/main.js
-CardRouter.get("/", getAllCards);
+CardRouter.get("/", checkAuth, getAllCards);
 CardRouter.post("/", createCard);
 CardRouter.put("/", (_, res) => {
   res.statusCode = 403;
