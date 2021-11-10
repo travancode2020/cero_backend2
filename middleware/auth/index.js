@@ -2,6 +2,7 @@ const admin = require("firebase-admin");
 
 const checkAuth = (req, res, next) => {
   const sessionCookie = req.cookies.session || "";
+  console.log(sessionCookie);
   admin
     .auth()
     .verifySessionCookie(sessionCookie, true /** checkRevoked */)
@@ -10,7 +11,7 @@ const checkAuth = (req, res, next) => {
       next();
     })
     .catch((error) => {
-      res.status(401).json({message: "Unauthorized"})
+      res.status(401).json({ message: "Unauthorized" });
     });
 };
 
