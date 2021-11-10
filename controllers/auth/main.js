@@ -2,7 +2,7 @@ const admin = require("firebase-admin");
 
 const sessionLogin = (req, res, next) => {
   const idToken = req.body.idToken.toString();
-  const expiresIn = 60 * 60 * 24 * 20 * 1000; // 20 days expiry
+  const expiresIn = 60 * 60 * 24 * 14 * 1000; // 20 days expiry
 
   admin
     .auth()
