@@ -21,7 +21,7 @@ const mongoose = require("mongoose");
 initFirebase();
 
 mongoose
-  .connect(process.env.CONNECTION_DEV_STRING, {
+  .connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
