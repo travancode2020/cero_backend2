@@ -48,7 +48,7 @@ const { checkAuth } = require("../middleware/auth");
 const CardRouter = express.Router();
 
 // controllers/cards/main.js
-CardRouter.get("/", checkAuth, getAllCards);
+CardRouter.get("/", getAllCards);
 CardRouter.post("/", createCard);
 CardRouter.put("/", (_, res) => {
   res.statusCode = 403;
