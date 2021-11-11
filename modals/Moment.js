@@ -22,9 +22,8 @@ const MomentScema = new Schema({
       ref: "User",
     },
   ],
+  createdAt: { type: Date, expires: "10m" },
 });
-
-MomentScema.index({ createdAt: 1 }, { expireAfterSeconds: 86400 });
 
 const Moment = mongoose.model("Moment", MomentScema);
 

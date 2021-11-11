@@ -25,14 +25,17 @@ const StreakSchema = new Schema({
   lastDate: {
     type: Date,
     required: true,
+    default: new Date(),
   },
   score: {
     type: Number,
     required: true,
+    default: 0,
   },
   highestScore: {
     type: Number,
     required: true,
+    default: 0,
   },
 });
 
