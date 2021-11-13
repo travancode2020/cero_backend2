@@ -24,17 +24,14 @@ const WorkSchema = new Schema(
 const StreakSchema = new Schema({
   lastDate: {
     type: Date,
-    required: true,
     default: new Date(),
   },
   score: {
     type: Number,
-    required: true,
     default: 0,
   },
   highestScore: {
     type: Number,
-    required: true,
     default: 0,
   },
 });
@@ -90,7 +87,11 @@ const UserSchema = new Schema(
     work: [WorkSchema],
     streak: {
       type: StreakSchema,
-      default: null,
+      default: {
+        lastDate : new Date(),
+        score: 0,
+        highestScore: 0,
+      }
     },
     userTag: [
       {
