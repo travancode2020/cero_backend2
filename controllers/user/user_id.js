@@ -1,7 +1,7 @@
 const Users = require("../../modals/User.js");
 
 const getUserByUserId = (req, res, next) => {
-  Users.findById( req.params.userid )
+    Users.findOne({"_id":req.params.userid })
     .then(
       (user) => {
         res.statusCode = 200;

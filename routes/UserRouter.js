@@ -63,7 +63,7 @@ UserRouter.put("/", (_, res) => {
 });
 UserRouter.patch("/", patchUserByUsername);
 UserRouter.delete("/", deleteAllUsers);
-UserRouter.get("/:phno", getUserByPhno);
+UserRouter.get("/phno/:phno", getUserByPhno);
 
 // controllers/user/user_id.js
 UserRouter.get("/:userid", getUserByUserId);
