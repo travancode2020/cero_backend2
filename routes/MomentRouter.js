@@ -4,16 +4,16 @@ const express = require("express");
 const {
   getAllMoments,
   deleteAllMoments,
-  createMoment,
+  createMoment
 } = require("../controllers/moment/main.js");
 
 const {
   getMomentById,
   deleteMomentById,
-  addViewByMomentId
+  addViewByMomentId,
 } = require("../controllers/moment/moment_id.js");
 
-const { getMomentsByUserId } = require("../controllers/moment/user_id.js");
+const { getMomentsByUserId,  getMomentsOfUser } = require("../controllers/moment/user_id.js");
 
 const MomentRouter = express.Router();
 
@@ -29,5 +29,6 @@ MomentRouter.post("/:momentId", addViewByMomentId)
 
 //controllers/moment/user_id.js
 MomentRouter.get("/user/:userId", getMomentsByUserId);
+MomentRouter.get("/:userId", getMomentsOfUser);
 
 module.exports = MomentRouter;
