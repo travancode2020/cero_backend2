@@ -56,6 +56,20 @@ const deleteAllUsers = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+const getUserByPhno = (req, res, next) => {
+    Users.findOne({"phone":req.params.phno})
+    .then(
+      (resp)=>{
+        res.statusCode = 200;
+        res.setHeader("Content-Type","application/json");
+        res.json(resp);
+      },
+      (err)=> next(err)
+    )
+    .catch((err) => next(err));
+};
+
+
 const checkUsernameExists = async (req, res, next) => {
   try {
     const userName = req.body.userName;
@@ -86,4 +100,5 @@ module.exports = {
   patchUserByUsername,
   deleteAllUsers,
   checkUsernameExists,
+  getUserByPhno
 };

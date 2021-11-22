@@ -7,6 +7,7 @@ const {
   patchUserByUsername,
   deleteAllUsers,
   checkUsernameExists,
+  getUserByPhno
 } = require("../controllers/user/main.js");
 
 const {
@@ -62,6 +63,7 @@ UserRouter.put("/", (_, res) => {
 });
 UserRouter.patch("/", patchUserByUsername);
 UserRouter.delete("/", deleteAllUsers);
+UserRouter.get("/:phno", getUserByPhno);
 
 // controllers/user/user_id.js
 UserRouter.get("/:userid", getUserByUserId);
