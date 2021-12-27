@@ -13,8 +13,10 @@ const getAllUsers = (req, res, next) => {
     .catch((err) => next(err));
 };
 
-const createUser = (req, res, next) => {
-  Users.create(req.body)
+const createUser = async (req, res, next) => {
+  let agoraId = await generateUniqueAgoraId();
+  let body = { ...req.body, agoraId };
+  Users.create(body)
     .then(
       (user) => {
         console.log("New User Created", user);
@@ -57,18 +59,17 @@ const deleteAllUsers = (req, res, next) => {
 };
 
 const getUserByPhno = (req, res, next) => {
-    Users.findOne({"phone":req.params.phno})
+  Users.findOne({ phone: req.params.phno })
     .then(
-      (resp)=>{
+      (resp) => {
         res.statusCode = 200;
-        res.setHeader("Content-Type","application/json");
+        res.setHeader("Content-Type", "application/json");
         res.json(resp);
       },
-      (err)=> next(err)
+      (err) => next(err)
     )
     .catch((err) => next(err));
 };
-
 
 const checkUsernameExists = async (req, res, next) => {
   try {
@@ -94,11 +95,32 @@ const checkUsernameExists = async (req, res, next) => {
   }
 };
 
+const generateUniqueAgoraId = async () => {
+  try {
+    let isUnique = false;
+    let uniqueNumber;
+
+    while (isUnique == false) {
+      uniqueNumber = Math.floor(000000000 + Math.random() * 999999999);
+      let numberExist = await Users.findOne({ agoraId: uniqueNumber });
+
+      if (!numberExist) {
+        isUnique = true;
+      }
+    }
+
+    return uniqueNumber;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
   patchUserByUsername,
   deleteAllUsers,
   checkUsernameExists,
-  getUserByPhno
+  getUserByPhno,
 };

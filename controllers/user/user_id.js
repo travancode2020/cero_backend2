@@ -1,7 +1,7 @@
 const Users = require("../../modals/User.js");
 
 const getUserByUserId = (req, res, next) => {
-  Users.findById( req.params.userid )
+  Users.findById(req.params.userid)
     .then(
       (user) => {
         res.statusCode = 200;
@@ -103,9 +103,24 @@ const updateUserProfile = async (req, res, next) => {
   }
 };
 
+const getUserByAgoraId = async (req, res, next) => {
+  try {
+    let { agoraId } = req.params;
+    if (!agoraId) throw new Error("please pass agoraId");
+
+    let userData = await Users.findOne({ agoraId });
+    if (!userData) throw new Error("User not found");
+
+    userData && res.status(200).json(userData);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getUserByUserId,
   postUserByUserId,
   deleteUserByUserId,
   updateUserProfile,
+  getUserByAgoraId,
 };

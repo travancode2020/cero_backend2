@@ -1206,6 +1206,25 @@
 					"body": "[\n    {\n        \"_id\": \"6177bb898f45e5001687a543\",\n        \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n        \"userName\": \"agarian\",\n        \"name\": \"Ajay Agarian\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n    }\n]"
 				}
 			]
+		},
+		{
+			"name": "Get User By AgoraId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/getUserByAgoraId/999999999",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"getUserByAgoraId",
+						"999999999"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

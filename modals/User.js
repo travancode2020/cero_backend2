@@ -42,6 +42,7 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    agoraId: { type: Number, unique: true },
     userName: {
       type: String,
       required: true,
@@ -62,7 +63,7 @@ const UserSchema = new Schema(
     },
     phone: {
       type: Number,
-      unique:true
+      unique: true,
     },
     photoUrl: {
       type: String,
@@ -89,10 +90,10 @@ const UserSchema = new Schema(
     streak: {
       type: StreakSchema,
       default: {
-        lastDate : new Date(),
+        lastDate: new Date(),
         score: 0,
         highestScore: 0,
-      }
+      },
     },
     userTag: [
       {

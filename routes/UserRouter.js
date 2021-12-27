@@ -7,7 +7,7 @@ const {
   patchUserByUsername,
   deleteAllUsers,
   checkUsernameExists,
-  getUserByPhno
+  getUserByPhno,
 } = require("../controllers/user/main.js");
 
 const {
@@ -15,6 +15,7 @@ const {
   postUserByUserId,
   deleteUserByUserId,
   updateUserProfile,
+  getUserByAgoraId,
 } = require("../controllers/user/user_id.js");
 
 const {
@@ -70,6 +71,7 @@ UserRouter.get("/:userid", getUserByUserId);
 UserRouter.post("/:userid", postUserByUserId);
 UserRouter.delete("/:userid", deleteUserByUserId);
 UserRouter.patch("/:userId", updateUserProfile);
+UserRouter.get("/getUserByAgoraId/:agoraId", getUserByAgoraId);
 
 //controllers/user/user_id_work.js
 UserRouter.get("/:userId/work", getWorkByUserId);
