@@ -1,0 +1,48 @@
+{
+  "info": {
+    "_postman_id": "3dbd8dd2-2f3b-4a4b-b3b0-718431c4dafc",
+    "name": "agora",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "get agora token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/agora/getToken?agoraId=999999999&channel=test&isHost=true",
+          "host": ["{{BASE_URL}}"],
+          "path": ["agora", "getToken"],
+          "query": [
+            {
+              "key": "agoraId",
+              "value": "999999999"
+            },
+            {
+              "key": "channel",
+              "value": "test"
+            },
+            {
+              "key": "isHost",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

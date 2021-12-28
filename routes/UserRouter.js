@@ -71,7 +71,7 @@ UserRouter.get("/:userid", getUserByUserId);
 UserRouter.post("/:userid", postUserByUserId);
 UserRouter.delete("/:userid", deleteUserByUserId);
 UserRouter.patch("/:userId", updateUserProfile);
-UserRouter.get("/getUserByAgoraId/:agoraId", getUserByAgoraId);
+UserRouter.get("/agoraId/:agoraId", getUserByAgoraId);
 
 //controllers/user/user_id_work.js
 UserRouter.get("/:userId/work", getWorkByUserId);
