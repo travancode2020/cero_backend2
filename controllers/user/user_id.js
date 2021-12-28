@@ -108,7 +108,7 @@ const getUserByAgoraId = async (req, res, next) => {
     let { agoraId } = req.params;
     if (!agoraId) throw new Error("please pass agoraId");
 
-    let userData = await Users.findOne({ agoraId });
+    let userData = await Users.findOne({ agoraId }).select("userName name photoUrl");
     if (!userData) throw new Error("User not found");
 
     userData && res.status(200).json(userData);
