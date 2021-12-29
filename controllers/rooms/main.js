@@ -24,6 +24,7 @@ const getRoomsByUserId = async (req, res, next) => {
   try {
     let { userId } = req.params;
     let { page, limit, nameFilter } = req.query;
+    nameFilter = nameFilter ? nameFilter : "";
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
@@ -189,7 +190,7 @@ const UpdateRoom = async (req, res, next) => {
     roomUpdated &&
       res
         .status(200)
-        .send({ success: true, message: "Room updated succesfully" });
+        .json({ success: true, message: "Room updated succesfully" });
   } catch (error) {
     next(error);
   }

@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "54ba5ea0-1af4-4baf-aea8-b6d36b626178",
+		"name": "room",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":false,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/room/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Room By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/61a12223270b53001681f488?page=1&limit=20&nameFilter=tes",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"61a12223270b53001681f488"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "nameFilter",
+							"value": "tes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Room By HostId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/host/61a12223270b53001681f488?page=1&limit=20",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"host",
+						"61a12223270b53001681f488"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Room By RoomId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/?roomId=61cca2c29ae41629d86f3229&userId=61a12223270b53001681f488",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						""
+					],
+					"query": [
+						{
+							"key": "roomId",
+							"value": "61cca2c29ae41629d86f3229"
+						},
+						{
+							"key": "userId",
+							"value": "61a12223270b53001681f488"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Room By RoomId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"61a12223270b53001681f488\",\r\n    \"_id\":\"61cca2c29ae41629d86f3229\",\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":true,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/room/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
