@@ -5,6 +5,7 @@ const MomentRouter = require("./MomentRouter.js");
 const LocationRouter = require("./LocationRouter.js");
 const AuthRouter = require("./AuthRouter.js");
 const AgoraRouter = require("./AgoraRouter");
+const RoomRouter = require("./RoomRouter");
 
 const router = express.Router();
 
@@ -21,4 +22,5 @@ module.exports = {
   LocationRouter,
   AuthRouter,
   AgoraRouter,
+  RoomRouter,
 };

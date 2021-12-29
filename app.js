@@ -15,6 +15,7 @@ const {
   LocationRouter,
   AuthRouter,
   AgoraRouter,
+  RoomRouter,
 } = require("./routes");
 
 const app = express();
@@ -56,6 +57,9 @@ app.use("/location", LocationRouter);
 app.use("/auth", AuthRouter);
 
 app.use("/agora", AgoraRouter);
+
+//Rooms
+app.use("/room", RoomRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
