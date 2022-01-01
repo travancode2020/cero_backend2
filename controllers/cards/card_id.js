@@ -102,10 +102,13 @@ const getSavedUsersByCardId = async (req, res, next) => {
 const updateCardByCardId = async (req, res, next) => {
   try {
     let { cardId } = req.params;
-    let { body } = req;
+    let { caption } = req.body;
     if (!cardId) throw new Error("Please pass card Id");
 
-    let cardUpdated = await Cards.findOneAndUpdate({ _id: cardId }, body);
+    let cardUpdated = await Cards.findOneAndUpdate(
+      { _id: cardId },
+      { caption }
+    );
 
     if (!cardUpdated) throw new Error("card not found");
     cardUpdated && res.status(200).json(cardUpdated);

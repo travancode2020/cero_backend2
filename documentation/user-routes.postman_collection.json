@@ -1225,6 +1225,38 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Search User By Name Or Username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/users/search?userFilter=JAY&page=1&limit=20",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "userFilter",
+							"value": "AJAY"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

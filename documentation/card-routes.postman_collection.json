@@ -1857,6 +1857,34 @@
 					"body": "[\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
 				}
 			]
+		},
+		{
+			"name": "Update Card By Card Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"caption\":\"Beautiful Building\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/cards/update/61d005c662c50f211cb8fc05",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"update",
+						"61d005c662c50f211cb8fc05"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
