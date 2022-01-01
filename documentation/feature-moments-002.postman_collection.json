@@ -533,6 +533,48 @@
 					"body": "{\n    \"message\": \"Moment Updated\"\n}"
 				}
 			]
+		},
+		{
+			"name": "User's Moments By User ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/moments/userMoment/61a12223270b53001681f488",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"moments",
+						"userMoment",
+						"61a12223270b53001681f488"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User's Moments By User ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/moments/userMoment/61a12223270b53001681f488",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"moments",
+								"userMoment",
+								"61a12223270b53001681f488"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"data\": [\r\n        {\r\n            \"views\": [\r\n                \"61a12223270b53001681f488\"\r\n            ],\r\n            \"_id\": \"61d063f0e43c940016478c73\",\r\n            \"host\": \"61a12223270b53001681f488\",\r\n            \"mediaType\": \"IMAGE\",\r\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f4882022-01-01%2019%3A53%3A34.389748?alt=media&token=7ca78542-24d4-49a0-8f66-12e11c2bde24\",\r\n            \"createdAt\": \"2022-01-01T14:23:44.942Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"views\": [],\r\n            \"_id\": \"61d087870093850814f42ff6\",\r\n            \"host\": \"61a12223270b53001681f488\",\r\n            \"mediaType\": \"IMAGE\",\r\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n            \"createdAt\": \"2022-01-01T16:55:35.634Z\",\r\n            \"__v\": 0\r\n        }\r\n    ]\r\n}"
+				}
+			]
 		}
 	]
 }

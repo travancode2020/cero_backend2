@@ -65,7 +65,22 @@ const getMomentsOfUser = async (req, res, next) => {
   res.status(200).json({ data: foundUser });
 };
 
+const getUserMoments = async (req, res, next) => {
+  try {
+    let { userId } = req.params;
+    if (!userId) throw new Error("Please pass user ID");
+
+    let userMoments = await Moment.find({ host: userId });
+
+    userMoments && res.status(200).json({ data: userMoments });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};
+
 module.exports = {
   getMomentsByUserId,
   getMomentsOfUser,
+  getUserMoments,
 };
