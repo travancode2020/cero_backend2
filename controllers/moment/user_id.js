@@ -43,7 +43,6 @@ const getMomentsByUserId = async (req, res, next) => {
           "host._id": 1,
           "host.name": 1,
           "host.userName": 1,
-          "host.fId": 1,
           "host.photoUrl": 1,
           moments: 1,
         },
@@ -60,14 +59,13 @@ const getMomentsByUserId = async (req, res, next) => {
 };
 
 const getMomentsOfUser = async (req, res, next) => {
-
   const userId = req.params.userId;
 
   const foundUser = await Users.findById({ _id: userId });
-  res.status(200).json({data:foundUser});
+  res.status(200).json({ data: foundUser });
 };
 
 module.exports = {
   getMomentsByUserId,
-  getMomentsOfUser
+  getMomentsOfUser,
 };

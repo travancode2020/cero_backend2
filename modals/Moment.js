@@ -13,7 +13,7 @@ const MomentScema = new Schema({
     required: true,
   },
   mediaUrl: {
-    type: [String],
+    type: String,
     required: true,
   },
   views: [

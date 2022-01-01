@@ -56,8 +56,13 @@ const getAllTrendingCards = async (req, res, next) => {
 
 const getAllTrendingCardsByInterests = async (req, res, next) => {
   try {
-    const interestString = req.query.interests || "";
+    let { page, limit, interests } = req.query;
+    const interestString = interests || "";
     const interestArray = interestString.split(",");
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+    let totalPage;
 
     if (interestArray[0] === "") {
       return res.status(400).json({ message: "interests are missing" });
@@ -111,9 +116,62 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
       {
         $unwind: "$card",
       },
+      { $skip: skip },
+      { $limit: limit },
     ]);
 
-    res.status(200).json(trendingCards);
+    const totalData = await Cards.aggregate([
+      { $match: { tags: { $in: interestArray } } },
+      {
+        $addFields: { likeCount: { $size: { $ifNull: ["$likes", []] } } },
+      },
+      {
+        $lookup: {
+          from: "users",
+          let: { host: "$host" },
+          pipeline: [
+            { $match: { $expr: { $eq: ["$_id", "$$host"] } } },
+            {
+              $project: {
+                name: 1,
+                userName: 1,
+                photoUrl: 1,
+                fId: 1,
+                userTag: 1,
+              },
+            },
+          ],
+          as: "host",
+        },
+      },
+      {
+        $unwind: "$host",
+      },
+      {
+        $group: {
+          _id: { $first: "$tags" },
+          cards: { $addToSet: "$$ROOT" },
+        },
+      },
+      {
+        $unwind: "$cards",
+      },
+      {
+        $sort: { _id: 1, "cards.likeCount": -1 },
+      },
+      {
+        $group: {
+          _id: "$_id",
+          card: { $push: "$cards" },
+        },
+      },
+      {
+        $unwind: "$card",
+      },
+    ]);
+    totalPage = Math.ceil(totalData.length / limit);
+
+    res.status(200).json({ totalPage, trendingCards });
   } catch (error) {
     next(error);
   }

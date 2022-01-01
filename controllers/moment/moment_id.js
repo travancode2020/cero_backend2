@@ -1,11 +1,31 @@
 const { Moment } = require("../../modals/Moment.js");
 const Users = require("../../modals/User.js");
+const { Types } = require("mongoose");
 
 const getMomentById = async (req, res, next) => {
   try {
     const momentId = req.params.momentId;
 
-    const foundMoment = await Moment.find({ _id: momentId });
+    const foundMoment = await Moment.aggregate([
+      { $match: { _id: Types.ObjectId(momentId) } },
+      {
+        $lookup: {
+          from: "users",
+          let: { views: "$views" },
+          pipeline: [
+            { $match: { $expr: { $in: ["$_id", "$$views"] } } },
+            {
+              $project: {
+                name: 1,
+                userName: 1,
+                photoUrl: 1,
+              },
+            },
+          ],
+          as: "viewers",
+        },
+      },
+    ]);
 
     if (foundMoment) {
       return res.status(200).json(foundMoment);

@@ -116,6 +116,46 @@ const generateUniqueAgoraId = async () => {
   }
 };
 
+const findUserByNameUserName = async (req, res, next) => {
+  try {
+    let { userFilter, page, limit } = req.query;
+    userFilter = userFilter ? userFilter : "";
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+
+    let UserList = await Users.aggregate([
+      {
+        $match: {
+          $or: [
+            { userName: { $regex: userFilter, $options: "i" } },
+            { name: { $regex: userFilter, $options: "i" } },
+          ],
+        },
+      },
+      { $limit: limit },
+      { $skip: skip },
+    ]);
+
+    let count = await Users.aggregate([
+      {
+        $match: {
+          $or: [
+            { userName: { $regex: userFilter, $options: "i" } },
+            { name: { $regex: userFilter, $options: "i" } },
+          ],
+        },
+      },
+    ]);
+
+    let totalPage = Math.ceil(count.length / limit);
+
+    UserList && res.status(200).json({ totalPage, UserList });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
@@ -123,4 +163,5 @@ module.exports = {
   deleteAllUsers,
   checkUsernameExists,
   getUserByPhno,
+  findUserByNameUserName,
 };

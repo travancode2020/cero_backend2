@@ -1,55 +1,60 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const CardSchema = new Schema({
-  links: [
-    {
-      type: String,
+const CardSchema = new Schema(
+  {
+    links: [
+      {
+        type: String,
+      },
+    ],
+    isImage: {
+      type: Boolean,
+      required: true,
     },
-  ],
-  isImage: {
-    type: Boolean,
-    required: true,
-  },
-  disLikes: [
-    {
+    disLikes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    saved: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    host: {
       type: Schema.Types.ObjectId,
       ref: "User",
+      required: true,
     },
-  ],
-  saved: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
-  likes: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
-  host: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
-  caption: {
-    type: String,
-  },
-  views: [],
-  tags: [
-    {
+    caption: {
       type: String,
     },
-  ],
-  color: [
-    {
-      type: String,
-    },
-  ],
-  comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
-});
+    views: [],
+    tags: [
+      {
+        type: String,
+      },
+    ],
+    color: [
+      {
+        type: String,
+      },
+    ],
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
+  },
+  {
+    timestamps: true,
+  }
+);
 
 CardSchema.set("toObject", { virtuals: true });
 CardSchema.set("toJSON", { virtuals: true });

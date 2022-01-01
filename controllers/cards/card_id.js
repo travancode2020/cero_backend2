@@ -99,6 +99,21 @@ const getSavedUsersByCardId = async (req, res, next) => {
   }
 };
 
+const updateCardByCardId = async (req, res, next) => {
+  try {
+    let { cardId } = req.params;
+    let { body } = req;
+    if (!cardId) throw new Error("Please pass card Id");
+
+    let cardUpdated = await Cards.findOneAndUpdate({ _id: cardId }, body);
+
+    if (!cardUpdated) throw new Error("card not found");
+    cardUpdated && res.status(200).json(cardUpdated);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getCardById,
   patchCardById,
@@ -106,4 +121,5 @@ module.exports = {
   deleteCardById,
   getLikedUsersByCardId,
   getSavedUsersByCardId,
+  updateCardByCardId,
 };
