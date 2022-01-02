@@ -72,7 +72,7 @@ const getUserMoments = async (req, res, next) => {
 
     let userMoments = await Moment.find({ host: userId });
 
-    userMoments && res.status(200).json({ data: userMoments });
+    userMoments && res.status(200).json(userMoments);
   } catch (error) {
     console.log(error);
     next(error);

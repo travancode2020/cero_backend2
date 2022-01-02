@@ -236,13 +236,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/moments/614ef39b8b70f31748305857",
+					"raw": "{{BASE_URL}}/moments/61d063f0e43c940016478c73",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"moments",
-						"614ef39b8b70f31748305857"
+						"61d063f0e43c940016478c73"
 					]
 				}
 			},
@@ -297,7 +297,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"_id\": \"614ef39b8b70f31748305857\",\n        \"host\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"mediaType\": \"IMAGE\",\n        \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n        \"duration\": 60,\n        \"__v\": 0\n    }\n]"
+					"body": "[\n    {\n        \"_id\": \"61a12223270b53001681f488\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
 				}
 			]
 		},

@@ -42,7 +42,47 @@
           ]
         }
       },
-      "response": []
+      "response": [
+        {
+          "name": "get agora token",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/agora/getToken?agoraId=999999999&channel=test&isHost=true",
+              "host": ["{{BASE_URL}}"],
+              "path": ["agora", "getToken"],
+              "query": [
+                {
+                  "key": "agoraId",
+                  "value": "999999999"
+                },
+                {
+                  "key": "channel",
+                  "value": "test"
+                },
+                {
+                  "key": "isHost",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
     }
   ]
 }

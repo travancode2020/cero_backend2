@@ -25,10 +25,15 @@ const getMomentById = async (req, res, next) => {
           as: "viewers",
         },
       },
+      {
+        $project: {
+          viewers: 1,
+        },
+      },
     ]);
 
     if (foundMoment) {
-      return res.status(200).json(foundMoment);
+      return res.status(200).json(foundMoment[0].viewers);
     }
 
     res.status(404).json({ message: "Moment not found" });
