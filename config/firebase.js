@@ -7,4 +7,8 @@ const initFirebase = () => {
   });
 };
 
-module.exports = initFirebase;
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+
+module.exports = { initFirebase, admin };
