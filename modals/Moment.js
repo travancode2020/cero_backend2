@@ -7,7 +7,7 @@ const MomentScema = new Schema({
     ref: "User",
     required: true,
   },
-  mediaType: {
+  isImage: {
     type: Boolean,
     required: true,
   },

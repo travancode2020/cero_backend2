@@ -150,7 +150,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"host\": \"6177bb898f45e5001687a543\",\r\n    \"mediaType\": \"IMAGE\",\r\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n    \"duration\": 60\r\n}",
+					"raw": "{\r\n    \"host\": \"61a12223270b53001681f488\",\r\n    \"isImage\": true,\r\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n    \"duration\": 60\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -175,7 +175,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"host\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\r\n    \"mediaType\": \"IMAGE\",\r\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n    \"duration\": 60\r\n}",
+							"raw": "{\r\n    \"host\": \"61a12223270b53001681f488\",\r\n    \"isImage\": true,\r\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n    \"duration\": 60\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -226,7 +226,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"_id\": \"614ef39b8b70f31748305857\",\n    \"host\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n    \"mediaType\": \"IMAGE\",\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n    \"duration\": 60,\n    \"__v\": 0\n}"
+					"body": "{\n    \"views\": [],\n    \"_id\": \"61d73d6438cf8b02f43d19f5\",\n    \"host\": \"61a12223270b53001681f488\",\n    \"isImage\": true,\n    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n    \"createdAt\": \"2022-01-06T19:05:08.207Z\",\n    \"__v\": 0\n}"
 				}
 			]
 		},
