@@ -84,7 +84,6 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
                 name: 1,
                 userName: 1,
                 photoUrl: 1,
-                fId: 1,
                 userTag: 1,
               },
             },

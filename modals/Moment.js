@@ -8,8 +8,7 @@ const MomentScema = new Schema({
     required: true,
   },
   mediaType: {
-    type: String,
-    enum: ["IMAGE", "VIDEO"],
+    type: Boolean,
     required: true,
   },
   mediaUrl: {

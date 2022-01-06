@@ -1,5 +1,6 @@
 const Cards = require("../../modals/Cards.js");
 const Users = require("../../modals/User.js");
+const Comment = require("../../modals/Comment.js");
 
 const getCardById = async (req, res, next) => {
   try {
@@ -58,7 +59,11 @@ const putCardById = (req, res, next) => {
     .catch((err) => next(err));
 };
 
-const deleteCardById = (req, res, next) => {
+const deleteCardById = async (req, res, next) => {
+  let commentIds = await Cards.findOne({ _id: req.params.cardId }).select(
+    "comments"
+  );
+  await Comment.deleteMany({ _id: { $in: commentIds.comments } });
   Cards.findByIdAndRemove(req.params.cardId)
     .then(
       (resp) => {
