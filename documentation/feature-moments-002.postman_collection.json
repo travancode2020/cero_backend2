@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c257516d-6ea4-4871-b17f-16e092f7defe",
+		"_postman_id": "faaafb81-e4f3-489c-ace8-c56b2e8f79a2",
 		"name": "feature-moments-002",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -70,7 +70,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[]"
+					"body": "[\r\n    {\r\n        \"views\": [],\r\n        \"_id\": \"61d73d6438cf8b02f43d19f5\",\r\n        \"host\": \"61a12223270b53001681f488\",\r\n        \"isImage\": true,\r\n        \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n        \"createdAt\": \"2022-01-06T19:05:08.207Z\",\r\n        \"__v\": 0\r\n    }\r\n]"
 				}
 			]
 		},
@@ -253,13 +253,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/moments/614ef39b8b70f31748305857",
+							"raw": "{{BASE_URL}}/moments/61d73d6438cf8b02f43d19f5",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"moments",
-								"614ef39b8b70f31748305857"
+								"61d73d6438cf8b02f43d19f5"
 							]
 						}
 					},
@@ -297,7 +297,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"_id\": \"61a12223270b53001681f488\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
+					"body": "[\n    {\n        \"_id\": \"61a12223270b53001681f488\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    },\n    {\n        \"_id\": \"61a12889270b53001681f4ae\",\n        \"userName\": \"pranavdeep_kumar\",\n        \"name\": \"Pranavdeep Kumar\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GiX4HIeZSqrCBmZRJPw8jmdCNuAsJWP0fJ7YEsIfw=s96-c\"\n    }\n]"
 				}
 			]
 		},
@@ -441,7 +441,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"hostMoments\": [\n        {\n            \"mediaUrl\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n            ],\n            \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n            \"_id\": \"61784de51e74f0205c6bca5d\",\n            \"host\": \"6177a2a9761cc3001671bbd0\",\n            \"mediaType\": \"IMAGE\",\n            \"duration\": 60,\n            \"__v\": 0\n        }\n    ],\n    \"followingMoments\": [\n        {\n            \"host\": {\n                \"_id\": \"6176c9691ea09c0016dc38b3\",\n                \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n                \"userName\": \"ajay\",\n                \"name\": \"Ajay Krishna P\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n            },\n            \"moments\": [\n                {\n                    \"_id\": \"61784db91e74f0205c6bca56\",\n                    \"mediaUrl\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n                    ],\n                    \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n                    \"mediaType\": \"IMAGE\",\n                    \"duration\": 60,\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"61784ded1e74f0205c6bca61\",\n                    \"mediaUrl\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n                    ],\n                    \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n                    \"mediaType\": \"IMAGE\",\n                    \"duration\": 60,\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"61784dec1e74f0205c6bca5f\",\n                    \"mediaUrl\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n                    ],\n                    \"createdAt\": \"2021-10-26T18:47:44.563Z\",\n                    \"mediaType\": \"IMAGE\",\n                    \"duration\": 60,\n                    \"__v\": 0\n                }\n            ]\n        }\n    ]\n}"
+					"body": "{\n    \"hostMoments\": [\n        {\n            \"views\": [\n                \"61a12223270b53001681f488\",\n                \"61a12889270b53001681f4ae\"\n            ],\n            \"_id\": \"61d73d6438cf8b02f43d19f5\",\n            \"host\": \"61a12223270b53001681f488\",\n            \"isImage\": true,\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"createdAt\": \"2022-01-06T19:05:08.207Z\",\n            \"__v\": 0\n        }\n    ],\n    \"followingMoments\": [\n        {\n            \"moments\": [\n                {\n                    \"_id\": \"61d741b020b37016d0c6d3e5\",\n                    \"views\": [],\n                    \"isImage\": true,\n                    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n                    \"createdAt\": \"2022-01-06T19:23:28.899Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"host\": {\n                \"_id\": \"61a12889270b53001681f4ae\",\n                \"userName\": \"pranavdeep_kumar\",\n                \"name\": \"Pranavdeep Kumar\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GiX4HIeZSqrCBmZRJPw8jmdCNuAsJWP0fJ7YEsIfw=s96-c\"\n            }\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -452,7 +452,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\" : \"617abf7d2dbd2100169ef146\"\r\n}",
+					"raw": "{\r\n    \"userId\" : \"61a12223270b53001681f488\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -460,13 +460,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/moments/61890547c393f41ab86acdc0",
+					"raw": "{{BASE_URL}}/moments/61d1f4b81862062320438d79",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"moments",
-						"61890547c393f41ab86acdc0"
+						"61d1f4b81862062320438d79"
 					]
 				}
 			},
@@ -558,21 +558,21 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/moments/userMoment/61a12223270b53001681f488",
+							"raw": "{{BASE_URL}}/moments/userMoment/61a12889270b53001681f4ae",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"moments",
 								"userMoment",
-								"61a12223270b53001681f488"
+								"61a12889270b53001681f4ae"
 							]
 						}
 					},
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"data\": [\r\n        {\r\n            \"views\": [\r\n                \"61a12223270b53001681f488\"\r\n            ],\r\n            \"_id\": \"61d063f0e43c940016478c73\",\r\n            \"host\": \"61a12223270b53001681f488\",\r\n            \"mediaType\": \"IMAGE\",\r\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f4882022-01-01%2019%3A53%3A34.389748?alt=media&token=7ca78542-24d4-49a0-8f66-12e11c2bde24\",\r\n            \"createdAt\": \"2022-01-01T14:23:44.942Z\",\r\n            \"__v\": 0\r\n        },\r\n        {\r\n            \"views\": [],\r\n            \"_id\": \"61d087870093850814f42ff6\",\r\n            \"host\": \"61a12223270b53001681f488\",\r\n            \"mediaType\": \"IMAGE\",\r\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n            \"createdAt\": \"2022-01-01T16:55:35.634Z\",\r\n            \"__v\": 0\r\n        }\r\n    ]\r\n}"
+					"body": "[\r\n    {\r\n        \"views\": [],\r\n        \"_id\": \"61d741b020b37016d0c6d3e5\",\r\n        \"host\": \"61a12889270b53001681f4ae\",\r\n        \"isImage\": true,\r\n        \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n        \"createdAt\": \"2022-01-06T19:23:28.899Z\",\r\n        \"__v\": 0\r\n    },\r\n    {\r\n        \"views\": [],\r\n        \"_id\": \"61d741f620b37016d0c6d3ec\",\r\n        \"host\": \"61a12889270b53001681f4ae\",\r\n        \"isImage\": true,\r\n        \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\r\n        \"createdAt\": \"2022-01-06T19:24:38.697Z\",\r\n        \"__v\": 0\r\n    }\r\n]"
 				}
 			]
 		}
