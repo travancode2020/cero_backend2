@@ -14,19 +14,28 @@ const getAllUsers = (req, res, next) => {
 };
 
 const createUser = async (req, res, next) => {
-  let agoraId = await generateUniqueAgoraId();
-  let body = { ...req.body, agoraId };
-  Users.create(body)
-    .then(
-      (user) => {
-        console.log("New User Created", user);
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        res.json(user);
-      },
-      (err) => next(err)
-    )
-    .catch((err) => next(err));
+  try {
+    if (req.body.phone) {
+      let phoneNumberAvailable = await Users.findOne({ phone: req.body.phone });
+      if (phoneNumberAvailable)
+        throw new Error("Phone number already registered");
+    }
+    let agoraId = await generateUniqueAgoraId();
+    let body = { ...req.body, agoraId };
+    Users.create(body)
+      .then(
+        (user) => {
+          console.log("New User Created", user);
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(user);
+        },
+        (err) => next(err)
+      )
+      .catch((err) => next(err));
+  } catch (error) {
+    next(error);
+  }
 };
 
 const patchUserByUsername = (req, res, next) => {
