@@ -47,6 +47,9 @@ const getMomentsByUserId = async (req, res, next) => {
           moments: 1,
         },
       },
+      {
+        $sort: { _id: -1 },
+      },
     ]);
 
     res.status(200).json({
