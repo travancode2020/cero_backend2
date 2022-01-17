@@ -1067,14 +1067,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/users/6177bb898f45e5001687a543/followers",
+					"raw": "{{BASE_URL}}/users/61a13043270b53001681f63f/followers?page=1&limit=1",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"users",
-						"6177bb898f45e5001687a543",
+						"61a13043270b53001681f63f",
 						"followers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -1085,14 +1095,24 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/users/6177bb898f45e5001687a543/followers",
+							"raw": "{{BASE_URL}}/users/61a13043270b53001681f63f/followers?page=1&limit=20",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"users",
-								"6177bb898f45e5001687a543",
+								"61a13043270b53001681f63f",
 								"followers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
 							]
 						}
 					},
@@ -1130,7 +1150,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"_id\": \"617abf7d2dbd2100169ef146\",\n        \"fId\": \"qrXxJTlIZPSgLU3Yy8lMsx7v9Zv2\",\n        \"userName\": \"johnny\",\n        \"name\": \"Johnny\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJyZ_eHmreKuBa0OiylLG86GCuospFqXhr8RWEhi=s96-c\"\n    },\n    {\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
+					"body": "{\n    \"totalPages\": 1,\n    \"followers\": [\n        {\n            \"_id\": \"61df17051d8ce900165aee5f\",\n            \"fId\": \"tCMxo4xloPMDU49GBXQ8OFaOV3z1\",\n            \"userName\": \"aryana\",\n            \"name\": \"Abhirami\",\n            \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\n        },\n        {\n            \"_id\": \"61a12223270b53001681f488\",\n            \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -1140,14 +1160,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/following",
+					"raw": "{{BASE_URL}}/users/61a13043270b53001681f63f/following?page=1&limit=1",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"users",
-						"6176c9691ea09c0016dc38b3",
+						"61a13043270b53001681f63f",
 						"following"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -1158,14 +1188,24 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/users/6176c9691ea09c0016dc38b3/following",
+							"raw": "{{BASE_URL}}/users/61a13043270b53001681f63f/following?page=1&limit=1",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"users",
-								"6176c9691ea09c0016dc38b3",
+								"61a13043270b53001681f63f",
 								"following"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -1203,10 +1243,10 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"_id\": \"6177bb898f45e5001687a543\",\n        \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n        \"userName\": \"agarian\",\n        \"name\": \"Ajay Agarian\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n    }\n]"
+					"body": "{\n    \"totalPages\": 1,\n    \"following\": [\n        {\n            \"_id\": \"61a12223270b53001681f488\",\n            \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        }\n    ]\n}"
 				}
 			]
-		},
+		}
 		{
 			"name": "Get User By AgoraId",
 			"request": {

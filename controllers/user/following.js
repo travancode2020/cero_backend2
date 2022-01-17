@@ -61,6 +61,10 @@ const unfollowByUserId = async (req, res, next) => {
 const getFollowersByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const foundUser = await Users.findById(userId).populate({
       path: "followers",
@@ -69,8 +73,10 @@ const getFollowersByUserId = async (req, res, next) => {
     if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
+    let followers = foundUser.followers.slice(skip, skip + limit);
+    let totalPages = Math.ceil(foundUser.followers.length / limit);
 
-    res.status(200).json(foundUser.followers);
+    res.status(200).json({ totalPages, followers });
   } catch (error) {
     next(error);
   }
@@ -79,6 +85,10 @@ const getFollowersByUserId = async (req, res, next) => {
 const getFollowingByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const foundUser = await Users.findById(userId).populate({
       path: "following",
@@ -87,8 +97,10 @@ const getFollowingByUserId = async (req, res, next) => {
     if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
+    let following = foundUser.following.slice(skip, skip + limit);
+    let totalPages = Math.ceil(foundUser.following.length / limit);
 
-    res.status(200).json(foundUser.following);
+    res.status(200).json({ totalPages, following });
   } catch (error) {
     next(error);
   }

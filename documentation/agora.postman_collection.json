@@ -83,6 +83,48 @@
           "body": null
         }
       ]
+    },
+    {
+      "name": "Get RTM Agora Token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/agora/getRtmToken?agoraId=999999999",
+          "host": ["{{BASE_URL}}"],
+          "path": ["agora", "getRtmToken"],
+          "query": [
+            {
+              "key": "agoraId",
+              "value": "999999999"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get RTM Agora Token",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/agora/getRtmToken?agoraId=999999999",
+              "host": ["{{BASE_URL}}"],
+              "path": ["agora", "getRtmToken"],
+              "query": [
+                {
+                  "key": "agoraId",
+                  "value": "999999999"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"token\": \"0062f90a385e00d428380fcff212d2e9425IABVQiL9N37rkvRPhtqZ+9bAvDwU6bOkNhXTDSBmwjkBouQqvrsAAAAAEADdYUpP4PrmYQEA6ANwt+Vh\"\r\n}"
+        }
+      ]
     }
   ]
 }
