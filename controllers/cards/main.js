@@ -16,7 +16,7 @@ const getAllCards = async (req, res, next) => {
         select: ["name", "userName", "photoUrl", "fId", "userTag"],
       },
     ];
-
+    let total;
     if (interestString.length) {
       if (userId) {
         foundCards = await Cards.find({
@@ -27,11 +27,20 @@ const getAllCards = async (req, res, next) => {
           .populate(populateQuery)
           .skip(count * (page - 1))
           .limit(count);
+        total = await Cards.find({
+          tags: { $in: interestArray },
+          likes: { $nin: [userId] },
+          disLikes: { $nin: [userId] },
+        }).populate(populateQuery);
       } else {
         foundCards = await Cards.find({ tags: { $in: interestArray } })
           .populate(populateQuery)
           .skip(count * (page - 1))
           .limit(count);
+
+        total = await Cards.find({ tags: { $in: interestArray } }).populate(
+          populateQuery
+        );
       }
     } else {
       if (userId) {
@@ -42,15 +51,21 @@ const getAllCards = async (req, res, next) => {
           .populate(populateQuery)
           .skip(count * (page - 1))
           .limit(count);
+        total = await Cards.find({
+          likes: { $nin: [userId] },
+          disLikes: { $nin: [userId] },
+        });
       } else {
         foundCards = await Cards.find({})
           .populate(populateQuery)
           .skip(count * (page - 1))
           .limit(count);
+
+        total = await Cards.find({}).populate(populateQuery);
       }
     }
-
-    res.status(200).json(foundCards);
+    let totalpage = Math.ceil(total.length / count);
+    res.status(200).json({ totalpage, data: foundCards });
   } catch (error) {
     next(error);
   }
