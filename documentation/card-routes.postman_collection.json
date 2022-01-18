@@ -1,1910 +1,1741 @@
 {
-	"info": {
-		"_postman_id": "2336160c-5b59-4adc-94cb-4454ac4846d8",
-		"name": "card-routes",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Get Cards",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Cards",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2237"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"8bd-ujD1NaeAMhQbdLR7htSWIsHMbZE\""
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 28 Oct 2021 17:36:30 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [\n            \"617a5fe7b27a5a00164cea1c\"\n        ],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n        ],\n        \"disLikes\": [\n            \"6177bb898f45e5001687a543\"\n        ],\n        \"saved\": [],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"42343a\"\n        ],\n        \"comments\": [\n            \"617a2b62b0526d0016bc770d\",\n            \"617a401f5f07d6001696d429\"\n        ],\n        \"_id\": \"617941abeb538a0016b57085\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Description is not available\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"617941abeb538a0016b57085\"\n    }\n]"
-				},
-				{
-					"name": "Get Cards With Interests and Skip, Limit",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards?interests=One&page=1&count=5",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards"
-							],
-							"query": [
-								{
-									"key": "interests",
-									"value": "One"
-								},
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "count",
-									"value": "5"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "704"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2c0-VgV6PFKmGw3LDwMgxzDryaCDhJk\""
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 29 Oct 2021 12:03:25 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    }\n]"
-				},
-				{
-					"name": "Get Card not Liked/Disliked Yet by User id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards?userId=617abf7d2dbd2100169ef146",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "617abf7d2dbd2100169ef146"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2135"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"857-hTpYdZAL8KXvgbNvNXTJjLz2V/Q\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 09 Nov 2021 05:47:44 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n             \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [\n            \"617a5fe7b27a5a00164cea1c\"\n        ],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6176c9691ea09c0016dc38b3%2F2021-11-07%2020%3A27%3A19.913912?alt=media&token=763c3155-d453-4b85-a5c6-a36351f92d5d\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"131413\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6187e95c3cfcfe00165f3da9\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        },\n        \"caption\": \"575983\",\n        \"__v\": 0,\n        \"likeCount\": 1,\n        \"id\": \"6187e95c3cfcfe00165f3da9\"\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Get Trending Cards",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/trending?page=1&limit=20",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"trending"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "limit",
-							"value": "20"
-						}
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Trending Cards",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/trending?page=1&limit=20",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"trending"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "20"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "11920"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2e90-SFNIsg1SupxKEx8Ll+NfRj0IYFU\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:12:44 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"totalPage\": 1,\n    \"trendingCards\": [\n        {\n            \"_id\": \"Current Affairs\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d07977edd5e9001640aaa6\",\n                    \"links\": [\n                        \"https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [\n                        \"61a12223270b53001681f488\",\n                        \"61a12889270b53001681f4ae\",\n                        \"61a13043270b53001681f63f\",\n                        \"61cbfff387b7220016e533c2\"\n                    ],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Current Affairs\"\n                    ],\n                    \"color\": [\n                        \"b3b6b1\"\n                    ],\n                    \"comments\": [\n                        \"61d7336ef72bae13786d121a\",\n                        \"61d738a6889d6f14b8398329\"\n                    ],\n                    \"isImage\": false,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"Lorem ipsum\",\n                    \"createdAt\": \"2022-01-01T15:55:35.273Z\",\n                    \"updatedAt\": \"2022-01-06T18:44:54.677Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 4,\n                    \"treandingRation\": 0.7090302241161244\n                },\n                {\n                    \"_id\": \"61d4716ffcf4ae001645d4ff\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-01-04%2021%3A40%3A07.609849?alt=media&token=ee8ba8c9-7349-458a-9fbd-b1ad75378a85\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Current Affairs\"\n                    ],\n                    \"color\": [\n                        \"4669ae\"\n                    ],\n                    \"comments\": [],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"🤣🤣\",\n                    \"createdAt\": \"2022-01-04T16:10:23.406Z\",\n                    \"updatedAt\": \"2022-01-06T15:01:09.118Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"Science & Technology\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d0b47a83393200162b9eb3\",\n                    \"links\": [\n                        \"https://assets.mixkit.co/videos/preview/mixkit-paddleboarder-1166-large.mp4\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Science & Technology\",\n                        \"Two\"\n                    ],\n                    \"color\": [\n                        \"c6d1d5\"\n                    ],\n                    \"comments\": [],\n                    \"isImage\": false,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p\",\n                    \"createdAt\": \"2022-01-01T20:07:22.007Z\",\n                    \"updatedAt\": \"2022-01-06T10:12:28.965Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"Psychology\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d0936983393200162b9e22\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-01-01%2023%3A16%3A04.954852?alt=media&token=4e28c316-813c-43da-beba-f6bc850a7917\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Psychology\",\n                        \"Free\"\n                    ],\n                    \"color\": [\n                        \"b6bb97\"\n                    ],\n                    \"comments\": [],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"Happy New Year 💕🎆\",\n                    \"createdAt\": \"2022-01-01T17:46:17.380Z\",\n                    \"updatedAt\": \"2022-01-05T16:59:22.884Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"General Knowledge\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d2f07c9651b700166003fe\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2021-11-27%2000%3A20%3A43.086242?alt=media&token=e3b873f6-ac84-4f98-b6cd-e2be12381c2c\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"General Knowledge\",\n                        \"Free\"\n                    ],\n                    \"color\": [],\n                    \"comments\": [],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"\",\n                    \"createdAt\": \"2022-01-03T12:47:56.898Z\",\n                    \"updatedAt\": \"2022-01-03T12:47:56.898Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        }\n    ]\n}"
-				}
-			]
-		},
-		{
-			"name": "Get Trending Cards By Interests",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/trending/interests?interests=Psychology",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"trending",
-						"interests"
-					],
-					"query": [
-						{
-							"key": "interests",
-							"value": "Psychology"
-						}
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Trending Cards By Interests",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/trending/interests?interests=Psychology",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"trending",
-								"interests"
-							],
-							"query": [
-								{
-									"key": "interests",
-									"value": "Psychology"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1552"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"610-hroUTBTssKaubLYWobT6S69MDKA\""
-						},
-						{
-							"key": "Date",
-							"value": "Sun, 31 Oct 2021 18:10:12 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"_id\": \"Psychology\",\n        \"card\": {\n            \"_id\": \"617941abeb538a0016b57085\",\n            \"links\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n            ],\n            \"disLikes\": [\n                \"6177bb898f45e5001687a543\"\n            ],\n            \"saved\": [\n                \"617abf7d2dbd2100169ef146\"\n            ],\n            \"likes\": [\n                \"617abf7d2dbd2100169ef146\"\n            ],\n            \"views\": [],\n            \"tags\": [\n                \"Psychology\",\n                \"Two\"\n            ],\n            \"color\": [\n                \"42343a\"\n            ],\n            \"comments\": [\n                \"617a2b62b0526d0016bc770d\",\n                \"617a401f5f07d6001696d429\"\n            ],\n            \"isImage\": true,\n            \"host\": {\n                \"_id\": \"6177bb898f45e5001687a543\",\n                \"userTag\": [\n                    \"Entrepreneur\"\n                ],\n                \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n                \"userName\": \"agarian\",\n                \"name\": \"Ajay Agarian\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n            },\n            \"caption\": \"Description is not available\",\n            \"__v\": 0,\n            \"likeCount\": 1\n        }\n    },\n    {\n        \"_id\": \"Psychology\",\n        \"card\": {\n            \"_id\": \"61794169eb538a0016b5707e\",\n            \"links\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n            ],\n            \"disLikes\": [],\n            \"saved\": [\n                \"6176c9691ea09c0016dc38b3\"\n            ],\n            \"likes\": [],\n            \"views\": [],\n            \"tags\": [\n                \"Psychology\",\n                \"Free\"\n            ],\n            \"color\": [\n                \"392b2b\"\n            ],\n            \"comments\": [\n                \"617a5fe7b27a5a00164cea1c\"\n            ],\n            \"isImage\": true,\n            \"host\": {\n                \"_id\": \"6177bb898f45e5001687a543\",\n                \"userTag\": [\n                    \"Entrepreneur\"\n                ],\n                \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n                \"userName\": \"agarian\",\n                \"name\": \"Ajay Agarian\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n            },\n            \"caption\": \"Loren ipsum\",\n            \"__v\": 0,\n            \"likeCount\": 0\n        }\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Get Cards By User Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/user/6177bb898f45e5001687a543",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"user",
-						"6177bb898f45e5001687a543"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Cards By User Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/user/SNQOQnqzeMdsozL7NY6ieowl5ax1",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"user",
-								"SNQOQnqzeMdsozL7NY6ieowl5ax1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "5958"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1746-AshtYtWl6Oe8lHF3vUYF2DgOWvA\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:13:08 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"777b7c\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Mountaineering⛰️, also called mountain climbing, the sport of attaining, or attempting to attain, high points in mountainous regions, mainly for the pleasure of the climb. ... For the untrained, mountaineering is a dangerous pastime.\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"👍👍\",\n                \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"userName\": \"ajay_k.p\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n                \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"habahssh\",\n                \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"userName\": \"ajay_k.p\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n                \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"❤\",\n                \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n                \"userName\": \"hrithiksraj\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n                \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-24T20:09:43.981Z\",\n        \"updatedAt\": \"2021-09-05T10:37:02.607Z\",\n        \"__v\": 3\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A17%3A09.720940?alt=media&token=19cde279-fe62-4296-b9c8-2f48ed94c714\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A17%3A15.589997?alt=media&token=72168f8f-caa7-4690-8605-7b2a6491a386\"\n        ],\n        \"disLikes\": [\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n        ],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Four\"\n        ],\n        \"color\": [\n            \"f0f0f0\",\n            \"d3d3c8\"\n        ],\n        \"_id\": \"612c8d0af9d3f500165c30ea\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Psychology is the scientific study of the mind and behavior. Psychologists are actively involved in studying and understanding mental processes, brain functions, and behavior.\",\n        \"comments\": [],\n        \"createdAt\": \"2021-08-30T07:47:22.887Z\",\n        \"updatedAt\": \"2021-10-01T10:00:49.036Z\",\n        \"__v\": 0\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A22%3A44.004363?alt=media&token=e40667c6-a8bc-4778-ae6a-255b96fa2e00\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A22%3A49.821170?alt=media&token=dbdf38f1-2e65-4ca9-b803-d1b4beb80f02\"\n        ],\n        \"disLikes\": [\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n        ],\n        \"saved\": [],\n        \"likes\": [\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"History\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"252323\",\n            \"80888d\"\n        ],\n        \"_id\": \"612c8e59f9d3f500165c30ef\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"History is the study of change and development in society over time. The study of history enables us to understand how past human action affects the present and influences our future, and it allows us to evaluate these effects\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612c8e59f9d3f500165c30ef\",\n                \"comment\": \"ggg\",\n                \"userId\": \"U7v4QpOH22eiRJCTru2z0LbDpC33\",\n                \"userName\": \"hari\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-09-05T10:35:49.044Z\",\n                \"updatedAt\": \"2021-09-05T10:35:49.044Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612c8e59f9d3f500165c30ef\",\n                \"comment\": \"test\",\n                \"userId\": \"U7v4QpOH22eiRJCTru2z0LbDpC33\",\n                \"userName\": \"hari\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-09-05T10:35:51.503Z\",\n                \"updatedAt\": \"2021-09-05T10:35:51.503Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-30T07:52:57.171Z\",\n        \"updatedAt\": \"2021-09-09T16:04:28.508Z\",\n        \"__v\": 2\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2017%3A06%3A24.509770?alt=media&token=837c2a13-22d5-485f-93d7-8b1b710cf34c\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2017%3A06%3A33.107650?alt=media&token=f2ce4c28-882d-4bb8-8b6c-5a4a7d6bcb66\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2017%3A06%3A38.802540?alt=media&token=f3d8ceb0-6a92-4ddc-a0b5-437d5cab3052\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"a0c5e6\"\n        ],\n        \"_id\": \"612cc2cd1dbfbc0016dda6e9\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi malesuada a arcu vel accumsan. Ut malesuada sapien at turpis ornare, ut tincidunt augue lobortis. Nulla facilisi. Donec sit amet massa vehicula, varius nibh a, accumsan nibh. Nullam cursus feugiat egestas. Ut ut sollicitudin velit. Duis sodales ut diam et pellentesque.\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612cc2cd1dbfbc0016dda6e9\",\n                \"comment\": \"osm\",\n                \"userId\": \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n                \"userName\": \"brijpatel\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-31T06:18:54.079Z\",\n                \"updatedAt\": \"2021-08-31T06:18:54.079Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-30T11:36:45.487Z\",\n        \"updatedAt\": \"2021-10-01T09:48:16.502Z\",\n        \"__v\": 1\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Get All Liked Cards By User Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"user",
-						"liked",
-						"6177bb898f45e5001687a543"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get All Liked Cards By User Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"user",
-								"liked",
-								"6177bb898f45e5001687a543"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1322"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"52a-4gha1yWZrye1QhIfgERQidli5Ak\""
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 29 Oct 2021 10:40:51 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\",\n        \"General Knowledge\",\n        \"Current Affairs\",\n        \"Culture & lifestyle\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"liked\": [\n        {\n            \"links\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n            ],\n            \"disLikes\": [\n                \"6177bb898f45e5001687a543\"\n            ],\n            \"saved\": [\n                \"617abf7d2dbd2100169ef146\"\n            ],\n            \"likes\": [],\n            \"views\": [],\n            \"tags\": [\n                \"Psychology\",\n                \"Two\"\n            ],\n            \"color\": [\n                \"42343a\"\n            ],\n            \"comments\": [\n                \"617a2b62b0526d0016bc770d\",\n                \"617a401f5f07d6001696d429\"\n            ],\n            \"_id\": \"617941abeb538a0016b57085\",\n            \"isImage\": true,\n            \"host\": \"6177bb898f45e5001687a543\",\n            \"caption\": \"Description is not available\",\n            \"__v\": 0,\n            \"likeCount\": 0,\n            \"id\": \"617941abeb538a0016b57085\"\n        }\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6177bb898f45e5001687a543\",\n    \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n    \"userName\": \"agarian\",\n    \"name\": \"Ajay Agarian\",\n    \"email\": \"ajayagarian.aero2astro@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": true,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-26T08:25:45.965Z\",\n    \"updatedAt\": \"2021-10-28T14:53:04.601Z\",\n    \"__v\": 0,\n    \"phone\": null\n}"
-				}
-			]
-		},
-		{
-			"name": "Get All Saved Cards By User Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"user",
-						"6176c9691ea09c0016dc38b3",
-						"saved"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get All Saved Cards By User Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"user",
-								"6176c9691ea09c0016dc38b3",
-								"saved"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1396"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"574-KEW97LUM8IaMlqA5zlzPhcwLgwk\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Oct 2021 15:38:50 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Get Card By Card Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"61255207fa24c6001602dd3e"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Card By Card Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"61255207fa24c6001602dd3e"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2266"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"8da-/tGdTdNBOleyq2gRV95YtYdxP50\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:13:36 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"$__\": {\n        \"strictMode\": true,\n        \"selected\": {},\n        \"getters\": {},\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"wasPopulated\": false,\n        \"activePaths\": {\n            \"paths\": {\n                \"hostName\": \"init\",\n                \"hostId\": \"init\",\n                \"isImage\": \"init\",\n                \"link\": \"init\",\n                \"disLikes\": \"init\",\n                \"saved\": \"init\",\n                \"likes\": \"init\",\n                \"views\": \"init\",\n                \"tags\": \"init\",\n                \"color\": \"init\",\n                \"_id\": \"init\",\n                \"hostPropic\": \"init\",\n                \"caption\": \"init\",\n                \"comments\": \"modify\",\n                \"createdAt\": \"init\",\n                \"updatedAt\": \"init\",\n                \"__v\": \"init\"\n            },\n            \"states\": {\n                \"ignore\": {},\n                \"default\": {},\n                \"init\": {\n                    \"_id\": true,\n                    \"link\": true,\n                    \"disLikes\": true,\n                    \"saved\": true,\n                    \"likes\": true,\n                    \"views\": true,\n                    \"tags\": true,\n                    \"color\": true,\n                    \"isImage\": true,\n                    \"hostId\": true,\n                    \"hostName\": true,\n                    \"hostPropic\": true,\n                    \"caption\": true,\n                    \"createdAt\": true,\n                    \"updatedAt\": true,\n                    \"__v\": true\n                },\n                \"modify\": {\n                    \"comments\": true\n                },\n                \"require\": {}\n            },\n            \"stateNames\": [\n                \"require\",\n                \"modify\",\n                \"init\",\n                \"default\",\n                \"ignore\"\n            ]\n        },\n        \"pathsToScopes\": {},\n        \"cachedRequired\": {},\n        \"session\": null,\n        \"$setCalled\": {},\n        \"emitter\": {\n            \"_events\": {},\n            \"_eventsCount\": 0,\n            \"_maxListeners\": 0\n        },\n        \"$options\": {\n            \"skipId\": true,\n            \"isNew\": false,\n            \"willInit\": true,\n            \"defaults\": true\n        }\n    },\n    \"isNew\": false,\n    \"$locals\": {},\n    \"$op\": null,\n    \"_doc\": {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"777b7c\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Mountaineering⛰️, also called mountain climbing, the sport of attaining, or attempting to attain, high points in mountainous regions, mainly for the pleasure of the climb. ... For the untrained, mountaineering is a dangerous pastime.\",\n        \"createdAt\": \"2021-08-24T20:09:43.981Z\",\n        \"updatedAt\": \"2021-09-05T10:37:02.607Z\",\n        \"__v\": 3\n    },\n    \"$init\": true,\n    \"commentCount\": 3,\n    \"host\": {\n        \"userTag\": [\n            \"SoftwareDeveloper\"\n        ],\n        \"_id\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"userName\": \"ajaykrishnap\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n    }\n}"
-				}
-			]
-		},
-		{
-			"name": "Get Comments By Card Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6176dae832053632d07441cf",
-						"comments"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Comments By Card Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e/comments",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"61255207fa24c6001602dd3e",
-								"comments"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "701"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"2bd-gsPHzJgjc5pJfF1cjpHTH6wBvdA\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:14:01 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"👍👍\",\n        \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n        \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n    },\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"habahssh\",\n        \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n        \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n    },\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"❤\",\n        \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n        \"userName\": \"hrithiksraj\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n        \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Get Comment By Comment ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6176dae832053632d07441cf",
-						"comments",
-						"6177b4c101a8dd0f0887b24f"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Comment By Comment ID",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e/comments/61255207fa24c6001602dd3e",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"61255207fa24c6001602dd3e",
-								"comments",
-								"61255207fa24c6001602dd3e"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "233"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"e9-OTDYiHA9gtt8ip5IrnqnTgJPEhg\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 20 Oct 2021 05:14:48 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"likes\": [\n        \"\"\n    ],\n    \"_id\": \"61255207fa24c6001602dd3e\",\n    \"comment\": \"👍👍\",\n    \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n    \"userName\": \"ajay_k.p\",\n    \"replyTo\": \"ajaykrishnap\",\n    \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n    \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Create Card By User Id",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"links\": [\"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"],\r\n    \"isImage\": true,\r\n    \"host\": \"6176c9691ea09c0016dc38b3\",\r\n    \"caption\": \"Beautiful Building\",\r\n    \"color\": [\"#FF5733\"]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Create Card By User Id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"links\": [\"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"],\r\n    \"isImage\": true,\r\n    \"host\": \"61766e42a4fe081a682b514b\",\r\n    \"caption\": \"Beautiful Building\",\r\n    \"color\": [\"#FF5733\"]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "383"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"17f-oJRlXBJFfRrdIcPmy/1kmHex4Sg\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 25 Oct 2021 08:50:41 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [],\n    \"_id\": \"61766fe170053f39a005c0b4\",\n    \"isImage\": true,\n    \"host\": \"61766e42a4fe081a682b514b\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0\n}"
-				}
-			]
-		},
-		{
-			"name": "Create Comment By Card Id",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6176dae832053632d07441cf",
-						"comments"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Create Comment By Card Id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"6176dae832053632d07441cf",
-								"comments"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "455"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1c7-t+ukCrox4mWcHOruCknK+kdTrEY\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 26 Oct 2021 06:05:15 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [\n        \"61779a9ba516690418103e43\"\n    ],\n    \"_id\": \"6176dae832053632d07441cf\",\n    \"isImage\": true,\n    \"host\": \"6176c9691ea09c0016dc38b3\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0,\n    \"likeCount\": 0,\n    \"id\": \"6176dae832053632d07441cf\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Delete Comment By Comment ID",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6176dae832053632d07441cf",
-						"comments",
-						"61779a9ba516690418103e43"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Delete Comment By Comment ID",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"6176dae832053632d07441cf",
-								"comments",
-								"61779a9ba516690418103e43"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-+7dttf6TMeUXpmYyRtIWXCeHyZw\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 26 Oct 2021 06:12:28 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Comment deleted\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Update Comment By Comment Id",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"comment\": \"Update comment\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6176dae832053632d07441cf",
-						"comments",
-						"6177b4c101a8dd0f0887b24f"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Update Comment By Comment Id",
-					"originalRequest": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"comment\": \"Update comment\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"6176dae832053632d07441cf",
-								"comments",
-								"6177b4c101a8dd0f0887b24f"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 26 Oct 2021 17:03:47 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Comment updated\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Like or Unlike Comment By User Id and Comment ID",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"isLiked\" : false\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6176c9691ea09c0016dc38b3",
-						"comments",
-						"like",
-						"6177b4c101a8dd0f0887b24f"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Like Comment",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isLiked\" : true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"6176c9691ea09c0016dc38b3",
-								"comments",
-								"like",
-								"6177b4c101a8dd0f0887b24f"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 26 Oct 2021 17:13:08 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Comment updated\"\n}"
-				},
-				{
-					"name": "Unlike Comment",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isLiked\" : false\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"6176c9691ea09c0016dc38b3",
-								"comments",
-								"like",
-								"6177b4c101a8dd0f0887b24f"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "29"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 26 Oct 2021 17:13:29 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Comment updated\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Save Card By User Id and Card Id",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"isSaved\" : true\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/61794169eb538a0016b5707e",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"user",
-						"6176c9691ea09c0016dc38b3",
-						"save",
-						"61794169eb538a0016b5707e"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Save Card By User Id and Card Id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isSaved\" : true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/6177d52e235d3d0016bd88aa",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"user",
-								"6176c9691ea09c0016dc38b3",
-								"save",
-								"6177d52e235d3d0016bd88aa"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "26"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Oct 2021 15:25:02 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Card updated\"\n}"
-				},
-				{
-					"name": "Unsave Card By User Id and Card Id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isSaved\" : false\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/6177d52e235d3d0016bd88aa",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"user",
-								"6176c9691ea09c0016dc38b3",
-								"save",
-								"6177d52e235d3d0016bd88aa"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "26"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 27 Oct 2021 15:25:33 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Card updated\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Like/Unlike Card By User Id and Card Id",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"isLiked\" : \"false\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/like/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"like",
-						"6177d52e235d3d0016bd88aa",
-						"user",
-						"6176c9691ea09c0016dc38b3"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Like Card By User Id and Card Id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isLiked\" : \"true\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/like/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"like",
-								"6177d52e235d3d0016bd88aa",
-								"user",
-								"6176c9691ea09c0016dc38b3"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "26"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 28 Oct 2021 16:54:36 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Card updated\"\n}"
-				},
-				{
-					"name": "Unlike Card by User Id and Card id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isLiked\" : \"false\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/like/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"like",
-								"6177d52e235d3d0016bd88aa",
-								"user",
-								"6176c9691ea09c0016dc38b3"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "26"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 28 Oct 2021 16:56:19 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Card updated\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Dislike/Undislike by Card Id and User Id",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"isDisliked\" :  \"false\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/dislike/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"dislike",
-						"6177d52e235d3d0016bd88aa",
-						"user",
-						"6176c9691ea09c0016dc38b3"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Dislike Card By Card Id and User Id",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"isDisliked\" :  \"true\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/cards/dislike/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"dislike",
-								"6177d52e235d3d0016bd88aa",
-								"user",
-								"6176c9691ea09c0016dc38b3"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "26"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 28 Oct 2021 17:36:28 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Card updated\"\n}"
-				}
-			]
-		},
-		{
-			"name": "Get Liked Users By Card Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"617941abeb538a0016b57085",
-						"liked"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Liked Users By Card Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"617941abeb538a0016b57085",
-								"liked"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "463"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"1cf-npQw3EOPWWtynnR7zGO34Ca1g74\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 08 Nov 2021 09:43:34 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"userTag\": [],\n        \"_id\": \"617abf7d2dbd2100169ef146\",\n        \"fId\": \"qrXxJTlIZPSgLU3Yy8lMsx7v9Zv2\",\n        \"userName\": \"johnny\",\n        \"name\": \"Johnny\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJyZ_eHmreKuBa0OiylLG86GCuospFqXhr8RWEhi=s96-c\"\n    },\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Get Saved Users By Card Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/cards/6177d52e235d3d0016bd88aa/saved",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"6177d52e235d3d0016bd88aa",
-						"saved"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Saved Users By Card Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/cards/6177d52e235d3d0016bd88aa/saved",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"cards",
-								"6177d52e235d3d0016bd88aa",
-								"saved"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "242"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"f2-5KXXNsWU7gmRWi5ttylOSy98UIE\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 08 Nov 2021 09:45:15 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "Update Card By Card Id",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"caption\":\"Beautiful Building\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/cards/update/61d005c662c50f211cb8fc05",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"cards",
-						"update",
-						"61d005c662c50f211cb8fc05"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "2336160c-5b59-4adc-94cb-4454ac4846d8",
+    "name": "card-routes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Cards",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Cards",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2237"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"8bd-ujD1NaeAMhQbdLR7htSWIsHMbZE\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 28 Oct 2021 17:36:30 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [\n            \"617a5fe7b27a5a00164cea1c\"\n        ],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n        ],\n        \"disLikes\": [\n            \"6177bb898f45e5001687a543\"\n        ],\n        \"saved\": [],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"42343a\"\n        ],\n        \"comments\": [\n            \"617a2b62b0526d0016bc770d\",\n            \"617a401f5f07d6001696d429\"\n        ],\n        \"_id\": \"617941abeb538a0016b57085\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Description is not available\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"617941abeb538a0016b57085\"\n    }\n]"
+        },
+        {
+          "name": "Get Cards With Interests and Skip, Limit",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards?interests=One&page=1&count=5",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards"],
+              "query": [
+                {
+                  "key": "interests",
+                  "value": "One"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "count",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "704"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2c0-VgV6PFKmGw3LDwMgxzDryaCDhJk\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 29 Oct 2021 12:03:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    }\n]"
+        },
+        {
+          "name": "Get Card not Liked/Disliked Yet by User id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards?userId=617abf7d2dbd2100169ef146",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards"],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "617abf7d2dbd2100169ef146"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2135"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"857-hTpYdZAL8KXvgbNvNXTJjLz2V/Q\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 09 Nov 2021 05:47:44 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n             \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [\n            \"617a5fe7b27a5a00164cea1c\"\n        ],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6176c9691ea09c0016dc38b3%2F2021-11-07%2020%3A27%3A19.913912?alt=media&token=763c3155-d453-4b85-a5c6-a36351f92d5d\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"131413\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6187e95c3cfcfe00165f3da9\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        },\n        \"caption\": \"575983\",\n        \"__v\": 0,\n        \"likeCount\": 1,\n        \"id\": \"6187e95c3cfcfe00165f3da9\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get Trending Cards",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/trending?page=1&limit=20",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "trending"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Trending Cards",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/trending?page=1&limit=20",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "trending"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "11920"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2e90-SFNIsg1SupxKEx8Ll+NfRj0IYFU\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 20 Oct 2021 05:12:44 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"totalPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"Psychology\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d0936983393200162b9e22\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-01-01%2023%3A16%3A04.954852?alt=media&token=4e28c316-813c-43da-beba-f6bc850a7917\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Psychology\",\n                        \"Free\"\n                    ],\n                    \"color\": [\n                        \"b6bb97\"\n                    ],\n                    \"comments\": [],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"Happy New Year 💕🎆\",\n                    \"createdAt\": \"2022-01-01T17:46:17.380Z\",\n                    \"updatedAt\": \"2022-01-05T16:59:22.884Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"General Knowledge\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d2f07c9651b700166003fe\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2021-11-27%2000%3A20%3A43.086242?alt=media&token=e3b873f6-ac84-4f98-b6cd-e2be12381c2c\"\n                    ],\n                    \"disLikes\": [\n                        \"61dc59523e5caf0016f0f677\"\n                    ],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"General Knowledge\",\n                        \"Free\"\n                    ],\n                    \"color\": [],\n                    \"comments\": [\n                        \"61db3bfec1d9900016fc2e57\"\n                    ],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"\",\n                    \"createdAt\": \"2022-01-03T12:47:56.898Z\",\n                    \"updatedAt\": \"2022-01-12T10:47:22.015Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"Science & Technology\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d0b47a83393200162b9eb3\",\n                    \"links\": [\n                        \"https://assets.mixkit.co/videos/preview/mixkit-paddleboarder-1166-large.mp4\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Science & Technology\",\n                        \"Two\"\n                    ],\n                    \"color\": [\n                        \"c6d1d5\"\n                    ],\n                    \"comments\": [],\n                    \"isImage\": false,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p\",\n                    \"createdAt\": \"2022-01-01T20:07:22.007Z\",\n                    \"updatedAt\": \"2022-01-15T03:45:54.912Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"Business\",\n            \"cards\": [\n                {\n                    \"_id\": \"61e5e28f7b701300169ae587\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a13043270b53001681f63f%2F2022-01-18%2003%3A11%3A24.453607?alt=media&token=e252c5e2-3877-4336-bf28-d6390d13c0ea\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Business\"\n                    ],\n                    \"color\": [\n                        \"f8b008\"\n                    ],\n                    \"comments\": [],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a13043270b53001681f63f\",\n                        \"userTag\": [\n                            \"Company\"\n                        ],\n                        \"fId\": \"oY5lvgy5X4OX62KnxDzx04Hi6yA2\",\n                        \"userName\": \"travancode\",\n                        \"name\": \"Travancode\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gi4fZDbu5UZ8H18P24X1bfhm5ckjarxzyHnnr8=s96-c\"\n                    },\n                    \"caption\": \"Send your resume to kumarpranavdeep56@gmail.com\",\n                    \"createdAt\": \"2022-01-17T21:41:35.832Z\",\n                    \"updatedAt\": \"2022-01-18T14:53:35.990Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 0,\n                    \"treandingRation\": 0\n                }\n            ]\n        },\n        {\n            \"_id\": \"Current Affairs\",\n            \"cards\": [\n                {\n                    \"_id\": \"61d07977edd5e9001640aaa6\",\n                    \"links\": [\n                        \"https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [\n                        \"61a12223270b53001681f488\",\n                        \"61a12889270b53001681f4ae\",\n                        \"61cbfff387b7220016e533c2\"\n                    ],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Current Affairs\"\n                    ],\n                    \"color\": [\n                        \"b3b6b1\"\n                    ],\n                    \"comments\": [\n                        \"61d7336ef72bae13786d121a\",\n                        \"61d738a6889d6f14b8398329\"\n                    ],\n                    \"isImage\": false,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"Lorem ipsum\",\n                    \"createdAt\": \"2022-01-01T15:55:35.273Z\",\n                    \"updatedAt\": \"2022-01-15T03:50:33.088Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 3,\n                    \"treandingRation\": 0.17670970420831902\n                },\n                {\n                    \"_id\": \"61d4716ffcf4ae001645d4ff\",\n                    \"links\": [\n                        \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-01-04%2021%3A40%3A07.609849?alt=media&token=ee8ba8c9-7349-458a-9fbd-b1ad75378a85\"\n                    ],\n                    \"disLikes\": [],\n                    \"saved\": [],\n                    \"likes\": [\n                        \"61dc59523e5caf0016f0f677\"\n                    ],\n                    \"views\": [],\n                    \"tags\": [\n                        \"Current Affairs\"\n                    ],\n                    \"color\": [\n                        \"4669ae\"\n                    ],\n                    \"comments\": [\n                        \"61db3b4fc1d9900016fc2e4b\",\n                        \"61db4217c1d9900016fc2efc\"\n                    ],\n                    \"isImage\": true,\n                    \"host\": {\n                        \"_id\": \"61a12223270b53001681f488\",\n                        \"userTag\": [\n                            \"Entrepreneur\"\n                        ],\n                        \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                        \"userName\": \"ajay\",\n                        \"name\": \"Ajay Krishna P\",\n                        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                    },\n                    \"caption\": \"🤣🤣\",\n                    \"createdAt\": \"2022-01-04T16:10:23.406Z\",\n                    \"updatedAt\": \"2022-01-17T19:01:35.374Z\",\n                    \"__v\": 0,\n                    \"likeCount\": 1,\n                    \"treandingRation\": 0.07159878724581964\n                }\n            ]\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Trending Cards By Interests",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/trending/interests?interests=Current Affairs&limit=20&page=1",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "trending", "interests"],
+          "query": [
+            {
+              "key": "interests",
+              "value": "Current Affairs"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Trending Cards By Interests",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/trending/interests?interests=Psychology",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "trending", "interests"],
+              "query": [
+                {
+                  "key": "interests",
+                  "value": "Psychology"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1552"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"610-hroUTBTssKaubLYWobT6S69MDKA\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 31 Oct 2021 18:10:12 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"totalPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"Current Affairs\",\n            \"card\": {\n                \"_id\": \"61d07977edd5e9001640aaa6\",\n                \"links\": [\n                    \"https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4\"\n                ],\n                \"disLikes\": [],\n                \"saved\": [],\n                \"likes\": [\n                    \"61a12223270b53001681f488\",\n                    \"61a12889270b53001681f4ae\",\n                    \"61cbfff387b7220016e533c2\"\n                ],\n                \"views\": [],\n                \"tags\": [\n                    \"Current Affairs\"\n                ],\n                \"color\": [\n                    \"b3b6b1\"\n                ],\n                \"comments\": [\n                    \"61d7336ef72bae13786d121a\",\n                    \"61d738a6889d6f14b8398329\"\n                ],\n                \"isImage\": false,\n                \"host\": {\n                    \"_id\": \"61a12223270b53001681f488\",\n                    \"userTag\": [\n                        \"Entrepreneur\"\n                    ],\n                    \"userName\": \"ajay\",\n                    \"name\": \"Ajay Krishna P\",\n                    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                },\n                \"caption\": \"Lorem ipsum\",\n                \"createdAt\": \"2022-01-01T15:55:35.273Z\",\n                \"updatedAt\": \"2022-01-15T03:50:33.088Z\",\n                \"__v\": 0,\n                \"likeCount\": 3\n            }\n        },\n        {\n            \"_id\": \"Current Affairs\",\n            \"card\": {\n                \"_id\": \"61d4716ffcf4ae001645d4ff\",\n                \"links\": [\n                    \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-01-04%2021%3A40%3A07.609849?alt=media&token=ee8ba8c9-7349-458a-9fbd-b1ad75378a85\"\n                ],\n                \"disLikes\": [],\n                \"saved\": [],\n                \"likes\": [\n                    \"61dc59523e5caf0016f0f677\"\n                ],\n                \"views\": [],\n                \"tags\": [\n                    \"Current Affairs\"\n                ],\n                \"color\": [\n                    \"4669ae\"\n                ],\n                \"comments\": [\n                    \"61db3b4fc1d9900016fc2e4b\",\n                    \"61db4217c1d9900016fc2efc\"\n                ],\n                \"isImage\": true,\n                \"host\": {\n                    \"_id\": \"61a12223270b53001681f488\",\n                    \"userTag\": [\n                        \"Entrepreneur\"\n                    ],\n                    \"userName\": \"ajay\",\n                    \"name\": \"Ajay Krishna P\",\n                    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n                },\n                \"caption\": \"🤣🤣\",\n                \"createdAt\": \"2022-01-04T16:10:23.406Z\",\n                \"updatedAt\": \"2022-01-17T19:01:35.374Z\",\n                \"__v\": 0,\n                \"likeCount\": 1\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Cards By User Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/user/6177bb898f45e5001687a543",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "user", "6177bb898f45e5001687a543"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Cards By User Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/user/SNQOQnqzeMdsozL7NY6ieowl5ax1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "user", "SNQOQnqzeMdsozL7NY6ieowl5ax1"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "5958"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1746-AshtYtWl6Oe8lHF3vUYF2DgOWvA\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 20 Oct 2021 05:13:08 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"777b7c\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Mountaineering⛰️, also called mountain climbing, the sport of attaining, or attempting to attain, high points in mountainous regions, mainly for the pleasure of the climb. ... For the untrained, mountaineering is a dangerous pastime.\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"👍👍\",\n                \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"userName\": \"ajay_k.p\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n                \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"habahssh\",\n                \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n                \"userName\": \"ajay_k.p\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n                \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"61255207fa24c6001602dd3e\",\n                \"comment\": \"❤\",\n                \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n                \"userName\": \"hrithiksraj\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n                \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-24T20:09:43.981Z\",\n        \"updatedAt\": \"2021-09-05T10:37:02.607Z\",\n        \"__v\": 3\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A17%3A09.720940?alt=media&token=19cde279-fe62-4296-b9c8-2f48ed94c714\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A17%3A15.589997?alt=media&token=72168f8f-caa7-4690-8605-7b2a6491a386\"\n        ],\n        \"disLikes\": [\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n        ],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Four\"\n        ],\n        \"color\": [\n            \"f0f0f0\",\n            \"d3d3c8\"\n        ],\n        \"_id\": \"612c8d0af9d3f500165c30ea\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Psychology is the scientific study of the mind and behavior. Psychologists are actively involved in studying and understanding mental processes, brain functions, and behavior.\",\n        \"comments\": [],\n        \"createdAt\": \"2021-08-30T07:47:22.887Z\",\n        \"updatedAt\": \"2021-10-01T10:00:49.036Z\",\n        \"__v\": 0\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A22%3A44.004363?alt=media&token=e40667c6-a8bc-4778-ae6a-255b96fa2e00\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2013%3A22%3A49.821170?alt=media&token=dbdf38f1-2e65-4ca9-b803-d1b4beb80f02\"\n        ],\n        \"disLikes\": [\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\"\n        ],\n        \"saved\": [],\n        \"likes\": [\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"History\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"252323\",\n            \"80888d\"\n        ],\n        \"_id\": \"612c8e59f9d3f500165c30ef\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"History is the study of change and development in society over time. The study of history enables us to understand how past human action affects the present and influences our future, and it allows us to evaluate these effects\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612c8e59f9d3f500165c30ef\",\n                \"comment\": \"ggg\",\n                \"userId\": \"U7v4QpOH22eiRJCTru2z0LbDpC33\",\n                \"userName\": \"hari\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-09-05T10:35:49.044Z\",\n                \"updatedAt\": \"2021-09-05T10:35:49.044Z\"\n            },\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612c8e59f9d3f500165c30ef\",\n                \"comment\": \"test\",\n                \"userId\": \"U7v4QpOH22eiRJCTru2z0LbDpC33\",\n                \"userName\": \"hari\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-09-05T10:35:51.503Z\",\n                \"updatedAt\": \"2021-09-05T10:35:51.503Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-30T07:52:57.171Z\",\n        \"updatedAt\": \"2021-09-09T16:04:28.508Z\",\n        \"__v\": 2\n    },\n    {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2017%3A06%3A24.509770?alt=media&token=837c2a13-22d5-485f-93d7-8b1b710cf34c\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2017%3A06%3A33.107650?alt=media&token=f2ce4c28-882d-4bb8-8b6c-5a4a7d6bcb66\",\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-30%2017%3A06%3A38.802540?alt=media&token=f3d8ceb0-6a92-4ddc-a0b5-437d5cab3052\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"a0c5e6\"\n        ],\n        \"_id\": \"612cc2cd1dbfbc0016dda6e9\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi malesuada a arcu vel accumsan. Ut malesuada sapien at turpis ornare, ut tincidunt augue lobortis. Nulla facilisi. Donec sit amet massa vehicula, varius nibh a, accumsan nibh. Nullam cursus feugiat egestas. Ut ut sollicitudin velit. Duis sodales ut diam et pellentesque.\",\n        \"comments\": [\n            {\n                \"likes\": [\n                    \"\"\n                ],\n                \"_id\": \"612cc2cd1dbfbc0016dda6e9\",\n                \"comment\": \"osm\",\n                \"userId\": \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n                \"userName\": \"brijpatel\",\n                \"replyTo\": \"ajaykrishnap\",\n                \"createdAt\": \"2021-08-31T06:18:54.079Z\",\n                \"updatedAt\": \"2021-08-31T06:18:54.079Z\"\n            }\n        ],\n        \"createdAt\": \"2021-08-30T11:36:45.487Z\",\n        \"updatedAt\": \"2021-10-01T09:48:16.502Z\",\n        \"__v\": 1\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get All Liked Cards By User Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "user", "liked", "6177bb898f45e5001687a543"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get All Liked Cards By User Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "user", "liked", "6177bb898f45e5001687a543"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1322"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"52a-4gha1yWZrye1QhIfgERQidli5Ak\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 29 Oct 2021 10:40:51 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\",\n        \"General Knowledge\",\n        \"Current Affairs\",\n        \"Culture & lifestyle\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"liked\": [\n        {\n            \"links\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n            ],\n            \"disLikes\": [\n                \"6177bb898f45e5001687a543\"\n            ],\n            \"saved\": [\n                \"617abf7d2dbd2100169ef146\"\n            ],\n            \"likes\": [],\n            \"views\": [],\n            \"tags\": [\n                \"Psychology\",\n                \"Two\"\n            ],\n            \"color\": [\n                \"42343a\"\n            ],\n            \"comments\": [\n                \"617a2b62b0526d0016bc770d\",\n                \"617a401f5f07d6001696d429\"\n            ],\n            \"_id\": \"617941abeb538a0016b57085\",\n            \"isImage\": true,\n            \"host\": \"6177bb898f45e5001687a543\",\n            \"caption\": \"Description is not available\",\n            \"__v\": 0,\n            \"likeCount\": 0,\n            \"id\": \"617941abeb538a0016b57085\"\n        }\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6177bb898f45e5001687a543\",\n    \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n    \"userName\": \"agarian\",\n    \"name\": \"Ajay Agarian\",\n    \"email\": \"ajayagarian.aero2astro@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": true,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-26T08:25:45.965Z\",\n    \"updatedAt\": \"2021-10-28T14:53:04.601Z\",\n    \"__v\": 0,\n    \"phone\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Saved Cards By User Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "user", "6176c9691ea09c0016dc38b3", "saved"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get All Saved Cards By User Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "user", "6176c9691ea09c0016dc38b3", "saved"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1396"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"574-KEW97LUM8IaMlqA5zlzPhcwLgwk\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 27 Oct 2021 15:38:50 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get Card By Card Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "61255207fa24c6001602dd3e"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Card By Card Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "61255207fa24c6001602dd3e"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2266"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"8da-/tGdTdNBOleyq2gRV95YtYdxP50\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 20 Oct 2021 05:13:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"$__\": {\n        \"strictMode\": true,\n        \"selected\": {},\n        \"getters\": {},\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"wasPopulated\": false,\n        \"activePaths\": {\n            \"paths\": {\n                \"hostName\": \"init\",\n                \"hostId\": \"init\",\n                \"isImage\": \"init\",\n                \"link\": \"init\",\n                \"disLikes\": \"init\",\n                \"saved\": \"init\",\n                \"likes\": \"init\",\n                \"views\": \"init\",\n                \"tags\": \"init\",\n                \"color\": \"init\",\n                \"_id\": \"init\",\n                \"hostPropic\": \"init\",\n                \"caption\": \"init\",\n                \"comments\": \"modify\",\n                \"createdAt\": \"init\",\n                \"updatedAt\": \"init\",\n                \"__v\": \"init\"\n            },\n            \"states\": {\n                \"ignore\": {},\n                \"default\": {},\n                \"init\": {\n                    \"_id\": true,\n                    \"link\": true,\n                    \"disLikes\": true,\n                    \"saved\": true,\n                    \"likes\": true,\n                    \"views\": true,\n                    \"tags\": true,\n                    \"color\": true,\n                    \"isImage\": true,\n                    \"hostId\": true,\n                    \"hostName\": true,\n                    \"hostPropic\": true,\n                    \"caption\": true,\n                    \"createdAt\": true,\n                    \"updatedAt\": true,\n                    \"__v\": true\n                },\n                \"modify\": {\n                    \"comments\": true\n                },\n                \"require\": {}\n            },\n            \"stateNames\": [\n                \"require\",\n                \"modify\",\n                \"init\",\n                \"default\",\n                \"ignore\"\n            ]\n        },\n        \"pathsToScopes\": {},\n        \"cachedRequired\": {},\n        \"session\": null,\n        \"$setCalled\": {},\n        \"emitter\": {\n            \"_events\": {},\n            \"_eventsCount\": 0,\n            \"_maxListeners\": 0\n        },\n        \"$options\": {\n            \"skipId\": true,\n            \"isNew\": false,\n            \"willInit\": true,\n            \"defaults\": true\n        }\n    },\n    \"isNew\": false,\n    \"$locals\": {},\n    \"$op\": null,\n    \"_doc\": {\n        \"link\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [],\n        \"likes\": [\n            \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n            \"N1vnln855XUDEucn4LL4Yi8jFHA2\",\n            \"6yrqbWqfskRGFBCPJ8VusTJaJE22\",\n            \"U7v4QpOH22eiRJCTru2z0LbDpC33\"\n        ],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"Two\"\n        ],\n        \"color\": [\n            \"777b7c\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"isImage\": true,\n        \"hostId\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"hostName\": \"ajaykrishnap\",\n        \"hostPropic\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n        \"caption\": \"Mountaineering⛰️, also called mountain climbing, the sport of attaining, or attempting to attain, high points in mountainous regions, mainly for the pleasure of the climb. ... For the untrained, mountaineering is a dangerous pastime.\",\n        \"createdAt\": \"2021-08-24T20:09:43.981Z\",\n        \"updatedAt\": \"2021-09-05T10:37:02.607Z\",\n        \"__v\": 3\n    },\n    \"$init\": true,\n    \"commentCount\": 3,\n    \"host\": {\n        \"userTag\": [\n            \"SoftwareDeveloper\"\n        ],\n        \"_id\": \"SNQOQnqzeMdsozL7NY6ieowl5ax1\",\n        \"userName\": \"ajaykrishnap\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Comments By Card Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "6176dae832053632d07441cf", "comments"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Comments By Card Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e/comments",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "61255207fa24c6001602dd3e", "comments"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "701"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2bd-gsPHzJgjc5pJfF1cjpHTH6wBvdA\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 20 Oct 2021 05:14:01 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"👍👍\",\n        \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n        \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n    },\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"habahssh\",\n        \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n        \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n    },\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"❤\",\n        \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n        \"userName\": \"hrithiksraj\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n        \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get Comment By Comment ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "6176dae832053632d07441cf",
+            "comments",
+            "6177b4c101a8dd0f0887b24f"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Comment By Comment ID",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/61255207fa24c6001602dd3e/comments/61255207fa24c6001602dd3e",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "61255207fa24c6001602dd3e",
+                "comments",
+                "61255207fa24c6001602dd3e"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "233"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"e9-OTDYiHA9gtt8ip5IrnqnTgJPEhg\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 20 Oct 2021 05:14:48 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"likes\": [\n        \"\"\n    ],\n    \"_id\": \"61255207fa24c6001602dd3e\",\n    \"comment\": \"👍👍\",\n    \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n    \"userName\": \"ajay_k.p\",\n    \"replyTo\": \"ajaykrishnap\",\n    \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n    \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Card By User Id",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"links\": [\"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"],\r\n    \"isImage\": true,\r\n    \"host\": \"6176c9691ea09c0016dc38b3\",\r\n    \"caption\": \"Beautiful Building\",\r\n    \"color\": [\"#FF5733\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards"]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Card By User Id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"links\": [\"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"],\r\n    \"isImage\": true,\r\n    \"host\": \"61766e42a4fe081a682b514b\",\r\n    \"caption\": \"Beautiful Building\",\r\n    \"color\": [\"#FF5733\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "383"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"17f-oJRlXBJFfRrdIcPmy/1kmHex4Sg\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 25 Oct 2021 08:50:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [],\n    \"_id\": \"61766fe170053f39a005c0b4\",\n    \"isImage\": true,\n    \"host\": \"61766e42a4fe081a682b514b\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Comment By Card Id",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "6176dae832053632d07441cf", "comments"]
+        }
+      },
+      "response": [
+        {
+          "name": "Create Comment By Card Id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "6176dae832053632d07441cf", "comments"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "455"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1c7-t+ukCrox4mWcHOruCknK+kdTrEY\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Oct 2021 06:05:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [\n        \"61779a9ba516690418103e43\"\n    ],\n    \"_id\": \"6176dae832053632d07441cf\",\n    \"isImage\": true,\n    \"host\": \"6176c9691ea09c0016dc38b3\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0,\n    \"likeCount\": 0,\n    \"id\": \"6176dae832053632d07441cf\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Comment By Comment ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "6176dae832053632d07441cf",
+            "comments",
+            "61779a9ba516690418103e43"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete Comment By Comment ID",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/61779a9ba516690418103e43",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "6176dae832053632d07441cf",
+                "comments",
+                "61779a9ba516690418103e43"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "29"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1d-+7dttf6TMeUXpmYyRtIWXCeHyZw\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Oct 2021 06:12:28 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Comment deleted\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Comment By Comment Id",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"comment\": \"Update comment\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "6176dae832053632d07441cf",
+            "comments",
+            "6177b4c101a8dd0f0887b24f"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update Comment By Comment Id",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\": \"Update comment\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments/6177b4c101a8dd0f0887b24f",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "6176dae832053632d07441cf",
+                "comments",
+                "6177b4c101a8dd0f0887b24f"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "29"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Oct 2021 17:03:47 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Comment updated\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Like or Unlike Comment By User Id and Comment ID",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isLiked\" : false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "6176c9691ea09c0016dc38b3",
+            "comments",
+            "like",
+            "6177b4c101a8dd0f0887b24f"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Like Comment",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isLiked\" : true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "6176c9691ea09c0016dc38b3",
+                "comments",
+                "like",
+                "6177b4c101a8dd0f0887b24f"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "29"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Oct 2021 17:13:08 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Comment updated\"\n}"
+        },
+        {
+          "name": "Unlike Comment",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isLiked\" : false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/6176c9691ea09c0016dc38b3/comments/like/6177b4c101a8dd0f0887b24f",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "6176c9691ea09c0016dc38b3",
+                "comments",
+                "like",
+                "6177b4c101a8dd0f0887b24f"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "29"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1d-03B1kUvUXxhUkAx2/pS7J6d9zUI\""
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Oct 2021 17:13:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Comment updated\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Save Card By User Id and Card Id",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isSaved\" : true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/61794169eb538a0016b5707e",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "user",
+            "6176c9691ea09c0016dc38b3",
+            "save",
+            "61794169eb538a0016b5707e"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Save Card By User Id and Card Id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isSaved\" : true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/6177d52e235d3d0016bd88aa",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "user",
+                "6176c9691ea09c0016dc38b3",
+                "save",
+                "6177d52e235d3d0016bd88aa"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "26"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 27 Oct 2021 15:25:02 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Card updated\"\n}"
+        },
+        {
+          "name": "Unsave Card By User Id and Card Id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isSaved\" : false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/6177d52e235d3d0016bd88aa",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "user",
+                "6176c9691ea09c0016dc38b3",
+                "save",
+                "6177d52e235d3d0016bd88aa"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "26"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 27 Oct 2021 15:25:33 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Card updated\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Like/Unlike Card By User Id and Card Id",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isLiked\" : \"false\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/like/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "like",
+            "6177d52e235d3d0016bd88aa",
+            "user",
+            "6176c9691ea09c0016dc38b3"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Like Card By User Id and Card Id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isLiked\" : \"true\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/like/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "like",
+                "6177d52e235d3d0016bd88aa",
+                "user",
+                "6176c9691ea09c0016dc38b3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "26"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 28 Oct 2021 16:54:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Card updated\"\n}"
+        },
+        {
+          "name": "Unlike Card by User Id and Card id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isLiked\" : \"false\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/like/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "like",
+                "6177d52e235d3d0016bd88aa",
+                "user",
+                "6176c9691ea09c0016dc38b3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "26"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 28 Oct 2021 16:56:19 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Card updated\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Dislike/Undislike by Card Id and User Id",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isDisliked\" :  \"false\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/dislike/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "cards",
+            "dislike",
+            "6177d52e235d3d0016bd88aa",
+            "user",
+            "6176c9691ea09c0016dc38b3"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Dislike Card By Card Id and User Id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isDisliked\" :  \"true\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/cards/dislike/6177d52e235d3d0016bd88aa/user/6176c9691ea09c0016dc38b3",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "cards",
+                "dislike",
+                "6177d52e235d3d0016bd88aa",
+                "user",
+                "6176c9691ea09c0016dc38b3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "26"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1a-X3c+PGkx+pIoJ/+LRGq6fz3eiYg\""
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 28 Oct 2021 17:36:28 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Card updated\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Liked Users By Card Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "617941abeb538a0016b57085", "liked"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Liked Users By Card Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "617941abeb538a0016b57085", "liked"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "463"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"1cf-npQw3EOPWWtynnR7zGO34Ca1g74\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 08 Nov 2021 09:43:34 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"userTag\": [],\n        \"_id\": \"617abf7d2dbd2100169ef146\",\n        \"fId\": \"qrXxJTlIZPSgLU3Yy8lMsx7v9Zv2\",\n        \"userName\": \"johnny\",\n        \"name\": \"Johnny\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJyZ_eHmreKuBa0OiylLG86GCuospFqXhr8RWEhi=s96-c\"\n    },\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get Saved Users By Card Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/cards/6177d52e235d3d0016bd88aa/saved",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "6177d52e235d3d0016bd88aa", "saved"]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Saved Users By Card Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/cards/6177d52e235d3d0016bd88aa/saved",
+              "host": ["{{BASE_URL}}"],
+              "path": ["cards", "6177d52e235d3d0016bd88aa", "saved"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "242"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"f2-5KXXNsWU7gmRWi5ttylOSy98UIE\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 08 Nov 2021 09:45:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Update Card By Card Id",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"caption\":\"Beautiful Building\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/cards/update/61d005c662c50f211cb8fc05",
+          "host": ["{{BASE_URL}}"],
+          "path": ["cards", "update", "61d005c662c50f211cb8fc05"]
+        }
+      },
+      "response": []
+    }
+  ]
 }

@@ -1,10 +1,30 @@
 const Cards = require("../../modals/Cards.js");
+const moment = require("moment");
 
 const getAllTrendingCards = async (req, res, next) => {
   try {
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+    let todayDate = new Date();
+
     const trendingCards = await Cards.aggregate([
       {
-        $addFields: { likeCount: { $size: { $ifNull: ["$likes", []] } } },
+        $addFields: {
+          likeCount: { $size: { $ifNull: ["$likes", []] } },
+          treandingRation: {
+            $divide: [
+              { $size: { $ifNull: ["$likes", []] } },
+              {
+                $divide: [
+                  { $subtract: [todayDate, "$createdAt"] },
+                  1000 * 60 * 60 * 24,
+                ],
+              },
+            ],
+          },
+        },
       },
       {
         $lookup: {
@@ -38,7 +58,7 @@ const getAllTrendingCards = async (req, res, next) => {
         $unwind: "$cards",
       },
       {
-        $sort: { _id: 1, "cards.likeCount": -1 },
+        $sort: { _id: 1, "cards.treandingRation": -1 },
       },
       {
         $group: {
@@ -46,9 +66,14 @@ const getAllTrendingCards = async (req, res, next) => {
           cards: { $push: "$cards" },
         },
       },
+      { $skip: skip },
+      { $limit: limit },
     ]);
 
-    res.status(200).json(trendingCards);
+    const totalData = await Cards.find();
+    let totalPage = Math.ceil(totalData.length / limit);
+
+    res.status(200).json({ totalPage, data: trendingCards });
   } catch (error) {
     next(error);
   }
@@ -170,7 +195,7 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
     ]);
     totalPage = Math.ceil(totalData.length / limit);
 
-    res.status(200).json({ totalPage, trendingCards });
+    res.status(200).json({ totalPage, data: trendingCards });
   } catch (error) {
     next(error);
   }
