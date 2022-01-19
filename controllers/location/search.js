@@ -6,6 +6,10 @@ const searchByCity = async (req, res, next) => {
     const tag = req.query.tag;
     const city = req.query.city;
     const pro = req.query.pro;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     if (!tag) {
       return res.status(400).json({ message: "Tag is required" });
@@ -29,7 +33,9 @@ const searchByCity = async (req, res, next) => {
             next(err);
           }
           users = users.filter((user) => user.host);
-          res.status(200).json(users);
+          let data = users.slice(skip, skip + limit);
+          let totalPages = Math.ceil(users.length / limit);
+          res.status(200).json({ totalPages, data: data });
         });
     } else {
       await Location.find({ city: city })
@@ -39,7 +45,9 @@ const searchByCity = async (req, res, next) => {
             next(err);
           }
           users = users.filter((user) => user.host);
-          res.status(200).json(users);
+          let data = users.slice(skip, skip + limit);
+          let totalPages = Math.ceil(users.length / limit);
+          res.status(200).json({ totalPages, data: data });
         });
     }
   } catch (error) {
@@ -54,6 +62,10 @@ const searchByRange = async (req, res, next) => {
     const lng = req.query.lng;
     const tag = req.query.tag;
     const pro = req.query.pro;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     if (!lat || !lng) {
       return res
@@ -90,7 +102,9 @@ const searchByRange = async (req, res, next) => {
             next(err);
           }
           users = users.filter((user) => user.host);
-          res.status(200).json(users);
+          let data = users.slice(skip, skip + limit);
+          let totalPages = Math.ceil(users.length / limit);
+          res.status(200).json({ totalPages, data: data });
         });
     } else {
       await Location.find({
@@ -107,7 +121,9 @@ const searchByRange = async (req, res, next) => {
             next(err);
           }
           users = users.filter((user) => user.host);
-          res.status(200).json(users);
+          let data = users.slice(skip, skip + limit);
+          let totalPages = Math.ceil(users.length / limit);
+          res.status(200).json({ totalPages, data: data });
         });
     }
   } catch (error) {

@@ -5,6 +5,10 @@ const mongoose = require("mongoose");
 const getCardsByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const populateQuery = [
       {
@@ -13,15 +17,18 @@ const getCardsByUserId = async (req, res, next) => {
       },
     ];
 
-    const foundCards = await Cards.find({ host: userId }).populate(
-      populateQuery
-    );
+    const foundCards = await Cards.find({ host: userId })
+      .populate(populateQuery)
+      .limit(limit)
+      .skip(skip);
+    const count = await Cards.find({ host: userId }).populate(populateQuery);
+    let totalPages = Math.ceil(count.length / limit);
 
     if (!foundCards) {
       return res.status(404).json({ message: "Cards not found" });
     }
 
-    res.status(200).json(foundCards);
+    res.status(200).json({ totalPages, data: foundCards });
   } catch (error) {
     next(error);
   }
@@ -30,6 +37,10 @@ const getCardsByUserId = async (req, res, next) => {
 const getSavedCardsByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const userPopulateQuery = [
       {
@@ -42,12 +53,13 @@ const getSavedCardsByUserId = async (req, res, next) => {
     ];
 
     const foundUser = await User.findById(userId).populate(userPopulateQuery);
-
+    let savedCards = foundUser.saved.slice(skip, skip + limit);
+    let totalPages = Math.ceil(foundUser.saved.length / limit);
     if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json(foundUser.saved);
+    res.status(200).json({ totalPages, data: savedCards });
   } catch (error) {
     next(error);
   }
@@ -190,6 +202,10 @@ const dislikeCardByUserId = async (req, res, next) => {
 const getLikedCardsByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const userPopulateQuery = [
       {
@@ -206,8 +222,10 @@ const getLikedCardsByUserId = async (req, res, next) => {
     if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
+    let likedUsers = foundUser.liked.slice(skip, skip + limit);
+    let totalPages = Math.ceil(foundUser.liked.length / limit);
 
-    res.status(200).json(foundUser.liked);
+    res.status(200).json({ totalPages, data: likedUsers });
   } catch (error) {
     next(error);
   }

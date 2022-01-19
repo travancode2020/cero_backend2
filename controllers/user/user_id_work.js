@@ -1,13 +1,19 @@
 const Users = require("../../modals/User.js");
 
 const getWorkByUserId = (req, res, next) => {
+  let { page, limit } = req.query;
+  page = page ? Number(page) : 1;
+  limit = limit ? Number(limit) : 20;
+  let skip = (page - 1) * limit;
   Users.findById(req.params.userId)
     .then(
       (card) => {
         if (card != null) {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(card.work);
+          let work = card.work.slice(skip, skip + limit);
+          let totalPages = Math.ceil(card.work.length / limit);
+          res.json({ totalPages, data: work });
         } else {
           err = new Error("Card " + req.params.userId + " not found");
           err.status = 404;

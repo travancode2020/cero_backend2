@@ -79,12 +79,18 @@ const deleteCardById = async (req, res, next) => {
 const getLikedUsersByCardId = async (req, res, next) => {
   try {
     const cardId = req.params.cardId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+
     const foundCard = await Cards.findById(cardId).populate({
       path: "likes",
       select: ["userName", "name", "fId", "photoUrl", "userTag"],
     });
-
-    res.status(200).json(foundCard.likes);
+    let likedUser = foundCard.likes.slice(skip, skip + limit);
+    let totalPages = Math.ceil(foundCard.likes.length / limit);
+    res.status(200).json({ totalPages, data: likedUser });
   } catch (error) {
     next(error);
   }

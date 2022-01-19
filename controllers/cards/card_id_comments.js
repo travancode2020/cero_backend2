@@ -5,17 +5,27 @@ const mongoose = require("mongoose");
 const getAllCommentsByCardId = async (req, res, next) => {
   try {
     const cardId = req.params.cardId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const userPopulateQuery = [
       {
         path: "comments",
-        populate: { path: "user", select: ["userName", "fId", "name", "photoUrl", "userTag"] },
+        populate: {
+          path: "user",
+          select: ["userName", "fId", "name", "photoUrl", "userTag"],
+        },
       },
     ];
     const replyToPopulateQuery = [
       {
         path: "comments",
-        populate: { path: "replyTo", select: ["userName", "fId", "name", "photoUrl", "userTag"] },
+        populate: {
+          path: "replyTo",
+          select: ["userName", "fId", "name", "photoUrl", "userTag"],
+        },
       },
     ];
 
@@ -27,8 +37,9 @@ const getAllCommentsByCardId = async (req, res, next) => {
     if (!card) {
       return res.status(404).json({ message: "Card Not Found" });
     }
-
-    res.status(200).json(card.comments);
+    let comments = card.comments.slice(skip, skip + limit);
+    let totalPages = Math.ceil(card.comments.length / limit);
+    res.status(200).json({ totalPages, data: comments });
   } catch (error) {
     next(error);
   }
