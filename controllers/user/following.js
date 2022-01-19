@@ -76,7 +76,7 @@ const getFollowersByUserId = async (req, res, next) => {
     let followers = foundUser.followers.slice(skip, skip + limit);
     let totalPages = Math.ceil(foundUser.followers.length / limit);
 
-    res.status(200).json({ totalPages, followers });
+    res.status(200).json({ totalPages, data: followers });
   } catch (error) {
     next(error);
   }
@@ -100,7 +100,7 @@ const getFollowingByUserId = async (req, res, next) => {
     let following = foundUser.following.slice(skip, skip + limit);
     let totalPages = Math.ceil(foundUser.following.length / limit);
 
-    res.status(200).json({ totalPages, following });
+    res.status(200).json({ totalPages, data: following });
   } catch (error) {
     next(error);
   }
