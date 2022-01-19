@@ -71,9 +71,9 @@ const getAllTrendingCards = async (req, res, next) => {
     ]);
 
     const totalData = await Cards.find();
-    let totalPage = Math.ceil(totalData.length / limit);
+    let totalPages = Math.ceil(totalData.length / limit);
 
-    res.status(200).json({ totalPage, data: trendingCards });
+    res.status(200).json({ totalPages, data: trendingCards });
   } catch (error) {
     next(error);
   }
@@ -87,7 +87,7 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
-    let totalPage;
+    let totalPages;
 
     if (interestArray[0] === "") {
       return res.status(400).json({ message: "interests are missing" });
@@ -193,9 +193,9 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
         $unwind: "$card",
       },
     ]);
-    totalPage = Math.ceil(totalData.length / limit);
+    totalPages = Math.ceil(totalData.length / limit);
 
-    res.status(200).json({ totalPage, data: trendingCards });
+    res.status(200).json({ totalPages, data: trendingCards });
   } catch (error) {
     next(error);
   }

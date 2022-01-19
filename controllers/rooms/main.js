@@ -122,9 +122,9 @@ const getRoomsByUserId = async (req, res, next) => {
         },
       },
     ]);
-    let totalPage = Math.ceil(count.length / limit);
+    let totalPages = Math.ceil(count.length / limit);
 
-    rooms && res.status(200).json({ succes: true, totalPage, data: rooms });
+    rooms && res.status(200).json({ succes: true, totalPages, data: rooms });
   } catch (error) {
     next(error);
   }
@@ -147,9 +147,9 @@ const getRoomByHost = async (req, res, next) => {
     if (!rooms) throw new Error("Rooms not found");
 
     let count = await Rooms.find({ hostId });
-    let totalPage = Math.ceil(count.length / limit);
+    let totalPages = Math.ceil(count.length / limit);
 
-    rooms && res.status(200).json({ succes: true, totalPage, data: rooms });
+    rooms && res.status(200).json({ succes: true, totalPages, data: rooms });
   } catch (error) {
     next(error);
   }
