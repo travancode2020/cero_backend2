@@ -64,8 +64,8 @@ const getAllCards = async (req, res, next) => {
         total = await Cards.find({}).populate(populateQuery);
       }
     }
-    let totalpage = Math.ceil(total.length / count);
-    res.status(200).json({ totalpage, data: foundCards });
+    let totalPages = Math.ceil(total.length / count);
+    res.status(200).json({ totalPages, data: foundCards });
   } catch (error) {
     next(error);
   }
