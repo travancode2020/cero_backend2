@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "2336160c-5b59-4adc-94cb-4454ac4846d8",
+    "_postman_id": "3b128efd-74f7-434c-9034-fab463810aa2",
     "name": "card-routes",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
@@ -8,12 +8,31 @@
     {
       "name": "Get Cards",
       "request": {
-        "method": "GET",
+        "method": "POST",
         "header": [],
         "url": {
-          "raw": "{{BASE_URL}}/cards",
+          "raw": "{{BASE_URL}}/cards?interests=Psychology&page=1&count=5",
           "host": ["{{BASE_URL}}"],
-          "path": ["cards"]
+          "path": ["cards"],
+          "query": [
+            {
+              "key": "interests",
+              "value": "Psychology"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "count",
+              "value": "5"
+            },
+            {
+              "key": "userId",
+              "value": "617abf7d2dbd2100169ef146",
+              "disabled": true
+            }
+          ]
         }
       },
       "response": [
@@ -271,16 +290,9 @@
     },
     {
       "name": "Get Trending Cards By Interests",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
       "request": {
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": {
           "raw": "{{BASE_URL}}/cards/trending/interests?interests=Current Affairs&limit=20&page=1",
           "host": ["{{BASE_URL}}"],
@@ -363,9 +375,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{BASE_URL}}/cards/user/6177bb898f45e5001687a543",
+          "raw": "{{BASE_URL}}/cards/user/61a12223270b53001681f488?page=10&limit=1",
           "host": ["{{BASE_URL}}"],
-          "path": ["cards", "user", "6177bb898f45e5001687a543"]
+          "path": ["cards", "user", "61a12223270b53001681f488"],
+          "query": [
+            {
+              "key": "page",
+              "value": "10"
+            },
+            {
+              "key": "limit",
+              "value": "1"
+            }
+          ]
         }
       },
       "response": [
@@ -424,9 +446,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
+          "raw": "{{BASE_URL}}/cards/user/liked/61a12223270b53001681f488?page=1&limit=20",
           "host": ["{{BASE_URL}}"],
-          "path": ["cards", "user", "liked", "6177bb898f45e5001687a543"]
+          "path": ["cards", "user", "liked", "61a12223270b53001681f488"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
         }
       },
       "response": [
@@ -436,9 +468,19 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{BASE_URL}}/cards/user/liked/6177bb898f45e5001687a543",
+              "raw": "{{BASE_URL}}/cards/user/liked/61a12223270b53001681f488?page=1&limit=20",
               "host": ["{{BASE_URL}}"],
-              "path": ["cards", "user", "liked", "6177bb898f45e5001687a543"]
+              "path": ["cards", "user", "liked", "61a12223270b53001681f488"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
             }
           },
           "status": "OK",
@@ -475,7 +517,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"userTag\": [\n        \"Entrepreneur\"\n    ],\n    \"interest\": [\n        \"Business\",\n        \"Psychology\",\n        \"History\",\n        \"Science & Technology\",\n        \"General Knowledge\",\n        \"Current Affairs\",\n        \"Culture & lifestyle\"\n    ],\n    \"followers\": [],\n    \"verifiedProfiles\": [],\n    \"following\": [],\n    \"saved\": [\n        \"617941abeb538a0016b57085\"\n    ],\n    \"liked\": [\n        {\n            \"links\": [\n                \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A40%3A02.778087?alt=media&token=20411687-ca29-4e4e-a899-acd6f3f094c8\"\n            ],\n            \"disLikes\": [\n                \"6177bb898f45e5001687a543\"\n            ],\n            \"saved\": [\n                \"617abf7d2dbd2100169ef146\"\n            ],\n            \"likes\": [],\n            \"views\": [],\n            \"tags\": [\n                \"Psychology\",\n                \"Two\"\n            ],\n            \"color\": [\n                \"42343a\"\n            ],\n            \"comments\": [\n                \"617a2b62b0526d0016bc770d\",\n                \"617a401f5f07d6001696d429\"\n            ],\n            \"_id\": \"617941abeb538a0016b57085\",\n            \"isImage\": true,\n            \"host\": \"6177bb898f45e5001687a543\",\n            \"caption\": \"Description is not available\",\n            \"__v\": 0,\n            \"likeCount\": 0,\n            \"id\": \"617941abeb538a0016b57085\"\n        }\n    ],\n    \"viewed\": [],\n    \"isLocationSharingEnabled\": true,\n    \"_id\": \"6177bb898f45e5001687a543\",\n    \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n    \"userName\": \"agarian\",\n    \"name\": \"Ajay Agarian\",\n    \"email\": \"ajayagarian.aero2astro@gmail.com\",\n    \"password\": \"Pass@11\",\n    \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n    \"dob\": \"00/00/0000\",\n    \"isCreator\": true,\n    \"isPro\": true,\n    \"work\": [],\n    \"createdAt\": \"2021-10-26T08:25:45.965Z\",\n    \"updatedAt\": \"2021-10-28T14:53:04.601Z\",\n    \"__v\": 0,\n    \"phone\": null\n}"
+          "body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"links\": [\n                \"https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4\"\n            ],\n            \"disLikes\": [],\n            \"saved\": [],\n            \"likes\": [\n                \"61a12223270b53001681f488\",\n                \"61a12889270b53001681f4ae\",\n                \"61cbfff387b7220016e533c2\"\n            ],\n            \"views\": [],\n            \"tags\": [\n                \"Current Affairs\"\n            ],\n            \"color\": [\n                \"b3b6b1\"\n            ],\n            \"comments\": [\n                \"61d7336ef72bae13786d121a\",\n                \"61d738a6889d6f14b8398329\"\n            ],\n            \"_id\": \"61d07977edd5e9001640aaa6\",\n            \"isImage\": false,\n            \"host\": {\n                \"userTag\": [\n                    \"Entrepreneur\"\n                ],\n                \"_id\": \"61a12223270b53001681f488\",\n                \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                \"userName\": \"ajay\",\n                \"name\": \"Ajay Krishna P\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n            },\n            \"caption\": \"Lorem ipsum\",\n            \"createdAt\": \"2022-01-01T15:55:35.273Z\",\n            \"updatedAt\": \"2022-01-15T03:50:33.088Z\",\n            \"__v\": 0,\n            \"likeCount\": 3,\n            \"id\": \"61d07977edd5e9001640aaa6\"\n        }\n    ]\n}"
         }
       ]
     },
@@ -485,9 +527,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
+          "raw": "{{BASE_URL}}/cards/user/61a12223270b53001681f488/saved?page=1&limit=20",
           "host": ["{{BASE_URL}}"],
-          "path": ["cards", "user", "6176c9691ea09c0016dc38b3", "saved"]
+          "path": ["cards", "user", "61a12223270b53001681f488", "saved"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
         }
       },
       "response": [
@@ -497,9 +549,19 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/saved",
+              "raw": "{{BASE_URL}}/cards/user/61a12223270b53001681f488/saved?page=1&limit=20",
               "host": ["{{BASE_URL}}"],
-              "path": ["cards", "user", "6176c9691ea09c0016dc38b3", "saved"]
+              "path": ["cards", "user", "61a12223270b53001681f488", "saved"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
             }
           },
           "status": "OK",
@@ -536,7 +598,7 @@
             }
           ],
           "cookie": [],
-          "body": "[\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-26%2015%3A45%3A03.898641?alt=media&token=45861ffe-96a9-4b5a-8b91-5b7e2f4468ce\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Culture & lifestyle\",\n            \"One\"\n        ],\n        \"color\": [\n            \"e9d297\"\n        ],\n        \"comments\": [],\n        \"_id\": \"6177d52e235d3d0016bd88aa\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"6177d52e235d3d0016bd88aa\"\n    },\n    {\n        \"links\": [\n            \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/6177bb898f45e5001687a543%2F2021-10-27%2017%3A38%3A54.429865?alt=media&token=2a062a12-19de-41d2-8d86-8c0617aed0fb\"\n        ],\n        \"disLikes\": [],\n        \"saved\": [\n            \"6176c9691ea09c0016dc38b3\"\n        ],\n        \"likes\": [],\n        \"views\": [],\n        \"tags\": [\n            \"Psychology\",\n            \"Free\"\n        ],\n        \"color\": [\n            \"392b2b\"\n        ],\n        \"comments\": [],\n        \"_id\": \"61794169eb538a0016b5707e\",\n        \"isImage\": true,\n        \"host\": {\n            \"userTag\": [\n                \"Coder\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"fId\": \"dTbGpOjDyCYVWz0E2vywc2Tp36E2\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\"\n        },\n        \"caption\": \"Loren ipsum\",\n        \"__v\": 0,\n        \"likeCount\": 0,\n        \"id\": \"61794169eb538a0016b5707e\"\n    }\n]"
+          "body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"links\": [\n                \"https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4\"\n            ],\n            \"disLikes\": [],\n            \"saved\": [\n                \"61a12223270b53001681f488\"\n            ],\n            \"likes\": [\n                \"61a12223270b53001681f488\",\n                \"61a12889270b53001681f4ae\",\n                \"61cbfff387b7220016e533c2\"\n            ],\n            \"views\": [],\n            \"tags\": [\n                \"Current Affairs\"\n            ],\n            \"color\": [\n                \"b3b6b1\"\n            ],\n            \"comments\": [\n                \"61d7336ef72bae13786d121a\",\n                \"61d738a6889d6f14b8398329\"\n            ],\n            \"_id\": \"61d07977edd5e9001640aaa6\",\n            \"isImage\": false,\n            \"host\": {\n                \"userTag\": [\n                    \"Entrepreneur\"\n                ],\n                \"_id\": \"61a12223270b53001681f488\",\n                \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n                \"userName\": \"ajay\",\n                \"name\": \"Ajay Krishna P\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n            },\n            \"caption\": \"Lorem ipsum\",\n            \"createdAt\": \"2022-01-01T15:55:35.273Z\",\n            \"updatedAt\": \"2022-01-19T17:13:14.581Z\",\n            \"__v\": 0,\n            \"likeCount\": 3,\n            \"id\": \"61d07977edd5e9001640aaa6\"\n        }\n    ]\n}"
         }
       ]
     },
@@ -607,9 +669,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+          "raw": "{{BASE_URL}}/cards/61d07977edd5e9001640aaa6/comments?page=1&limit=20",
           "host": ["{{BASE_URL}}"],
-          "path": ["cards", "6176dae832053632d07441cf", "comments"]
+          "path": ["cards", "61d07977edd5e9001640aaa6", "comments"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
         }
       },
       "response": [
@@ -658,7 +730,7 @@
             }
           ],
           "cookie": [],
-          "body": "[\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"👍👍\",\n        \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n        \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n    },\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"habahssh\",\n        \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n        \"userName\": \"ajay_k.p\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n        \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n    },\n    {\n        \"likes\": [\n            \"\"\n        ],\n        \"_id\": \"61255207fa24c6001602dd3e\",\n        \"comment\": \"❤\",\n        \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n        \"userName\": \"hrithiksraj\",\n        \"replyTo\": \"ajaykrishnap\",\n        \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n        \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n    }\n]"
+          "body": "{\n  \"totalPages\": 0,\n  \"data\": [\n    {\n      \"likes\": [\"\"],\n      \"_id\": \"61255207fa24c6001602dd3e\",\n      \"comment\": \"👍👍\",\n      \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n      \"userName\": \"ajay_k.p\",\n      \"replyTo\": \"ajaykrishnap\",\n      \"createdAt\": \"2021-08-24T21:07:57.774Z\",\n      \"updatedAt\": \"2021-08-24T21:07:57.774Z\"\n    },\n    {\n      \"likes\": [\"\"],\n      \"_id\": \"61255207fa24c6001602dd3e\",\n      \"comment\": \"habahssh\",\n      \"userId\": \"N5orwkOjGWSlRL71VGqbYO7AwwW2\",\n      \"userName\": \"ajay_k.p\",\n      \"replyTo\": \"ajaykrishnap\",\n      \"createdAt\": \"2021-08-28T13:40:30.498Z\",\n      \"updatedAt\": \"2021-08-28T13:40:30.498Z\"\n    },\n    {\n      \"likes\": [\"\"],\n      \"_id\": \"61255207fa24c6001602dd3e\",\n      \"comment\": \"❤\",\n      \"userId\": \"IBOaLroPjUSnR3EQjFdhfWidSBC3\",\n      \"userName\": \"hrithiksraj\",\n      \"replyTo\": \"ajaykrishnap\",\n      \"createdAt\": \"2021-08-29T05:29:57.673Z\",\n      \"updatedAt\": \"2021-08-29T05:29:57.673Z\"\n    }\n  ]\n}\n"
         }
       ]
     },
@@ -1211,7 +1283,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"isSaved\" : true\r\n}",
+          "raw": "{\r\n    \"isSaved\" : \"true\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -1219,14 +1291,14 @@
           }
         },
         "url": {
-          "raw": "{{BASE_URL}}/cards/user/6176c9691ea09c0016dc38b3/save/61794169eb538a0016b5707e",
+          "raw": "{{BASE_URL}}/cards/user/61a12223270b53001681f488/save/61d07977edd5e9001640aaa6",
           "host": ["{{BASE_URL}}"],
           "path": [
             "cards",
             "user",
-            "6176c9691ea09c0016dc38b3",
+            "61a12223270b53001681f488",
             "save",
-            "61794169eb538a0016b5707e"
+            "61d07977edd5e9001640aaa6"
           ]
         }
       },
@@ -1607,9 +1679,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
+          "raw": "{{BASE_URL}}/cards/61d07977edd5e9001640aaa6/liked?page=1&limit=20",
           "host": ["{{BASE_URL}}"],
-          "path": ["cards", "617941abeb538a0016b57085", "liked"]
+          "path": ["cards", "61d07977edd5e9001640aaa6", "liked"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
         }
       },
       "response": [
@@ -1619,9 +1701,19 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{BASE_URL}}/cards/617941abeb538a0016b57085/liked",
+              "raw": "{{BASE_URL}}/cards/61d07977edd5e9001640aaa6/liked?page=1&limit=20",
               "host": ["{{BASE_URL}}"],
-              "path": ["cards", "617941abeb538a0016b57085", "liked"]
+              "path": ["cards", "61d07977edd5e9001640aaa6", "liked"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
             }
           },
           "status": "OK",
@@ -1658,7 +1750,7 @@
             }
           ],
           "cookie": [],
-          "body": "[\n    {\n        \"userTag\": [],\n        \"_id\": \"617abf7d2dbd2100169ef146\",\n        \"fId\": \"qrXxJTlIZPSgLU3Yy8lMsx7v9Zv2\",\n        \"userName\": \"johnny\",\n        \"name\": \"Johnny\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJyZ_eHmreKuBa0OiylLG86GCuospFqXhr8RWEhi=s96-c\"\n    },\n    {\n        \"userTag\": [\n            \"Entrepreneur\"\n        ],\n        \"_id\": \"6176c9691ea09c0016dc38b3\",\n        \"fId\": \"uSOcj00tH8Z36FNJFreqWxz9axp1\",\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n    }\n]"
+          "body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"61a12223270b53001681f488\",\n            \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        },\n        {\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"_id\": \"61a12889270b53001681f4ae\",\n            \"fId\": \"3F01s8ehoOSfussv3zCno2ahbxN2\",\n            \"userName\": \"pranavdeep_kumar\",\n            \"name\": \"Pranavdeep Kumar\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GiX4HIeZSqrCBmZRJPw8jmdCNuAsJWP0fJ7YEsIfw=s96-c\"\n        }\n    ]\n}"
         }
       ]
     },
