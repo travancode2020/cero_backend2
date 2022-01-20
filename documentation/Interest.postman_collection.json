@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "7c6e504d-9bf3-4b37-8661-9266ce96ea38",
+		"name": "Interest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Remove Interest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"interest\" : [\"social\"],\r\n    \"id\" : \"61e998eeda34d605b83b2927\",\r\n    \"key\" : \"ceroapp8080\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/interest/addRemove",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"interest",
+						"addRemove"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Remove Interest",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"interest\" : [\"social\"],\r\n    \"key\" : \"ceroapp8080\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/interest/addRemove",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"interest",
+								"addRemove"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"message\": \"Interest added successfully\"\r\n}"
+				},
+				{
+					"name": "Remove Interest",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"61e998eeda34d605b83b2927\",\r\n    \"key\" : \"ceroapp8080\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/interest/addRemove",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"interest",
+								"addRemove"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"message\": \"Interest deleted successfully\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Interest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/interest",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"interest"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Interest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/interest",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"interest"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"_id\": \"61e99581f40aa731643fe2c5\",\r\n        \"interest\": \"study\"\r\n    }\r\n]"
+				}
+			]
+		}
+	]
+}

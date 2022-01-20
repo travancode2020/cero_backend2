@@ -16,6 +16,7 @@ const {
   AuthRouter,
   AgoraRouter,
   RoomRouter,
+  InterestRouter,
 } = require("./routes");
 
 const app = express();
@@ -54,6 +55,7 @@ app.use("/users", UserRouter);
 app.use("/cards", CardRouter);
 app.use("/moments", MomentRouter);
 app.use("/location", LocationRouter);
+app.use("/interest", InterestRouter);
 app.use("/auth", AuthRouter);
 
 app.use("/agora", AgoraRouter);
