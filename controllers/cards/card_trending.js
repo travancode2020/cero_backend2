@@ -116,30 +116,30 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
           as: "host",
         },
       },
-      {
-        $unwind: "$host",
-      },
-      {
-        $group: {
-          _id: { $first: "$tags" },
-          cards: { $addToSet: "$$ROOT" },
-        },
-      },
-      {
-        $unwind: "$cards",
-      },
+      // {
+      //   $unwind: "$host",
+      // },
+      // {
+      //   $group: {
+      //     _id: { $first: "$tags" },
+      //     cards: { $addToSet: "$$ROOT" },
+      //   },
+      // },
+      // {
+      //   $unwind: "$cards",
+      // },
       {
         $sort: { _id: 1, "cards.likeCount": -1 },
       },
-      {
-        $group: {
-          _id: "$_id",
-          card: { $push: "$cards" },
-        },
-      },
-      {
-        $unwind: "$card",
-      },
+      // {
+      //   $group: {
+      //     _id: "$_id",
+      //     card: { $push: "$cards" },
+      //   },
+      // },
+      // {
+      //   $unwind: "$card",
+      // },
       { $skip: skip },
       { $limit: limit },
     ]);
