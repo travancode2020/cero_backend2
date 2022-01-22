@@ -66,14 +66,14 @@ const getAllTrendingCards = async (req, res, next) => {
           cards: { $push: "$cards" },
         },
       },
-      { $skip: skip },
-      { $limit: limit },
+      // { $skip: skip },
+      // { $limit: limit },
     ]);
-
+    trendingCards.forEach();
     const totalData = await Cards.find();
-    let totalPages = Math.ceil(totalData.length / limit);
+    // let totalPages = Math.ceil(totalData.length / limit);
 
-    res.status(200).json({ totalPages, data: trendingCards });
+    res.status(200).json({ data: trendingCards });
   } catch (error) {
     next(error);
   }
@@ -81,8 +81,7 @@ const getAllTrendingCards = async (req, res, next) => {
 
 const getAllTrendingCardsByInterests = async (req, res, next) => {
   try {
-    let { page, limit } = req.query;
-    let { interests } = req.body;
+    let { page, limit, interests } = req.query;
     const interestString = interests || "";
     const interestArray = interestString.split(",");
     page = page ? Number(page) : 1;
@@ -97,7 +96,10 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
     const trendingCards = await Cards.aggregate([
       { $match: { tags: { $in: interestArray } } },
       {
-        $addFields: { likeCount: { $size: { $ifNull: ["$likes", []] } } },
+        $addFields: {
+          likeCount: { $size: { $ifNull: ["$likes", []] } },
+          id: "$_id",
+        },
       },
       {
         $lookup: {
