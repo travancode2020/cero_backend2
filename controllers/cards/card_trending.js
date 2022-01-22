@@ -81,7 +81,8 @@ const getAllTrendingCards = async (req, res, next) => {
 
 const getAllTrendingCardsByInterests = async (req, res, next) => {
   try {
-    let { page, limit, interests } = req.query;
+    let { page, limit } = req.query;
+    let { interests } = req.body;
     const interestString = interests || "";
     const interestArray = interestString.split(",");
     page = page ? Number(page) : 1;
@@ -110,6 +111,7 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
                 userName: 1,
                 photoUrl: 1,
                 userTag: 1,
+                fId: 1,
               },
             },
           ],
