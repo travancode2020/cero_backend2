@@ -128,7 +128,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\":\"61a12223270b53001681f488\",\r\n    \"_id\":\"61cca2c29ae41629d86f3229\",\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":true,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n}",
+					"raw": "{\r\n    \"userId\":\"61a12223270b53001681f488\",\r\n    \"_id\":\"61ccb45686375e0e389f627b\",\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":true,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -147,6 +147,210 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Live Rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/liveRooms?id=61df17051d8ce900165aee5f&page=1&limit=20",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"liveRooms"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "61df17051d8ce900165aee5f"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Live Rooms",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/liveRooms?id=61df17051d8ce900165aee5f&page=1&limit=20",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"liveRooms"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "61df17051d8ce900165aee5f"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"specialGuest\": [\r\n                \"61a12889270b53001681f4ae\"\r\n            ],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"_id\": \"61ed8b5eb3ec1f2db06003fd\",\r\n            \"name\": \"testRoom\",\r\n            \"description\": \"test room\",\r\n            \"hostId\": \"61a12223270b53001681f488\",\r\n            \"dateAndTime\": \"2022-01-23T18:00:03.488Z\",\r\n            \"isPrivate\": true,\r\n            \"createdAt\": \"2022-01-23T17:07:42.836Z\",\r\n            \"updatedAt\": \"2022-01-23T17:07:42.836Z\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Scheduled Room By UsserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/ScheduledRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"ScheduledRoom"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "61df17051d8ce900165aee5f"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Scheduled Room By UsserId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/ScheduledRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"ScheduledRoom"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "61df17051d8ce900165aee5f"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"specialGuest\": [\r\n                \"61a12889270b53001681f4ae\"\r\n            ],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"_id\": \"61ed8b5eb3ec1f2db06003fd\",\r\n            \"name\": \"testRoom\",\r\n            \"description\": \"test room\",\r\n            \"hostId\": \"61a12223270b53001681f488\",\r\n            \"dateAndTime\": \"2022-01-23T20:00:03.488Z\",\r\n            \"isPrivate\": true,\r\n            \"createdAt\": \"2022-01-23T17:07:42.836Z\",\r\n            \"updatedAt\": \"2022-01-23T17:07:42.836Z\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Upcomming Rooms By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/upcommingRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"upcommingRoom"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "61df17051d8ce900165aee5f"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Upcomming Rooms By UserId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/upcommingRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"upcommingRoom"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "61df17051d8ce900165aee5f"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"specialGuest\": [\r\n                \"61a12889270b53001681f4ae\"\r\n            ],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"_id\": \"61ed8b5eb3ec1f2db06003fd\",\r\n            \"name\": \"testRoom\",\r\n            \"description\": \"test room\",\r\n            \"hostId\": \"61a12223270b53001681f488\",\r\n            \"dateAndTime\": \"2022-01-23T20:00:03.488Z\",\r\n            \"isPrivate\": true,\r\n            \"createdAt\": \"2022-01-23T17:07:42.836Z\",\r\n            \"updatedAt\": \"2022-01-23T17:07:42.836Z\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
 		}
 	]
 }

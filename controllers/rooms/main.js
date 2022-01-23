@@ -1,5 +1,6 @@
 const Rooms = require("../../modals/Room");
 const { Types } = require("mongoose");
+const moment = require("moment");
 const addRooms = async (req, res, next) => {
   try {
     let { body } = req;
@@ -196,10 +197,108 @@ const UpdateRoom = async (req, res, next) => {
   }
 };
 
+const getLiveRooms = async (req, res, next) => {
+  let { id, page, limit } = req.query;
+  page = page ? Number(page) : 1;
+  limit = limit ? Number(limit) : 20;
+  let skip = (page - 1) * limit;
+
+  let timeNow = new Date(moment().format("YYYY-MM-DD HH:MM"));
+  let afterOneHour = new Date(
+    moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
+  );
+  let rooms = await Rooms.find({
+    $and: [
+      { dateAndTime: { $gte: timeNow } },
+      { dateAndTime: { $lte: afterOneHour } },
+      {
+        $or: [
+          { isPrivate: false },
+          {
+            $and: [{ isPrivate: true }, { inviteOrScheduledUser: { $in: id } }],
+          },
+        ],
+      },
+    ],
+  });
+  let roomsdata = rooms.slice(skip, skip + limit);
+  let totalPages = Math.ceil(rooms.length / limit);
+  rooms && res.status(200).json({ totalPages, data: roomsdata });
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getScheduledRoom = async (req, res, next) => {
+  let { id, page, limit } = req.query;
+  page = page ? Number(page) : 1;
+  limit = limit ? Number(limit) : 20;
+  let skip = (page - 1) * limit;
+
+  let timeNow = new Date(moment().format("YYYY-MM-DD HH:MM"));
+  let afterOneHour = new Date(
+    moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
+  );
+  let rooms = await Rooms.find({
+    $and: [
+      { dateAndTime: { $gte: afterOneHour } },
+      {
+        $or: [
+          {
+            $and: [{ isPrivate: true }, { inviteOrScheduledUser: { $in: id } }],
+          },
+        ],
+      },
+    ],
+  });
+  let roomsdata = rooms.slice(skip, skip + limit);
+  let totalPages = Math.ceil(rooms.length / limit);
+  rooms && res.status(200).json({ totalPages, data: roomsdata });
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getUpcommingRoom = async (req, res, next) => {
+  let { id, page, limit } = req.query;
+  page = page ? Number(page) : 1;
+  limit = limit ? Number(limit) : 20;
+  let skip = (page - 1) * limit;
+
+  let timeNow = new Date(moment().format("YYYY-MM-DD HH:MM"));
+  let afterOneHour = new Date(
+    moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
+  );
+  let rooms = await Rooms.find({
+    $and: [
+      { dateAndTime: { $gte: afterOneHour } },
+      {
+        $or: [
+          {
+            $and: [{ isPrivate: true }, { inviteOrScheduledUser: { $ne: id } }],
+          },
+        ],
+      },
+    ],
+  });
+  let roomsdata = rooms.slice(skip, skip + limit);
+  let totalPages = Math.ceil(rooms.length / limit);
+  rooms && res.status(200).json({ totalPages, data: roomsdata });
+  try {
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addRooms,
   getRoomsByUserId,
   getRoomByHost,
   deleteRoom,
   UpdateRoom,
+  getLiveRooms,
+  getScheduledRoom,
+  getUpcommingRoom,
 };
