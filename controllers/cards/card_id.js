@@ -99,12 +99,17 @@ const getLikedUsersByCardId = async (req, res, next) => {
 const getSavedUsersByCardId = async (req, res, next) => {
   try {
     const cardId = req.params.cardId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
     const foundCard = await Cards.findById(cardId).populate({
       path: "saved",
       select: ["userName", "name", "fId", "photoUrl", "userTag"],
     });
-
-    res.status(200).json(foundCard.saved);
+    let saved = foundCard.saved.slice(skip, skip + limit);
+    let totalPages = Math.ceil(foundCard.saved.length / limit);
+    res.status(200).json({ totalPages, data: foundCard.saved });
   } catch (error) {
     next(error);
   }

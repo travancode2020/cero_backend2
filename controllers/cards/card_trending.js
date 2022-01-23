@@ -9,7 +9,7 @@ const getAllTrendingCards = async (req, res, next) => {
     let skip = (page - 1) * limit;
     let todayDate = new Date();
 
-    const trendingCards = await Cards.aggregate([
+    let trendingCards = await Cards.aggregate([
       {
         $addFields: {
           likeCount: { $size: { $ifNull: ["$likes", []] } },
@@ -69,9 +69,9 @@ const getAllTrendingCards = async (req, res, next) => {
       // { $skip: skip },
       // { $limit: limit },
     ]);
-    trendingCards.forEach();
-    const totalData = await Cards.find();
-    // let totalPages = Math.ceil(totalData.length / limit);
+    trendingCards.forEach((obj, index) => {
+      obj.cards = obj.cards.slice(0, 3);
+    });
 
     res.status(200).json({ data: trendingCards });
   } catch (error) {
@@ -121,8 +121,13 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
         },
       },
       // {
-      //   $unwind: "$host",
+      //   $addFields: {
+      //     host: "$host",
+      //   },
       // },
+      {
+        $unwind: "$host",
+      },
       // {
       //   $group: {
       //     _id: { $first: "$tags" },
