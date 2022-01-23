@@ -1,6 +1,4 @@
 const Rooms = require("../../modals/Room");
-const Users = require("../../modals/User.js");
-
 const { Types } = require("mongoose");
 const moment = require("moment");
 const addRooms = async (req, res, next) => {
@@ -143,24 +141,43 @@ const getRoomByHost = async (req, res, next) => {
 
     if (!hostId) throw new Error("Please pass host id");
 
-    let rooms = await Rooms.find({ hostId })
-      .select(
-        "specialGuest inviteOrScheduledUser name dateAndTime isPrivate createdAt updatedAt "
-      )
-      .sort({ createdAt: -1 })
-      .skip(skip)
-      .limit(limit);
-    if (!rooms) throw new Error("Rooms not found");
-    let hostData = await Users.findOne({ _id: hostId }).select(
-      "_id userName name photoUrl"
-    );
+    let rooms = await Rooms.aggregate([
+      { $match: { hostId: Types.ObjectId(hostId) } },
+      {
+        $lookup: {
+          from: "users",
+          localField: "hostId",
+          foreignField: "_id",
+          as: "hostData",
+        },
+      },
+      { $unwind: "$hostData" },
+      {
+        $project: {
+          "hostData._id": 1,
+          "hostData.userName": 1,
+          "hostData.name": 1,
+          "hostData.photoUrl": 1,
+          specialGuest: 1,
+          inviteOrScheduledUser: 1,
+          name: 1,
+          dateAndTime: 1,
+          isPrivate: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+      { $sort: { createdAt: -1 } },
+      { $skip: skip },
+      { $limit: limit },
+    ]);
 
-    let data = { rooms: rooms, hostData };
+    if (!rooms) throw new Error("Rooms not found");
 
     let count = await Rooms.find({ hostId });
     let totalPages = Math.ceil(count.length / limit);
 
-    rooms && res.status(200).json({ succes: true, totalPages, data: data });
+    rooms && res.status(200).json({ succes: true, totalPages, data: rooms });
   } catch (error) {
     next(error);
   }
