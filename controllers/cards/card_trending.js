@@ -73,7 +73,7 @@ const getAllTrendingCards = async (req, res, next) => {
       obj.cards = obj.cards.slice(0, 3);
     });
 
-    res.status(200).json({ data: trendingCards });
+    res.status(200).json(trendingCards);
   } catch (error) {
     next(error);
   }
