@@ -11,7 +11,7 @@ const getMomentsByUserId = async (req, res, next) => {
 
     const foundUserMoments = await Moment.find({
       host: foundUser._id,
-    });
+    }).sort({ createdAt: -1 });
 
     const foundFollowingMoments = await Moment.aggregate([
       {
@@ -48,7 +48,7 @@ const getMomentsByUserId = async (req, res, next) => {
         },
       },
       {
-        $sort: { _id: -1 },
+        $sort: { "moments.createdAt": -1 },
       },
     ]);
 
