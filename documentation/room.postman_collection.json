@@ -212,7 +212,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"specialGuest\": [\r\n                \"61a12889270b53001681f4ae\"\r\n            ],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"_id\": \"61ed8b5eb3ec1f2db06003fd\",\r\n            \"name\": \"testRoom\",\r\n            \"description\": \"test room\",\r\n            \"hostId\": \"61a12223270b53001681f488\",\r\n            \"dateAndTime\": \"2022-01-23T18:00:03.488Z\",\r\n            \"isPrivate\": true,\r\n            \"createdAt\": \"2022-01-23T17:07:42.836Z\",\r\n            \"updatedAt\": \"2022-01-23T17:07:42.836Z\"\r\n        }\r\n    ]\r\n}"
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9a7f4d60110016aa9ce1\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"Helloo\",\r\n            \"dateAndTime\": \"2022-01-23T18:40:59.786Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:12:15.512Z\",\r\n            \"updatedAt\": \"2022-01-23T18:12:15.512Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
 				}
 			]
 		},
@@ -280,7 +280,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"specialGuest\": [\r\n                \"61a12889270b53001681f4ae\"\r\n            ],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"_id\": \"61ed8b5eb3ec1f2db06003fd\",\r\n            \"name\": \"testRoom\",\r\n            \"description\": \"test room\",\r\n            \"hostId\": \"61a12223270b53001681f488\",\r\n            \"dateAndTime\": \"2022-01-23T20:00:03.488Z\",\r\n            \"isPrivate\": true,\r\n            \"createdAt\": \"2022-01-23T17:07:42.836Z\",\r\n            \"updatedAt\": \"2022-01-23T17:07:42.836Z\"\r\n        }\r\n    ]\r\n}"
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9b064d60110016aa9d0a\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"name\": \"Google\",\r\n            \"dateAndTime\": \"2022-01-25T00:00:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"updatedAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
 				}
 			]
 		},
@@ -348,7 +348,95 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"specialGuest\": [\r\n                \"61a12889270b53001681f4ae\"\r\n            ],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"_id\": \"61ed8b5eb3ec1f2db06003fd\",\r\n            \"name\": \"testRoom\",\r\n            \"description\": \"test room\",\r\n            \"hostId\": \"61a12223270b53001681f488\",\r\n            \"dateAndTime\": \"2022-01-23T20:00:03.488Z\",\r\n            \"isPrivate\": true,\r\n            \"createdAt\": \"2022-01-23T17:07:42.836Z\",\r\n            \"updatedAt\": \"2022-01-23T17:07:42.836Z\"\r\n        }\r\n    ]\r\n}"
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9b064d60110016aa9d0a\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"Google\",\r\n            \"dateAndTime\": \"2022-01-25T00:00:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"updatedAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Invite User By UserId In Room By RoomId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/inviteUser/61a12223270b53001681f488",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"61df329c71047e0016dfa3c3",
+						"inviteUser",
+						"61a12223270b53001681f488"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invite User By UserId In Room By RoomId",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/inviteUser/61df17051d8ce900165aee5f",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"61df329c71047e0016dfa3c3",
+								"inviteUser",
+								"61df17051d8ce900165aee5f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\",\r\n        \"61a12223270b53001681f488\",\r\n        \"61df17051d8ce900165aee5f\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:44:38.821Z\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancel Invited User By Userid",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/cancelInvite/61a12223270b53001681f488",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"61df329c71047e0016dfa3c3",
+						"cancelInvite",
+						"61a12223270b53001681f488"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel Invited User By Userid",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/cancelInvite/61a12223270b53001681f488",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"61df329c71047e0016dfa3c3",
+								"cancelInvite",
+								"61a12223270b53001681f488"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:47:39.974Z\"\r\n}"
 				}
 			]
 		}
