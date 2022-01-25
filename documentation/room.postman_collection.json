@@ -439,6 +439,94 @@
 					"body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:47:39.974Z\"\r\n}"
 				}
 			]
+		},
+		{
+			"name": "Add special Guest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/addGuest/61a12889270b53001681f4ae",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"61df329c71047e0016dfa3c3",
+						"addGuest",
+						"61a12889270b53001681f4ae"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add special Guest",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/addGuest/61a12889270b53001681f4ae",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"61df329c71047e0016dfa3c3",
+								"addGuest",
+								"61a12889270b53001681f4ae"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"specialGuest\": [\r\n        \"61a12223270b53001681f488\",\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\",\r\n        \"61a12223270b53001681f489\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-25T14:06:28.326Z\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Remove Special Guest",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/removeGuest/61a12889270b53001681f4ae",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"61df329c71047e0016dfa3c3",
+						"removeGuest",
+						"61a12889270b53001681f4ae"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Remove Special Guest",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/removeGuest/61a12889270b53001681f4ae",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"61df329c71047e0016dfa3c3",
+								"removeGuest",
+								"61a12889270b53001681f4ae"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"specialGuest\": [\r\n        \"61a12223270b53001681f488\"\r\n    ],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12223270b53001681f489\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-25T14:08:08.465Z\"\r\n}"
+				}
+			]
 		}
 	]
 }

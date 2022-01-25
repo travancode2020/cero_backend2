@@ -452,6 +452,41 @@ const cancelInvitedUser = async (req, res, next) => {
     next(error);
   }
 };
+
+const addSpecialGuest = async (req, res, next) => {
+  try {
+    let { roomId, userId } = req.params;
+    let roomData = await Rooms.findOne({ _id: roomId });
+    if (!roomData.specialGuest.includes(userId)) {
+      roomData.specialGuest.push(userId);
+    }
+
+    let saveRoomsData = await Rooms.findOneAndUpdate({ _id: roomId }, roomData);
+
+    saveRoomsData && res.status(200).json(roomData);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const removeSpecialGuest = async (req, res, next) => {
+  try {
+    let { roomId, userId } = req.params;
+    let roomData = await Rooms.findOne({ _id: roomId });
+    roomData.specialGuest = roomData.specialGuest.filter((userIdObj) => {
+      if (userIdObj != userId) {
+        return userIdObj;
+      }
+    });
+
+    let saveRoomsData = await Rooms.findOneAndUpdate({ _id: roomId }, roomData);
+
+    saveRoomsData && res.status(200).json(roomData);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addRooms,
   getRoomsByUserId,
@@ -463,4 +498,6 @@ module.exports = {
   getUpcommingRoom,
   addInvitedUser,
   cancelInvitedUser,
+  addSpecialGuest,
+  removeSpecialGuest,
 };
