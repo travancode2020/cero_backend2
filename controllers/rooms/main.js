@@ -230,15 +230,15 @@ const getLiveRooms = async (req, res, next) => {
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
+    let startTime = new Date();
+    let endTime = new Date();
+    startTime.setHours(startTime.getHours() - 1);
+    endTime.setHours(endTime.getHours() + 1);
 
-    let timeNow = new Date(moment().format("YYYY-MM-DD HH:MM"));
-    let afterOneHour = new Date(
-      moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
-    );
     let filter = {
       $and: [
-        { dateAndTime: { $gte: timeNow } },
-        { dateAndTime: { $lte: afterOneHour } },
+        { dateAndTime: { $gte: startTime } },
+        { dateAndTime: { $lte: endTime } },
         {
           $or: [
             { isPrivate: false },
