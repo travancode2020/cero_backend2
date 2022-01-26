@@ -279,11 +279,15 @@ const getLiveRooms = async (req, res, next) => {
         },
       },
     ]);
-
     let roomsdata = rooms.slice(skip, skip + limit);
+    roomsdata = roomsdata.map((obj) => {
+      obj.dateAndTime = new Date(obj.dateAndTime).toString();
+      return obj;
+    });
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };
@@ -346,6 +350,10 @@ const getScheduledRoom = async (req, res, next) => {
     ]);
 
     let roomsdata = rooms.slice(skip, skip + limit);
+    roomsdata = roomsdata.map((obj) => {
+      obj.dateAndTime = new Date(obj.dateAndTime).toString();
+      return obj;
+    });
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
@@ -410,6 +418,10 @@ const getUpcommingRoom = async (req, res, next) => {
     ]);
 
     let roomsdata = rooms.slice(skip, skip + limit);
+    roomsdata = roomsdata.map((obj) => {
+      obj.dateAndTime = new Date(obj.dateAndTime).toString();
+      return obj;
+    });
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
