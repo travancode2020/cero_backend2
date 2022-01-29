@@ -25,6 +25,7 @@ const getAllCards = async (req, res, next) => {
           disLikes: { $nin: [userId] },
         })
           .populate(populateQuery)
+          .sort({ createdAt: -1 })
           .skip(count * (page - 1))
           .limit(count);
         total = await Cards.find({
@@ -35,6 +36,7 @@ const getAllCards = async (req, res, next) => {
       } else {
         foundCards = await Cards.find({ tags: { $in: interestArray } })
           .populate(populateQuery)
+          .sort({ createdAt: -1 })
           .skip(count * (page - 1))
           .limit(count);
 
@@ -49,6 +51,7 @@ const getAllCards = async (req, res, next) => {
           disLikes: { $nin: [userId] },
         })
           .populate(populateQuery)
+          .sort({ createdAt: -1 })
           .skip(count * (page - 1))
           .limit(count);
         total = await Cards.find({
@@ -58,6 +61,7 @@ const getAllCards = async (req, res, next) => {
       } else {
         foundCards = await Cards.find({})
           .populate(populateQuery)
+          .sort({ createdAt: -1 })
           .skip(count * (page - 1))
           .limit(count);
 
