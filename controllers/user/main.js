@@ -142,6 +142,13 @@ const findUserByNameUserName = async (req, res, next) => {
           ],
         },
       },
+      {
+        $project: {
+          name: 1,
+          userName: 1,
+          photoUrl: 1,
+        },
+      },
       { $limit: limit },
       { $skip: skip },
     ]);
@@ -159,7 +166,7 @@ const findUserByNameUserName = async (req, res, next) => {
 
     let totalPages = Math.ceil(count.length / limit);
 
-    UserList && res.status(200).json({ totalPages, UserList });
+    UserList && res.status(200).json({ totalPages, data: UserList });
   } catch (error) {
     next(error);
   }
