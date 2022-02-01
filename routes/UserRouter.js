@@ -38,6 +38,8 @@ const {
   unfollowByUserId,
   getFollowersByUserId,
   getFollowingByUserId,
+  searchFollowingUser,
+  searchFollowersUser,
 } = require("../controllers/user/following.js");
 
 const {
@@ -67,6 +69,9 @@ UserRouter.patch("/", patchUserByUsername);
 UserRouter.delete("/", deleteAllUsers);
 UserRouter.get("/phno/:phno", getUserByPhno);
 UserRouter.get("/search/", findUserByNameUserName);
+UserRouter.get("/search/followings", searchFollowingUser);
+
+UserRouter.get("/search/followers", searchFollowersUser);
 
 // controllers/user/user_id.js
 UserRouter.get("/:userid", getUserByUserId);

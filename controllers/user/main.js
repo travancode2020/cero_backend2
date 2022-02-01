@@ -137,21 +137,21 @@ const findUserByNameUserName = async (req, res, next) => {
       {
         $match: {
           $or: [
-            { userName: { $regex: userFilter, $options: "i" } },
-            { name: { $regex: userFilter, $options: "i" } },
+            { userName: { $regex: `^${userFilter}`, $options: "i" } },
+            { name: { $regex: `^${userFilter}`, $options: "i" } },
           ],
         },
       },
-      { $limit: limit },
       { $skip: skip },
+      { $limit: limit },
     ]);
 
     let count = await Users.aggregate([
       {
         $match: {
           $or: [
-            { userName: { $regex: userFilter, $options: "i" } },
-            { name: { $regex: userFilter, $options: "i" } },
+            { userName: { $regex: `^${userFilter}`, $options: "i" } },
+            { name: { $regex: `^${userFilter}`, $options: "i" } },
           ],
         },
       },

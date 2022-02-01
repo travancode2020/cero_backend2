@@ -12,9 +12,11 @@ const {
   cancelInvitedUser,
   addSpecialGuest,
   removeSpecialGuest,
+  searchRoom,
 } = require("../controllers/rooms/main");
 
 const RoomRouter = express.Router();
+RoomRouter.get("/search", searchRoom);
 
 RoomRouter.post("/", addRooms);
 RoomRouter.get("/liveRooms", getLiveRooms);

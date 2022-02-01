@@ -12,10 +12,7 @@ const addRooms = async (req, res, next) => {
     roomsaved = await Rooms.create(body);
     if (!roomsaved) throw new Error("Something went wrong while creating room");
 
-    roomsaved &&
-      res
-        .status(200)
-        .json({ success: true, message: "Room created succesfully" });
+    roomsaved && res.status(200).json({ success: true, data: roomsaved });
   } catch (error) {
     next(error);
   }
@@ -35,7 +32,7 @@ const getRoomsByUserId = async (req, res, next) => {
       {
         $match: {
           $and: [
-            { name: { $regex: nameFilter } },
+            { name: { $regex: nameFilter, $options: "i" } },
             {
               $or: [
                 { isPrivate: false },
@@ -84,7 +81,7 @@ const getRoomsByUserId = async (req, res, next) => {
       {
         $match: {
           $and: [
-            { name: { $regex: nameFilter } },
+            { name: { $regex: nameFilter, $options: "i" } },
             {
               $or: [
                 { isPrivate: false },
@@ -499,6 +496,52 @@ const removeSpecialGuest = async (req, res, next) => {
   }
 };
 
+const searchRoom = async (req, res, next) => {
+  try {
+    let { roomseaarch } = req.query;
+    let roomData = await Rooms.aggregate([
+      {
+        $lookup: {
+          from: "users",
+          localField: "hostId",
+          foreignField: "_id",
+          as: "hostData",
+        },
+      },
+      {
+        $match: {
+          $or: [
+            {
+              name: { $regex: `^${roomseaarch}`, $options: "i" },
+              "hostData.name": { $regex: `^${roomseaarch}`, $options: "i" },
+              "hostData.userName": { $regex: `^${roomseaarch}`, $options: "i" },
+            },
+          ],
+        },
+      },
+      {
+        $project: {
+          "hostData._id": 1,
+          "hostData.userName": 1,
+          "hostData.name": 1,
+          "hostData.photoUrl": 1,
+          specialGuest: 1,
+          inviteOrScheduledUser: 1,
+          name: 1,
+          dateAndTime: 1,
+          isPrivate: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+    ]);
+
+    roomData && res.status(200).json(roomData);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addRooms,
   getRoomsByUserId,
@@ -512,4 +555,5 @@ module.exports = {
   cancelInvitedUser,
   addSpecialGuest,
   removeSpecialGuest,
+  searchRoom,
 };

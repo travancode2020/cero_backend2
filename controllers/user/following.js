@@ -1,4 +1,5 @@
 const Users = require("../../modals/User.js");
+const { Types } = require("mongoose");
 
 const followByUserId = async (req, res, next) => {
   try {
@@ -106,9 +107,141 @@ const getFollowingByUserId = async (req, res, next) => {
   }
 };
 
+const searchFollowingUser = async (req, res, next) => {
+  try {
+    let { searchFilter, _id, page, limit } = req.query;
+    searchFilter = searchFilter ? searchFilter : "";
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+
+    let data = await Users.aggregate([
+      {
+        $match: { _id: Types.ObjectId(_id) },
+      },
+      {
+        $lookup: {
+          from: "users",
+          localField: "following",
+          foreignField: "_id",
+          as: "followeingsData",
+        },
+      },
+      { $unwind: "$followeingsData" },
+      {
+        $match: {
+          $or: [
+            {
+              "followeingsData.userName": {
+                $regex: `^${searchFilter}`,
+                $options: "i",
+              },
+            },
+            {
+              "followeingsData.name": {
+                $regex: `^${searchFilter}`,
+                $options: "i",
+              },
+            },
+          ],
+        },
+      },
+      {
+        $addFields: {
+          userName: "$followeingsData.userName",
+          name: "$followeingsData.name",
+          id: "$followeingsData._id",
+          photoUrl: "$followeingsData.photoUrl",
+        },
+      },
+      {
+        $project: { name: 1, userName: 1, id: 1, _id: 0, photoUrl: 1 },
+      },
+    ]);
+
+    let count = data.slice(skip, skip + limit);
+    let totalPages = Math.ceil(data.length / limit);
+
+    res.status(200).json({ totalPages, data });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
+
+const searchFollowersUser = async (req, res, next) => {
+  try {
+    let { searchFilter, _id, page, limit } = req.query;
+    searchFilter = searchFilter ? searchFilter : "";
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+
+    let data = await Users.aggregate([
+      {
+        $match: { _id: Types.ObjectId(_id) },
+      },
+      {
+        $lookup: {
+          from: "users",
+          localField: "followers",
+          foreignField: "_id",
+          as: "followersData",
+        },
+      },
+      { $unwind: "$followersData" },
+      {
+        $match: {
+          $or: [
+            {
+              "followersData.userName": {
+                $regex: `^${searchFilter}`,
+                $options: "i",
+              },
+            },
+            {
+              "followersData.name": {
+                $regex: `^${searchFilter}`,
+                $options: "i",
+              },
+            },
+          ],
+        },
+      },
+      {
+        $addFields: {
+          id: "$followersData._id",
+          userName: "$followersData.userName",
+          name: "$followersData.name",
+          photoUrl: "$followersData.photoUrl",
+        },
+      },
+      {
+        $project: {
+          name: 1,
+          userName: 1,
+          id: 1,
+          photoUrl: 1,
+          _id: 0,
+        },
+      },
+    ]);
+
+    let count = data.slice(skip, skip + limit);
+    let totalPages = Math.ceil(data.length / limit);
+
+    res.status(200).json({ totalPages, data });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
+
 module.exports = {
   followByUserId,
   unfollowByUserId,
   getFollowersByUserId,
   getFollowingByUserId,
+  searchFollowingUser,
+  searchFollowersUser,
 };
