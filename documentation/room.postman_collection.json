@@ -1,559 +1,480 @@
 {
-	"info": {
-		"_postman_id": "54ba5ea0-1af4-4baf-aea8-b6d36b626178",
-		"name": "room",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "create room",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":false,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/room/",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Room By UserId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/61a12223270b53001681f488?page=1&limit=20&nameFilter=tes",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"61a12223270b53001681f488"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "limit",
-							"value": "20"
-						},
-						{
-							"key": "nameFilter",
-							"value": "tes"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Room By HostId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/host/61a12223270b53001681f488?page=1&limit=20",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"host",
-						"61a12223270b53001681f488"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "limit",
-							"value": "20"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Room By RoomId",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/?roomId=61cca2c29ae41629d86f3229&userId=61a12223270b53001681f488",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						""
-					],
-					"query": [
-						{
-							"key": "roomId",
-							"value": "61cca2c29ae41629d86f3229"
-						},
-						{
-							"key": "userId",
-							"value": "61a12223270b53001681f488"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Room By RoomId",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"userId\":\"61a12223270b53001681f488\",\r\n    \"_id\":\"61ccb45686375e0e389f627b\",\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":true,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BASE_URL}}/room/",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Live Rooms",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/liveRooms?id=61df17051d8ce900165aee5f&page=1&limit=20",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"liveRooms"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "61df17051d8ce900165aee5f"
-						},
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "limit",
-							"value": "20"
-						}
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Live Rooms",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/liveRooms?id=61df17051d8ce900165aee5f&page=1&limit=20",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"liveRooms"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "61df17051d8ce900165aee5f"
-								},
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "20"
-								}
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9a7f4d60110016aa9ce1\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"Helloo\",\r\n            \"dateAndTime\": \"2022-01-23T18:40:59.786Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:12:15.512Z\",\r\n            \"updatedAt\": \"2022-01-23T18:12:15.512Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Get Scheduled Room By UsserId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/ScheduledRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"ScheduledRoom"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "61df17051d8ce900165aee5f"
-						},
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "limit",
-							"value": "20"
-						}
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Scheduled Room By UsserId",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/ScheduledRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"ScheduledRoom"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "61df17051d8ce900165aee5f"
-								},
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "20"
-								}
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9b064d60110016aa9d0a\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"name\": \"Google\",\r\n            \"dateAndTime\": \"2022-01-25T00:00:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"updatedAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Get Upcomming Rooms By UserId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/upcommingRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"upcommingRoom"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "61df17051d8ce900165aee5f"
-						},
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "limit",
-							"value": "20"
-						}
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Get Upcomming Rooms By UserId",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/upcommingRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"upcommingRoom"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "61df17051d8ce900165aee5f"
-								},
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "limit",
-									"value": "20"
-								}
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9b064d60110016aa9d0a\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"Google\",\r\n            \"dateAndTime\": \"2022-01-25T00:00:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"updatedAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Invite User By UserId In Room By RoomId",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/inviteUser/61a12223270b53001681f488",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"61df329c71047e0016dfa3c3",
-						"inviteUser",
-						"61a12223270b53001681f488"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Invite User By UserId In Room By RoomId",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/inviteUser/61df17051d8ce900165aee5f",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"61df329c71047e0016dfa3c3",
-								"inviteUser",
-								"61df17051d8ce900165aee5f"
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\",\r\n        \"61a12223270b53001681f488\",\r\n        \"61df17051d8ce900165aee5f\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:44:38.821Z\"\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Cancel Invited User By Userid",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/cancelInvite/61a12223270b53001681f488",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"61df329c71047e0016dfa3c3",
-						"cancelInvite",
-						"61a12223270b53001681f488"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Cancel Invited User By Userid",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/cancelInvite/61a12223270b53001681f488",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"61df329c71047e0016dfa3c3",
-								"cancelInvite",
-								"61a12223270b53001681f488"
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:47:39.974Z\"\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Add special Guest",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/addGuest/61a12889270b53001681f4ae",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"61df329c71047e0016dfa3c3",
-						"addGuest",
-						"61a12889270b53001681f4ae"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Add special Guest",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/addGuest/61a12889270b53001681f4ae",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"61df329c71047e0016dfa3c3",
-								"addGuest",
-								"61a12889270b53001681f4ae"
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"specialGuest\": [\r\n        \"61a12223270b53001681f488\",\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\",\r\n        \"61a12223270b53001681f489\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-25T14:06:28.326Z\"\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Remove Special Guest",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/removeGuest/61a12889270b53001681f4ae",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"room",
-						"61df329c71047e0016dfa3c3",
-						"removeGuest",
-						"61a12889270b53001681f4ae"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Remove Special Guest",
-					"originalRequest": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/removeGuest/61a12889270b53001681f4ae",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"room",
-								"61df329c71047e0016dfa3c3",
-								"removeGuest",
-								"61a12889270b53001681f4ae"
-							]
-						}
-					},
-					"_postman_previewlanguage": null,
-					"header": null,
-					"cookie": [],
-					"body": "{\r\n    \"specialGuest\": [\r\n        \"61a12223270b53001681f488\"\r\n    ],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12223270b53001681f489\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-25T14:08:08.465Z\"\r\n}"
-				}
-			]
-		},
-		{
-			"name": "Search Room",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/room/search/?roomseaarch=t",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"room",
-						"search",
-						""
-					],
-					"query": [
-						{
-							"key": "roomseaarch",
-							"value": "t"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "54ba5ea0-1af4-4baf-aea8-b6d36b626178",
+    "name": "room",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "create room",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":false,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/room/",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Room By UserId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/61a12223270b53001681f488?page=1&limit=20&nameFilter=tes",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", "61a12223270b53001681f488"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            },
+            {
+              "key": "nameFilter",
+              "value": "tes"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Room By HostId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/host/61a12223270b53001681f488?page=1&limit=20",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", "host", "61a12223270b53001681f488"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Room By RoomId",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/?roomId=61cca2c29ae41629d86f3229&userId=61a12223270b53001681f488",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", ""],
+          "query": [
+            {
+              "key": "roomId",
+              "value": "61cca2c29ae41629d86f3229"
+            },
+            {
+              "key": "userId",
+              "value": "61a12223270b53001681f488"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Room By RoomId",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\":\"61a12223270b53001681f488\",\r\n    \"_id\":\"61ccb45686375e0e389f627b\",\r\n    \"name\" : \"testRoom\",\r\n    \"description\" : \"test room\",\r\n    \"hostId\":\"61a12223270b53001681f488\",\r\n    \"specialGuest\":[\"61a12889270b53001681f4ae\"],\r\n    \"dateAndTime\": \"2021-12-29T17:34:03.488Z\",\r\n    \"isPrivate\":true,\r\n    \"inviteOrScheduledUser\":[\"61a12223270b53001681f488\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/room/",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Live Rooms",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/liveRooms?id=61df17051d8ce900165aee5f&page=1&limit=20",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", "liveRooms"],
+          "query": [
+            {
+              "key": "id",
+              "value": "61df17051d8ce900165aee5f"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Live Rooms",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/liveRooms?id=61df17051d8ce900165aee5f&page=1&limit=20",
+              "host": ["{{BASE_URL}}"],
+              "path": ["room", "liveRooms"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "61df17051d8ce900165aee5f"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9a7f4d60110016aa9ce1\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"Helloo\",\r\n            \"dateAndTime\": \"2022-01-23T18:40:59.786Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:12:15.512Z\",\r\n            \"updatedAt\": \"2022-01-23T18:12:15.512Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Scheduled Room By UsserId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/ScheduledRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", "ScheduledRoom"],
+          "query": [
+            {
+              "key": "id",
+              "value": "61df17051d8ce900165aee5f"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Scheduled Room By UsserId",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/ScheduledRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+              "host": ["{{BASE_URL}}"],
+              "path": ["room", "ScheduledRoom"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "61df17051d8ce900165aee5f"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9b064d60110016aa9d0a\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61df17051d8ce900165aee5f\"\r\n            ],\r\n            \"name\": \"Google\",\r\n            \"dateAndTime\": \"2022-01-25T00:00:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"updatedAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Upcomming Rooms By UserId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/upcommingRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+          "host": ["{{BASE_URL}}"],
+          "path": ["room", "upcommingRoom"],
+          "query": [
+            {
+              "key": "id",
+              "value": "61df17051d8ce900165aee5f"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Get Upcomming Rooms By UserId",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/upcommingRoom?id=61df17051d8ce900165aee5f&page=1&limit=20",
+              "host": ["{{BASE_URL}}"],
+              "path": ["room", "upcommingRoom"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "61df17051d8ce900165aee5f"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61ed9b064d60110016aa9d0a\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"Google\",\r\n            \"dateAndTime\": \"2022-01-25T00:00:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"updatedAt\": \"2022-01-23T18:14:30.957Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            }\r\n        }\r\n    ]\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Invite User By UserId In Room By RoomId",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/inviteUser/61a12223270b53001681f488",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "room",
+            "61df329c71047e0016dfa3c3",
+            "inviteUser",
+            "61a12223270b53001681f488"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Invite User By UserId In Room By RoomId",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/inviteUser/61df17051d8ce900165aee5f",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "room",
+                "61df329c71047e0016dfa3c3",
+                "inviteUser",
+                "61df17051d8ce900165aee5f"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\",\r\n        \"61a12223270b53001681f488\",\r\n        \"61df17051d8ce900165aee5f\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:44:38.821Z\"\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Cancel Invited User By Userid",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/cancelInvite/61a12223270b53001681f488",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "room",
+            "61df329c71047e0016dfa3c3",
+            "cancelInvite",
+            "61a12223270b53001681f488"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Cancel Invited User By Userid",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/cancelInvite/61a12223270b53001681f488",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "room",
+                "61df329c71047e0016dfa3c3",
+                "cancelInvite",
+                "61a12223270b53001681f488"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"specialGuest\": [],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-24T17:47:39.974Z\"\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Add special Guest",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/addGuest/61a12889270b53001681f4ae",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "room",
+            "61df329c71047e0016dfa3c3",
+            "addGuest",
+            "61a12889270b53001681f4ae"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add special Guest",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/addGuest/61a12889270b53001681f4ae",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "room",
+                "61df329c71047e0016dfa3c3",
+                "addGuest",
+                "61a12889270b53001681f4ae"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"specialGuest\": [\r\n        \"61a12223270b53001681f488\",\r\n        \"61a12889270b53001681f4ae\"\r\n    ],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12889270b53001681f4ae\",\r\n        \"61a12223270b53001681f489\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-25T14:06:28.326Z\"\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Remove Special Guest",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/removeGuest/61a12889270b53001681f4ae",
+          "host": ["{{BASE_URL}}"],
+          "path": [
+            "room",
+            "61df329c71047e0016dfa3c3",
+            "removeGuest",
+            "61a12889270b53001681f4ae"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Remove Special Guest",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/room/61df329c71047e0016dfa3c3/removeGuest/61a12889270b53001681f4ae",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "room",
+                "61df329c71047e0016dfa3c3",
+                "removeGuest",
+                "61a12889270b53001681f4ae"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"specialGuest\": [\r\n        \"61a12223270b53001681f488\"\r\n    ],\r\n    \"inviteOrScheduledUser\": [\r\n        \"61a12223270b53001681f489\"\r\n    ],\r\n    \"_id\": \"61df329c71047e0016dfa3c3\",\r\n    \"name\": \"a\",\r\n    \"description\": \"about the anything\",\r\n    \"hostId\": \"61a12889270b53001681f4ae\",\r\n    \"dateAndTime\": \"2022-01-16T00:01:00.000Z\",\r\n    \"isPrivate\": false,\r\n    \"createdAt\": \"2022-01-12T19:57:16.397Z\",\r\n    \"updatedAt\": \"2022-01-25T14:08:08.465Z\"\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Search Rooms",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "Search Rooms",
+          "originalRequest": {
+            "method": "GET",
+            "header": []
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61f6fcb36af3f20016a1a7e5\",\r\n            \"specialGuest\": [],\r\n            \"inviteOrScheduledUser\": [],\r\n            \"name\": \"abcd\",\r\n            \"dateAndTime\": \"2022-01-31T02:31:29.697Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-01-30T21:01:39.472Z\",\r\n            \"updatedAt\": \"2022-01-30T21:01:39.472Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61dc59523e5caf0016f0f677\",\r\n                \"userName\": \"solowolf93\",\r\n                \"name\": \"Dithesh\",\r\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Giuth2OP_un95RoASYj4tHNFBbR7WNW_60VfYXU3w=s96-c\"\r\n            }\r\n        }\r\n    ]\r\n}"
+        }
+      ]
+    }
+  ]
 }
