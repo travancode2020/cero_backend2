@@ -569,7 +569,10 @@ const searchRoom = async (req, res, next) => {
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
+    let todayDte = new Date();
+    todayDte.setHours(todayDte.getHours() - 1);
     let roomData = await Rooms.aggregate([
+      { $match: { dateAndTime: { $gte: todayDte } } },
       {
         $lookup: {
           from: "users",
