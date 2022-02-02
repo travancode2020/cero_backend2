@@ -1246,7 +1246,7 @@
 					"body": "{\n    \"totalPages\": 1,\n    \"following\": [\n        {\n            \"_id\": \"61a12223270b53001681f488\",\n            \"fId\": \"c4eOBpxgAOZ5jSfRXoTH2AohkIh2\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\n        }\n    ]\n}"
 				}
 			]
-		}
+		},
 		{
 			"name": "Get User By AgoraId",
 			"request": {
@@ -1297,6 +1297,170 @@
 				}
 			},
 			"response": []
-		}
+		},
+		{
+			"name": "Search Following By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/search/followings?page=1&limit=1&_id=61df17051d8ce900165aee5f&searchFilter=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"search",
+						"followings"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "_id",
+							"value": "61df17051d8ce900165aee5f"
+						},
+						{
+							"key": "searchFilter",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Following By UserId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/search/followings?page=1&limit=1&_id=61df17051d8ce900165aee5f&searchFilter=a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"search",
+								"followings"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "_id",
+									"value": "61df17051d8ce900165aee5f"
+								},
+								{
+									"key": "searchFilter",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"id\": \"61a12223270b53001681f488\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Search  Followers By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/search/followers?page=1&limit=1&_id=61a12223270b53001681f488&searchFilter=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"search",
+						"followers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "_id",
+							"value": "61a12223270b53001681f488"
+						},
+						{
+							"key": "searchFilter",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search  Followers By UserId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/search/followers?page=1&limit=1&_id=61a12223270b53001681f488&searchFilter=p",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"search",
+								"followers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "_id",
+									"value": "61a12223270b53001681f488"
+								},
+								{
+									"key": "searchFilter",
+									"value": "p"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"userName\": \"pappan\",\n            \"name\": \"Pappan\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\",\n            \"id\": \"61df2ec971047e0016dfa2a9\"\n        }\n    ]\n}"
+				}
+			]
+		},
 	]
 }
