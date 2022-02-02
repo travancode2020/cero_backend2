@@ -139,6 +139,7 @@ const findUserByNameUserName = async (req, res, next) => {
           $or: [
             { userName: { $regex: `^${userFilter}`, $options: "i" } },
             { name: { $regex: `^${userFilter}`, $options: "i" } },
+            { name: { $regex: ` ${userFilter}`, $options: "i" } },
           ],
         },
       },
