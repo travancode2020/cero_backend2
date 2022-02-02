@@ -191,7 +191,7 @@ const getRoomByHost = async (req, res, next) => {
           updatedAt: 1,
         },
       },
-      { $sort: { createdAt: -1 } },
+      { $sort: { dateAndTime: -1 } },
       { $skip: skip },
       { $limit: limit },
     ]);
@@ -525,7 +525,10 @@ const removeSpecialGuest = async (req, res, next) => {
 
 const searchRoom = async (req, res, next) => {
   try {
-    let { roomseaarch } = req.query;
+    let { roomseaarch, page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
     let roomData = await Rooms.aggregate([
       {
         $lookup: {
@@ -533,17 +536,6 @@ const searchRoom = async (req, res, next) => {
           localField: "hostId",
           foreignField: "_id",
           as: "hostData",
-        },
-      },
-      {
-        $match: {
-          $or: [
-            {
-              name: { $regex: `^${roomseaarch}`, $options: "i" },
-              "hostData.name": { $regex: `^${roomseaarch}`, $options: "i" },
-              "hostData.userName": { $regex: `^${roomseaarch}`, $options: "i" },
-            },
-          ],
         },
       },
       {
@@ -561,9 +553,32 @@ const searchRoom = async (req, res, next) => {
           updatedAt: 1,
         },
       },
+      {
+        $unwind: "$hostData",
+      },
+      {
+        $match: {
+          $or: [
+            {
+              name: { $regex: `^${roomseaarch}`, $options: "i" },
+            },
+            {
+              "hostData.name": { $regex: `^${roomseaarch}`, $options: "i" },
+            },
+            {
+              "hostData.userName": { $regex: `^${roomseaarch}`, $options: "i" },
+            },
+            {
+              "hostData.name": { $regex: ` ${roomseaarch}`, $options: "i" },
+            },
+          ],
+        },
+      },
     ]);
 
-    roomData && res.status(200).json(roomData);
+    let data = roomData.slice(skip, skip + limit);
+    let totalPages = Math.ceil(roomData.length / limit);
+    roomData && res.status(200).json({ totalPages, data });
   } catch (error) {
     next(error);
   }
