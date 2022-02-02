@@ -166,7 +166,12 @@ const getRoomByHost = async (req, res, next) => {
     if (!hostId) throw new Error("Please pass host id");
 
     let rooms = await Rooms.aggregate([
-      { $match: { hostId: Types.ObjectId(hostId) } },
+      {
+        $match: {
+          hostId: Types.ObjectId(hostId),
+          dateAndTime: { $gte: new Date() },
+        },
+      },
       {
         $lookup: {
           from: "users",
@@ -191,17 +196,52 @@ const getRoomByHost = async (req, res, next) => {
           updatedAt: 1,
         },
       },
-      { $sort: { dateAndTime: -1 } },
+      { $sort: { dateAndTime: 1 } },
       { $skip: skip },
       { $limit: limit },
     ]);
+    let rooms1 = await Rooms.aggregate([
+      {
+        $match: {
+          hostId: Types.ObjectId(hostId),
+          dateAndTime: { $lt: new Date() },
+        },
+      },
+      {
+        $lookup: {
+          from: "users",
+          localField: "hostId",
+          foreignField: "_id",
+          as: "hostData",
+        },
+      },
+      { $unwind: "$hostData" },
+      {
+        $project: {
+          "hostData._id": 1,
+          "hostData.userName": 1,
+          "hostData.name": 1,
+          "hostData.photoUrl": 1,
+          specialGuest: 1,
+          inviteOrScheduledUser: 1,
+          name: 1,
+          dateAndTime: 1,
+          isPrivate: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+      { $sort: { dateAndTime: 1 } },
+      { $skip: skip },
+      { $limit: limit },
+    ]);
+    let data1 = rooms.concat(rooms1);
+    if (!data1) throw new Error("Rooms not found");
 
-    if (!rooms) throw new Error("Rooms not found");
+    let data = data1.slice(skip, skip + limit);
+    let totalPages = Math.ceil(data1.length / limit);
 
-    let count = await Rooms.find({ hostId });
-    let totalPages = Math.ceil(count.length / limit);
-
-    rooms && res.status(200).json({ succes: true, totalPages, data: rooms });
+    rooms && res.status(200).json({ totalPages, data: data });
   } catch (error) {
     next(error);
   }
