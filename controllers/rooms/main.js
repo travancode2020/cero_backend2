@@ -38,8 +38,8 @@ const addRooms = async (req, res, next) => {
         },
       },
     ]);
-
-    roomsaved && res.status(200).json(RoomData);
+    let data = RoomData[0];
+    roomsaved && res.status(200).json(data);
   } catch (error) {
     next(error);
   }
