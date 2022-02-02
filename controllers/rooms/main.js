@@ -12,7 +12,7 @@ const addRooms = async (req, res, next) => {
     roomsaved = await Rooms.create(body);
     if (!roomsaved) throw new Error("Something went wrong while creating room");
 
-    roomsaved && res.status(200).json({ success: true, data: roomsaved });
+    roomsaved && res.status(200).json(roomsaved);
   } catch (error) {
     next(error);
   }

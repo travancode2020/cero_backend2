@@ -142,6 +142,13 @@ const findUserByNameUserName = async (req, res, next) => {
           ],
         },
       },
+      {
+        $project: {
+          name: 1,
+          userName: 1,
+          photoUrl: 1,
+        },
+      },
       { $skip: skip },
       { $limit: limit },
     ]);
