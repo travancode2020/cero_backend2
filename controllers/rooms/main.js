@@ -11,8 +11,35 @@ const addRooms = async (req, res, next) => {
 
     roomsaved = await Rooms.create(body);
     if (!roomsaved) throw new Error("Something went wrong while creating room");
+    let RoomData = await Rooms.aggregate([
+      { $match: { _id: Types.ObjectId(roomsaved._id) } },
+      {
+        $lookup: {
+          from: "users",
+          localField: "hostId",
+          foreignField: "_id",
+          as: "hostData",
+        },
+      },
+      { $unwind: "$hostData" },
+      {
+        $project: {
+          "hostData._id": 1,
+          "hostData.userName": 1,
+          "hostData.name": 1,
+          "hostData.photoUrl": 1,
+          specialGuest: 1,
+          inviteOrScheduledUser: 1,
+          name: 1,
+          dateAndTime: 1,
+          isPrivate: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+    ]);
 
-    roomsaved && res.status(200).json(roomsaved);
+    roomsaved && res.status(200).json(RoomData);
   } catch (error) {
     next(error);
   }
