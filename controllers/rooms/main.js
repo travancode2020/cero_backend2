@@ -81,9 +81,20 @@ const getRoomsByUserId = async (req, res, next) => {
         },
       },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           _id: 1,
-          specialGuest: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
           inviteOrScheduledUser: 1,
           name: 1,
           description: 1,
@@ -162,7 +173,6 @@ const getRoomByHost = async (req, res, next) => {
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
-
     if (!hostId) throw new Error("Please pass host id");
 
     let rooms = await Rooms.aggregate([
@@ -182,18 +192,29 @@ const getRoomByHost = async (req, res, next) => {
       },
       { $unwind: "$hostData" },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
           inviteOrScheduledUser: 1,
           name: 1,
           dateAndTime: 1,
           isPrivate: 1,
           createdAt: 1,
           updatedAt: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
         },
       },
       { $sort: { dateAndTime: 1 } },
@@ -217,14 +238,27 @@ const getRoomByHost = async (req, res, next) => {
       },
       { $unwind: "$hostData" },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
+          _id: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
           inviteOrScheduledUser: 1,
           name: 1,
+          description: 1,
           dateAndTime: 1,
           isPrivate: 1,
           createdAt: 1,
@@ -336,6 +370,7 @@ const getLiveRooms = async (req, res, next) => {
           specialGuest: 1,
           inviteOrScheduledUser: 1,
           name: 1,
+          description: 1,
           dateAndTime: 1,
           isPrivate: 1,
           createdAt: 1,
@@ -405,6 +440,7 @@ const getScheduledRoom = async (req, res, next) => {
           specialGuest: 1,
           inviteOrScheduledUser: 1,
           name: 1,
+          description: 1,
           dateAndTime: 1,
           isPrivate: 1,
           createdAt: 1,
@@ -412,7 +448,6 @@ const getScheduledRoom = async (req, res, next) => {
         },
       },
     ]);
-
     let roomsdata = rooms.slice(skip, skip + limit);
     roomsdata = roomsdata.map((obj) => {
       obj.dateAndTime = new Date(obj.dateAndTime).toString();
@@ -465,12 +500,24 @@ const getUpcommingRoom = async (req, res, next) => {
       },
       { $unwind: "$hostData" },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
+          description: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
           inviteOrScheduledUser: 1,
           name: 1,
           dateAndTime: 1,

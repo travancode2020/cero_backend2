@@ -150,12 +150,12 @@ const searchFollowingUser = async (req, res, next) => {
         $addFields: {
           userName: "$followeingsData.userName",
           name: "$followeingsData.name",
-          id: "$followeingsData._id",
+          _id: "$followeingsData._id",
           photoUrl: "$followeingsData.photoUrl",
         },
       },
       {
-        $project: { name: 1, userName: 1, id: 1, _id: 0, photoUrl: 1 },
+        $project: { name: 1, userName: 1, _id: 1, photoUrl: 1 },
       },
     ]);
 
@@ -210,7 +210,7 @@ const searchFollowersUser = async (req, res, next) => {
       },
       {
         $addFields: {
-          id: "$followersData._id",
+          _id: "$followersData._id",
           userName: "$followersData.userName",
           name: "$followersData.name",
           photoUrl: "$followersData.photoUrl",
@@ -220,9 +220,8 @@ const searchFollowersUser = async (req, res, next) => {
         $project: {
           name: 1,
           userName: 1,
-          id: 1,
+
           photoUrl: 1,
-          _id: 0,
         },
       },
     ]);
