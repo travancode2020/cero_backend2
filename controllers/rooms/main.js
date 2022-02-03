@@ -1,4 +1,4 @@
-const Rooms = require("../../modals/Room");
+const Rooms = require("../../modals/Room.js");
 const { Types } = require("mongoose");
 const moment = require("moment");
 const addRooms = async (req, res, next) => {
@@ -23,12 +23,23 @@ const addRooms = async (req, res, next) => {
       },
       { $unwind: "$hostData" },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
           inviteOrScheduledUser: 1,
           name: 1,
           dateAndTime: 1,
@@ -362,12 +373,23 @@ const getLiveRooms = async (req, res, next) => {
       },
       { $unwind: "$hostData" },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
           inviteOrScheduledUser: 1,
           name: 1,
           description: 1,
@@ -432,12 +454,24 @@ const getScheduledRoom = async (req, res, next) => {
       },
       { $unwind: "$hostData" },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.photoUrl": 1,
+          "specialGuest.name": 1,
+
           inviteOrScheduledUser: 1,
           name: 1,
           description: 1,
@@ -629,16 +663,28 @@ const searchRoom = async (req, res, next) => {
         },
       },
       {
+        $lookup: {
+          from: "users",
+          localField: "specialGuest",
+          foreignField: "_id",
+          as: "specialGuest",
+        },
+      },
+      {
         $project: {
           "hostData._id": 1,
           "hostData.userName": 1,
           "hostData.name": 1,
           "hostData.photoUrl": 1,
-          specialGuest: 1,
+          "specialGuest._id": 1,
+          "specialGuest.userName": 1,
+          "specialGuest.name": 1,
+          "specialGuest.photoUrl": 1,
           inviteOrScheduledUser: 1,
           name: 1,
           dateAndTime: 1,
           isPrivate: 1,
+          description: 1,
           createdAt: 1,
           updatedAt: 1,
         },
