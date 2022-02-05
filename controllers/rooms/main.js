@@ -431,12 +431,17 @@ const getScheduledRoom = async (req, res, next) => {
           $or: [
             {
               isPrivate: false,
-              inviteOrScheduledUser: { $in: [Types.ObjectId(id)] },
+              $or: [
+                { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
+                { specialGuest: { $in: [Types.ObjectId(id)] } },
+              ],
             },
-
             {
               isPrivate: true,
-              inviteOrScheduledUser: { $in: [Types.ObjectId(id)] },
+              $or: [
+                { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
+                { specialGuest: { $in: [Types.ObjectId(id)] } },
+              ],
             },
           ],
         },
