@@ -354,7 +354,12 @@ const getLiveRooms = async (req, res, next) => {
             {
               $and: [
                 { isPrivate: true },
-                { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
+                {
+                  $or: [
+                    { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
+                    { specialGuest: { $in: [Types.ObjectId(id)] } },
+                  ],
+                },
               ],
             },
           ],
