@@ -358,6 +358,7 @@ const getLiveRooms = async (req, res, next) => {
                   $or: [
                     { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
                     { specialGuest: { $in: [Types.ObjectId(id)] } },
+                    { hostId: { $in: [Types.ObjectId(id)] } },
                   ],
                 },
               ],
@@ -406,10 +407,6 @@ const getLiveRooms = async (req, res, next) => {
       },
     ]);
     let roomsdata = rooms.slice(skip, skip + limit);
-    roomsdata = roomsdata.map((obj) => {
-      obj.dateAndTime = new Date(obj.dateAndTime).toString();
-      return obj;
-    });
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
@@ -439,6 +436,7 @@ const getScheduledRoom = async (req, res, next) => {
               $or: [
                 { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
                 { specialGuest: { $in: [Types.ObjectId(id)] } },
+                { hostId: { $in: [Types.ObjectId(id)] } },
               ],
             },
             {
@@ -446,6 +444,7 @@ const getScheduledRoom = async (req, res, next) => {
               $or: [
                 { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
                 { specialGuest: { $in: [Types.ObjectId(id)] } },
+                { hostId: { $in: [Types.ObjectId(id)] } },
               ],
             },
           ],
@@ -493,10 +492,6 @@ const getScheduledRoom = async (req, res, next) => {
       },
     ]);
     let roomsdata = rooms.slice(skip, skip + limit);
-    roomsdata = roomsdata.map((obj) => {
-      obj.dateAndTime = new Date(obj.dateAndTime).toString();
-      return obj;
-    });
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
@@ -516,21 +511,11 @@ const getUpcommingRoom = async (req, res, next) => {
       moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
     );
     let filter = {
-      $and: [
-        { dateAndTime: { $gte: afterOneHour } },
-        {
-          $or: [
-            {
-              isPrivate: false,
-              inviteOrScheduledUser: { $ne: Types.ObjectId(id) },
-            },
-            {
-              isPrivate: true,
-              inviteOrScheduledUser: { $ne: Types.ObjectId(id) },
-            },
-          ],
-        },
-      ],
+      dateAndTime: { $gte: afterOneHour },
+      isPrivate: false,
+      inviteOrScheduledUser: { $ne: Types.ObjectId(id) },
+      specialGuest: { $ne: Types.ObjectId(id) },
+      hostId: { $ne: [Types.ObjectId(id)] },
     };
     let rooms = await Rooms.aggregate([
       { $match: filter },
@@ -573,10 +558,6 @@ const getUpcommingRoom = async (req, res, next) => {
     ]);
 
     let roomsdata = rooms.slice(skip, skip + limit);
-    roomsdata = roomsdata.map((obj) => {
-      obj.dateAndTime = new Date(obj.dateAndTime).toString();
-      return obj;
-    });
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
@@ -656,14 +637,22 @@ const removeSpecialGuest = async (req, res, next) => {
 
 const searchRoom = async (req, res, next) => {
   try {
-    let { roomseaarch, page, limit } = req.query;
+    let { roomseaarch, page, limit, id } = req.query;
+    if (!id) throw new Error("Please pass id");
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
-    let todayDte = new Date();
-    todayDte.setHours(todayDte.getHours() - 1);
+    let todayDate = new Date();
+    let startTime = new Date();
+    let endTime = new Date();
+    startTime.setHours(startTime.getHours() - 1);
+    endTime.setHours(endTime.getHours() + 1);
+    todayDate.setHours(todayDate.getHours() - 1);
+    let afterOneHour = new Date(
+      moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
+    );
     let roomData = await Rooms.aggregate([
-      { $match: { dateAndTime: { $gte: todayDte } } },
+      { $match: { dateAndTime: { $gte: todayDate } } },
       {
         $lookup: {
           from: "users",
@@ -721,8 +710,49 @@ const searchRoom = async (req, res, next) => {
         },
       },
     ]);
-
     let data = roomData.slice(skip, skip + limit);
+    data = data.map((obj) => {
+      let specialGuest = [];
+      let inviteOrScheduledUser = [];
+      obj.specialGuest.map((obj1) => {
+        specialGuest.push(obj1._id.toString());
+      });
+      obj.inviteOrScheduledUser.map((obj2) => {
+        inviteOrScheduledUser.push(obj2.toString());
+      });
+      if (
+        obj.dateAndTime >= startTime &&
+        obj.dateAndTime <= endTime &&
+        (obj.isPrivate == false ||
+          (obj.isPrivate == true &&
+            (inviteOrScheduledUser.includes(id) ||
+              specialGuest.includes(id) ||
+              obj.hostData._id == id)))
+      ) {
+        obj = { ...obj, type: "Live" };
+      } else if (
+        obj.dateAndTime >= afterOneHour &&
+        ((obj.isPrivate == false &&
+          (inviteOrScheduledUser.includes(id) ||
+            specialGuest.includes(id) ||
+            obj.hostData._id == id)) ||
+          (obj.isPrivate == true &&
+            (inviteOrScheduledUser.includes(id) ||
+              specialGuest.includes(id) ||
+              obj.hostData._id == id)))
+      ) {
+        obj = { ...obj, type: "Scheduled" };
+      } else if (
+        obj.dateAndTime >= afterOneHour &&
+        obj.isPrivate == false &&
+        !inviteOrScheduledUser.includes(id) &&
+        !specialGuest.includes(id) &&
+        obj.hostData._id != id
+      ) {
+        obj = { ...obj, type: "Upcomming" };
+      }
+      return obj;
+    });
     let totalPages = Math.ceil(roomData.length / limit);
     roomData && res.status(200).json({ totalPages, data });
   } catch (error) {
