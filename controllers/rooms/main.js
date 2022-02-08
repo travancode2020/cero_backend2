@@ -650,7 +650,22 @@ const searchRoom = async (req, res, next) => {
       moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
     );
     let roomData = await Rooms.aggregate([
-      { $match: { dateAndTime: { $gte: startTime } } },
+      {
+        $match: {
+          dateAndTime: { $gte: startTime },
+          $or: [
+            { isPrivate: false },
+            {
+              isPrivate: true,
+              $or: [
+                { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
+                { specialGuest: { $in: [Types.ObjectId(id)] } },
+                { hostId: { $in: [Types.ObjectId(id)] } },
+              ],
+            },
+          ],
+        },
+      },
       {
         $lookup: {
           from: "users",
