@@ -12,8 +12,7 @@ const getMomentsByUserId = async (req, res, next) => {
     const foundUserMoments = await Moment.find({
       host: foundUser._id,
     }).sort({ createdAt: -1 });
-
-    const foundFollowingMoments = await Moment.aggregate([
+    let foundFollowingMoments = await Moment.aggregate([
       {
         $match: { host: { $in: foundUser.following } },
       },
@@ -47,10 +46,26 @@ const getMomentsByUserId = async (req, res, next) => {
           moments: 1,
         },
       },
-      {
-        $sort: { "moments.createdAt": -1 },
-      },
     ]);
+    foundFollowingMoments = foundFollowingMoments.map((followingObj) => {
+      let arr = [];
+      followingObj.moments.map((momentObj, index) => {
+        if (index == 0) {
+          arr.push(momentObj);
+        } else {
+          for (let a = 0; a < arr.length; a++) {
+            if (momentObj.createdAt > arr[a].createdAt) {
+              arr.splice(a, 0, momentObj);
+              break;
+            } else if (arr.length - 1 == a) {
+              arr.push(momentObj);
+            }
+          }
+        }
+      });
+      followingObj.moments = arr;
+      return followingObj;
+    });
 
     res.status(200).json({
       hostMoments: foundUserMoments,
