@@ -642,17 +642,30 @@ const searchRoom = async (req, res, next) => {
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
-    let todayDate = new Date();
     let startTime = new Date();
     let endTime = new Date();
     startTime.setHours(startTime.getHours() - 1);
     endTime.setHours(endTime.getHours() + 1);
-    todayDate.setHours(todayDate.getHours() - 1);
     let afterOneHour = new Date(
       moment().add(1, "hours").format("YYYY-MM-DD HH:MM")
     );
     let roomData = await Rooms.aggregate([
-      { $match: { dateAndTime: { $gte: todayDate } } },
+      {
+        $match: {
+          dateAndTime: { $gte: startTime },
+          $or: [
+            { isPrivate: false },
+            {
+              isPrivate: true,
+              $or: [
+                { inviteOrScheduledUser: { $in: [Types.ObjectId(id)] } },
+                { specialGuest: { $in: [Types.ObjectId(id)] } },
+                { hostId: { $in: [Types.ObjectId(id)] } },
+              ],
+            },
+          ],
+        },
+      },
       {
         $lookup: {
           from: "users",
@@ -729,7 +742,7 @@ const searchRoom = async (req, res, next) => {
               specialGuest.includes(id) ||
               obj.hostData._id == id)))
       ) {
-        obj = { ...obj, type: "Live" };
+        obj = { ...obj, type: 1 };
       } else if (
         obj.dateAndTime >= afterOneHour &&
         ((obj.isPrivate == false &&
@@ -741,7 +754,7 @@ const searchRoom = async (req, res, next) => {
               specialGuest.includes(id) ||
               obj.hostData._id == id)))
       ) {
-        obj = { ...obj, type: "Scheduled" };
+        obj = { ...obj, type: 2 };
       } else if (
         obj.dateAndTime >= afterOneHour &&
         obj.isPrivate == false &&
@@ -749,7 +762,9 @@ const searchRoom = async (req, res, next) => {
         !specialGuest.includes(id) &&
         obj.hostData._id != id
       ) {
-        obj = { ...obj, type: "Upcomming" };
+        obj = { ...obj, type: 3 };
+      } else {
+        obj = { ...obj, type: 0 };
       }
       return obj;
     });
