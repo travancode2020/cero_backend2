@@ -23,7 +23,7 @@ const searchByCity = async (req, res, next) => {
 
     const populatePath = "host";
     const populateSelect =
-      "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location";
+      "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location -agoraId -createdAt -updatedAt -createdAt -proBio -phone";
 
     if (pro) {
       await Location.find({ city: city })
@@ -85,7 +85,7 @@ const searchByRange = async (req, res, next) => {
 
     const populatePath = "host";
     const populateSelect =
-      "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location";
+      "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location   -agoraId -createdAt -updatedAt -createdAt -proBio -phone ";
 
     if (pro) {
       await Location.find({
