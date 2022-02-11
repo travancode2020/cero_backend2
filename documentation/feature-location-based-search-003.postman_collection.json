@@ -417,7 +417,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/location/search/range?lng=11.008396&lat=76.958242&range=100000&pro=true&tag=Entrepreneur",
+					"raw": "{{BASE_URL}}/location/search/range?lat=22.849514192327458&range=&pro=true&tag=Entrepreneur&page=1&limit=20&lng=73.06705319722535",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -428,16 +428,12 @@
 					],
 					"query": [
 						{
-							"key": "lng",
-							"value": "11.008396"
-						},
-						{
 							"key": "lat",
-							"value": "76.958242"
+							"value": "22.849514192327458"
 						},
 						{
 							"key": "range",
-							"value": "100000"
+							"value": ""
 						},
 						{
 							"key": "pro",
@@ -446,6 +442,18 @@
 						{
 							"key": "tag",
 							"value": "Entrepreneur"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "lng",
+							"value": "73.06705319722535"
 						}
 					]
 				}
@@ -457,12 +465,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/location/search/range?lng=11.008396&lat=76.958242&range=100000&pro=true&tag=Entrepreneur",
-							"protocol": "http",
+							"raw": "{{BASE_URL}}/location/search/range?lat=22.833285424508254&range=0&pro=false&tag=Entrepreneur&lng=73.10591146625815&userName=&name=p",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "8080",
 							"path": [
 								"location",
 								"search",
@@ -470,24 +476,32 @@
 							],
 							"query": [
 								{
-									"key": "lng",
-									"value": "11.008396"
-								},
-								{
 									"key": "lat",
-									"value": "76.958242"
+									"value": "22.833285424508254"
 								},
 								{
 									"key": "range",
-									"value": "100000"
+									"value": "0"
 								},
 								{
 									"key": "pro",
-									"value": "true"
+									"value": "false"
 								},
 								{
 									"key": "tag",
 									"value": "Entrepreneur"
+								},
+								{
+									"key": "lng",
+									"value": "73.10591146625815"
+								},
+								{
+									"key": "userName",
+									"value": ""
+								},
+								{
+									"key": "name",
+									"value": "p"
 								}
 							]
 						}
@@ -526,7 +540,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"617ed575b06f673084888fc4\",\n        \"city\": \"Jodhpur Updated\",\n        \"host\": {\n            \"streak\": {\n                \"_id\": \"618426937248eb001620dbbe\",\n                \"lastDate\": \"2021-11-04T23:59:36.466Z\",\n                \"score\": 1,\n                \"highestScore\": 1\n            },\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Culture & lifestyle\",\n                \"Current Affairs\",\n                \"General Knowledge\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [\n                \"6177a2a9761cc3001671bbd0\"\n            ],\n            \"_id\": \"6176c9691ea09c0016dc38b3\",\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-25T15:12:41.982Z\",\n            \"updatedAt\": \"2021-11-04T18:52:37.191Z\",\n            \"__v\": 18,\n            \"proBio\": \"I am pro at creating logos\"\n        },\n        \"__v\": 0\n    },\n    {\n        \"location\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                10.960573,\n                76.502824\n            ]\n        },\n        \"_id\": \"6184d3416bc87600164c6f43\",\n        \"city\": \"Jodhpur Updated\",\n        \"host\": {\n            \"streak\": {\n                \"_id\": \"618422b47248eb001620db11\",\n                \"lastDate\": \"2021-11-03T00:00:00.000Z\",\n                \"score\": 0,\n                \"highestScore\": 0\n            },\n            \"userTag\": [\n                \"Entrepreneur\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"Psychology\",\n                \"History\",\n                \"Science & Technology\",\n                \"General Knowledge\",\n                \"Current Affairs\",\n                \"Culture & lifestyle\"\n            ],\n            \"followers\": [\n                \"617abf7d2dbd2100169ef146\",\n                \"6176c9691ea09c0016dc38b3\"\n            ],\n            \"verifiedProfiles\": [\n                \"6176c9691ea09c0016dc38b3\"\n            ],\n            \"_id\": \"6177bb898f45e5001687a543\",\n            \"userName\": \"agarian\",\n            \"name\": \"Ajay Agarian\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a/AATXAJwZ_lQmopbsjxgyCNl5anO_MewL4TzeRDCH7jkb=s96-c\",\n            \"isCreator\": true,\n            \"isPro\": true,\n            \"createdAt\": \"2021-10-26T08:25:45.965Z\",\n            \"updatedAt\": \"2021-11-05T06:46:25.513Z\",\n            \"__v\": 0,\n            \"phone\": null\n        },\n        \"__v\": 0\n    }\n]"
+					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"_id\": \"61d6c890749a290016126b3b\",\n            \"location\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    22.833285424508254,\n                    73.10591146625815\n                ]\n            },\n            \"city\": \"Thiruvananthapuram\",\n            \"host\": {\n                \"_id\": \"61a12223270b53001681f488\",\n                \"streak\": {\n                    \"lastDate\": \"2022-02-07T17:19:38.730Z\",\n                    \"score\": 1,\n                    \"highestScore\": 3,\n                    \"_id\": \"6201075691ce3900161c942b\"\n                },\n                \"userTag\": [\n                    \"Entrepreneur\"\n                ],\n                \"interest\": [\n                    \"Business\",\n                    \"Psychology\",\n                    \"History\",\n                    \"Science & Technology\",\n                    \"General Knowledge\",\n                    \"Current Affairs\",\n                    \"Culture & lifestyle\"\n                ],\n                \"followers\": [\n                    \"61a12889270b53001681f4ae\",\n                    \"61df17051d8ce900165aee5f\",\n                    \"61a13043270b53001681f63f\",\n                    \"61df2ec971047e0016dfa2a9\",\n                    \"61f10c97cd5e4f0016387f44\"\n                ],\n                \"verifiedProfiles\": [\n                    \"61a13043270b53001681f63f\",\n                    \"61dc6ef4748b2700166241fb\",\n                    \"61df17051d8ce900165aee5f\",\n                    \"61f11718cd5e4f0016387fa4\"\n                ],\n                \"userName\": \"ajay\",\n                \"name\": \"Ajay Krishna P\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n                \"isCreator\": true,\n                \"isPro\": false,\n                \"__v\": 0\n            },\n            \"__v\": 0\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -536,7 +550,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/location/search/city?city=Jodhpur%20Updated&tag=Entrepreneur&pro=true",
+					"raw": "{{BASE_URL}}/location/search/city?city=Thiruvananthapuram&tag=entrepreneur&pro=false&page=1&limit=20&userName=a&name=ajay",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -548,15 +562,31 @@
 					"query": [
 						{
 							"key": "city",
-							"value": "Jodhpur%20Updated"
+							"value": "Thiruvananthapuram"
 						},
 						{
 							"key": "tag",
-							"value": "Entrepreneur"
+							"value": "entrepreneur"
 						},
 						{
 							"key": "pro",
-							"value": "true"
+							"value": "false"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						},
+						{
+							"key": "userName",
+							"value": "a"
+						},
+						{
+							"key": "name",
+							"value": "ajay"
 						}
 					]
 				}
@@ -568,7 +598,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/location/search/city?city=Jodhpur%20Updated&tag=Entrepreneur&pro=true",
+							"raw": "{{BASE_URL}}/location/search/city?city=Thiruvananthapuram&tag=entrepreneur&pro=false&page=1&limit=20&userName=a&name=ajay",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -580,15 +610,31 @@
 							"query": [
 								{
 									"key": "city",
-									"value": "Jodhpur%20Updated"
+									"value": "Thiruvananthapuram"
 								},
 								{
 									"key": "tag",
-									"value": "Entrepreneur"
+									"value": "entrepreneur"
 								},
 								{
 									"key": "pro",
-									"value": "true"
+									"value": "false"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "userName",
+									"value": "a"
+								},
+								{
+									"key": "name",
+									"value": "ajay"
 								}
 							]
 						}
@@ -627,7 +673,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[]"
+					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"61d6c890749a290016126b3b\",\r\n            \"location\": {\r\n                \"type\": \"Point\",\r\n                \"coordinates\": [\r\n                    22.833285424508254,\r\n                    73.10591146625815\r\n                ]\r\n            },\r\n            \"city\": \"Thiruvananthapuram\",\r\n            \"host\": {\r\n                \"_id\": \"61a12223270b53001681f488\",\r\n                \"streak\": {\r\n                    \"lastDate\": \"2022-02-07T17:19:38.730Z\",\r\n                    \"score\": 1,\r\n                    \"highestScore\": 3,\r\n                    \"_id\": \"6201075691ce3900161c942b\"\r\n                },\r\n                \"userTag\": [\r\n                    \"Entrepreneur\"\r\n                ],\r\n                \"interest\": [\r\n                    \"Business\",\r\n                    \"Psychology\",\r\n                    \"History\",\r\n                    \"Science & Technology\",\r\n                    \"General Knowledge\",\r\n                    \"Current Affairs\",\r\n                    \"Culture & lifestyle\"\r\n                ],\r\n                \"followers\": [\r\n                    \"61a12889270b53001681f4ae\",\r\n                    \"61df17051d8ce900165aee5f\",\r\n                    \"61a13043270b53001681f63f\",\r\n                    \"61df2ec971047e0016dfa2a9\",\r\n                    \"61f10c97cd5e4f0016387f44\"\r\n                ],\r\n                \"verifiedProfiles\": [\r\n                    \"61a13043270b53001681f63f\",\r\n                    \"61dc6ef4748b2700166241fb\",\r\n                    \"61df17051d8ce900165aee5f\",\r\n                    \"61f11718cd5e4f0016387fa4\"\r\n                ],\r\n                \"userName\": \"ajay\",\r\n                \"name\": \"Ajay Krishna P\",\r\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\r\n                \"isCreator\": true,\r\n                \"isPro\": false,\r\n                \"__v\": 0\r\n            },\r\n            \"__v\": 0\r\n        }\r\n    ]\r\n}"
 				}
 			]
 		}
