@@ -5,7 +5,8 @@ const searchByCity = async (req, res, next) => {
   try {
     const tag = req.query.tag;
     const city = req.query.city;
-    const pro = req.query.pro == "true" ? true : false;
+    const pro =
+      req.query.pro == "true" ? true : req.query.pro == "false" ? false : null;
     let { page, limit } = req.query;
     const userName = req.query.userName;
     const name = req.query.name;
@@ -17,7 +18,10 @@ const searchByCity = async (req, res, next) => {
       return res.status(400).json({ message: "City is required" });
     }
 
-    let filter = { "host.isPro": pro };
+    let filter = {};
+    if (pro == true || pro == false) {
+      filter = { "host.isPro": pro };
+    }
     if (tag) {
       filter = {
         ...filter,
@@ -108,7 +112,8 @@ const searchByRange = async (req, res, next) => {
     const lat = req.query.lat;
     const lng = req.query.lng;
     const tag = req.query.tag;
-    const pro = req.query.pro == "true" ? true : false;
+    const pro =
+      req.query.pro == "true" ? true : req.query.pro == "false" ? false : null;
     const userName = req.query.userName;
     const name = req.query.name;
     let { page, limit } = req.query;
@@ -129,7 +134,10 @@ const searchByRange = async (req, res, next) => {
     //   return res.status(400).json({ message: "Tag is required" });
     // }
 
-    let filter = { "host.isPro": pro };
+    let filter = {};
+    if (pro == true || pro == false) {
+      filter = { "host.isPro": pro };
+    }
     if (tag) {
       filter = {
         ...filter,
@@ -167,7 +175,6 @@ const searchByRange = async (req, res, next) => {
         ],
       };
     }
-
     let users = await Location.aggregate([
       {
         $match: {
@@ -191,9 +198,7 @@ const searchByRange = async (req, res, next) => {
       },
       { $unwind: "$host" },
       {
-        $match: {
-          filter,
-        },
+        $match: filter,
       },
       {
         $project: {
