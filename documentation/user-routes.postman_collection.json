@@ -1462,5 +1462,85 @@
 				}
 			]
 		},
+		{
+			"name": "Search User By UserName or Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users/search/UserNameName?page&limit&userName=s&name=a",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"search",
+						"UserNameName"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": null
+						},
+						{
+							"key": "limit",
+							"value": null
+						},
+						{
+							"key": "userName",
+							"value": "s"
+						},
+						{
+							"key": "name",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search User By UserName or Name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/search/UserNameName?page&limit&userName=s&name=a",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"search",
+								"UserNameName"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "userName",
+									"value": "s"
+								},
+								{
+									"key": "name",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"_id\": \"61dc59523e5caf0016f0f677\",\n            \"streak\": {\n                \"lastDate\": \"2022-01-10T14:04:45.404Z\",\n                \"score\": 0,\n                \"highestScore\": 0,\n                \"_id\": \"61dc59523e5caf0016f0f676\"\n            },\n            \"userTag\": [\n                \"Developer\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"General Knowledge\",\n                \"Science & Technology\",\n                \"Psychology\",\n                \"History\",\n                \"Current Affairs\",\n                \"Culture & lifestyle\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [],\n            \"following\": [],\n            \"saved\": [],\n            \"liked\": [\n                \"61d4716ffcf4ae001645d4ff\"\n            ],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": false,\n            \"fId\": \"hCak9Cg4fZejUpilU7nRYqECIXy1\",\n            \"userName\": \"solowolf93\",\n            \"name\": \"Dithesh\",\n            \"email\": \"ditheshthegreat@gmail.com\",\n            \"password\": \"Dithesh@1993\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Giuth2OP_un95RoASYj4tHNFBbR7WNW_60VfYXU3w=s96-c\",\n            \"dob\": \"00/00/0000\",\n            \"isCreator\": false,\n            \"isPro\": false,\n            \"phone\": 902065064,\n            \"agoraId\": 381855726,\n            \"work\": [],\n            \"createdAt\": \"2022-01-10T16:05:38.390Z\",\n            \"updatedAt\": \"2022-01-10T18:29:37.001Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
 	]
 }

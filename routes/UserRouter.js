@@ -9,6 +9,7 @@ const {
   checkUsernameExists,
   getUserByPhno,
   findUserByNameUserName,
+  searchByUserNameName,
 } = require("../controllers/user/main.js");
 
 const {
@@ -79,6 +80,7 @@ UserRouter.post("/:userid", postUserByUserId);
 UserRouter.delete("/:userid", deleteUserByUserId);
 UserRouter.patch("/:userId", updateUserProfile);
 UserRouter.get("/agoraId/:agoraId", getUserByAgoraId);
+UserRouter.get("/search/UserNameName", searchByUserNameName);
 
 //controllers/user/user_id_work.js
 UserRouter.get("/:userId/work", getWorkByUserId);

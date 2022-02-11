@@ -5,7 +5,7 @@ const searchByCity = async (req, res, next) => {
   try {
     const tag = req.query.tag;
     const city = req.query.city;
-    const pro = req.query.pro;
+    const pro = req.query.pro == "true" ? true : false;
     let { page, limit } = req.query;
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
@@ -21,34 +21,101 @@ const searchByCity = async (req, res, next) => {
 
     await Location.ensureIndexes({ point: "2dsphere" });
 
-    const populatePath = "host";
-    const populateSelect =
-      "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location -agoraId -createdAt -updatedAt -createdAt -proBio -phone";
-
     if (pro) {
-      await Location.find({ city: city })
-        .populate(populatePath, populateSelect, { isPro: pro, userTag: tag })
-        .exec((err, users) => {
-          if (err) {
-            next(err);
-          }
-          users = users.filter((user) => user.host);
-          let data = users.slice(skip, skip + limit);
-          let totalPages = Math.ceil(users.length / limit);
-          res.status(200).json({ totalPages, data: data });
-        });
+      let users = await Location.aggregate([
+        { $match: { city: city } },
+        {
+          $lookup: {
+            from: "users",
+            localField: "host",
+            foreignField: "_id",
+            as: "host",
+          },
+        },
+        { $unwind: "$host" },
+        {
+          $match: {
+            "host.isPro": pro,
+            "host.userTag": {
+              $regex: `^${tag}`,
+              $options: "i",
+            },
+          },
+        },
+        {
+          $project: {
+            "host.following": 0,
+            "host.saved": 0,
+            "host.liked": 0,
+            "host.viewed": 0,
+            "host.isLocationSharingEnabled": 0,
+            "host.fId": 0,
+            "host.email": 0,
+            "host.password": 0,
+            "host.dob": 0,
+            "host.work": 0,
+            "host.location": 0,
+            "host.agoraId": 0,
+            "host.createdAt": 0,
+            "host.updatedAt": 0,
+            "host.createdAt": 0,
+            "host.proBio": 0,
+            "host.phone": 0,
+          },
+        },
+      ]);
+
+      users = users.filter((user) => user.host);
+      let data = users.slice(skip, skip + limit);
+      let totalPages = Math.ceil(users.length / limit);
+      res.status(200).json({ totalPages, data: data });
     } else {
-      await Location.find({ city: city })
-        .populate(populatePath, populateSelect, { userTag: tag })
-        .exec((err, users) => {
-          if (err) {
-            next(err);
-          }
-          users = users.filter((user) => user.host);
-          let data = users.slice(skip, skip + limit);
-          let totalPages = Math.ceil(users.length / limit);
-          res.status(200).json({ totalPages, data: data });
-        });
+      let users = await Location.aggregate([
+        { $match: { city: city } },
+        {
+          $lookup: {
+            from: "users",
+            localField: "host",
+            foreignField: "_id",
+            as: "host",
+          },
+        },
+        { $unwind: "$host" },
+        {
+          $match: {
+            "host.isPro": pro,
+            "host.userTag": {
+              $regex: `^${tag}`,
+              $options: "i",
+            },
+          },
+        },
+        {
+          $project: {
+            "host.following": 0,
+            "host.saved": 0,
+            "host.liked": 0,
+            "host.viewed": 0,
+            "host.isLocationSharingEnabled": 0,
+            "host.fId": 0,
+            "host.email": 0,
+            "host.password": 0,
+            "host.dob": 0,
+            "host.work": 0,
+            "host.location": 0,
+            "host.agoraId": 0,
+            "host.createdAt": 0,
+            "host.updatedAt": 0,
+            "host.createdAt": 0,
+            "host.proBio": 0,
+            "host.phone": 0,
+          },
+        },
+      ]);
+      users = users.filter((user) => user.host);
+      let data = users.slice(skip, skip + limit);
+      let totalPages = Math.ceil(users.length / limit);
+      res.status(200).json({ totalPages, data: data });
     }
   } catch (error) {
     next(error);
@@ -61,7 +128,7 @@ const searchByRange = async (req, res, next) => {
     const lat = req.query.lat;
     const lng = req.query.lng;
     const tag = req.query.tag;
-    const pro = req.query.pro;
+    const pro = req.query.pro == "true" ? true : false;
     let { page, limit } = req.query;
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
@@ -88,43 +155,121 @@ const searchByRange = async (req, res, next) => {
       "-following -saved -liked -viewed -isLocationSharingEnabled -fId -email -password -dob -work  -location   -agoraId -createdAt -updatedAt -createdAt -proBio -phone ";
 
     if (pro) {
-      await Location.find({
-        location: {
-          $near: {
-            $geometry: { type: "Point", coordinates: [lng, lat] },
-            $maxDistance: range,
+      let users = await Location.aggregate([
+        {
+          $match: {
+            location: {
+              $geoWithin: {
+                $centerSphere: [
+                  [Number(lat), Number(lng)],
+                  Number(range) / 6378000.16,
+                ],
+              },
+            },
           },
         },
-      })
-        .populate(populatePath, populateSelect, { userTag: tag, isPro: pro })
-        .exec((err, users) => {
-          if (err) {
-            next(err);
-          }
-          users = users.filter((user) => user.host);
-          let data = users.slice(skip, skip + limit);
-          let totalPages = Math.ceil(users.length / limit);
-          res.status(200).json({ totalPages, data: data });
-        });
+        {
+          $lookup: {
+            from: "users",
+            localField: "host",
+            foreignField: "_id",
+            as: "host",
+          },
+        },
+        { $unwind: "$host" },
+        {
+          $match: {
+            "host.isPro": Boolean(pro),
+            "host.userTag": {
+              $regex: `^${tag}`,
+              $options: "i",
+            },
+          },
+        },
+        {
+          $project: {
+            "host.following": 0,
+            "host.saved": 0,
+            "host.liked": 0,
+            "host.viewed": 0,
+            "host.isLocationSharingEnabled": 0,
+            "host.fId": 0,
+            "host.email": 0,
+            "host.password": 0,
+            "host.dob": 0,
+            "host.work": 0,
+            "host.location": 0,
+            "host.agoraId": 0,
+            "host.createdAt": 0,
+            "host.updatedAt": 0,
+            "host.createdAt": 0,
+            "host.proBio": 0,
+            "host.phone": 0,
+          },
+        },
+      ]);
+      users = users.filter((user) => user.host);
+      let data = users.slice(skip, skip + limit);
+      let totalPages = Math.ceil(users.length / limit);
+      res.status(200).json({ totalPages, data: data });
     } else {
-      await Location.find({
-        location: {
-          $near: {
-            $geometry: { type: "Point", coordinates: [lng, lat] },
-            $maxDistance: range,
+      let users = await Location.aggregate([
+        {
+          $match: {
+            location: {
+              $geoWithin: {
+                $centerSphere: [
+                  [Number(lat), Number(lng)],
+                  Number(range) / 6378000.16,
+                ],
+              },
+            },
           },
         },
-      })
-        .populate(populatePath, populateSelect, { userTag: tag })
-        .exec((err, users) => {
-          if (err) {
-            next(err);
-          }
-          users = users.filter((user) => user.host);
-          let data = users.slice(skip, skip + limit);
-          let totalPages = Math.ceil(users.length / limit);
-          res.status(200).json({ totalPages, data: data });
-        });
+        {
+          $lookup: {
+            from: "users",
+            localField: "host",
+            foreignField: "_id",
+            as: "host",
+          },
+        },
+        { $unwind: "$host" },
+        {
+          $match: {
+            "host.isPro": pro,
+            "host.userTag": {
+              $regex: `^${tag}`,
+              $options: "i",
+            },
+          },
+        },
+        {
+          $project: {
+            "host.following": 0,
+            "host.saved": 0,
+            "host.liked": 0,
+            "host.viewed": 0,
+            "host.isLocationSharingEnabled": 0,
+            "host.fId": 0,
+            "host.email": 0,
+            "host.password": 0,
+            "host.dob": 0,
+            "host.work": 0,
+            "host.location": 0,
+            "host.agoraId": 0,
+            "host.createdAt": 0,
+            "host.updatedAt": 0,
+            "host.createdAt": 0,
+            "host.proBio": 0,
+            "host.phone": 0,
+          },
+        },
+      ]);
+      users = users.filter((user) => user.host);
+      let data = users.slice(skip, skip + limit);
+      let totalPages = Math.ceil(users.length / limit);
+      res.status(200).json({ totalPages, data: data });
     }
   } catch (error) {
     next(error);

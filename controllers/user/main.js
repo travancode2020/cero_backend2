@@ -173,6 +173,79 @@ const findUserByNameUserName = async (req, res, next) => {
   }
 };
 
+const searchByUserNameName = async (req, res, next) => {
+  try {
+    let { userName, name, page, limit } = req.query;
+
+    let filter = {};
+    if (name) {
+      filter = {
+        ...filter,
+        $or: [
+          {
+            name: {
+              $regex: `^${name}`,
+              $options: "i",
+            },
+          },
+          {
+            name: {
+              $regex: ` ${name}`,
+              $options: "i",
+            },
+          },
+        ],
+      };
+    }
+    if (userName) {
+      filter = {
+        ...filter,
+        userName: {
+          $regex: `^${userName}`,
+          $options: "i",
+        },
+      };
+    }
+
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
+
+    let data = await Users.aggregate([
+      {
+        $match: filter,
+      },
+      {
+        $project: {
+          following: 0,
+          saved: 0,
+          liked: 0,
+          viewed: 0,
+          isLocationSharingEnabled: 0,
+          fId: 0,
+          email: 0,
+          password: 0,
+          dob: 0,
+          work: 0,
+          location: 0,
+          agoraId: 0,
+          createdAt: 0,
+          updatedAt: 0,
+          createdAt: 0,
+          proBio: 0,
+          phone: 0,
+        },
+      },
+    ]);
+    let count = data.slice(skip, skip + limit);
+    let totalPages = Math.ceil(data.length / limit);
+
+    res.status(200).json({ totalPages, data: count });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
   createUser,
@@ -181,4 +254,5 @@ module.exports = {
   checkUsernameExists,
   getUserByPhno,
   findUserByNameUserName,
+  searchByUserNameName,
 };
