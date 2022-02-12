@@ -9,7 +9,6 @@ const searchByCity = async (req, res, next) => {
       req.query.pro == "true" ? true : req.query.pro == "false" ? false : null;
     let { page, limit } = req.query;
     const userName = req.query.userName;
-    const name = req.query.name;
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
@@ -34,25 +33,22 @@ const searchByCity = async (req, res, next) => {
     if (userName) {
       filter = {
         ...filter,
-        "host.userName": {
-          $regex: `^${userName}`,
-          $options: "i",
-        },
-      };
-    }
-    if (name) {
-      filter = {
-        ...filter,
         $or: [
           {
             "host.name": {
-              $regex: `^${name}`,
+              $regex: `^${userName}`,
               $options: "i",
             },
           },
           {
             "host.name": {
-              $regex: ` ${name}`,
+              $regex: ` ${userName}`,
+              $options: "i",
+            },
+          },
+          {
+            "host.userName": {
+              $regex: `^${userName}`,
               $options: "i",
             },
           },
@@ -115,7 +111,6 @@ const searchByRange = async (req, res, next) => {
     const pro =
       req.query.pro == "true" ? true : req.query.pro == "false" ? false : null;
     const userName = req.query.userName;
-    const name = req.query.name;
     let { page, limit } = req.query;
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
@@ -150,25 +145,22 @@ const searchByRange = async (req, res, next) => {
     if (userName) {
       filter = {
         ...filter,
-        "host.userName": {
-          $regex: `^${userName}`,
-          $options: "i",
-        },
-      };
-    }
-    if (name) {
-      filter = {
-        ...filter,
         $or: [
           {
             "host.name": {
-              $regex: `^${name}`,
+              $regex: `^${userName}`,
               $options: "i",
             },
           },
           {
             "host.name": {
-              $regex: ` ${name}`,
+              $regex: ` ${userName}`,
+              $options: "i",
+            },
+          },
+          {
+            "host.userName": {
+              $regex: `^${userName}`,
               $options: "i",
             },
           },
