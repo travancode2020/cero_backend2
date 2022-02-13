@@ -417,7 +417,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/location/search/range?lat=22.849514192327458&range=&pro=true&tag=Entrepreneur&page=1&limit=20&lng=73.06705319722535",
+					"raw": "{{BASE_URL}}/location/search/range?lat=22.833285424508254&tag=Entrepreneur&page=1&limit=20&lng=73.10591146625815&userName=a&range=1000&pro=true",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -429,15 +429,7 @@
 					"query": [
 						{
 							"key": "lat",
-							"value": "22.849514192327458"
-						},
-						{
-							"key": "range",
-							"value": ""
-						},
-						{
-							"key": "pro",
-							"value": "true"
+							"value": "22.833285424508254"
 						},
 						{
 							"key": "tag",
@@ -453,7 +445,19 @@
 						},
 						{
 							"key": "lng",
-							"value": "73.06705319722535"
+							"value": "73.10591146625815"
+						},
+						{
+							"key": "userName",
+							"value": "a"
+						},
+						{
+							"key": "range",
+							"value": "1000"
+						},
+						{
+							"key": "pro",
+							"value": "true"
 						}
 					]
 				}
@@ -465,7 +469,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/location/search/range?lat=22.833285424508254&range=0&pro=false&tag=Entrepreneur&lng=73.10591146625815&userName=&name=p",
+							"raw": "{{BASE_URL}}/location/search/range?lat=22.833285424508254&tag=Entrepreneur&page=1&limit=20&lng=73.10591146625815&userName=a&range=1000&pro=true",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -480,16 +484,16 @@
 									"value": "22.833285424508254"
 								},
 								{
-									"key": "range",
-									"value": "0"
-								},
-								{
-									"key": "pro",
-									"value": "false"
-								},
-								{
 									"key": "tag",
 									"value": "Entrepreneur"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
 								},
 								{
 									"key": "lng",
@@ -497,11 +501,15 @@
 								},
 								{
 									"key": "userName",
-									"value": ""
+									"value": "a"
 								},
 								{
-									"key": "name",
-									"value": "p"
+									"key": "range",
+									"value": "1000"
+								},
+								{
+									"key": "pro",
+									"value": "true"
 								}
 							]
 						}
@@ -550,7 +558,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/location/search/city?city=Thiruvananthapuram&tag=entrepreneur&pro=false&page=1&limit=20&userName=a&name=ajay",
+					"raw": "{{BASE_URL}}/location/search/city?city=Thiruvananthapuram&tag=entrepreneur&pro=true&page=1&limit=20&userName=ajay",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -570,7 +578,7 @@
 						},
 						{
 							"key": "pro",
-							"value": "false"
+							"value": "true"
 						},
 						{
 							"key": "page",
@@ -582,10 +590,6 @@
 						},
 						{
 							"key": "userName",
-							"value": "a"
-						},
-						{
-							"key": "name",
 							"value": "ajay"
 						}
 					]
@@ -598,7 +602,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/location/search/city?city=Thiruvananthapuram&tag=entrepreneur&pro=false&page=1&limit=20&userName=a&name=ajay",
+							"raw": "{{BASE_URL}}/location/search/city?city=Thiruvananthapuram&tag=entrepreneur&page=1&limit=20&pro=true&userName=ajay",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -617,10 +621,6 @@
 									"value": "entrepreneur"
 								},
 								{
-									"key": "pro",
-									"value": "false"
-								},
-								{
 									"key": "page",
 									"value": "1"
 								},
@@ -629,11 +629,11 @@
 									"value": "20"
 								},
 								{
-									"key": "userName",
-									"value": "a"
+									"key": "pro",
+									"value": "true"
 								},
 								{
-									"key": "name",
+									"key": "userName",
 									"value": "ajay"
 								}
 							]
