@@ -47,9 +47,14 @@ const getMomentsByUserId = async (req, res, next) => {
         },
       },
     ]);
-    foundFollowingMoments = foundFollowingMoments.map((followingObj) => {
+    // foundFollowingMoments = foundFollowingMoments.map((followingObj) => {
+    let mainindex = 0;
+    for (let followingObj of foundFollowingMoments) {
       let arr = [];
-      followingObj.moments.map((momentObj, index) => {
+      let index = 0;
+
+      // followingObj.moments.map((momentObj, index) => {
+      for (let momentObj of foundFollowingMoments) {
         if (index == 0) {
           arr.push(momentObj);
         } else {
@@ -62,10 +67,10 @@ const getMomentsByUserId = async (req, res, next) => {
             }
           }
         }
-      });
-      followingObj.moments = arr;
-      return followingObj;
-    });
+        index = index + 1;
+      }
+      foundFollowingMoments[mainindex] = arr;
+    }
 
     res.status(200).json({
       hostMoments: foundUserMoments,
