@@ -378,14 +378,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/moments/user/6177a2a9761cc3001671bbd0",
+					"raw": "{{BASE_URL}}moments/user/61a12223270b53001681f488?page=2&limit=1",
 					"host": [
-						"{{BASE_URL}}"
+						"{{BASE_URL}}moments"
 					],
 					"path": [
-						"moments",
 						"user",
-						"6177a2a9761cc3001671bbd0"
+						"61a12223270b53001681f488"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -396,14 +405,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/moments/user/6177a2a9761cc3001671bbd0",
+							"raw": "{{BASE_URL}}moments/user/61a12223270b53001681f488?page=2&limit=1",
 							"host": [
-								"{{BASE_URL}}"
+								"{{BASE_URL}}moments"
 							],
 							"path": [
-								"moments",
 								"user",
-								"6177a2a9761cc3001671bbd0"
+								"61a12223270b53001681f488"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -441,7 +459,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"hostMoments\": [\n        {\n            \"views\": [\n                \"61a12223270b53001681f488\",\n                \"61a12889270b53001681f4ae\"\n            ],\n            \"_id\": \"61d73d6438cf8b02f43d19f5\",\n            \"host\": \"61a12223270b53001681f488\",\n            \"isImage\": true,\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"createdAt\": \"2022-01-06T19:05:08.207Z\",\n            \"__v\": 0\n        }\n    ],\n    \"followingMoments\": [\n        {\n            \"moments\": [\n                {\n                    \"_id\": \"61d741b020b37016d0c6d3e5\",\n                    \"views\": [],\n                    \"isImage\": true,\n                    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n                    \"createdAt\": \"2022-01-06T19:23:28.899Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"host\": {\n                \"_id\": \"61a12889270b53001681f4ae\",\n                \"userName\": \"pranavdeep_kumar\",\n                \"name\": \"Pranavdeep Kumar\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14GiX4HIeZSqrCBmZRJPw8jmdCNuAsJWP0fJ7YEsIfw=s96-c\"\n            }\n        }\n    ]\n}"
+					"body": "{\n    \"totalPages\": 2,\n    \"hostMoments\": [\n        {\n            \"views\": [],\n            \"_id\": \"620d494cb6ea907011d1d09d\",\n            \"host\": \"61a12223270b53001681f488\",\n            \"isImage\": true,\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"createdAt\": \"2022-02-16T18:58:20.405Z\",\n            \"__v\": 0\n        },\n        {\n            \"views\": [],\n            \"_id\": \"620d494bb6ea907011d1d09b\",\n            \"host\": \"61a12223270b53001681f488\",\n            \"isImage\": true,\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"createdAt\": \"2022-02-16T18:58:19.740Z\",\n            \"__v\": 0\n        },\n        {\n            \"views\": [],\n            \"_id\": \"620d494ab6ea907011d1d099\",\n            \"host\": \"61a12223270b53001681f488\",\n            \"isImage\": true,\n            \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n            \"createdAt\": \"2022-02-16T18:58:18.188Z\",\n            \"__v\": 0\n        }\n    ],\n    \"followingMoments\": [\n        {\n            \"moments\": [\n                {\n                    \"_id\": \"620d2ea20bb06f0ce94efff7\",\n                    \"views\": [\n                        \"61a12223270b53001681f488\"\n                    ],\n                    \"isImage\": true,\n                    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n                    \"createdAt\": \"2022-02-16T17:04:34.894Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"620d2e8c0bb06f0ce94efff1\",\n                    \"views\": [],\n                    \"isImage\": true,\n                    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n                    \"createdAt\": \"2022-02-16T17:04:12.990Z\",\n                    \"__v\": 0\n                },\n                {\n                    \"_id\": \"620d2e790bb06f0ce94effeb\",\n                    \"views\": [],\n                    \"isImage\": true,\n                    \"mediaUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/SNQOQnqzeMdsozL7NY6ieowl5ax1%2F2021-08-25%2001%3A39%3A33.033394?alt=media&token=1bbb10c1-7ba8-4cbc-8b55-1868dd42af80\",\n                    \"createdAt\": \"2022-02-16T17:03:53.283Z\",\n                    \"__v\": 0\n                }\n            ],\n            \"host\": {\n                \"_id\": \"61a13043270b53001681f63f\",\n                \"userName\": \"travancode software tech private limited\",\n                \"name\": \"Travancode  Software Tech Private Limited\",\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gi4fZDbu5UZ8H18P24X1bfhm5ckjarxzyHnnr8=s96-c\"\n            }\n        }\n    ]\n}"
 				}
 			]
 		},

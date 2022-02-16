@@ -1,11 +1,14 @@
-const mongoose = require("mongoose");
-
+const { Types } = require("mongoose");
 const { Moment } = require("../../modals/Moment.js");
 const Users = require("../../modals/User.js");
 
 const getMomentsByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
+    let { page, limit } = req.query;
+    page = page ? Number(page) : 1;
+    limit = limit ? Number(limit) : 20;
+    let skip = (page - 1) * limit;
 
     const foundUser = await Users.findById({ _id: userId });
 
@@ -47,34 +50,58 @@ const getMomentsByUserId = async (req, res, next) => {
         },
       },
     ]);
-    // foundFollowingMoments = foundFollowingMoments.map((followingObj) => {
     let mainindex = 0;
     for (let followingObj of foundFollowingMoments) {
       let arr = [];
       let index = 0;
 
-      // followingObj.moments.map((momentObj, index) => {
-      for (let momentObj of foundFollowingMoments) {
+      for (let momentObj of followingObj.moments) {
+        let isInserted = false;
         if (index == 0) {
           arr.push(momentObj);
         } else {
-          for (let a = 0; a < arr.length; a++) {
-            if (momentObj.createdAt > arr[a].createdAt) {
-              arr.splice(a, 0, momentObj);
-              break;
-            } else if (arr.length - 1 == a) {
+          let arrIndex = 0;
+          for (let arrObj of arr) {
+            if (momentObj.createdAt > arrObj.createdAt && !isInserted) {
+              arr.splice(arrIndex, 0, momentObj);
+              isInserted = true;
+            } else if (arr.length - 1 == arrIndex && !isInserted) {
               arr.push(momentObj);
             }
+            arrIndex = arrIndex + 1;
           }
         }
         index = index + 1;
       }
-      foundFollowingMoments[mainindex] = arr;
+      followingObj.moments = arr;
+      mainindex = mainindex + 1;
     }
 
+    let data = [];
+    for (let followingObj of foundFollowingMoments) {
+      let viewed = false;
+      if (followingObj.moments[0].views.length > 0) {
+        followingObj.moments[0].views.map((obj) => {
+          if (obj == userId) {
+            viewed = true;
+          }
+        });
+      }
+
+      if (viewed) {
+        data.push(followingObj);
+      } else {
+        data.splice(0, 0, followingObj);
+      }
+    }
+    console.log("data.length", data.length);
+    let totalPages = Math.ceil(data.length / limit);
+    data = data.slice(skip, skip + limit);
+
     res.status(200).json({
+      totalPages,
       hostMoments: foundUserMoments,
-      followingMoments: foundFollowingMoments,
+      followingMoments: data,
     });
   } catch (error) {
     next(error);
