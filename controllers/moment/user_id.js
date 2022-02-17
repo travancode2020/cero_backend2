@@ -54,7 +54,6 @@ const getMomentsByUserId = async (req, res, next) => {
     for (let followingObj of foundFollowingMoments) {
       let arr = [];
       let index = 0;
-
       for (let momentObj of followingObj.moments) {
         let isInserted = false;
         if (index == 0) {
@@ -67,6 +66,7 @@ const getMomentsByUserId = async (req, res, next) => {
               isInserted = true;
             } else if (arr.length - 1 == arrIndex && !isInserted) {
               arr.push(momentObj);
+              isInserted = true;
             }
             arrIndex = arrIndex + 1;
           }
@@ -94,7 +94,6 @@ const getMomentsByUserId = async (req, res, next) => {
         data.splice(0, 0, followingObj);
       }
     }
-    console.log("data.length", data.length);
     let totalPages = Math.ceil(data.length / limit);
     data = data.slice(skip, skip + limit);
 
