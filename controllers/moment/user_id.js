@@ -46,11 +46,13 @@ const getMomentsByUserId = async (req, res, next) => {
           "host.name": 1,
           "host.userName": 1,
           "host.photoUrl": 1,
+          "host.agoraId": 1,
           moments: 1,
         },
       },
     ]);
     let mainindex = 0;
+    let agoraIdSorting = [];
     for (let followingObj of foundFollowingMoments) {
       let arr = [];
       let index = 0;
@@ -74,11 +76,31 @@ const getMomentsByUserId = async (req, res, next) => {
         index = index + 1;
       }
       followingObj.moments = arr;
+
+      let agoraIndex = 0;
+      let agoraNested = false;
+      if (mainindex == 0) {
+        agoraIdSorting.push(followingObj);
+      } else {
+        for (let userObj of agoraIdSorting) {
+          if (
+            userObj.host.agoraId < followingObj.host.agoraId &&
+            !agoraNested
+          ) {
+            agoraIdSorting.splice(agoraIndex, 0, followingObj);
+            agoraNested = true;
+          } else if (agoraIdSorting.length - 1 == agoraIndex && !agoraNested) {
+            agoraIdSorting.push(followingObj);
+            agoraNested = true;
+          }
+          agoraIndex = agoraIndex + 1;
+        }
+      }
+
       mainindex = mainindex + 1;
     }
-
     let data = [];
-    for (let followingObj of foundFollowingMoments) {
+    for (let followingObj of agoraIdSorting) {
       let viewed = false;
       if (followingObj.moments[0].views.length > 0) {
         followingObj.moments[0].views.map((obj) => {
