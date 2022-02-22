@@ -1,5 +1,6 @@
 const { Moment } = require("../../modals/Moment.js");
 const User = require("../../modals/User.js");
+const { sendFirebaseNotification } = require("../fireBaseNotification/main");
 
 const getAllMoments = async (req, res, next) => {
   try {
@@ -31,10 +32,17 @@ const createMoment = async (req, res, next) => {
     const newMoment = await Moment.create(momentBody);
 
     const hostId = req.body.host;
-    let hostFollowers = await User.findOne({ _id: hostId }).select("followers");
-    
-    
-
+    let hostData = await User.findOne({ _id: hostId });
+    let hostFollowers = hostData.followers;
+    let followersData = await User.find({ _id: { $in: hostFollowers } });
+    for (let obj of followersData) {
+      let notificationToken = obj.notificationToken;
+      await sendFirebaseNotification(
+        "cero",
+        `${hostData.userName} recently added to their moments.`,
+        notificationToken
+      );
+    }
     res.status(200).json(newMoment);
   } catch (error) {
     next(error);

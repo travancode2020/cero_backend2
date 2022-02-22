@@ -145,7 +145,6 @@ const getUserMoments = async (req, res, next) => {
 
     userMoments && res.status(200).json(userMoments);
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };
