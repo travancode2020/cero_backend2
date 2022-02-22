@@ -890,84 +890,96 @@
       ]
     },
     {
-      "name": "Create Comment By Card Id",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
-          "host": ["{{BASE_URL}}"],
-          "path": ["cards", "6176dae832053632d07441cf", "comments"]
-        }
-      },
-      "response": [
-        {
-          "name": "Create Comment By Card Id",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
-              "host": ["{{BASE_URL}}"],
-              "path": ["cards", "6176dae832053632d07441cf", "comments"]
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": "json",
-          "header": [
-            {
-              "key": "X-Powered-By",
-              "value": "Express"
-            },
-            {
-              "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
-            },
-            {
-              "key": "Content-Length",
-              "value": "455"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"1c7-t+ukCrox4mWcHOruCknK+kdTrEY\""
-            },
-            {
-              "key": "Date",
-              "value": "Tue, 26 Oct 2021 06:05:15 GMT"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=5"
-            }
-          ],
-          "cookie": [],
-          "body": "{\n    \"links\": [\n        \"https://images.unsplash.com/photo-1633956465086-9e0ef5620952?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80\"\n    ],\n    \"disLikes\": [],\n    \"saved\": [],\n    \"likes\": [],\n    \"views\": [],\n    \"tags\": [],\n    \"color\": [\n        \"#FF5733\"\n    ],\n    \"comments\": [\n        \"61779a9ba516690418103e43\"\n    ],\n    \"_id\": \"6176dae832053632d07441cf\",\n    \"isImage\": true,\n    \"host\": \"6176c9691ea09c0016dc38b3\",\n    \"caption\": \"Beautiful Building\",\n    \"__v\": 0,\n    \"likeCount\": 0,\n    \"id\": \"6176dae832053632d07441cf\"\n}"
-        }
-      ]
-    },
+			"name": "Create Comment By Card Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"cards",
+						"6176dae832053632d07441cf",
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Comment By Card Id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"comment121\",\r\n    \"user\": \"6176c9691ea09c0016dc38b3\",\r\n    \"likes\": [],\r\n    \"replyTo\": \"6176c9691ea09c0016dc38b3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/cards/6176dae832053632d07441cf/comments",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"cards",
+								"6176dae832053632d07441cf",
+								"comments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "455"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c7-t+ukCrox4mWcHOruCknK+kdTrEY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 26 Oct 2021 06:05:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"62153ad08a2e8a4a3426f4c1\",\n    \"likes\": [],\n    \"comment\": \"comment121\",\n    \"user\": {\n        \"_id\": \"61df2ec971047e0016dfa2a9\",\n        \"userName\": \"pappan\",\n        \"name\": \"Pappan\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\"\n    },\n    \"replyTo\": {\n        \"_id\": \"61dc59523e5caf0016f0f677\",\n        \"userName\": \"solowolf93\",\n        \"name\": \"Dithesh\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Giuth2OP_un95RoASYj4tHNFBbR7WNW_60VfYXU3w=s96-c\"\n    },\n    \"createdAt\": \"2022-02-22T19:34:40.644Z\",\n    \"updatedAt\": \"2022-02-22T19:34:40.644Z\"\n}"
+				}
+			]
+		},
     {
       "name": "Delete Comment By Comment ID",
       "request": {

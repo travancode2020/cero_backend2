@@ -1,6 +1,7 @@
 const Cards = require("../../modals/Cards.js");
 const Comment = require("../../modals/Comment.js");
 const mongoose = require("mongoose");
+// const { sendFirebaseNotification } = require("../fireBaseNotification/main");
 
 const getAllCommentsByCardId = async (req, res, next) => {
   try {
@@ -64,8 +65,52 @@ const postCommentByCardId = async (req, res, next) => {
         new: true,
       }
     );
+    let cardHost = await User.findOne({ _id: updatedCard.host });
+    let returnData = await Comment.aggregate([
+      { $match: { _id: newComment._id } },
+      {
+        $lookup: {
+          from: "users",
+          localField: "user",
+          foreignField: "_id",
+          as: "user",
+        },
+      },
+      { $unwind: "$user" },
+      {
+        $lookup: {
+          from: "users",
+          localField: "replyTo",
+          foreignField: "_id",
+          as: "replyTo",
+        },
+      },
+      { $unwind: "$replyTo" },
+      {
+        $project: {
+          _id: 1,
+          "replyTo._id": 1,
+          "replyTo.userName": 1,
+          "replyTo.name": 1,
+          "replyTo.photoUrl": 1,
+          "user._id": 1,
+          "user.userName": 1,
+          "user.name": 1,
+          "user.photoUrl": 1,
+          likes: 1,
+          comment: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+    ]);
+    // await sendFirebaseNotification(
+    //   "cero",
+    //   `${returnData[0].user.userName} commented on your cards.`,
+    //   cardHost.notificationToken
+    // );
 
-    res.status(200).json(updatedCard);
+    res.status(200).json(returnData[0]);
   } catch (error) {
     next(error);
   }
