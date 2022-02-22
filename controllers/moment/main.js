@@ -1,4 +1,5 @@
 const { Moment } = require("../../modals/Moment.js");
+const User = require("../../modals/User.js");
 
 const getAllMoments = async (req, res, next) => {
   try {
@@ -28,6 +29,11 @@ const createMoment = async (req, res, next) => {
   try {
     const momentBody = req.body;
     const newMoment = await Moment.create(momentBody);
+
+    const hostId = req.body.host;
+    let hostFollowers = await User.findOne({ _id: hostId }).select("followers");
+    
+    
 
     res.status(200).json(newMoment);
   } catch (error) {
