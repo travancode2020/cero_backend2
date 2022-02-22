@@ -135,17 +135,19 @@ const likeCardByUserId = async (req, res, next) => {
   }
 
   if (isLiked) {
-    await Cards.findByIdAndUpdate(cardId, {
+    let cardData = await Cards.findByIdAndUpdate(cardId, {
       $addToSet: { likes: userId },
       $pull: { disLikes: userId },
     });
     let likeUserData = await User.findByIdAndUpdate(userId, {
       $addToSet: { liked: cardId },
     });
+
+    let cardHostData = await User.findOne({ _id: cardData.host });
     await sendFirebaseNotification(
       "cero",
       `${likeUserData.userName} liked your cards.`,
-      notificationToken
+      cardHostData.notificationToken
     );
   } else {
     await Cards.findByIdAndUpdate(cardId, {

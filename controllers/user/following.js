@@ -9,7 +9,7 @@ const followByUserId = async (req, res, next) => {
     const notificationToken = req.body.followingUserNotificationToken;
 
     const isUserExists = await Users.findOne({ _id: userId });
-    const isFollowingUserExists = await Users.exists({ _id: followingId });
+    const isFollowingUserExists = await Users.findOne({ _id: followingId });
 
     if (!isUserExists) {
       return res.status(404).json({ message: "User not found" });
@@ -28,7 +28,7 @@ const followByUserId = async (req, res, next) => {
     await sendFirebaseNotification(
       "cero",
       `${isUserExists.userName} started following you.`,
-      notificationToken
+      isFollowingUserExists.notificationToken
     );
     res.status(200).json({ message: "User updated" });
   } catch (error) {
@@ -170,7 +170,6 @@ const searchFollowingUser = async (req, res, next) => {
 
     res.status(200).json({ totalPages, data });
   } catch (error) {
-    console.log(error);
     next();
   }
 };
@@ -237,7 +236,6 @@ const searchFollowersUser = async (req, res, next) => {
 
     res.status(200).json({ totalPages, data });
   } catch (error) {
-    console.log(error);
     next();
   }
 };

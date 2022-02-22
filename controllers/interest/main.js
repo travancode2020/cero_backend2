@@ -2,7 +2,6 @@ const Interest = require("../../modals/Interest");
 const addRemoveInterest = async (req, res, next) => {
   try {
     let { interest, key, id } = req.body;
-    console.log(interest);
     if (key != "ceroapp8080") throw new Error("Somthing went wrong");
     if (interest && interest.length > 0) {
       interest = interest.map((obj) => {

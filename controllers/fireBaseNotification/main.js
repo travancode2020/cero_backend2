@@ -10,7 +10,7 @@ const sendFirebaseNotification = async (title, message, token) => {
     const response = await admin
       .messaging()
       .sendToDevice(
-        "dTz_pMfVTzih2I2KzYNlp5:APA91bFBl85sdWVY2RnNYUUigkcaiQax58Pn0klrn0_43Ah1DixMWgQOdhPd7wRoAcT1W91trMq2UcQjOCKpsgqRqBVybSH9xWAB6TaNsq0MSjRoZllTm_uY-CrnBEs3TmZTNyF-VMTb",
+        "copxESC6R2ur0OAbnTa_T0:APA91bGEivRZ_hu10Y3TjE6CwlTGStabWzF-TI0nL-JhEmCgq94LDGMO6Wo8Lh7kLo4Yz1Il1E882UoWPFgzC2nwVyH1ZYDMXzr6j8TPvQmac7-uW9CapCwKe1jV3OuJvlR0if45L6tA",
         payload
       );
     return response;
