@@ -1,5 +1,6 @@
 const Cards = require("../../modals/Cards.js");
 const Comment = require("../../modals/Comment.js");
+const User = require("../../modals/User.js");
 const mongoose = require("mongoose");
 const User = require("../../modals/User.js");
 // const { sendFirebaseNotification } = require("../fireBaseNotification/main");
@@ -55,8 +56,8 @@ const postCommentByCardId = async (req, res, next) => {
     if (!mongoose.Types.ObjectId.isValid(cardId)) {
       return res.status(404).send("Card not found");
     }
-
     const newComment = await Comment.create(commentBody);
+    const notificationToken = commentBody.notificationToken;
     const updatedCard = await Cards.findByIdAndUpdate(
       cardId,
       {
