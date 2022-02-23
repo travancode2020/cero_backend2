@@ -30,7 +30,7 @@ const createMoment = async (req, res, next) => {
   try {
     const momentBody = req.body;
     const newMoment = await Moment.create(momentBody);
-
+    const notificationData = { _id: newMoment._id.toString() };
     const hostId = req.body.host;
     let hostData = await User.findOne({ _id: hostId });
     let hostFollowers = hostData.followers;
@@ -40,6 +40,7 @@ const createMoment = async (req, res, next) => {
       await sendFirebaseNotification(
         "cero",
         `${hostData.userName} recently added to their moments.`,
+        notificationData,
         notificationToken
       );
     }

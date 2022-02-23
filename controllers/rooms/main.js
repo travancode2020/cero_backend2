@@ -59,11 +59,23 @@ const addRooms = async (req, res, next) => {
       _id: { $in: inviteOrScheduledUsers },
     });
 
+    let startTime = new Date();
+    let endTime = new Date();
+    let roomTime = new Date(body.dateAndTime);
+    startTime.setHours(startTime.getHours() - 1);
+    endTime.setHours(endTime.getHours() + 1);
+    let notificationData = {};
+
+    if (roomTime > startTime && endTime > roomTime) {
+      notificationData = { _id: data._id.toString() };
+    }
+
     for (let userObj of notificationUsers) {
       let notificationToken = userObj.notificationToken;
       await sendFirebaseNotification(
         "cero",
         `${data.hostData.userName} invite you to a Room.`,
+        notificationData,
         notificationToken
       );
     }

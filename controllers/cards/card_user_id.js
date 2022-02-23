@@ -144,9 +144,11 @@ const likeCardByUserId = async (req, res, next) => {
     });
 
     let cardHostData = await User.findOne({ _id: cardData.host });
+    let notificationData = { _id: cardData._id.toString() };
     await sendFirebaseNotification(
       "cero",
       `${likeUserData.userName} liked your cards.`,
+      notificationData,
       cardHostData.notificationToken
     );
   } else {

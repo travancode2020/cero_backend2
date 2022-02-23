@@ -25,9 +25,11 @@ const followByUserId = async (req, res, next) => {
     await Users.findByIdAndUpdate(followingId, {
       $addToSet: { followers: userId },
     });
+    const notificationData = { _id: isUserExists._id.toString() };
     await sendFirebaseNotification(
       "cero",
       `${isUserExists.userName} started following you.`,
+      notificationData,
       isFollowingUserExists.notificationToken
     );
     res.status(200).json({ message: "User updated" });

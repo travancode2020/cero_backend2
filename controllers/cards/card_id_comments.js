@@ -2,8 +2,7 @@ const Cards = require("../../modals/Cards.js");
 const Comment = require("../../modals/Comment.js");
 const User = require("../../modals/User.js");
 const mongoose = require("mongoose");
-const User = require("../../modals/User.js");
-// const { sendFirebaseNotification } = require("../fireBaseNotification/main");
+const { sendFirebaseNotification } = require("../fireBaseNotification/main");
 
 const getAllCommentsByCardId = async (req, res, next) => {
   try {
@@ -57,7 +56,6 @@ const postCommentByCardId = async (req, res, next) => {
       return res.status(404).send("Card not found");
     }
     const newComment = await Comment.create(commentBody);
-    const notificationToken = commentBody.notificationToken;
     const updatedCard = await Cards.findByIdAndUpdate(
       cardId,
       {
@@ -68,6 +66,7 @@ const postCommentByCardId = async (req, res, next) => {
       }
     );
     let cardHost = await User.findOne({ _id: updatedCard.host });
+    let notificationData = { _id: updatedCard._id.toString() };
     let returnData = await Comment.aggregate([
       { $match: { _id: newComment._id } },
       {
@@ -106,11 +105,12 @@ const postCommentByCardId = async (req, res, next) => {
         },
       },
     ]);
-    // await sendFirebaseNotification(
-    //   "cero",
-    //   `${returnData[0].user.userName} commented on your cards.`,
-    //   cardHost.notificationToken
-    // );
+    await sendFirebaseNotification(
+      "cero",
+      `${returnData[0].user.userName} commented on your cards.`,
+      notificationData,
+      cardHost.notificationToken
+    );
 
     res.status(200).json(returnData[0]);
   } catch (error) {
