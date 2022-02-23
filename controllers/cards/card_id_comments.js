@@ -1,6 +1,7 @@
 const Cards = require("../../modals/Cards.js");
 const Comment = require("../../modals/Comment.js");
 const mongoose = require("mongoose");
+const User = require("../../modals/User.js");
 // const { sendFirebaseNotification } = require("../fireBaseNotification/main");
 
 const getAllCommentsByCardId = async (req, res, next) => {
