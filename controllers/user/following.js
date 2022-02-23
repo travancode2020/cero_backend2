@@ -1,13 +1,15 @@
 const Users = require("../../modals/User.js");
 const { Types } = require("mongoose");
+const { sendFirebaseNotification } = require("../fireBaseNotification/main");
 
 const followByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
     const followingId = req.body.followingId;
+    const notificationToken = req.body.followingUserNotificationToken;
 
-    const isUserExists = await Users.exists({ _id: userId });
-    const isFollowingUserExists = await Users.exists({ _id: followingId });
+    const isUserExists = await Users.findOne({ _id: userId });
+    const isFollowingUserExists = await Users.findOne({ _id: followingId });
 
     if (!isUserExists) {
       return res.status(404).json({ message: "User not found" });
@@ -23,7 +25,13 @@ const followByUserId = async (req, res, next) => {
     await Users.findByIdAndUpdate(followingId, {
       $addToSet: { followers: userId },
     });
-
+    const notificationData = { _id: isUserExists._id.toString() };
+    await sendFirebaseNotification(
+      "cero",
+      `${isUserExists.userName} started following you.`,
+      notificationData,
+      isFollowingUserExists.notificationToken
+    );
     res.status(200).json({ message: "User updated" });
   } catch (error) {
     next(error);
@@ -164,7 +172,6 @@ const searchFollowingUser = async (req, res, next) => {
 
     res.status(200).json({ totalPages, data });
   } catch (error) {
-    console.log(error);
     next();
   }
 };
@@ -231,7 +238,6 @@ const searchFollowersUser = async (req, res, next) => {
 
     res.status(200).json({ totalPages, data });
   } catch (error) {
-    console.log(error);
     next();
   }
 };

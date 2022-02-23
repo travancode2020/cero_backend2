@@ -25,7 +25,6 @@ const createUser = async (req, res, next) => {
     Users.create(body)
       .then(
         (user) => {
-          console.log("New User Created", user);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(user);
@@ -120,7 +119,6 @@ const generateUniqueAgoraId = async () => {
 
     return uniqueNumber;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };

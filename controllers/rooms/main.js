@@ -1,12 +1,14 @@
 const Rooms = require("../../modals/Room.js");
 const { Types } = require("mongoose");
 const moment = require("moment");
+const { sendFirebaseNotification } = require("../fireBaseNotification/main");
+const User = require("../../modals/User.js");
+
 const addRooms = async (req, res, next) => {
   try {
     let { body } = req;
     let { _id } = body;
     if (!body) throw new Error("Please Enter valid Details");
-    let roomUpdated;
     let roomsaved;
 
     roomsaved = await Rooms.create(body);
@@ -50,6 +52,33 @@ const addRooms = async (req, res, next) => {
       },
     ]);
     let data = RoomData[0];
+    let inviteOrScheduledUsers = data.specialGuest.concat(
+      data.inviteOrScheduledUser
+    );
+    let notificationUsers = await User.find({
+      _id: { $in: inviteOrScheduledUsers },
+    });
+
+    let startTime = new Date();
+    let endTime = new Date();
+    let roomTime = new Date(body.dateAndTime);
+    startTime.setHours(startTime.getHours() - 1);
+    endTime.setHours(endTime.getHours() + 1);
+    let notificationData = {};
+
+    if (roomTime > startTime && endTime > roomTime) {
+      notificationData = { _id: data._id.toString() };
+    }
+
+    for (let userObj of notificationUsers) {
+      let notificationToken = userObj.notificationToken;
+      await sendFirebaseNotification(
+        "cero",
+        `${data.hostData.userName} invite you to a Room.`,
+        notificationData,
+        notificationToken
+      );
+    }
     roomsaved && res.status(200).json(data);
   } catch (error) {
     next(error);
@@ -315,7 +344,6 @@ const deleteRoom = async (req, res, next) => {
 const UpdateRoom = async (req, res, next) => {
   try {
     let { _id, userId } = req.body;
-    console.log(_id, userId);
 
     let UserHasRoom = await Rooms.findOne({ _id, hostId: userId });
     if (!UserHasRoom) throw new Error("User room not found");
@@ -410,7 +438,6 @@ const getLiveRooms = async (req, res, next) => {
     let totalPages = Math.ceil(rooms.length / limit);
     rooms && res.status(200).json({ totalPages, data: roomsdata });
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };

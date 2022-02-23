@@ -1,6 +1,7 @@
 const Cards = require("../../modals/Cards.js");
 const User = require("../../modals/User.js");
 const mongoose = require("mongoose");
+const { sendFirebaseNotification } = require("../fireBaseNotification/main");
 
 const getCardsByUserId = async (req, res, next) => {
   try {
@@ -113,6 +114,7 @@ const saveCardByUserId = async (req, res, next) => {
 const likeCardByUserId = async (req, res, next) => {
   const userId = req.params.userId;
   const cardId = req.params.cardId;
+  const notificationToken = req.body;
   const isLiked =
     req.body.isLiked === "true"
       ? true
@@ -133,13 +135,22 @@ const likeCardByUserId = async (req, res, next) => {
   }
 
   if (isLiked) {
-    await Cards.findByIdAndUpdate(cardId, {
+    let cardData = await Cards.findByIdAndUpdate(cardId, {
       $addToSet: { likes: userId },
       $pull: { disLikes: userId },
     });
-    await User.findByIdAndUpdate(userId, {
+    let likeUserData = await User.findByIdAndUpdate(userId, {
       $addToSet: { liked: cardId },
     });
+
+    let cardHostData = await User.findOne({ _id: cardData.host });
+    let notificationData = { _id: cardData._id.toString() };
+    await sendFirebaseNotification(
+      "cero",
+      `${likeUserData.userName} liked your cards.`,
+      notificationData,
+      cardHostData.notificationToken
+    );
   } else {
     await Cards.findByIdAndUpdate(cardId, {
       $pull: { likes: userId, disLikes: userId },
