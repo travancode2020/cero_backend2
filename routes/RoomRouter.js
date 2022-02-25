@@ -13,6 +13,7 @@ const {
   addSpecialGuest,
   removeSpecialGuest,
   searchRoom,
+  getRoomsById,
 } = require("../controllers/rooms/main");
 
 const RoomRouter = express.Router();
@@ -30,5 +31,6 @@ RoomRouter.post("/:roomId/inviteUser/:userId", addInvitedUser);
 RoomRouter.delete("/:roomId/cancelInvite/:userId", cancelInvitedUser);
 RoomRouter.post("/:roomId/addGuest/:userId", addSpecialGuest);
 RoomRouter.delete("/:roomId/removeGuest/:userId", removeSpecialGuest);
+RoomRouter.get("/getRoomById/:id", getRoomsById);
 
 module.exports = RoomRouter;

@@ -802,6 +802,48 @@ const searchRoom = async (req, res, next) => {
   }
 };
 
+const getRoomsById = async (req, res, next) => {
+  try {
+    let { id } = req.params;
+    if (!id) throw new Error("please enter room id");
+
+    let roomData = await Rooms.aggregate([
+      { $match: { _id: Types.ObjectId(id) } },
+      {
+        $lookup: {
+          from: "users",
+          localField: "hostId",
+          foreignField: "_id",
+          as: "hostData",
+        },
+      },
+      { $unwind: "$hostData" },
+      {
+        $project: {
+          "hostData._id": 1,
+          "hostData.userName": 1,
+          "hostData.name": 1,
+          "hostData.photoUrl": 1,
+          inviteOrScheduledUser: 1,
+          specialGuest: 1,
+          name: 1,
+          dateAndTime: 1,
+          isPrivate: 1,
+          description: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+    ]);
+
+    if (!roomData) throw new Error("room not found");
+
+    res.status(200).json(roomData[0]);
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   addRooms,
   getRoomsByUserId,
@@ -816,4 +858,5 @@ module.exports = {
   addSpecialGuest,
   removeSpecialGuest,
   searchRoom,
+  getRoomsById,
 };

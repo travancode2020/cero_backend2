@@ -533,6 +533,48 @@
 					"body": "{\r\n    \"totalPages\": 1,\r\n    \"data\": [\r\n        {\r\n            \"_id\": \"6200ca4fd2ef50001679942f\",\r\n            \"specialGuest\": [\r\n                {\r\n                    \"_id\": \"61df2ec971047e0016dfa2a9\",\r\n                    \"userName\": \"pappan\",\r\n                    \"name\": \"Pappan\",\r\n                    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\"\r\n                }\r\n            ],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61a13043270b53001681f63f\",\r\n                \"61df2ec971047e0016dfa2a9\"\r\n            ],\r\n            \"name\": \"Lorem ipsum dolor sit amet, consectetur adipiscing\",\r\n            \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut auctor nulla, ac egestas velit. Pellentesque molestie urna vitae metus tristique, quis convallis quam porttitor. Donec volutpat, odio non molestie consectetur, enim lacus pellentesque nisl, in imperdiet ligula orci et augue. Aenean bibendum, odio a elementum venenatis, eros leo faucibus purus, auctor tincidunt ex elit id augue. Etiam leo turpis, efficitur at varius quis, viverra sit amet nibh. Mauris tempor tincidunt sodales. Ve\",\r\n            \"dateAndTime\": \"2022-02-19T18:30:00.000Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-02-07T07:29:19.882Z\",\r\n            \"updatedAt\": \"2022-02-07T07:29:19.882Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df2ec971047e0016dfa2a9\",\r\n                \"userName\": \"pappan\",\r\n                \"name\": \"Pappan\",\r\n                \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\"\r\n            },\r\n            \"type\": \"Upcomming\"\r\n        },\r\n        {\r\n            \"_id\": \"620184e61dedcd2224537aa1\",\r\n            \"specialGuest\": [\r\n                {\r\n                    \"_id\": \"61a12223270b53001681f488\",\r\n                    \"userName\": \"ajay\",\r\n                    \"name\": \"Ajay Krishna P\",\r\n                    \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\"\r\n                }\r\n            ],\r\n            \"inviteOrScheduledUser\": [\r\n                \"61a12223270b53001681f488\"\r\n            ],\r\n            \"name\": \"testRoomj\",\r\n            \"description\": \"test room\",\r\n            \"dateAndTime\": \"2022-02-07T20:45:26.607Z\",\r\n            \"isPrivate\": false,\r\n            \"createdAt\": \"2022-02-07T20:45:26.607Z\",\r\n            \"updatedAt\": \"2022-02-07T20:45:26.607Z\",\r\n            \"hostData\": {\r\n                \"_id\": \"61df17051d8ce900165aee5f\",\r\n                \"userName\": \"aryana\",\r\n                \"name\": \"Abhirami\",\r\n                \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61df17051d8ce900165aee5f2022-01-13%2019%3A12%3A01.040295?alt=media&token=dedbd5f8-2cfd-4381-afa6-31719fbb8269\"\r\n            },\r\n            \"type\": \"Live\"\r\n        }\r\n    ]\r\n}"
 				}
 			]
+		},
+    {
+			"name": "Get Room By RoomId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/room/getRoomById/6200ca4fd2ef50001679942f",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"room",
+						"getRoomById",
+						"6200ca4fd2ef50001679942f"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Room By RoomId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/room/getRoomById/6200ca4fd2ef50001679942f",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"room",
+								"getRoomById",
+								"6200ca4fd2ef50001679942f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6200ca4fd2ef50001679942f\",\n    \"specialGuest\": [\n        \"61df2ec971047e0016dfa2a9\"\n    ],\n    \"inviteOrScheduledUser\": [\n        \"61a13043270b53001681f63f\",\n        \"61df2ec971047e0016dfa2a9\",\n        \"61a12223270b53001681f488\",\n        \"61dfaae8a2a7fb0016a86b2e\"\n    ],\n    \"name\": \"Lorem ipsum dolor sit amet, consectetur adipiscing\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut auctor nulla, ac egestas velit. Pellentesque molestie urna vitae metus tristique, quis convallis quam porttitor. Donec volutpat, odio non molestie consectetur, enim lacus pellentesque nisl, in imperdiet ligula orci et augue. Aenean bibendum, odio a elementum venenatis, eros leo faucibus purus, auctor tincidunt ex elit id augue. Etiam leo turpis, efficitur at varius quis, viverra sit amet nibh. Mauris tempor tincidunt sodales. Ve\",\n    \"dateAndTime\": \"2022-02-19T18:30:00.000Z\",\n    \"isPrivate\": false,\n    \"createdAt\": \"2022-02-07T07:29:19.882Z\",\n    \"updatedAt\": \"2022-02-19T08:20:20.826Z\",\n    \"hostData\": {\n        \"_id\": \"61df2ec971047e0016dfa2a9\",\n        \"userName\": \"pappan\",\n        \"name\": \"Pappan\",\n        \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\"\n    }\n}"
+				}
+			]
 		}
   ]
 }
