@@ -12,7 +12,7 @@ const messageNotification = async () => {
 
     message.onSnapshot(async (snapshot) => {
       let latestMessage = snapshot.docs[0].data();
-      if (latestMessage) {
+      if (latestMessage && !latestMessage.typing) {
         let receiver_id = latestMessage.receive_by;
         let sendBy = latestMessage.last_send_by;
 
