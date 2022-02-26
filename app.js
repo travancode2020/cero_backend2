@@ -6,6 +6,9 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const initFirebase = require("./config/firebase.js");
+const {
+  messageNotification,
+} = require("./controllers/firebaseMessaging/messaging");
 
 const {
   IndexRouter,
@@ -22,6 +25,7 @@ const {
 const app = express();
 const mongoose = require("mongoose");
 initFirebase();
+messageNotification();
 
 mongoose
   .connect(process.env.CONNECTION_STRING, {
