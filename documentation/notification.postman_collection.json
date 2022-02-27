@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "8adbeb46-9b0c-4d80-b350-2f3bcfca6b7e",
+		"name": "notification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get notification By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/notifications?id=6213c0e73020750016ef0482",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"notifications"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6213c0e73020750016ef0482"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get notification By UserId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/notifications?id=6213c0e73020750016ef0482",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6213c0e73020750016ef0482"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

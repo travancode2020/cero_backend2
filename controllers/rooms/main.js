@@ -1,7 +1,10 @@
 const Rooms = require("../../modals/Room.js");
 const { Types } = require("mongoose");
 const moment = require("moment");
-const { sendFirebaseNotification } = require("../fireBaseNotification/main");
+const {
+  sendFirebaseNotification,
+  saveNotification,
+} = require("../fireBaseNotification/main");
 const User = require("../../modals/User.js");
 
 const addRooms = async (req, res, next) => {
@@ -78,6 +81,12 @@ const addRooms = async (req, res, next) => {
         notificationData,
         notificationToken
       );
+      await saveNotification(userObj._id, {
+        type: 4,
+        notification: `${data.hostData.userName} invite you to a Room.`,
+        action_id: data._id.toString(),
+        createdAt: new Date(),
+      });
     }
     roomsaved && res.status(200).json(data);
   } catch (error) {

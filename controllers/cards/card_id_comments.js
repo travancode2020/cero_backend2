@@ -2,7 +2,10 @@ const Cards = require("../../modals/Cards.js");
 const Comment = require("../../modals/Comment.js");
 const User = require("../../modals/User.js");
 const mongoose = require("mongoose");
-const { sendFirebaseNotification } = require("../fireBaseNotification/main");
+const {
+  sendFirebaseNotification,
+  saveNotification,
+} = require("../fireBaseNotification/main");
 
 const getAllCommentsByCardId = async (req, res, next) => {
   try {
@@ -111,7 +114,12 @@ const postCommentByCardId = async (req, res, next) => {
       notificationData,
       cardHost.notificationToken
     );
-
+    await saveNotification(cardHost._id, {
+      type: 1,
+      notification: `${returnData[0].user.userName} commented on your cards.`,
+      action_id: notificationData._id,
+      createdAt: new Date(),
+    });
     res.status(200).json(returnData[0]);
   } catch (error) {
     next(error);

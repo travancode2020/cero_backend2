@@ -7,6 +7,7 @@ const AuthRouter = require("./AuthRouter.js");
 const AgoraRouter = require("./AgoraRouter");
 const RoomRouter = require("./RoomRouter");
 const InterestRouter = require("./InterestRouter");
+const NotificationRouter = require("./NotificationRouter");
 
 const router = express.Router();
 
@@ -25,4 +26,5 @@ module.exports = {
   AgoraRouter,
   RoomRouter,
   InterestRouter,
+  NotificationRouter,
 };

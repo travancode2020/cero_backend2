@@ -1,7 +1,10 @@
 const Cards = require("../../modals/Cards.js");
 const User = require("../../modals/User.js");
 const mongoose = require("mongoose");
-const { sendFirebaseNotification } = require("../fireBaseNotification/main");
+const {
+  sendFirebaseNotification,
+  saveNotification,
+} = require("../fireBaseNotification/main");
 
 const getCardsByUserId = async (req, res, next) => {
   try {
@@ -151,6 +154,12 @@ const likeCardByUserId = async (req, res, next) => {
       notificationData,
       cardHostData.notificationToken
     );
+    await saveNotification(cardHostData._id, {
+      type: 2,
+      notification: `${likeUserData.userName} liked your cards.`,
+      action_id: notificationData._id,
+      createdAt: new Date(),
+    });
   } else {
     await Cards.findByIdAndUpdate(cardId, {
       $pull: { likes: userId, disLikes: userId },

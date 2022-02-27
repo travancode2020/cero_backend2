@@ -1,6 +1,9 @@
 const Users = require("../../modals/User.js");
 const { Types } = require("mongoose");
-const { sendFirebaseNotification } = require("../fireBaseNotification/main");
+const {
+  sendFirebaseNotification,
+  saveNotification,
+} = require("../fireBaseNotification/main");
 
 const followByUserId = async (req, res, next) => {
   try {
@@ -32,6 +35,12 @@ const followByUserId = async (req, res, next) => {
       notificationData,
       isFollowingUserExists.notificationToken
     );
+    await saveNotification(isFollowingUserExists._id, {
+      type: 3,
+      notification: `${isUserExists.userName} started following you.`,
+      action_id: notificationData._id,
+      createdAt: new Date(),
+    });
     res.status(200).json({ message: "User updated" });
   } catch (error) {
     next(error);

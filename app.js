@@ -20,6 +20,7 @@ const {
   AgoraRouter,
   RoomRouter,
   InterestRouter,
+  NotificationRouter,
 } = require("./routes");
 
 const app = express();
@@ -61,8 +62,8 @@ app.use("/moments", MomentRouter);
 app.use("/location", LocationRouter);
 app.use("/interest", InterestRouter);
 app.use("/auth", AuthRouter);
-
 app.use("/agora", AgoraRouter);
+app.use("/notifications", NotificationRouter);
 
 //Rooms
 app.use("/room", RoomRouter);
