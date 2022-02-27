@@ -9,22 +9,24 @@ const messageNotification = async () => {
       .collection("chat_rooms")
       .orderBy("last_ts", "desc")
       .limit(1);
-
     message.onSnapshot(async (snapshot) => {
-      let latestMessage = snapshot.docs[0].data();
-      if (latestMessage && !latestMessage.typing) {
-        let receiver_id = latestMessage.receive_by;
-        let sendBy = latestMessage.last_send_by;
+      if (snapshot.docs.length > 0) {
+        let latestMessage = snapshot.docs[0].data();
 
-        let receiverData = await User.findOne({ _id: receiver_id });
-        let notificationData = {};
-        if (receiverData && receiverData.notificationToken) {
-          await sendFirebaseNotification(
-            "cero",
-            `Message from ${sendBy}`,
-            notificationData,
-            receiverData.notificationToken
-          );
+        if (latestMessage && !latestMessage.typing) {
+          let receiver_id = latestMessage.receive_by;
+          let sendBy = latestMessage.last_send_by;
+
+          let receiverData = await User.findOne({ _id: receiver_id });
+          let notificationData = {};
+          if (receiverData && receiverData.notificationToken) {
+            await sendFirebaseNotification(
+              "cero",
+              `Message from ${sendBy}`,
+              notificationData,
+              receiverData.notificationToken
+            );
+          }
         }
       }
     });
