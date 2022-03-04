@@ -77,14 +77,15 @@ const addRooms = async (req, res, next) => {
       let notificationToken = userObj.notificationToken;
       await sendFirebaseNotification(
         "cero",
-        `${data.hostData.userName} invite you to a Room.`,
+        `${data.hostData.userName} invite you to a Room`,
         notificationData,
         notificationToken
       );
       await saveNotification(userObj._id, {
         type: 4,
-        notification: `${data.hostData.userName} invite you to a Room.`,
+        notification: `${data.hostData.userName} invite you to a Room`,
         action_id: data._id.toString(),
+        triggered_by: data.hostData._id,
         createdAt: new Date(),
       });
     }

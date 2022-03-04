@@ -39,7 +39,7 @@ const createMoment = async (req, res, next) => {
       let notificationToken = obj.notificationToken;
       await sendFirebaseNotification(
         "cero",
-        `${hostData.userName} recently added to their moments.`,
+        `${hostData.userName} recently added to their moment`,
         notificationData,
         notificationToken
       );

@@ -31,13 +31,13 @@ const followByUserId = async (req, res, next) => {
     const notificationData = { _id: isUserExists._id.toString() };
     await sendFirebaseNotification(
       "cero",
-      `${isUserExists.userName} started following you.`,
+      `${isUserExists.userName} started following you`,
       notificationData,
       isFollowingUserExists.notificationToken
     );
     await saveNotification(isFollowingUserExists._id, {
       type: 3,
-      notification: `${isUserExists.userName} started following you.`,
+      notification: `${isUserExists.userName} started following you`,
       action_id: notificationData._id,
       createdAt: new Date(),
     });

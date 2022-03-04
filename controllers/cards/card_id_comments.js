@@ -108,16 +108,19 @@ const postCommentByCardId = async (req, res, next) => {
         },
       },
     ]);
-    await sendFirebaseNotification(
-      "cero",
-      `${returnData[0].user.userName} commented on your cards.`,
-      notificationData,
-      cardHost.notificationToken
-    );
+    if (updatedCard.comments.length % 10 == 0) {
+      await sendFirebaseNotification(
+        "cero",
+        `${returnData[0].user.userName} and 9 others commented on your card`,
+        notificationData,
+        cardHost.notificationToken
+      );
+    }
     await saveNotification(cardHost._id, {
       type: 1,
-      notification: `${returnData[0].user.userName} commented on your cards.`,
+      notification: `${returnData[0].user.userName} commented on your card`,
       action_id: notificationData._id,
+      triggered_by: returnData[0].user._id,
       createdAt: new Date(),
     });
     res.status(200).json(returnData[0]);
