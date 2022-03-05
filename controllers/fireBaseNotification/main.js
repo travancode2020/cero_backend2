@@ -89,7 +89,9 @@ const getUserNotification = async (req, res, next) => {
             { $match: { $expr: { $eq: ["$_id", "$$action_id"] } } },
             {
               $project: {
-                links: { $first: "$links" },
+                _id: 0,
+                action_id: "$_id",
+                action_photo: { $first: "$links" },
               },
             },
           ],
@@ -113,9 +115,9 @@ const getUserNotification = async (req, res, next) => {
             { $match: { $expr: { $eq: ["$_id", "$$action_id"] } } },
             {
               $project: {
-                name: 1,
-                userName: 1,
-                photoUrl: 1,
+                _id: 0,
+                action_id: "$_id",
+                action_photo: "$photoUrl",
               },
             },
           ],
@@ -134,7 +136,7 @@ const getUserNotification = async (req, res, next) => {
           "data.type": 1,
           "data.notification": 1,
           "data.createdAt": 1,
-          "data.action_id": {
+          "data.action_data": {
             $switch: {
               branches: [
                 {
@@ -146,7 +148,7 @@ const getUserNotification = async (req, res, next) => {
                   then: "$data.action_id_card",
                 },
               ],
-              default: "$data.action_id",
+              default: { action_id: "$data.action_id", action_photo: null },
             },
           },
           "data.triggered_by": {

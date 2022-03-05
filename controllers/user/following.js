@@ -39,6 +39,7 @@ const followByUserId = async (req, res, next) => {
       type: 3,
       notification: `${isUserExists.userName} started following you`,
       action_id: notificationData._id,
+      triggered_by: notificationData._id,
       createdAt: new Date(),
     });
     res.status(200).json({ message: "User updated" });
