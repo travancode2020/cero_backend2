@@ -12,6 +12,9 @@ const CardSchema = new Schema(
       type: Boolean,
       required: true,
     },
+    thumbnail: {
+      type: String,
+    },
     disLikes: [
       {
         type: Schema.Types.ObjectId,
