@@ -91,7 +91,17 @@ const getUserNotification = async (req, res, next) => {
               $project: {
                 _id: 0,
                 action_id: "$_id",
-                action_photo: { $first: "$links" },
+                action_photo: {
+                  $switch: {
+                    branches: [
+                      {
+                        case: { $eq: ["$isImage", false] },
+                        then: "$thumbnail",
+                      },
+                    ],
+                    default: { $first: "$links" },
+                  },
+                },
               },
             },
           ],

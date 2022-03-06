@@ -42,6 +42,7 @@ const getAllCommentsByCardId = async (req, res, next) => {
     if (!card) {
       return res.status(404).json({ message: "Card Not Found" });
     }
+    card.comments = card.comments.reverse();
     let comments = card.comments.slice(skip, skip + limit);
     let totalPages = Math.ceil(card.comments.length / limit);
     res.status(200).json({ totalPages, data: comments });

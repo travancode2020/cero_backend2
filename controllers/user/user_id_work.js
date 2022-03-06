@@ -11,6 +11,7 @@ const getWorkByUserId = (req, res, next) => {
         if (card != null) {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
+          card.work = card.work.reverse();
           let work = card.work.slice(skip, skip + limit);
           let totalPages = Math.ceil(card.work.length / limit);
           res.json({ totalPages, data: work });

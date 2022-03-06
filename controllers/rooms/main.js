@@ -552,7 +552,7 @@ const getUpcommingRoom = async (req, res, next) => {
       isPrivate: false,
       inviteOrScheduledUser: { $ne: Types.ObjectId(id) },
       specialGuest: { $ne: Types.ObjectId(id) },
-      hostId: { $ne: [Types.ObjectId(id)] },
+      hostId: { $ne: Types.ObjectId(id) },
     };
     let rooms = await Rooms.aggregate([
       { $match: filter },

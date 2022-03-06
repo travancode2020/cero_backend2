@@ -24,7 +24,8 @@ const getCardsByUserId = async (req, res, next) => {
     const foundCards = await Cards.find({ host: userId })
       .populate(populateQuery)
       .limit(limit)
-      .skip(skip);
+      .skip(skip)
+      .sort({ createdAt: -1 });
     const count = await Cards.find({ host: userId }).populate(populateQuery);
     let totalPages = Math.ceil(count.length / limit);
 
@@ -57,6 +58,7 @@ const getSavedCardsByUserId = async (req, res, next) => {
     ];
 
     const foundUser = await User.findById(userId).populate(userPopulateQuery);
+    foundUser.saved.reverse();
     let savedCards = foundUser.saved.slice(skip, skip + limit);
     let totalPages = Math.ceil(foundUser.saved.length / limit);
     if (!foundUser) {
