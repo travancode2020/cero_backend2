@@ -150,21 +150,23 @@ const likeCardByUserId = async (req, res, next) => {
 
     let cardHostData = await User.findOne({ _id: cardData.host });
     let notificationData = { _id: cardData._id.toString() };
-    if ((cardData.likes.length + 1) % 10 == 0) {
-      await sendFirebaseNotification(
-        "cero",
-        `${likeUserData.userName} and 9 others liked your card`,
-        notificationData,
-        cardHostData.notificationToken
-      );
+    if (likeUserData._id != cardHostData._id) {
+      if ((cardData.likes.length + 1) % 10 == 0) {
+        await sendFirebaseNotification(
+          "cero",
+          `${likeUserData.userName} and 9 others liked your card`,
+          notificationData,
+          cardHostData.notificationToken
+        );
+      }
+      await saveNotification(cardHostData._id, {
+        type: 2,
+        notification: `${likeUserData.userName} liked your card`,
+        action_id: notificationData._id,
+        triggered_by: likeUserData._id,
+        createdAt: new Date(),
+      });
     }
-    await saveNotification(cardHostData._id, {
-      type: 2,
-      notification: `${likeUserData.userName} liked your card`,
-      action_id: notificationData._id,
-      triggered_by: likeUserData._id,
-      createdAt: new Date(),
-    });
   } else {
     await Cards.findByIdAndUpdate(cardId, {
       $pull: { likes: userId, disLikes: userId },
@@ -247,6 +249,7 @@ const getLikedCardsByUserId = async (req, res, next) => {
     if (!foundUser) {
       return res.status(404).json({ message: "User not found" });
     }
+    foundUser.liked = foundUser.liked.reverse();
     let likedUsers = foundUser.liked.slice(skip, skip + limit);
     let totalPages = Math.ceil(foundUser.liked.length / limit);
 
