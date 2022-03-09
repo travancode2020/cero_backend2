@@ -36,7 +36,7 @@ const postWorkByUserId = (req, res, next) => {
             (card) => {
               res.statusCode = 200;
               res.setHeader("Content-Type", "application/json");
-              res.json(card.work);
+              res.json(card.work[card.work.length - 1]);
             },
             (err) => next(err)
           );
