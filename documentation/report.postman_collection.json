@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "90e66f8c-ab86-41ae-9131-54b7e811af49",
+		"name": "report",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save report",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"reportedBy\":\"61a12223270b53001681f488\",\n    \"contentId\":\"61dc59523e5caf0016f0f677\",\n    \"type\": 1,\n    \"status\": \"created\",\n    \"problem\": \" your problem\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/report/saveReport",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"saveReport"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save report",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reportedBy\":\"61a12223270b53001681f488\",\n    \"contentId\":\"61dc59523e5caf0016f0f677\",\n    \"type\": 1,\n    \"status\": \"created\",\n    \"problem\": \" your problem\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/report/saveReport",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"saveReport"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"_id\": \"622b745cfc36d4135b05ac25\",\n    \"reportedBy\": \"61a12223270b53001681f488\",\n    \"contentId\": \"61dc59523e5caf0016f0f677\",\n    \"type\": \"1\",\n    \"status\": \"created\",\n    \"problem\": \" your problem\",\n    \"createdAt\": \"2022-03-11T16:10:04.784Z\",\n    \"updatedAt\": \"2022-03-11T16:10:04.784Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		}
+	]
+}

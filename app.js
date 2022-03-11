@@ -21,6 +21,7 @@ const {
   RoomRouter,
   InterestRouter,
   NotificationRouter,
+  ReportRouter,
 } = require("./routes");
 
 const app = express();
@@ -64,6 +65,7 @@ app.use("/interest", InterestRouter);
 app.use("/auth", AuthRouter);
 app.use("/agora", AgoraRouter);
 app.use("/notifications", NotificationRouter);
+app.use("/report", ReportRouter);
 
 //Rooms
 app.use("/room", RoomRouter);
