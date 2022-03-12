@@ -4,11 +4,12 @@ const Schema = mongoose.Schema;
 const ReportSchema = new Schema(
   {
     reportedBy: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     contentId: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
     },
     type: {

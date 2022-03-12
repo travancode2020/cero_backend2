@@ -64,6 +64,143 @@
 					"body": "{\n    \"_id\": \"622b745cfc36d4135b05ac25\",\n    \"reportedBy\": \"61a12223270b53001681f488\",\n    \"contentId\": \"61dc59523e5caf0016f0f677\",\n    \"type\": \"1\",\n    \"status\": \"created\",\n    \"problem\": \" your problem\",\n    \"createdAt\": \"2022-03-11T16:10:04.784Z\",\n    \"updatedAt\": \"2022-03-11T16:10:04.784Z\",\n    \"__v\": 0\n}"
 				}
 			]
+		},
+		{
+			"name": "Get All And Individual Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/report/getReport",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"getReport"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "622b745cfc36d4135b05ac25",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/report/getReport",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"getReport"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"622b745cfc36d4135b05ac25\",\n        \"reportedBy\": {\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-02-23%2001%3A08%3A05.724785?alt=media&token=44baa6a8-e4c3-425c-94a5-dfe411ce6931\"\n        },\n        \"contentId\": \"61dc59523e5caf0016f0f677\",\n        \"type\": \"1\",\n        \"status\": \"solved\",\n        \"problem\": \" your problem\",\n        \"createdAt\": \"2022-03-11T16:10:04.784Z\",\n        \"updatedAt\": \"2022-03-12T13:53:00.551Z\"\n    }\n]"
+				},
+				{
+					"name": "Get Individual Report",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/report/getReport?id=622b745cfc36d4135b05ac25",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"getReport"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "622b745cfc36d4135b05ac25"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"_id\": \"622b745cfc36d4135b05ac25\",\n    \"reportedBy\": {\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-02-23%2001%3A08%3A05.724785?alt=media&token=44baa6a8-e4c3-425c-94a5-dfe411ce6931\"\n    },\n    \"contentId\": \"61dc59523e5caf0016f0f677\",\n    \"type\": \"1\",\n    \"status\": \"solved\",\n    \"problem\": \" your problem\",\n    \"createdAt\": \"2022-03-11T16:10:04.784Z\",\n    \"updatedAt\": \"2022-03-12T13:53:00.551Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Change Report Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"622b745cfc36d4135b05ac25\",\n    \"status\": \"solved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/report/changeReportStatus",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"changeReportStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Change Report Status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"622b745cfc36d4135b05ac25\",\n    \"status\": \"solved\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/report/changeReportStatus",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"changeReportStatus"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"_id\": \"622b745cfc36d4135b05ac25\",\n    \"reportedBy\": {\n        \"userName\": \"ajay\",\n        \"name\": \"Ajay Krishna P\",\n        \"photoUrl\": \"https://firebasestorage.googleapis.com/v0/b/cero-5c945.appspot.com/o/61a12223270b53001681f488%2F2022-02-23%2001%3A08%3A05.724785?alt=media&token=44baa6a8-e4c3-425c-94a5-dfe411ce6931\"\n    },\n    \"contentId\": \"61dc59523e5caf0016f0f677\",\n    \"type\": \"1\",\n    \"status\": \"solved\",\n    \"problem\": \" your problem\",\n    \"createdAt\": \"2022-03-11T16:10:04.784Z\",\n    \"updatedAt\": \"2022-03-12T13:53:00.551Z\"\n}"
+				}
+			]
 		}
 	]
 }
