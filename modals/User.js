@@ -43,7 +43,7 @@ const UserSchema = new Schema(
       required: true,
     },
     agoraId: { type: Number, unique: true },
-    notificationToken: { type: String, unique: true },
+    notificationToken: { type: String },
     userName: {
       type: String,
       required: true,

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fa0aab99-f266-4d96-8b32-3c03a79cc823",
+		"_postman_id": "2f478f3d-7316-41ec-8a0e-3e161887b301",
 		"name": "user-routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -300,7 +300,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\" : \"testUser\",\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"phone\": \"9999999999\",\r\n    \"dob\": \"18-12-1999\",\r\n    \"isCreator\": false,\r\n    \"isPro\": false\r\n}",
+					"raw": "{\r\n    \"userName\" : \"testUser\",\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"phone\": \"9999999999\",\r\n    \"dob\": \"18-12-1999\",\r\n    \"isCreator\": false,\r\n    \"isPro\": false,\r\n    \"notificationToken\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmthbEBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2NDc0OTY1MDEsImV4cCI6MTY0NzUwMDEwMX0.1WiUK4KKA99pstAyzhgjHZNZEhdl_DQT9nu3IMD7Ocg\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -325,7 +325,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\" : \"testUser\",\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"phone\": \"9999999999\",\r\n    \"dob\": \"18-12-1999\",\r\n    \"isCreator\": false,\r\n    \"isPro\": false\r\n}",
+							"raw": "{\r\n    \"userName\" : \"testUser\",\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"phone\": \"9999999999\",\r\n    \"dob\": \"18-12-1999\",\r\n    \"isCreator\": false,\r\n    \"isPro\": false,\r\n    \"notificationToken\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmthbEBnbWFpbC5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2NDc0OTY1MDEsImV4cCI6MTY0NzUwMDEwMX0.1WiUK4KKA99pstAyzhgjHZNZEhdl_DQT9nu3IMD7Ocg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1253,7 +1253,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/users/agoraId/999999999",
+					"raw": "{{BASE_URL}}/users/getUserByAgoraId/999999999",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -1272,7 +1272,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/users/search?userFilter=JAY&page=1&limit=20",
+					"raw": "{{BASE_URL}}/users/search?userFilter=AJAY&page=1&limit=20",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -1373,8 +1373,8 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"userName\": \"ajay\",\n            \"name\": \"Ajay Krishna P\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Gjh0IX5i2nlFhYhyUvNYC9rYG4B3nRYtNB4eSI=s96-c\",\n            \"id\": \"61a12223270b53001681f488\"\n        }\n    ]\n}"
 				}
@@ -1455,8 +1455,8 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"userName\": \"pappan\",\n            \"name\": \"Pappan\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Ghma9KCHm6fxO-WHFwyGLNSL0qnFZ2lnBeBwe2gYw=s96-c\",\n            \"id\": \"61df2ec971047e0016dfa2a9\"\n        }\n    ]\n}"
 				}
@@ -1481,11 +1481,11 @@
 					"query": [
 						{
 							"key": "page",
-							"value": null
+							"value": ""
 						},
 						{
 							"key": "limit",
-							"value": null
+							"value": ""
 						},
 						{
 							"key": "userName",
@@ -1535,8 +1535,8 @@
 							]
 						}
 					},
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": "{\n    \"totalPages\": 1,\n    \"data\": [\n        {\n            \"_id\": \"61dc59523e5caf0016f0f677\",\n            \"streak\": {\n                \"lastDate\": \"2022-01-10T14:04:45.404Z\",\n                \"score\": 0,\n                \"highestScore\": 0,\n                \"_id\": \"61dc59523e5caf0016f0f676\"\n            },\n            \"userTag\": [\n                \"Developer\"\n            ],\n            \"interest\": [\n                \"Business\",\n                \"General Knowledge\",\n                \"Science & Technology\",\n                \"Psychology\",\n                \"History\",\n                \"Current Affairs\",\n                \"Culture & lifestyle\"\n            ],\n            \"followers\": [],\n            \"verifiedProfiles\": [],\n            \"following\": [],\n            \"saved\": [],\n            \"liked\": [\n                \"61d4716ffcf4ae001645d4ff\"\n            ],\n            \"viewed\": [],\n            \"isLocationSharingEnabled\": false,\n            \"fId\": \"hCak9Cg4fZejUpilU7nRYqECIXy1\",\n            \"userName\": \"solowolf93\",\n            \"name\": \"Dithesh\",\n            \"email\": \"ditheshthegreat@gmail.com\",\n            \"password\": \"Dithesh@1993\",\n            \"photoUrl\": \"https://lh3.googleusercontent.com/a-/AOh14Giuth2OP_un95RoASYj4tHNFBbR7WNW_60VfYXU3w=s96-c\",\n            \"dob\": \"00/00/0000\",\n            \"isCreator\": false,\n            \"isPro\": false,\n            \"phone\": 902065064,\n            \"agoraId\": 381855726,\n            \"work\": [],\n            \"createdAt\": \"2022-01-10T16:05:38.390Z\",\n            \"updatedAt\": \"2022-01-10T18:29:37.001Z\",\n            \"__v\": 0\n        }\n    ]\n}"
 				}
