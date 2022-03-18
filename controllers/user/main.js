@@ -1,4 +1,5 @@
 const Users = require("../../modals/User.js");
+const admin = require("firebase-admin");
 
 const getAllUsers = (req, res, next) => {
   Users.find({})
@@ -20,11 +21,31 @@ const createUser = async (req, res, next) => {
       if (phoneNumberAvailable)
         throw new Error("Phone number already registered");
     }
+    let { idToken } = req.body;
+    const expiresIn = 60 * 60 * 24 * 14 * 1000; // 20 days expiry
+
     let agoraId = await generateUniqueAgoraId();
     let body = { ...req.body, agoraId };
     Users.create(body)
       .then(
         (user) => {
+          if (idToken) {
+            admin
+              .auth()
+              .createSessionCookie(idToken.toString(), { expiresIn })
+              .then(
+                (sessionCookie) => {
+                  const options = { maxAge: expiresIn, httpOnly: true };
+                  res.statusCode = 200;
+                  res.setHeader("Content-Type", "application/json");
+                  res.cookie("session", sessionCookie, options);
+                  res.json(user);
+                },
+                (error) => {
+                  next(error);
+                }
+              );
+          }
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(user);
