@@ -173,7 +173,7 @@ const searchByRange = async (req, res, next) => {
           location: {
             $geoWithin: {
               $centerSphere: [
-                [Number(lat), Number(lng)],
+                [Number(lng), Number(lat)],
                 Number(range) / 6378000.16,
               ],
             },

@@ -72,22 +72,23 @@ const addRooms = async (req, res, next) => {
     if (roomTime > startTime && endTime > roomTime) {
       notificationData = { _id: data._id.toString() };
     }
-
-    for (let userObj of notificationUsers) {
-      let notificationToken = userObj.notificationToken;
-      await sendFirebaseNotification(
-        "cero",
-        `${data.hostData.userName} invite you to a Room`,
-        notificationData,
-        notificationToken
-      );
-      await saveNotification(userObj._id, {
-        type: 4,
-        notification: `${data.hostData.userName} invite you to a Room`,
-        action_id: data._id.toString(),
-        triggered_by: data.hostData._id,
-        createdAt: new Date(),
-      });
+    if (userObj._id != data.hostData._id) {
+      for (let userObj of notificationUsers) {
+        let notificationToken = userObj.notificationToken;
+        await sendFirebaseNotification(
+          "cero",
+          `${data.hostData.userName} invite you to a Room`,
+          notificationData,
+          notificationToken
+        );
+        await saveNotification(userObj._id, {
+          type: 4,
+          notification: `${data.hostData.userName} invite you to a Room`,
+          action_id: data._id.toString(),
+          triggered_by: data.hostData._id,
+          createdAt: new Date(),
+        });
+      }
     }
     roomsaved && res.status(200).json(data);
   } catch (error) {

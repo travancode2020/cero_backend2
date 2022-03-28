@@ -66,8 +66,6 @@ const getAllTrendingCards = async (req, res, next) => {
           cards: { $push: "$cards" },
         },
       },
-      // { $skip: skip },
-      // { $limit: limit },
     ]);
     trendingCards.forEach((obj, index) => {
       obj.cards = obj.cards.slice(0, 3);
@@ -84,6 +82,8 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
     let { page, limit, interests } = req.query;
     const interestString = interests || "";
     const interestArray = interestString.split(",");
+    let todayDate = new Date();
+
     page = page ? Number(page) : 1;
     limit = limit ? Number(limit) : 20;
     let skip = (page - 1) * limit;
@@ -98,6 +98,17 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
       {
         $addFields: {
           likeCount: { $size: { $ifNull: ["$likes", []] } },
+          treandingRation: {
+            $divide: [
+              { $size: { $ifNull: ["$likes", []] } },
+              {
+                $divide: [
+                  { $subtract: [todayDate, "$createdAt"] },
+                  1000 * 60 * 60 * 24,
+                ],
+              },
+            ],
+          },
           id: "$_id",
         },
       },
@@ -120,35 +131,12 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
           as: "host",
         },
       },
-      // {
-      //   $addFields: {
-      //     host: "$host",
-      //   },
-      // },
       {
         $unwind: "$host",
       },
-      // {
-      //   $group: {
-      //     _id: { $first: "$tags" },
-      //     cards: { $addToSet: "$$ROOT" },
-      //   },
-      // },
-      // {
-      //   $unwind: "$cards",
-      // },
       {
-        $sort: { _id: 1, "cards.likeCount": -1 },
+        $sort: { _id: 1, "cards.treandingRation": -1 },
       },
-      // {
-      //   $group: {
-      //     _id: "$_id",
-      //     card: { $push: "$cards" },
-      //   },
-      // },
-      // {
-      //   $unwind: "$card",
-      // },
       { $skip: skip },
       { $limit: limit },
     ]);
