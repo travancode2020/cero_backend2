@@ -1,6 +1,8 @@
 const admin = require("firebase-admin");
 const Notification = require("../../modals/notification");
 const { Types } = require("mongoose");
+var CronJob = require("cron").CronJob;
+
 const sendFirebaseNotification = async (title, message, data, token) => {
   try {
     const payload = {
@@ -188,6 +190,44 @@ const getUserNotification = async (req, res, next) => {
     next(error);
   }
 };
+
+const getFiles = async () => {
+  try {
+    var query = {
+      directory: "Moments/",
+    };
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    let data = await admin
+      .storage()
+      .bucket("cero-5c945.appspot.com")
+      .getFiles(query);
+    for (let obj of data[0]) {
+      if (new Date(obj.metadata.timeCreated) < yesterday) {
+        await admin
+          .storage()
+          .bucket("cero-5c945.appspot.com")
+          .file(obj.metadata.name)
+          .delete();
+      }
+    }
+
+    return "file removed successfully";
+  } catch (error) {
+    console.log("error::", error);
+    return error;
+  }
+};
+
+const deleteMoment = new CronJob(
+  "59 23 * * *",
+  function () {
+    getFiles();
+  },
+  null,
+  true
+);
+deleteMoment.start();
 module.exports = {
   sendFirebaseNotification,
   saveNotification,
