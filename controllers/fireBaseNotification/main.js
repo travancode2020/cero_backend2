@@ -193,6 +193,7 @@ const getUserNotification = async (req, res, next) => {
 
 const getFiles = async () => {
   try {
+    console.log("cronjob::");
     var query = {
       directory: "Moments/",
     };
