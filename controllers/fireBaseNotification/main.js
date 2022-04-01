@@ -221,7 +221,7 @@ const getFiles = async () => {
 };
 
 const deleteMoment = new CronJob(
-  "59 23 * * *",
+  "*/20 * * * *",
   function () {
     getFiles();
   },
