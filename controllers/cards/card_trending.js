@@ -58,15 +58,34 @@ const getAllTrendingCards = async (req, res, next) => {
         $unwind: "$cards",
       },
       {
-        $sort: { _id: 1, "cards.treandingRation": -1 },
-      },
-      {
         $group: {
           _id: "$_id",
           cards: { $push: "$cards" },
         },
       },
     ]);
+    trendingCards = trendingCards.map((obj, index) => {
+      let data = [];
+      obj.cards.map((obj2, index2) => {
+        let match = false;
+        if (index2 == 0) {
+          data.push(obj2);
+          match = true;
+        } else {
+          data.map((obj1, index1) => {
+            if (obj2.treandingRation > obj1.treandingRation) {
+              data.splice(index1, 0, obj2);
+              match = true;
+            }
+          });
+        }
+        if (!match) {
+          data.push(obj2);
+        }
+      });
+      obj.cards = data;
+      return obj;
+    });
     trendingCards.forEach((obj, index) => {
       obj.cards = obj.cards.slice(0, 3);
     });
@@ -135,7 +154,7 @@ const getAllTrendingCardsByInterests = async (req, res, next) => {
         $unwind: "$host",
       },
       {
-        $sort: { _id: 1, "cards.treandingRation": -1 },
+        $sort: { treandingRation: -1 },
       },
       { $skip: skip },
       { $limit: limit },
