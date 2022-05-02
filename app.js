@@ -9,6 +9,7 @@ const initFirebase = require("./config/firebase.js");
 const {
   messageNotification,
 } = require("./controllers/firebaseMessaging/messaging");
+const fs = require("fs");
 
 const {
   IndexRouter,
@@ -24,6 +25,11 @@ const {
   ReportRouter,
 } = require("./routes");
 
+var dir = "./uploads";
+
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir);
+}
 const app = express();
 const mongoose = require("mongoose");
 initFirebase();
