@@ -12,7 +12,7 @@ const uploadFile = async (req, res, next) => {
         if (req.fileValidationError) {
           throw new Error(req.fileValidationError);
         } else if (!req.files) {
-          throw new Error("Please select an image to upload");
+          throw new Error("Please select an image to upload ");
         } else if (err) {
           throw new Error(err);
         }
