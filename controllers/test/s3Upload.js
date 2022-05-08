@@ -1,14 +1,14 @@
 const { readFileSync } = require("fs");
-const { S3 } = require("aws-sdk");
+const AWS = require("aws-sdk");
 
 const wasabi = async (filename) => {
   try {
-    const ID = process.env.AWS_CLIENT_ID;
-    const SECRET = process.env.AWS_CLIENT_SECRET;
-    const BUCKET_NAME = process.env.AWS_BUCKET_NAME;
+    const ID = "B1ZCNMWG7K0DS9MGBGZ9";
+    const SECRET = "EuoFt8hyRAE11dfpeSNOZVIfe80IotNvgqqBzlJr";
+    const BUCKET_NAME = "upload234";
     const wasabiEndpoint = new AWS.Endpoint("s3.wasabisys.com");
 
-    const s3 = new S3({
+    const s3 = new AWS.S3({
       endpoint: wasabiEndpoint,
       region: "us-east-2",
       accessKeyId: ID,
@@ -24,8 +24,10 @@ const wasabi = async (filename) => {
       Body: fileContent,
       ACL: "public-read",
     };
+    console.log(params);
+
     var options = { partSize: 10 * 1024 * 1024, queueSize: 1 };
-    const data = await s3.putObject(params, options).promise();
+    const data = await s3.upload(params, options).promise();
     return data;
   } catch (error) {
     console.log("error::s3", error);
