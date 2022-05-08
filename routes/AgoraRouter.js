@@ -9,6 +9,6 @@ const AgoraRouter = express.Router();
 
 AgoraRouter.get("/getToken", generateAgoraToken);
 AgoraRouter.get("/getRtmToken", generateRtmAgoraToken);
-AgoraRouter.get("/testUpload", uploadFile);
+AgoraRouter.post("/testUpload", uploadFile);
 
 module.exports = AgoraRouter;

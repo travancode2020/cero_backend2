@@ -3,14 +3,12 @@ const { wasabi } = require("./s3Upload");
 
 const uploadFile = async (req, res, next) => {
   try {
-    throw new Error("error");
     let path = null;
     let field = [{ name: "image" }],
       upload = multerConfig.upload.fields(field);
     upload(req, res, async (err) => {
       try {
         let { files, body } = req;
-
         if (req.fileValidationError) {
           throw new Error(req.fileValidationError);
         } else if (!req.files) {
