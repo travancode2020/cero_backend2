@@ -13,7 +13,10 @@ const addRooms = async (req, res, next) => {
     let { _id } = body;
     if (!body) throw new Error("Please Enter valid Details");
     let roomsaved;
-
+    let validHost = await User.findOne({
+      _id: body.hostId,
+    });
+    if (!validHost) throw new Error("Please enter valid host id");
     roomsaved = await Rooms.create(body);
     if (!roomsaved) throw new Error("Something went wrong while creating room");
     let RoomData = await Rooms.aggregate([
@@ -72,8 +75,8 @@ const addRooms = async (req, res, next) => {
     if (roomTime > startTime && endTime > roomTime) {
       notificationData = { _id: data._id.toString() };
     }
-    if (userObj._id != data.hostData._id) {
-      for (let userObj of notificationUsers) {
+    for (let userObj of notificationUsers) {
+      if (userObj._id != data.hostData._id) {
         let notificationToken = userObj.notificationToken;
         await sendFirebaseNotification(
           "cero",

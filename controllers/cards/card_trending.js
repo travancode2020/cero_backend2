@@ -72,12 +72,16 @@ const getAllTrendingCards = async (req, res, next) => {
           data.push(obj2);
           match = true;
         } else {
+          let matchIndex;
           data.map((obj1, index1) => {
             if (obj2.treandingRation > obj1.treandingRation) {
-              data.splice(index1, 0, obj2);
+              matchIndex = index1;
               match = true;
             }
           });
+          if (match) {
+            data.splice(matchIndex, 0, obj2);
+          }
         }
         if (!match) {
           data.push(obj2);
